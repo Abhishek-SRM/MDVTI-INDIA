@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTII</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Sofia Pro', sans-serif;
+        background-image: url('img/bg.png');
+
+    }
+
+    p {
+        font-size: 17px;
+        color: #000;
+    }
+
+    a {
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    h1 {
+        color: #150f49;
+    }
+
+    .footer {
+        background-color: #000;
+    }
+
+    .footer p {
+        color: #fff;
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    .footer .btn.btn-link::before {
+        position: relative;
+        content: "";
+        font-weight: 900;
+        margin-right: 10px;
+    }
+
+    .visitor {
+        border: 3px dotted rgba(255, 255, 255, 0.733);
+    }
+
+   
+    .pr3-get-right .pr3-get-vector-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+    }
+
+    .pr3-get-right {
+        position: relative;
+    }
+
+    .pr3-about-section {
+        padding: 100px 0;
+        position: relative;
+    }
+
+    .pr20-project-content .pr20-project-column .pr20-headline h2 {
+        display: inline-block;
+        color: #8B2025;
+    }
+
+    @media (max-width: 991.98px) {
+        .pr20-business-section {
+            padding-top: 100px;
+        }
+    }
+    .static{
+        position: fixed;
+    right: -39px;
+    top: 50%;
+    z-index: 100000;
+    transform: rotate(
+90deg
+);
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!--Static BTN-->
+    <span class="btn btn-primary shadow static">Register Now</span>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0" style="font-family: 'Sofia Pro', sans-serif;">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>info@mdvtiindia.org</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>1800-891-9232</small>
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-inline-flex align-items-center justify-content-end">
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Login</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="studentlogin.html" class="dropdown-item">Student Login</a>
+                        <a href="franchise_login.html   " class="dropdown-item">Franchise Login</a>
+                    </div>
+                </div>
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Register</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="student-reg.html" class="dropdown-item">Student Registration</a>
+                        <a href="registerfranchise.html" class="dropdown-item">Franchise Registration</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0"
+        style="font-family: 'Sofia Pro', sans-serif;">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="128px"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training </a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga
+                            Therapy</a>
+                        <a href="#" class="dropdown-item">Diploma in Yoga Teacher Training</a>
+                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
+                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
+                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
+                    </div>
+                </div>
+                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shop<i
+                    class="fa fa-shopping-cart ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <section style="background-image: url('https://images.unsplash.com/photo-1510894347713-fc3ed6fdf539?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'); background-size: cover; height: 84vh;">
+        <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div class="row align-items-center g-lg-5 py-5">
+              <div class="col-lg-7 text-center text-lg-start">
+               <img src="https://images.badabusiness.com/bb-website-prod/assets/cpmaster/images/bnr_txt.png" width="70%">
+              </div>
+              <div class="col-md-10 mx-auto col-lg-5">
+                
+              </div>
+            </div>
+          </div>
+    </section>
+    
+    <section id="sb-about" class="pr3-about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="pr3-get-right wow fadeInRight" data-wow-delay="0.2s"
+                        style="visibility: visible;animation-delay: 0.2s;">
+                        <div class="pr3-get-circle">
+                            <img src="img/franchise/circle.svg" alt="">
+                        </div>
+                        <div class="pr3-get-vector-img">
+                            <img src="img/franchise/circle-inner.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 container">
+                    <div class="pr3-about-right ">
+                        <div class="pr3-title-area wow fadeInDown " style="visibility: visible;">
+                            <div class="pr3-headline">
+                                <h1 class="">Why Join Yoga Franchise</h1>
+                            </div>
+                            <div class="pr3-pera-txt">
+                                <p>As health and wellness take center stage in the post-COVID world, Yoga has emerged as
+                                    a popular lifestyle choice. People are increasingly turned to practising yoga to
+                                    stay healthy, stress-free and avoid negative thinking and beliefs. There is a strong
+                                    demand for Yoga professionals and trainers to help people make the most of this
+                                    ancient Indian science. With time everything has changed- job market, choices of
+                                    people, lifestyle, and the ultimate desire to find inner peace. The surge in these
+                                    sectors has pushed the demand for trained professionals to lead people on their
+                                    spiritual journeys. </p>
+                                <a href="" class="btn btn-primary px-3 py-2">Join now<i
+                                        class="bi bi-arrow-right ms-3"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Counter Start-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 about-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                <div class="container">
+                    <div class="section-title text-start">
+                        <h1 class="display-5 mb-4">Our National Presence</h1>
+                    </div>
+                    <div class="row g-4 mb-4 pb-2">
+                        <div class="col-md-3 sm-12 mr-3 wow fadeIn bg-white shadow py-3" style="margin-right: 17px;"
+                            data-wow-delay="0.1s">
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
+                                    style="width: 60px; height: 60px;">
+                                    <i class="fa fa-users fa-2x text-primary"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <div class="d-flex justify-content-start">
+                                        <h2 class="text-primary mb-1" data-toggle="counter-up">753</h2>
+                                        <h3 class="text-primary">+</h3>
+                                    </div>
+
+                                    <p class="fw-medium mb-0">Study Centers</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-12 wow fadeIn bg-white shadow py-3" data-wow-delay="0.3s">
+                            <div class="d-flex align-items-center">
+                                <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white"
+                                    style="width: 60px; height: 60px;">
+                                    <i class="fa fa-check fa-2x text-primary"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <div class="d-flex justify-content-start">
+                                        <h2 class="text-primary mb-1" data-toggle="counter-up">35000</h2>
+                                        <h3 class="text-primary">+</h3>
+                                    </div>
+                                    <p class="fw-medium mb-0">Trained Yogis</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-5 sm-12 align-self-center wow fadeIn" data-wow-delay="0.5s">
+                            <a href="" class="btn btn-primary py-5 px-5">Join the mission to improve global
+                                well-being</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Counter end-->
+
+    <!--Benefits As Our Franchise Partner START-->
+    <section class="feature py-5">
+
+        <div class="mdvti-service-content container">
+            <div class="section-title text-start">
+                <h1 class="display-5 mb-4">Your Benefits As Our Franchise Partner</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="0ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-headset fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Dedicated Customer Support Manager</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="300ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 300ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-map-signs fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Complete guidance & solutions to establish, operate and manage the
+                                    Franchisee
+                                </a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="600ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 600ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-comments fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Customer Complaint Management System (CMS)
+                                </a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-smile fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Customer Relationship Management (CRM)</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-chart-line fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Extensive Marketing Support</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-laptop fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Personalized Website</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-sign-in-alt fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Dynamic Franchisee Login Panel</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-map-signs fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Regular Business & Marketing Training Sessions</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-sign-in-alt fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Social Media Management Training</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-user-plus fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Post Tracking System</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-portrait fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Accounts Management</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-file-invoice-dollar fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Reasonable Franchise Fee</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-chalkboard-teacher fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Assistance in Recruitment & Training of Staff</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-book-open fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Free Franchise Kit </a></h3>
+                            <p>Prospectus, Handbill, Books, Tshirts, Admission Form, Diary, Calendar, Affiliation
+                                Letter,
+                                Acknowledgement, Bhagwad Geeta</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-chalkboard fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Virtual Classroom</a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-video fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Recorded Lectures & Live Doubt Session for Students
+                                </a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6  wow fadeFromUp py-2" data-wow-delay="900ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 900ms; animation-name: fadeFromUp py-2;">
+                    <div class="mdvti-service-innerbox">
+                        <div class="mdvti-service-icon">
+                            <i class="fas fa-book fa-2x"></i>
+                        </div>
+                        <div class="mdvti-service-text cyb-headline pera-content">
+                            <hr>
+                            <h3><a href="#">Detailed Study Material for Students for Holistic Learning
+
+                                </a></h3>
+                            <p>Take decisive action with the frontline intelligence.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Benefits As Our Franchise Partner END-->
+
+    <!--Our Top Franchise Partners Start-->
+    <section class="py-3">
+        <div class="container">
+            <h1 class="text-center">Our Top 5 Franchise Partners</h1>
+            <div class="row">
+                <div class="owl-carousel franchise">
+                    <div class="item">
+                        <div class="p-3">
+                            <div class="card mb-3 shadow">
+                                <img class="card-img-top"
+                                    src="https://classpass-res.cloudinary.com/image/upload/f_auto/q_auto,w_1125/media_venue/eeikts44iwxjkwbehxu7.jpg"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-title bg-primary p-3 text-white shadow rounded"></i>MDVTI
+                                        INDIA</p>
+                                    <hr>
+                                    <div class="d-flex justify-content-between ">
+                                        <p class="card-text text-primary">
+                                            City : Lucknow
+                                        </p>
+                                        <p class="card-text text-primary">
+                                            State : Uttar Pradesh
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Our Top Franchise Partners End-->
+
+    <section class="aplit-gt-area py-5">
+        <div class="container">
+            <div class="aplit-gt-wrapper" data-background="assets/img/it-img-33/git-bg.jpg"
+                style="background-image: url(&quot;assets/img/it-img-33/git-bg.jpg&quot;);">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="aplit-gt-left">
+                            <span class="subtitle">MDVTI INDIA</span>
+                            <div class="aplit-headline">
+                                <h3>We are building the largest community of wellness providers on earth, be a part of
+                                    it.</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="aplit-gt-right ">
+                            <a href="#" class="bg-white px-5 py-3 shadow">Register Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp pb-5" data-wow-delay="0.1s">
+        <div class="container">
+
+            <!-- Video Gallery -->
+            <div class="container py-5">
+                <div class="aplit-gt-wrapper">
+                    <div class="row align-items-center">
+                        <div class="col-md-7">
+                            <div class="aplit-gt-left">
+                                <div class="container p-5 d-flex justify-content-center wow fadeInUp">
+                                    <iframe width="760" height="345" class="shadow rounded" style="overflow: hidden;"
+                                        src="https://www.youtube.com/embed/snPBv1-igjM?" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-1"></div>
+                        <div class="col-md-4">
+                            <div class="aplit-gt-right m-2">
+                                <a href="https://www.facebook.com/mdvtiindia/reviews/"
+                                    class="btn btn-primary py-3 d-lg-block"><img
+                                        src="https://img.icons8.com/fluency/40/000000/facebook-circled.png" /> <span
+                                        class="m-3"> Facebook
+                                        Reviews left by our students</span></a>
+                            </div>
+                            <div class="aplit-gt-right m-2">
+                                <a href="https://g.page/r/CZ7oR0BAPqQeEA0/review"
+                                    class="btn btn-primary py-3 d-lg-block"><img
+                                        src="https://img.icons8.com/stickers/40/000000/google-logo.png" /><span
+                                        class="m-3">
+                                        Google
+                                        Reviews left by our students</span></a>
+                            </div>
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </div>
+            <!-- video Gallery End -->
+        </div>
+        </div>
+        <!-- Testimonial End -->
+
+        <!--FAQ-->
+        <div class="container">
+            <div class="section-title position-relative my-5">
+                <div class="display-5 text-primary">Frequently Asked Question</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by
+                                    default, until the collapse plugin adds the appropriate classes that we
+                                    use
+                                    to style each element. These classes control the overall appearance, as
+                                    well
+                                    as the showing and hiding via CSS transitions. You can modify any of
+                                    this
+                                    with custom CSS or overriding our default variables. It's also worth
+                                    noting
+                                    that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    Accordion Item #2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden
+                                    by
+                                    default, until the collapse plugin adds the appropriate classes that we
+                                    use
+                                    to style each element. These classes control the overall appearance, as
+                                    well
+                                    as the showing and hiding via CSS transitions. You can modify any of
+                                    this
+                                    with custom CSS or overriding our default variables. It's also worth
+                                    noting
+                                    that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    Accordion Item #3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden
+                                    by
+                                    default, until the collapse plugin adds the appropriate classes that we
+                                    use
+                                    to style each element. These classes control the overall appearance, as
+                                    well
+                                    as the showing and hiding via CSS transitions. You can modify any of
+                                    this
+                                    with custom CSS or overriding our default variables. It's also worth
+                                    noting
+                                    that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapsefour" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    Accordion Item #1
+                                </button>
+                            </h2>
+                            <div id="collapsefour" class="accordion-collapse collapse show"
+                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the first item's accordion body.</strong> It is shown by
+                                    default, until the collapse plugin adds the appropriate classes that we
+                                    use
+                                    to style each element. These classes control the overall appearance, as
+                                    well
+                                    as the showing and hiding via CSS transitions. You can modify any of
+                                    this
+                                    with custom CSS or overriding our default variables. It's also worth
+                                    noting
+                                    that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    Accordion Item #2
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse"
+                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the second item's accordion body.</strong> It is hidden
+                                    by
+                                    default, until the collapse plugin adds the appropriate classes that we
+                                    use
+                                    to style each element. These classes control the overall appearance, as
+                                    well
+                                    as the showing and hiding via CSS transitions. You can modify any of
+                                    this
+                                    with custom CSS or overriding our default variables. It's also worth
+                                    noting
+                                    that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    Accordion Item #3
+                                </button>
+                            </h2>
+                            <div id="collapseSix" class="accordion-collapse collapse"
+                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>This is the third item's accordion body.</strong> It is hidden
+                                    by
+                                    default, until the collapse plugin adds the appropriate classes that we
+                                    use
+                                    to style each element. These classes control the overall appearance, as
+                                    well
+                                    as the showing and hiding via CSS transitions. You can modify any of
+                                    this
+                                    with custom CSS or overriding our default variables. It's also worth
+                                    noting
+                                    that just about any HTML can go within the <code>.accordion-body</code>,
+                                    though the transition does limit overflow.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--FAQ END-->
+
+        <!-- Footer Start -->
+        <div class="container-fluid text-light footer  pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+            style="background-image: url(img/bg.png); background-size:auto">
+            <div class="container py-3">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6 ">
+                        <h4 class="text-light mb-4 ">Login </h4>
+                        <a class="btn btn-link" href="">Student Login</a>
+                        <a class="btn btn-link" href="">Zonal Co-ordinator Login</a>
+                        <a class="btn btn-link" href="">Co-ordinator Login</a>
+                        <a class="btn btn-link" href="">Franchise Login</a>
+                        <a class="btn btn-link" href="">State Co-ordinator Login</a>
+                        <a class="btn btn-link" href="">Staff Login</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">Important Links</h4>
+                        <a class="btn btn-link" href="">Result</a>
+                        <a class="btn btn-link" href="">Career in Yoga</a>
+                        <a class="btn btn-link" href="">Verify Institute</a>
+                        <a class="btn btn-link" href="">Rules and Regulation</a>
+                        <a class="btn btn-link" href="">Verify Certificate</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-light mb-4">Quick Links</h4>
+                        <a class="btn btn-link" href="">About Us</a>
+                        <a class="btn btn-link" href="">Contact Us</a>
+                        <a class="btn btn-link" href="">Our Services</a>
+                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Support</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="mx-auto text-center">
+                            <img src="img/mdvtiindia_Logo.jpg" width="100px">
+                            <div class="mt-4 visitor">
+                                <h3 class="mt-2 text-white">Total visitors</h3>
+                                <h4 class="mt-2 text-white">987678</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="divider div-transparent div-dot"></div>
+            <div class="container ">
+                <div class="row g-5">
+                    <div class="col-lg-5 col-md-6 ">
+                        <h4 class="text-light mb-4">Address</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow
+                            (U.P.)-226022
+                        </p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                    class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright mt-5">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                            &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                        </div>
+                        <div class="col-md-6 text-center text-md-end">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i
+                class="bi bi-arrow-up"></i></a>
+
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+</body>
+
+</html>

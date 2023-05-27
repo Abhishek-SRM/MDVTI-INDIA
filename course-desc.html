@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTI INDIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mdvti_blog.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: rgba(238, 238, 238, 0.267);
+        background-image: url("img/bg.png");
+    }
+h3{
+    color:#150f49;
+}
+    img {
+        max-width: 100%;
+        height: auto;
+
+    }
+
+    p {
+        font-family: 'Sofia Pro', sans-serif;
+        font-size: 17px;
+        line-height: 31px;
+        text-align: justify;
+        color: #000;
+    }
+
+    a {
+        font-family: 'Sofia Pro', sans-serif;
+        color: #ffffff;
+    }
+
+    .footer {
+        background-color: #000;
+    }
+
+    .footer p {
+        color: #fff;
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    .footer .btn.btn-link::before {
+        position: relative;
+        content: "";
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 900;
+        margin-right: 10px;
+    }
+
+    .visitor {
+        border: 3px dotted rgba(255, 255, 255, 0.733);
+    }
+
+    .divider {
+        position: relative;
+        margin-top: 9px;
+        margin-bottom: 9px;
+        height: 1px;
+    }
+
+    .div-transparent:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 1px;
+        background-image: linear-gradient(to right, transparent, rgb(48, 49, 51), transparent);
+    }
+
+    .div-dot:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -9px;
+        left: calc(50% - 9px);
+        width: 18px;
+        height: 18px;
+        background-color: goldenrod;
+        border: 1px solid rgb(48, 49, 51);
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
+    }
+
+    .mdvti-breadcurmb-section {
+        background-color: #150f49;
+        padding: 40px 0px 40px;
+    }
+
+    .highlights h6 {
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    .feature h5 {
+        font-family: 'Sofia Pro';
+        font-weight: 400;
+        font-size: 18px;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0" style="font-family: 'Sofia Pro', sans-serif;">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>info@mdvtiindia.org</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>1800-891-9232</small>
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-inline-flex align-items-center justify-content-end">
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Login</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="studentlogin.html" class="dropdown-item">Student Login</a>
+                        <a href="franchise_login.html   " class="dropdown-item">Franchise Login</a>
+                    </div>
+                </div>
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Register</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="student-reg.html" class="dropdown-item">Student Registration</a>
+                        <a href="registerfranchise.html" class="dropdown-item">Franchise Registration</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0"
+        style="font-family: 'Sofia Pro', sans-serif;">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="128px"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training </a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga
+                            Therapy</a>
+                        <a href="#" class="dropdown-item">Diploma in Yoga Teacher Training</a>
+                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
+                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
+                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
+                    </div>
+                </div>
+                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shop<i
+                    class="fa fa-shopping-cart ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <section id="mdvti-breadcurmb" class="mdvti-breadcurmb-section">
+        <div class="container">
+            <div class="breadcurmb-title text-center">
+                <h2>Post Graduate Diploma in Yoga Teacher</h2>
+                <h5 class="text-white">(PGDYT)</h5>
+            </div>
+            <div class="breadcurmb-item-list text-center ul-li">
+                <ul class="mdvti-page-breadcurmb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Course</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="course-desc">
+        <div class="container">
+            <div class="container-fluid py-5">
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="mb-5">
+                                <div class="section-title position-relative mb-5">
+                                    <div class="display-5 text-primary">Post Graduate Diploma in Yoga Teacher</div>
+                                </div>
+                                <h3 class="d-inline-block position-relative text-uppercase pb-2 ">
+                                    Course Overview</h3>
+                                <p>
+                                    PG Diploma in Yoga is a 1 year course that can be studied as a skill enhancement
+                                    course for the people who want to work as a Yoga Teacher. PGDYT course is structured
+                                    to help individuals become well rounded, competent, professional and highly skilled
+                                    yoga teachers.
+                                </p>
+                                <p>PG Diploma in Yoga eligibility is that the candidates should have a minimum aggregate
+                                    score of 50%-60% in graduation from a recognized Board with a relevant subject.
+                                    There are no entrance tests for admission but some may ask for a personal interview
+                                    or group discussion for final selection in this course.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mt-lg-0 highlights">
+                            <div class="bg-white shadow mb-5">
+                                <h3 class=" py-3 px-4 m-0">Course Highlights</h3>
+                                <div class="d-flex justify-content-between border-bottom px-4">
+                                    <h6 class=" my-3">Duration</h6>
+                                    <h6 class=" my-3">1 year</h6>
+                                </div>
+                                <div class="d-flex justify-content-between border-bottom px-4">
+                                    <h6 class=" my-3">Examination Type</h6>
+                                    <h6 class=" my-3">Online/Offline</h6>
+                                </div>
+                                <div class="d-flex justify-content-between border-bottom px-4">
+                                    <h6 class=" my-3">Eligibility</h6>
+                                    <h6 class=" my-3">Graduation (Min.45%)</h6>
+                                </div>
+                                <div class="d-flex justify-content-between border-bottom px-4">
+                                    <h6 class=" my-3">Duration</h6>
+                                    <h6 class=" my-3">10.00 Hrs</h6>
+                                </div>
+                                <div class="d-flex justify-content-between border-bottom px-4">
+                                    <h6 class=" my-3">Medium of teaching</h6>
+                                    <h6 class=" my-3">Online/ Offline</h6>
+                                </div>
+                                <div class="d-flex justify-content-between border-bottom px-4">
+                                    <h6 class=" my-3">Average Salary</h6>
+                                    <h6 class=" my-3">6 Lakh Approx</h6>
+                                </div>
+                                <div class="row border-bottom justify-content-between px-4">
+                                    <h6 class=" my-3 col-6 ">Top Recruiting Areas</h6>
+                                    <h6 class=" my-3 col-6 ">Ayurvedic Centre, Naturopathy Centre, Therapeutic
+                                        Centre,Government Hospitals, Rehabilitation Centre.</h6>
+                                </div>
+                                <div class="row border-bottom justify-content-between px-4">
+                                    <h6 class="my-3 col-6 ">Job Positions</h6>
+                                    <h6 class=" my-3 col-6 ">Naturopathy Teacher, Yoga Instructor, Yoga Therapist, Yoga
+                                        Teacher, Researcher.
+                                    </h6>
+                                </div>
+                                <h5 class="px-4 pt-3 text-primary">Course Fee</h5>
+                                <div class="px-4">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <h6 class=" my-2">Indian Students</h6>
+                                            <h6>Rs.15,000/-</h6>
+                                            <h6>Rs.18,000/-</h6>
+                                        </div>
+                                        <div class="col-7">
+                                            <h6 class=" my-2">International Students</h6>
+                                            <h6>$1,000/-</h6>
+                                        </div>
+                                        <a href="" class="btn btn-primary px-5 my-4">Enroll Now<i
+                                            class="fa fa-arrow-right ms-3"></i></a>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container-fluid overflow-hidden px-lg-0">
+                        <div class="container feature px-lg-0">
+                            <div class="row g-0 mx-lg-0">
+                                <div class="mb-2">
+                                    <h3 class="d-inline-block position-relative text-uppercase pb-2 ">
+                                        Course Benefits</h3>
+                                </div>
+                                <div class="col-lg-7 feature-text wow fadeIn" data-wow-delay="0.5s"
+                                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
+                                    <div class="p-lg-5 ps-lg-0">
+                                        <div class="row g-4">
+                                            <div class="col-lg-4 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2 py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-video text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-1">
+                                                        <h5 class="mb-0">Recorded Lectures </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-8 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-book text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Detailed Study Material for Holistic Learning
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-7 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-id-badge text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Free Student Kit (ID card, Books, Tshirt)</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-pen text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Short notes &amp; E-books</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-book-reader text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Student Care Portal</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-user-check text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Virtual Classroom</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-drafting-compass text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Live Doubt sessions
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center "
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-brain text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Affordable Fee</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-lg-6 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-video text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Short notes &amp; E-books</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 sm-6 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-map-signs text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Lifetime Guidance from our Yoga Coach</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-chalkboard-teacher text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Highly Trained &amp; Certified Yoga Teachers
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 wow fadeInUp"
+                                                style="visibility: visible; animation-name: fadeInUp;">
+                                                <div class="d-flex align-items-center bg-white py-2 px-2"
+                                                    style="border-radius: 6px ; box-shadow:0px 12px 24px -8px rgb(0 0 0 / 33%)">
+                                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                                                        style="width: 40px; height: 40px;">
+                                                        <i class="fa fa-clipboard-check text-primary"></i>
+                                                    </div>
+                                                    <div class="ms-2">
+                                                        <h5 class="mb-0">Training for establishing your own Yoga Studio
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 pe-lg-0 wow fadeInRight"
+                                    style="min-height: 400px; visibility: visible; animation-name: fadeInRight;">
+                                    <div class="position-relative h-100">
+                                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_kvwtrk4n.json"
+                                            background="transparent" class="mt-5" speed="1" f="" ppp="" loop=""
+                                            autoplay=""></lottie-player>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="container px-4">
+        <h3 class="d-inline-block position-relative text-uppercase pb-2 ">
+            Admission</h3>
+        <p>For Online Admission, you can apply by clicking Register Now and for Offline admission, you may take
+            admission form by our study center situated in all over India or MDVTI INDIA's corporate office by paying
+            Rs.100/-. Following documents must be included along with filled & signed applications</p>
+        <div class="pr-mark-feature-content">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 0ms; animation-name: fadeInUp;">
+                    <div class="pr-mark-feature-innerbox position-relative headline pera-content">
+                        <div
+                            class="pr-mark-feature-inner-icon d-flex align-items-center justify-content-center  position-absolute">
+                            <img src="https://img.icons8.com/color-glass/30/000000/id-verified.png" />
+                        </div>
+                        <div class="pr-mark-feature-inner-text">
+                            <p class="p-0">Aadhar/Passport/VoterID</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 wow fadeInUp " data-wow-delay="200ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 200ms; animation-name: fadeInUp;">
+                    <div class="pr-mark-feature-innerbox position-relative headline pera-content">
+                        <div
+                            class="pr-mark-feature-inner-icon d-flex align-items-center justify-content-center  position-absolute">
+                            <img
+                                src="https://img.icons8.com/external-kmg-design-flat-kmg-design/30/000000/external-photo-graphic-design-kmg-design-flat-kmg-design.png" />
+                        </div>
+                        <div class="pr-mark-feature-inner-text">
+                            <p class="p-0">Two recent passport size Photographs of the applicant
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 wow fadeInUp my-2" data-wow-delay="400ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 400ms; animation-name: fadeInUp;">
+                    <div class="pr-mark-feature-innerbox position-relative headline pera-content">
+                        <div
+                            class="pr-mark-feature-inner-icon d-flex align-items-center justify-content-center  position-absolute">
+                            <img src="https://img.icons8.com/stickers/30/000000/report-card.png" />
+                        </div>
+                        <div class="pr-mark-feature-inner-text">
+                            <p class="p-0">Class 10th Marks-sheet with Certificate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 wow fadeInUp my-2" data-wow-delay="400ms" data-wow-duration="1500ms"
+                    style="visibility: visible; animation-duration: 1500ms; animation-delay: 400ms; animation-name: fadeInUp;">
+                    <div class="pr-mark-feature-innerbox position-relative headline pera-content">
+                        <div
+                            class="pr-mark-feature-inner-icon d-flex align-items-center justify-content-center  position-absolute">
+                            <img src="https://img.icons8.com/stickers/30/000000/report-card.png" />
+                        </div>
+                        <div class="pr-mark-feature-inner-text">
+                            <p class="p-0">Graduation Marks-sheet along with certificate.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="aplit-gt-area py-5">
+        <div class="container ">
+            <div class="aplit-gt-wrapper shadow"
+                style="background-image: url(img/bg.png); background-size: contain; background-repeat: repeat;">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="aplit-gt-left">
+                            <span class="subtitle">MDVTI INDIA</span>
+                            <div class="aplit-headline">
+                                <h3>Join Yoga Course and Become a Certified Yoga Teacher</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="aplit-gt-right ">
+                            <a href="#" class="bg-white px-5 py-3 shadow text-primary">Enroll Now</a>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Gallery -->
+    <div class="container py-5">
+        <div class="aplit-gt-wrapper">
+            <h1 class="text-primary py-4">Student Testimonial</h1>
+            <div class="row align-items-center">
+                <div class="col-md-7">
+                    <div class="aplit-gt-left">
+                        <div class="container p-5 d-flex justify-content-center wow fadeInUp">
+                            <iframe width="760" height="335" src="https://www.youtube.com/embed/snPBv1-igjM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-md-4">
+                    <div class="aplit-gt-right m-2">
+                        <a href="https://www.facebook.com/mdvtiindia/reviews/"
+                            class="btn btn-primary py-3 d-lg-block"><img
+                                src="https://img.icons8.com/fluency/48/000000/facebook-circled.png" /> <span
+                                class="m-3"> Facebook
+                                Reviews left by our students</span></a>
+                    </div>
+                    <div class="aplit-gt-right m-2">
+                        <a href="https://g.page/r/CZ7oR0BAPqQeEA0/review" class="btn btn-primary py-3 d-lg-block"><img
+                                src="https://img.icons8.com/stickers/48/000000/google-logo.png" /><span class="m-3">
+                                Google
+                                Reviews left by our students</span></a>
+                    </div>
+                </div>
+                <div class="col"></div>
+            </div>
+        </div>
+    </div>
+    <!-- video Gallery End -->
+    <!-- Testimonial End -->
+    
+    <div class="container">
+        <div class="section-title position-relative my-5">
+            <div class="display-5 text-primary">Frequently Asked Question</div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                Accordion Item #1
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show"
+                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the first item's accordion body.</strong> It is shown by
+                                default, until the collapse plugin adds the appropriate classes that we
+                                use
+                                to style each element. These classes control the overall appearance, as
+                                well
+                                as the showing and hiding via CSS transitions. You can modify any of
+                                this
+                                with custom CSS or overriding our default variables. It's also worth
+                                noting
+                                that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                                Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden
+                                by
+                                default, until the collapse plugin adds the appropriate classes that we
+                                use
+                                to style each element. These classes control the overall appearance, as
+                                well
+                                as the showing and hiding via CSS transitions. You can modify any of
+                                this
+                                with custom CSS or overriding our default variables. It's also worth
+                                noting
+                                that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse"
+                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden
+                                by
+                                default, until the collapse plugin adds the appropriate classes that we
+                                use
+                                to style each element. These classes control the overall appearance, as
+                                well
+                                as the showing and hiding via CSS transitions. You can modify any of
+                                this
+                                with custom CSS or overriding our default variables. It's also worth
+                                noting
+                                that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapsefour" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                Accordion Item #1
+                            </button>
+                        </h2>
+                        <div id="collapsefour" class="accordion-collapse collapse show"
+                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the first item's accordion body.</strong> It is shown by
+                                default, until the collapse plugin adds the appropriate classes that we
+                                use
+                                to style each element. These classes control the overall appearance, as
+                                well
+                                as the showing and hiding via CSS transitions. You can modify any of
+                                this
+                                with custom CSS or overriding our default variables. It's also worth
+                                noting
+                                that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                                Accordion Item #2
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse"
+                            aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the second item's accordion body.</strong> It is hidden
+                                by
+                                default, until the collapse plugin adds the appropriate classes that we
+                                use
+                                to style each element. These classes control the overall appearance, as
+                                well
+                                as the showing and hiding via CSS transitions. You can modify any of
+                                this
+                                with custom CSS or overriding our default variables. It's also worth
+                                noting
+                                that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#collapseSix"
+                                aria-expanded="false" aria-controls="collapseThree">
+                                Accordion Item #3
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse"
+                            aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>This is the third item's accordion body.</strong> It is hidden
+                                by
+                                default, until the collapse plugin adds the appropriate classes that we
+                                use
+                                to style each element. These classes control the overall appearance, as
+                                well
+                                as the showing and hiding via CSS transitions. You can modify any of
+                                this
+                                with custom CSS or overriding our default variables. It's also worth
+                                noting
+                                that just about any HTML can go within the <code>.accordion-body</code>,
+                                though the transition does limit overflow.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6 ">
+                    <h4 class="text-light mb-4 ">Login </h4>
+                    <a class="btn btn-link" href="">Student Login</a>
+                    <a class="btn btn-link" href="">Zonal Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Franchise Login</a>
+                    <a class="btn btn-link" href="">State Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Staff Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Result</a>
+                    <a class="btn btn-link" href="">Career in Yoga</a>
+                    <a class="btn btn-link" href="">Verify Institute</a>
+                    <a class="btn btn-link" href="">Rules and Regulation</a>
+                    <a class="btn btn-link" href="">Verify Certificate</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/mdvtiindia_Logo.jpg" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider div-transparent div-dot"></div>
+        <div class="container ">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

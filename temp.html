@@ -1,0 +1,1658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTI INDIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+    
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+   <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        background-color: rgba(238, 238, 238, 0.267);
+        background-image: url("img/bg.png");
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 31px;
+        text-align: justify;
+        color: #000;
+    }
+
+    a {
+        color: #373a5b;
+    }
+
+    h1 {
+        color: #150f49;
+    }
+
+    h3 a {
+        color: #8B2025;
+    }
+
+
+    .visitor {
+        border: 3px dotted rgba(255, 255, 255, 0.733);
+    }
+
+    .divider {
+        position: relative;
+        margin-top: 9px;
+        margin-bottom: 9px;
+        height: 1px;
+    }
+
+    .div-transparent:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 1px;
+        background-image: linear-gradient(to right, transparent, rgb(48, 49, 51), transparent);
+    }
+
+    .div-dot:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -9px;
+        left: calc(50% - 9px);
+        width: 18px;
+        height: 18px;
+        background-color: goldenrod;
+        border: 1px solid rgb(48, 49, 51);
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
+    }
+
+    .accordion-button {
+        padding: 0.5rem 1.25rem !important;
+    }
+
+    .owl-carousel .owl-nav {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    .owl-carousel .owl-prev {
+        position: absolute;
+        left: 0;
+    }
+
+    .owl-carousel .owl-next {
+        position: absolute;
+        right: 0;
+    }
+
+    .main_wrapper .owl-stage-outer {
+        margin: 0px 30px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    ul li {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 5px;
+        background-color: #fff;
+        font-family: 'Source Sans Pro', sans-serif !important;
+    }
+
+    ul li a {
+        display: block;
+        padding: 13px 15px;
+    }
+    h3{
+        font-family: 'Source Sans Pro', sans-serif !important;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="128px"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training </a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga
+                            Therapy</a>
+                        <a href="#" class="dropdown-item">Diploma in Yoga Teacher Training</a>
+                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
+                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
+                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
+                    </div>
+                </div>
+                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shop<i
+                    class="fa fa-shopping-cart ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <div class="container-fluid mb-4 wow fadeInUp main_wrapper"
+        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="owl-carousel toppers2">
+                <div class=" text-center">
+                    <a title="Post Graduate Diploma in Yoga Therapy">PGTYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Diploma in Yoga Teacher Training">DYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Certificate in Yoga Therapy">CYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Certificate in Yogasana & Pranayam">CYP</a>
+                </div>
+                <div class="text-center">
+                    <a title="Foundation Course in Yoga">FCY</a>
+                </div>
+                <div class="text-center">
+                    <a>Trending</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================================================================================== -->
+    <!-- =================================== Mobile View Start  ============================ -->
+    <!-- =================================================================================== -->
+
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
+                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Read</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Content</button>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+            <div class="blog-feed-post">
+                <div class="blog-feed-img-txt">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="mdvti-blog-text">
+                                <h3><a href="#">The Role of Yoga in Cardiac Health.</a></h3>
+                                <div class="mdvti-post-meta">
+                                    <a href="#"><i class="fas fa-user"></i> Shubham Tripathi | Yoga Teacher</a>
+                                </div>
+                                <p>Yoga and relaxation have been successfully used to check high blood
+                                    pressure and coronary artery disease.
+                                    A data structure is not only used for organizing the data. It is also used
+                                    for processing, retrieving, and storing data. There are different basic and
+                                    advanced types of data structures that are used in almost every program or
+                                    software system that has been developed. So we must have good knowledge
+                                    about data structures. A data structure is not only used for organizing the
+                                    data. It is also used for processing, retrieving, and storing data. There
+                                    are different basic and advanced types of data structures that are used in
+                                    almost every program or software system that has been developed. So we must
+                                    have good knowledge about data structures. A data structure is not only used
+                                    for organizing the data. It is also used for processing, retrieving, and
+                                    storing data. There are different basic and advanced types of data
+                                    structures that are used in almost every program or software system that has
+                                    been developed. So we must have good knowledge about data structures. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <section class="container important-links mt-4">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="text-center"><a name="Basics"></a>Python Basics</h2>
+                        <div class="Basics">
+                            <ul>
+                                <li><a href="https://www.geeksforgeeks.org/python-language-introduction/" rel="noopener"
+                                        target="_blank">Python language introduction</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/python-3-basics/" rel="noopener"
+                                        target="_blank">Python 3 basics</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/python-the-new-generation-language/"
+                                        rel="noopener" target="_blank">Python The new generation language</a>
+                                </li>
+                                <li><a href="https://www.geeksforgeeks.org/important-differences-between-python-2-x-and-python-3-x-with-examples/"
+                                        rel="noopener" target="_blank">Important difference between python 2.x
+                                        and python 3.x with example</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/keywords-python-set-1/" rel="noopener"
+                                        target="_blank">Keywords in Python | Set 1</a>, <a
+                                        href="https://www.geeksforgeeks.org/keywords-python-set-2/" rel="noopener"
+                                        target="_blank">Set 2</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/namespaces-and-scope-in-python/"
+                                        rel="noopener" target="_blank">Namespaces and Scope in Python</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/statement-indentation-and-comment-in-python/"
+                                        rel="noopener" target="_blank">Statement, Indentation and Comment in
+                                        Python</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/structuring-python-programs/" rel="noopener"
+                                        target="_blank">Structuring Python Programs</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/check-string-valid-keyword-python/"
+                                        rel="noopener" target="_blank">How to check if a string is a valid
+                                        keyword in Python?</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/how-to-assign-values-to-variables-in-python-and-other-languages/"
+                                        rel="noopener" target="_blank">How to assign values to variables in
+                                        Python and other languages</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/print-without-newline-python/" rel="noopener"
+                                        target="_blank">How to print without newline in
+                                        Python?</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/decision-making-python-else-nested-elif/"
+                                        rel="noopener" target="_blank">Decision making</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/make-simple-calculator-using-python/"
+                                        rel="noopener" target="_blank">Basic calculator program using Python</a>
+                                </li>
+                                <li><a href="https://www.geeksforgeeks.org/python-language-advantages-applications/"
+                                        rel="noopener" target="_blank">Python Language advantages and
+                                        applications</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md -6">
+                        <h2 class="text-center"><a name="Basics"></a>Python Basics</h2>
+                        <div class="Basics">
+                            <ul>
+                                <li><a href="https://www.geeksforgeeks.org/python-language-introduction/" rel="noopener"
+                                        target="_blank">Python language introduction</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/python-3-basics/" rel="noopener"
+                                        target="_blank">Python 3 basics</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/python-the-new-generation-language/"
+                                        rel="noopener" target="_blank">Python The new generation language</a>
+                                </li>
+                                <li><a href="https://www.geeksforgeeks.org/important-differences-between-python-2-x-and-python-3-x-with-examples/"
+                                        rel="noopener" target="_blank">Important difference between python 2.x
+                                        and python 3.x with example</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/keywords-python-set-1/" rel="noopener"
+                                        target="_blank">Keywords in Python | Set 1</a>, <a
+                                        href="https://www.geeksforgeeks.org/keywords-python-set-2/" rel="noopener"
+                                        target="_blank">Set 2</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/namespaces-and-scope-in-python/"
+                                        rel="noopener" target="_blank">Namespaces and Scope in Python</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/statement-indentation-and-comment-in-python/"
+                                        rel="noopener" target="_blank">Statement, Indentation and Comment in
+                                        Python</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/structuring-python-programs/" rel="noopener"
+                                        target="_blank">Structuring Python Programs</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/check-string-valid-keyword-python/"
+                                        rel="noopener" target="_blank">How to check if a string is a valid
+                                        keyword in Python?</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/how-to-assign-values-to-variables-in-python-and-other-languages/"
+                                        rel="noopener" target="_blank">How to assign values to variables in
+                                        Python and other languages</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/print-without-newline-python/" rel="noopener"
+                                        target="_blank">How to print without newline in
+                                        Python?</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/decision-making-python-else-nested-elif/"
+                                        rel="noopener" target="_blank">Decision making</a></li>
+                                <li><a href="https://www.geeksforgeeks.org/make-simple-calculator-using-python/"
+                                        rel="noopener" target="_blank">Basic calculator program using Python</a>
+                                </li>
+                                <li><a href="https://www.geeksforgeeks.org/python-language-advantages-applications/"
+                                        rel="noopener" target="_blank">Python Language advantages and
+                                        applications</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+            <div class="mdvti-blog-sidebar">
+                <div class="side-bar-widget">
+                    <div class="dia-headline">
+                        <h3 class="widget-title-2">Table of Content</h3>
+                        <div class="col-md-12">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-controls="collapseOne">
+                                            Data Structure Padding
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul style="padding-left: 20px;">
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                        to Linear Data Structures</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                        to Hierarchical Data Structure</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                        of Graph, Trie, Segment Tree and Suffix Tree Data Structures</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Introduction to Linear Data Structures
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul style="padding-left: 20px;">
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                        to Linear Data Structures</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                        to Hierarchical Data Structure</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                        of Graph, Trie, Segment Tree and Suffix Tree Data Structures</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            The total memory allocated
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul style="padding-left: 20px;">
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                        to Linear Data Structures</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                        to Hierarchical Data Structure</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                        of Graph, Trie, Segment Tree and Suffix Tree Data Structures</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- =================================================================================== -->
+    <!-- =================================== Desktop View Start  ============================ -->
+    <!-- =================================================================================== -->
+
+    <section id="news-feed">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="mdvti-blog-sidebar">
+                        <div class="side-bar-widget">
+                            <div class="dia-headline">
+                                <div class="col-md-12">
+                                    <div class="accordion" id="accordionExample">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                    Data Structure Padding
+                                                </button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show"
+                                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul style="padding-left: 20px;">
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                                to Linear Data Structures</a></li>
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                                to Hierarchical Data Structure</a></li>
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                                of Graph, Trie, Segment Tree and Suffix Tree Data
+                                                                Structures</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                                    aria-expanded="false" aria-controls="collapseTwo">
+                                                    Introduction to Linear Data Structures
+                                                </button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul style="padding-left: 20px;">
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                                to Linear Data Structures</a></li>
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                                to Hierarchical Data Structure</a></li>
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                                of Graph, Trie, Segment Tree and Suffix Tree Data
+                                                                Structures</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                    The total memory allocated
+                                                </button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                                <div class="accordion-body">
+                                                    <ul style="padding-left: 20px;">
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                                to Linear Data Structures</a></li>
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                                to Hierarchical Data Structure</a></li>
+                                                        <li><a
+                                                                href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                                of Graph, Trie, Segment Tree and Suffix Tree Data
+                                                                Structures</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-feed-post mb-5">
+                        <div class="blog-feed-img-txt">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="mdvti-blog-text">
+                                        <h3><a href="#">The Role of Yoga in Cardiac Health.</a></h3>
+                                        <div class="mdvti-post-meta">
+                                            <a href="#"><i class="fas fa-user"></i> Shubham Tripathi | Yoga Teacher</a>
+                                        </div>
+                                        <p>Yoga and relaxation have been successfully used to check high blood
+                                            pressure and coronary artery disease.
+                                            A data structure is not only used for organizing the data. It is also used
+                                            for processing, retrieving, and storing data. There are different basic and
+                                            advanced types of data structures that are used in almost every program or
+                                            software system that has been developed. So we must have good knowledge
+                                            about data structures. A data structure is not only used for organizing the
+                                            data. It is also used for processing, retrieving, and storing data. There
+                                            are different basic and advanced types of data structures that are used in
+                                            almost every program or software system that has been developed. So we must
+                                            have good knowledge about data structures. A data structure is not only used
+                                            for organizing the data. It is also used for processing, retrieving, and
+                                            storing data. There are different basic and advanced types of data
+                                            structures that are used in almost every program or software system that has
+                                            been developed. So we must have good knowledge about data structures. </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <section class="container important-links mt-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2 class="text-center"><a name="Basics"></a>Python Basics</h2>
+                                <div class="Basics">
+                                    <ul>
+                                        <li><a href="https://www.geeksforgeeks.org/python-language-introduction/"
+                                                rel="noopener" target="_blank">Python language introduction</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-3-basics/" rel="noopener"
+                                                target="_blank">Python 3 basics</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-the-new-generation-language/"
+                                                rel="noopener" target="_blank">Python The new generation language</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/important-differences-between-python-2-x-and-python-3-x-with-examples/"
+                                                rel="noopener" target="_blank">Important difference between python 2.x
+                                                and python 3.x with example</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/keywords-python-set-1/"
+                                                rel="noopener" target="_blank">Keywords in Python | Set 1</a>, <a
+                                                href="https://www.geeksforgeeks.org/keywords-python-set-2/"
+                                                rel="noopener" target="_blank">Set 2</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/namespaces-and-scope-in-python/"
+                                                rel="noopener" target="_blank">Namespaces and Scope in Python</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/statement-indentation-and-comment-in-python/"
+                                                rel="noopener" target="_blank">Statement, Indentation and Comment in
+                                                Python</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/structuring-python-programs/"
+                                                rel="noopener" target="_blank">Structuring Python Programs</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/check-string-valid-keyword-python/"
+                                                rel="noopener" target="_blank">How to check if a string is a valid
+                                                keyword in Python?</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/how-to-assign-values-to-variables-in-python-and-other-languages/"
+                                                rel="noopener" target="_blank">How to assign values to variables in
+                                                Python and other languages</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/print-without-newline-python/"
+                                                rel="noopener" target="_blank">How to print without newline in
+                                                Python?</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/decision-making-python-else-nested-elif/"
+                                                rel="noopener" target="_blank">Decision making</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/make-simple-calculator-using-python/"
+                                                rel="noopener" target="_blank">Basic calculator program using Python</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-language-advantages-applications/"
+                                                rel="noopener" target="_blank">Python Language advantages and
+                                                applications</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md -6">
+                                <h2 class="text-center"><a name="Basics"></a>Python Basics</h2>
+                                <div class="Basics">
+                                    <ul>
+                                        <li><a href="https://www.geeksforgeeks.org/python-language-introduction/"
+                                                rel="noopener" target="_blank">Python language introduction</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-3-basics/" rel="noopener"
+                                                target="_blank">Python 3 basics</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-the-new-generation-language/"
+                                                rel="noopener" target="_blank">Python The new generation language</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/important-differences-between-python-2-x-and-python-3-x-with-examples/"
+                                                rel="noopener" target="_blank">Important difference between python 2.x
+                                                and python 3.x with example</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/keywords-python-set-1/"
+                                                rel="noopener" target="_blank">Keywords in Python | Set 1</a>, <a
+                                                href="https://www.geeksforgeeks.org/keywords-python-set-2/"
+                                                rel="noopener" target="_blank">Set 2</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/namespaces-and-scope-in-python/"
+                                                rel="noopener" target="_blank">Namespaces and Scope in Python</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/statement-indentation-and-comment-in-python/"
+                                                rel="noopener" target="_blank">Statement, Indentation and Comment in
+                                                Python</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/structuring-python-programs/"
+                                                rel="noopener" target="_blank">Structuring Python Programs</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/check-string-valid-keyword-python/"
+                                                rel="noopener" target="_blank">How to check if a string is a valid
+                                                keyword in Python?</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/how-to-assign-values-to-variables-in-python-and-other-languages/"
+                                                rel="noopener" target="_blank">How to assign values to variables in
+                                                Python and other languages</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/print-without-newline-python/"
+                                                rel="noopener" target="_blank">How to print without newline in
+                                                Python?</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/decision-making-python-else-nested-elif/"
+                                                rel="noopener" target="_blank">Decision making</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/make-simple-calculator-using-python/"
+                                                rel="noopener" target="_blank">Basic calculator program using Python</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-language-advantages-applications/"
+                                                rel="noopener" target="_blank">Python Language advantages and
+                                                applications</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-3">
+                    <div class="wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="owl-carousel course-caraousel2">
+                            <div class="item">
+                                <div class="service-item  wow fadeInUp">
+                                    <div class="overflow-hidden">
+                                        <img class="img-fluid" src="img/course1.svg" alt="">
+                                    </div>
+                                    <div class="p-2 py-3 bg-white shadow">
+                                        <h6 class="mb-1">Post Graduation in Yoga Teacher</h6>
+                                        <a class="fw-small bg-primary p-1 text-white" style="font-size: 10px;">know
+                                            More<i class="fa fa-arrow-right ms-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6 ">
+                    <h4 class="text-light mb-4 ">Login </h4>
+                    <a class="btn btn-link" href="">Student Login</a>
+                    <a class="btn btn-link" href="">Zonal Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Franchise Login</a>
+                    <a class="btn btn-link" href="">State Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Staff Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Result</a>
+                    <a class="btn btn-link" href="">Career in Yoga</a>
+                    <a class="btn btn-link" href="">Verify Institute</a>
+                    <a class="btn btn-link" href="">Rules and Regulation</a>
+                    <a class="btn btn-link" href="">Verify Certificate</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/mdvtiindia_Logo.jpg" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider div-transparent div-dot"></div>
+        <div class="container ">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-1">
+                <div class="col-lg-4 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow
+                        (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Latest Events </a>
+                    <a class="btn btn-link" href="">Current Vacancies </a>
+                    <a class="btn btn-link" href="">Authorized Study Center</a>
+                    <a class="btn btn-link" href="">Blacklisted Centers</a>
+                    <a class="btn btn-link" href="">Selected students in Government and Private Jobs</a>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">Refund Policy</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/footer-logo.png" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="text-white bg-primary px-5 py-3">Pay now</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-1">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 2000 && $("#exampleModal").attr("displayed") === "false") {
+                $('#exampleModal').modal('show');
+                $("#exampleModal").attr("displayed", "true");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTI INDIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    /*
+    DEMO STYLE
+*/
+
+    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+    body {
+        font-family: 'Source Sans Pro', sans-serif !important;
+        background: #fafafa;
+    }
+
+    p {
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 1.1em;
+        font-weight: 300;
+        line-height: 1.7em;
+    }
+
+    .navbar-btn {
+        box-shadow: none;
+        outline: none !important;
+        border: none;
+    }
+
+    .line {
+        width: 100%;
+        height: 1px;
+        border-bottom: 1px dashed #ddd;
+        margin: 40px 0;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        font-family: 'Source Sans Pro', sans-serif !important;
+    }
+
+    /* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+    .wrapper {
+        display: flex;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    #sidebar {
+        max-width: 250px;
+        background: #ffffff;
+        color: #fff;
+        transition: all 0.3s;
+        flex-basis: calc(20% - 2px);
+        min-width: calc(20% - 2px);
+        z-index: 999 !important;
+
+        height: calc(100vh - 50px);
+        position: sticky !important;
+        top: 50px;
+    }
+
+    #sidebar.active {
+        margin-left: -250px;
+    }
+
+    #sidebar .sidebar-header {
+        padding: 20px;
+    }
+
+    #sidebar ul.components {
+        padding: 20px 0;
+        border-bottom: 1px solid #47748b;
+    }
+
+    #sidebar ul li {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 5px;
+        background-color: #fff;
+    }
+
+    #sidebar ul li a {
+        padding: 10px 15px;
+        font-size: 1.1em;
+        display: block;
+    }
+
+    #sidebar ul li a:hover {
+        color: #7386D5;
+        background: #fff;
+    }
+
+    #sidebar ul li.active>a,
+    a[aria-expanded="true"] {
+        color: #fff;
+    }
+
+    a[data-toggle="collapse"] {
+        position: relative;
+    }
+
+    ul.CTAs {
+        padding: 20px;
+    }
+
+    ul.CTAs a {
+        text-align: center;
+        font-size: 0.9em !important;
+        display: block;
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+
+    /* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+    #content {
+        width: 100%;
+        padding: 20px;
+        min-height: 100vh;
+        transition: all 0.3s;
+    }
+
+
+    /* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+    @media (max-width: 768px) {
+        #sidebar {
+            margin-left: -250px;
+        }
+
+        #sidebar.active {
+            margin-left: 0;
+        }
+
+        #sidebarCollapse span {
+            display: none;
+        }
+    }
+
+    .owl-carousel .owl-nav {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    .owl-carousel .owl-prev {
+        position: absolute;
+        left: 0;
+    }
+
+    .owl-carousel .owl-next {
+        position: absolute;
+        right: 0;
+    }
+    #sidebar .custom-menu .btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: relative
+}
+
+#sidebar .custom-menu .btn i {
+    margin-right: -40px;
+    font-size: 14px
+}
+
+#sidebar .custom-menu .btn.btn-primary {
+    background: 0 0;
+    border-color: transparent
+}
+
+#sidebar .custom-menu .btn.btn-primary:after {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    background: #3445b4;
+    border-radius: 10px
+}
+
+#sidebar .custom-menu .btn.btn-primary:hover,#sidebar .custom-menu .btn.btn-primary:focus {
+    background: 0 0!important;
+    border-color: transparent!important
+}
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="128px"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training </a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga
+                            Therapy</a>
+                        <a href="#" class="dropdown-item">Diploma in Yoga Teacher Training</a>
+                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
+                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
+                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
+                    </div>
+                </div>
+                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shop<i
+                    class="fa fa-shopping-cart ms-3"></i></a>
+        </div>
+    </nav>
+    <div class="container-fluid wow fadeInUp main_wrapper"
+        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="owl-carousel toppers2">
+                <div class=" text-center">
+                    <a title="Post Graduate Diploma in Yoga Therapy">PGTYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Diploma in Yoga Teacher Training">DYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Certificate in Yoga Therapy">CYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Certificate in Yogasana & Pranayam">CYP</a>
+                </div>
+                <div class="text-center">
+                    <a title="Foundation Course in Yoga">FCY</a>
+                </div>
+                <div class="text-center">
+                    <a>Trending</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="mdvti-blog-sidebar">
+                <div class="side-bar-widget">
+                    <div class="dia-headline">
+                        <div class="col-md-12">
+                            <div>
+                                <h5 class="px-5 py-3 m-0">Table of Content</h5>
+                            </div>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            Data Structure Padding
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="m-0 p-0">
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                        to Linear Data Structures</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                        to Hierarchical Data Structure</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                        of Graph, Trie, Segment Tree and Suffix Tree Data
+                                                        Structures</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Introduction to Linear Data Structures
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="m-0 p-0">
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                        to Linear Data Structures</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                        to Hierarchical Data Structure</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                        of Graph, Trie, Segment Tree and Suffix Tree Data
+                                                        Structures</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            The total memory allocated
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <ul class="m-0 p-0">
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                                        to Linear Data Structures</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                                        to Hierarchical Data Structure</a></li>
+                                                <li><a
+                                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                                        of Graph, Trie, Segment Tree and Suffix Tree Data
+                                                        Structures</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <!-- \\\\\\\\\\\\\\\\\\\\\\\\|||||||||||||||||||||||||||||||||||||||||||///////////////////////////// -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="blog-feed-post mb-5">
+                            <div class="blog-feed-img-txt">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="mdvti-blog-text">
+                                            <h3><a href="#">The Role of Yoga in Cardiac Health.</a></h3>
+                                            <div class="mdvti-post-meta">
+                                                <a href="#"><i class="fas fa-user"></i> Shubham Tripathi | Yoga
+                                                    Teacher</a>
+                                            </div>
+                                            <p>Yoga and relaxation have been successfully used to check high blood
+                                                pressure and coronary artery disease.
+                                                A data structure is not only used for organizing the data. It is also
+                                                used
+                                                for processing, retrieving, and storing data. There are different basic
+                                                and
+                                                advanced types of data structures that are used in almost every program
+                                                or
+                                                software system that has been developed. So we must have good knowledge
+                                                about data structures. A data structure is not only used for organizing
+                                                the
+                                                data. It is also used for processing, retrieving, and storing data.
+                                                There
+                                                are different basic and advanced types of data structures that are used
+                                                in
+                                                almost every program or software system that has been developed. So we
+                                                must
+                                                have good knowledge about data structures. A data structure is not only
+                                                used
+                                                for organizing the data. It is also used for processing, retrieving, and
+                                                storing data. There are different basic and advanced types of data
+                                                structures that are used in almost every program or software system that
+                                                has
+                                                been developed. So we must have good knowledge about data structures.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="my-4">
+                        <section class="container important-links mt-4">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2 class="text-center"><a name="Basics"></a>Python Basics</h2>
+                                    <div class="Basics">
+                                        <ul>
+                                            <li><a href="https://www.geeksforgeeks.org/python-language-introduction/"
+                                                    rel="noopener" target="_blank">Python language introduction</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/python-3-basics/" rel="noopener"
+                                                    target="_blank">Python 3 basics</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/python-the-new-generation-language/"
+                                                    rel="noopener" target="_blank">Python The new generation
+                                                    language</a>
+                                            </li>
+                                            <li><a href="https://www.geeksforgeeks.org/important-differences-between-python-2-x-and-python-3-x-with-examples/"
+                                                    rel="noopener" target="_blank">Important difference between python
+                                                    2.x
+                                                    and python 3.x with example</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/keywords-python-set-1/"
+                                                    rel="noopener" target="_blank">Keywords in Python | Set 1</a>, <a
+                                                    href="https://www.geeksforgeeks.org/keywords-python-set-2/"
+                                                    rel="noopener" target="_blank">Set 2</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/namespaces-and-scope-in-python/"
+                                                    rel="noopener" target="_blank">Namespaces and Scope in Python</a>
+                                            </li>
+                                            <li><a href="https://www.geeksforgeeks.org/statement-indentation-and-comment-in-python/"
+                                                    rel="noopener" target="_blank">Statement, Indentation and Comment in
+                                                    Python</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/structuring-python-programs/"
+                                                    rel="noopener" target="_blank">Structuring Python Programs</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/check-string-valid-keyword-python/"
+                                                    rel="noopener" target="_blank">How to check if a string is a valid
+                                                    keyword in Python?</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/how-to-assign-values-to-variables-in-python-and-other-languages/"
+                                                    rel="noopener" target="_blank">How to assign values to variables in
+                                                    Python and other languages</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/print-without-newline-python/"
+                                                    rel="noopener" target="_blank">How to print without newline in
+                                                    Python?</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/decision-making-python-else-nested-elif/"
+                                                    rel="noopener" target="_blank">Decision making</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/make-simple-calculator-using-python/"
+                                                    rel="noopener" target="_blank">Basic calculator program using
+                                                    Python</a>
+                                            </li>
+                                            <li><a href="https://www.geeksforgeeks.org/python-language-advantages-applications/"
+                                                    rel="noopener" target="_blank">Python Language advantages and
+                                                    applications</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-md -6">
+                                    <h2 class="text-center"><a name="Basics"></a>Python Basics</h2>
+                                    <div class="Basics">
+                                        <ul>
+                                            <li><a href="https://www.geeksforgeeks.org/python-language-introduction/"
+                                                    rel="noopener" target="_blank">Python language introduction</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/python-3-basics/" rel="noopener"
+                                                    target="_blank">Python 3 basics</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/python-the-new-generation-language/"
+                                                    rel="noopener" target="_blank">Python The new generation
+                                                    language</a>
+                                            </li>
+                                            <li><a href="https://www.geeksforgeeks.org/important-differences-between-python-2-x-and-python-3-x-with-examples/"
+                                                    rel="noopener" target="_blank">Important difference between python
+                                                    2.x
+                                                    and python 3.x with example</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/keywords-python-set-1/"
+                                                    rel="noopener" target="_blank">Keywords in Python | Set 1</a>, <a
+                                                    href="https://www.geeksforgeeks.org/keywords-python-set-2/"
+                                                    rel="noopener" target="_blank">Set 2</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/namespaces-and-scope-in-python/"
+                                                    rel="noopener" target="_blank">Namespaces and Scope in Python</a>
+                                            </li>
+                                            <li><a href="https://www.geeksforgeeks.org/statement-indentation-and-comment-in-python/"
+                                                    rel="noopener" target="_blank">Statement, Indentation and Comment in
+                                                    Python</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/structuring-python-programs/"
+                                                    rel="noopener" target="_blank">Structuring Python Programs</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/check-string-valid-keyword-python/"
+                                                    rel="noopener" target="_blank">How to check if a string is a valid
+                                                    keyword in Python?</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/how-to-assign-values-to-variables-in-python-and-other-languages/"
+                                                    rel="noopener" target="_blank">How to assign values to variables in
+                                                    Python and other languages</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/print-without-newline-python/"
+                                                    rel="noopener" target="_blank">How to print without newline in
+                                                    Python?</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/decision-making-python-else-nested-elif/"
+                                                    rel="noopener" target="_blank">Decision making</a></li>
+                                            <li><a href="https://www.geeksforgeeks.org/make-simple-calculator-using-python/"
+                                                    rel="noopener" target="_blank">Basic calculator program using
+                                                    Python</a>
+                                            </li>
+                                            <li><a href="https://www.geeksforgeeks.org/python-language-advantages-applications/"
+                                                    rel="noopener" target="_blank">Python Language advantages and
+                                                    applications</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="owl-carousel course-caraousel2">
+                                <div class="item">
+                                    <div class="service-item  wow fadeInUp">
+                                        <div class="overflow-hidden">
+                                            <img class="img-fluid" src="img/course1.svg" alt="">
+                                        </div>
+                                        <div class="p-2 py-3 bg-white shadow">
+                                            <h6 class="mb-1">Post Graduation in Yoga Teacher</h6>
+                                            <a class="fw-small bg-primary p-1 text-white" style="font-size: 10px;">know
+                                                More<i class="fa fa-arrow-right ms-2"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6 ">
+                    <h4 class="text-light mb-4 ">Login </h4>
+                    <a class="btn btn-link" href="">Student Login</a>
+                    <a class="btn btn-link" href="">Zonal Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Franchise Login</a>
+                    <a class="btn btn-link" href="">State Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Staff Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Result</a>
+                    <a class="btn btn-link" href="">Career in Yoga</a>
+                    <a class="btn btn-link" href="">Verify Institute</a>
+                    <a class="btn btn-link" href="">Rules and Regulation</a>
+                    <a class="btn btn-link" href="">Verify Certificate</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/mdvtiindia_Logo.jpg" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider div-transparent div-dot"></div>
+        <div class="container ">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-1">
+                <div class="col-lg-4 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow
+                        (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Latest Events </a>
+                    <a class="btn btn-link" href="">Current Vacancies </a>
+                    <a class="btn btn-link" href="">Authorized Study Center</a>
+                    <a class="btn btn-link" href="">Blacklisted Centers</a>
+                    <a class="btn btn-link" href="">Selected students in Government and Private Jobs</a>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">Refund Policy</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/footer-logo.png" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="text-white bg-primary px-5 py-3">Pay now</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-1">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 2000 && $("#exampleModal").attr("displayed") === "false") {
+                $('#exampleModal').modal('show');
+                $("#exampleModal").attr("displayed", "true");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

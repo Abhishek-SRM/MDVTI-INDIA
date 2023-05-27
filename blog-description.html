@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTI INDIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mdvti_blog.css" rel="stylesheet">
+</head>
+<style>
+    img {
+        max-width: 100%;
+        height: auto;
+
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 31px;
+        text-align: justify;
+        color: #000;
+    }
+
+    a {
+        font-family: 'Sofia Pro', sans-serif;
+        color: #373a5b;
+    }
+
+    h1 {
+        color: #150f49;
+    }
+
+    h3 a {
+        color: #150f49;
+    }
+
+    .footer {
+        background-color: #000;
+    }
+
+    .footer p {
+        color: #fff;
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    .footer .btn.btn-link::before {
+        position: relative;
+        content: "";
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 900;
+        margin-right: 10px;
+    }
+
+    .visitor {
+        border: 3px dotted rgba(255, 255, 255, 0.733);
+    }
+
+    .divider {
+        position: relative;
+        margin-top: 9px;
+        margin-bottom: 9px;
+        height: 1px;
+    }
+
+    .div-transparent:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 1px;
+        background-image: linear-gradient(to right, transparent, rgb(48, 49, 51), transparent);
+    }
+
+    .div-dot:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -9px;
+        left: calc(50% - 9px);
+        width: 18px;
+        height: 18px;
+        background-color: goldenrod;
+        border: 1px solid rgb(48, 49, 51);
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0" style="font-family: 'Sofia Pro', sans-serif;">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>info@mdvtiindia.org</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>1800-891-9232</small>
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-inline-flex align-items-center justify-content-end">
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Login</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="studentlogin.html" class="dropdown-item">Student Login</a>
+                        <a href="franchise_login.html   " class="dropdown-item">Franchise Login</a>
+                    </div>
+                </div>
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Register</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="student-reg.html" class="dropdown-item">Student Registration</a>
+                        <a href="registerfranchise.html" class="dropdown-item">Franchise Registration</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0"
+        style="font-family: 'Sofia Pro', sans-serif;">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="128px"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training </a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga
+                            Therapy</a>
+                        <a href="#" class="dropdown-item">Diploma in Yoga Teacher Training</a>
+                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
+                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
+                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
+                    </div>
+                </div>
+                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shop<i
+                    class="fa fa-shopping-cart ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <section id="mdvti-breadcurmb" class="mdvti-breadcurmb-section">
+        <div class="container">
+            <div class="breadcurmb-title text-center">
+                <h2>MDVTI Blogs</h2>
+            </div>
+            <div class="breadcurmb-item-list text-center ul-li">
+                <ul class="mdvti-page-breadcurmb">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog Feed</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="news-feed" class="news-feed-section">
+        <div class="container">
+            <div class="blog-feed-content">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="mdvti-blog-details-content">
+                            <div class="blog-details-img">
+                                <img src="img/blog_img/blog_desc/blog_desc1.jpg" alt="">
+                            </div>
+                            <div class="blog-details-text dia-headline">
+                                <h2>AN INTRODUCTION TO YOGA</h2>
+                                <div class="mdvti-post-meta">
+                                    <a href="#"><i class="fas fa-calendar-alt"></i> September 12, 2021</a>
+                                    <a href="#"><i class="fas fa-user"></i> Admin</a>
+                                </div>
+                                <article>
+                                    Yoga is an ancient wealth of wisdom, which is a gift passed down to us from our
+                                    ancestors from over five centuries ago. It is unfortunate that in today’s world this
+                                    tradition of yoga is only confined to the practice of asanas or physical postures.
+                                    Though in reality, the meaning of the word yoga encompasses so much more.
+                                </article>
+                                <article>
+                                    The word yoga is derived from the Sanskrit root word ‘yuj’, which means to unite. It
+                                    symbolizes the union of the individual soul (jivatma) with the universal soul
+                                    (paramatma). In other words, it enables a state of consciousness where the
+                                    practitioner is in harmony with his or her surroundings.
+                                </article>
+                                <h3>THE CONCEPT OF HEALTH</h3>
+                                <article>
+                                    The term ‘Health’ is an abstract concept which is hard to grasp. A fundamental
+                                    question arises, “Can an individual who does not suffer from any disease be called
+                                    healthy?”
+                                </article>
+
+                                <article>
+                                    It is a long established fact that a reader will be distracted by the readable
+                                    content of a page when looking at its layout. The point of using Lorem Ipsum The
+                                    man, who is in a stable condition in hospital, has "potentially life-changing
+                                    injuries" after the overnight attack in Garvagh, County Lono donderry. He was shot
+                                    in the arms and legs."What sort of men would think it is accepttable to sub ject a
+                                    young girl to this level of brutality and violence?
+                                </article>
+                                <blockquote>
+                                    In Naturopathic philosophy, it is believed that the improper functioning of the
+                                    digestive tract is the root cause of all diseases. In fact, “constipation is called
+                                    the mother of diseases”. This statement supports that the causality of all diseases
+                                    occurs through this progression of events, described above
+                                    <h4 class="text-white">THE YOGA VASHISHTA</h4>
+                                </blockquote>
+                            </div>
+                            <div class="blog-details-tag clearfix d-flex justify-content-between">
+                                <div class="blog-feed-tag float-left">
+                                    <span>Tags:</span>
+                                    <a href="#">Business</a>
+                                    <a href="#">Life</a>
+                                    <a href="#">mdvti</a>
+                                </div>
+                                <div class="blog-feed-share float-right">
+                                    <span>Share:</span>
+                                    <a href="#"><i class="fb-bg fab fa-facebook-f "></i></a>
+                                    <a href="#"><i class="bh-bg fab fa-behance"></i></a>
+                                    <a href="#"><i class="tw-bg fab fa-twitter"></i></a>
+                                    <a href="#"><i class="dr-bg fab fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                            <div class="mdvti-comment-field dia-headline">
+                                <h3>Comments (03)</h3>
+                                <div class="comment-list-item">
+                                    <div class="comment-inner-box d-flex justify-content-between">
+                                        <div class="comment-author-img float-left">
+                                            <img src="img/testimonial-3.jpg" alt="">
+                                        </div>
+                                        <div class="comment-author-text">
+                                            <h4><a href="#">Rolax Fellan</a></h4>
+                                            <span>November 25, 2021 at 09:00 am</span>
+                                            <p>It is a long established fact that a reader will be distracted by the
+                                                readable content of a page when looking at its layout. The point of
+                                                using.</p>
+                                            <a class="comment-reply" href="#">Reply</a>
+                                        </div>
+                                    </div>
+                                    <div class="comment-inner-box d-flex justify-content-between">
+                                        <div class="comment-author-img float-left">
+                                            <img src="img/testimonial-3.jpg" alt="">
+                                        </div>
+                                        <div class="comment-author-text">
+                                            <h4><a href="#">Rolax Fellan</a></h4>
+                                            <span>November 25, 2021 at 09:00 am</span>
+                                            <p>It is a long established fact that a reader will be distracted by the
+                                                readable content of a page when looking at its layout. The point of
+                                                using.</p>
+                                            <a class="comment-reply" href="#">Reply</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Post a comment</h3>
+                                <div class="comment-form">
+                                    <form action="#">
+                                        <input type="text" name="name" placeholder="Enter Your Full Name">
+                                        <input type="email" name="email" placeholder="Enter Your  Email Address">
+                                        <input type="tetx" name="website" placeholder="Enter Your Website">
+                                        <textarea name="message" placeholder="Your Comment here..."></textarea>
+                                        <button type="submit">Comment</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mdvti-blog-sidebar">
+                            <div class="side-bar-widget">
+                                <div class="search-widget dia-headline">
+                                    <h3 class="widget-title-2">Search</h3>
+                                    <form action="" class="relative-position">
+                                        <input type="text" name="search" placeholder="Search Here">
+                                        <button type="submit"><i class="fas fa-search"></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="side-bar-widget">
+                                <div class="category-widget dia-headline ul-li-block">
+                                    <h3 class="widget-title-2">Category</h3>
+                                    <ul>
+                                        <li><a href="#">Application <span>(06)</span></a></li>
+                                        <li><a href="#">Software <span>(06)</span></a></li>
+                                        <li><a href="#">Landing Page <span>(06)</span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="side-bar-widget">
+                                <div class="category-widget dia-headline ul-li-block">
+                                    <h3 class="widget-title-2">Recent Post</h3>
+                                    <div class="recent-post-area ">
+                                        <div class="recent-post-img-text d-flex justify-content-between shadwo">
+                                            <div class="recent-post-img ">
+                                                <img src="img/blog_img/blog_thumb/thumbnail-1.jpg" alt="">
+                                            </div>
+                                            <div class="recent-post-text dia-headline">
+                                                <h3><a href="#">
+                                                    The Role of Yoga in Cardiac Health.</a></h3>
+                                                <span class="rec-post-meta"><a href="#">December 12, 2021</a></span>
+                                            </div>
+                                        </div>
+                                        <div class="recent-post-img-text d-flex justify-content-between">
+                                            <div class="recent-post-img ">
+                                                <img src="img/blog_img/blog_thumb/thumbnail-1.jpg" alt="">
+                                            </div>
+                                            <div class="recent-post-text dia-headline">
+                                                <h3><a href="#">
+                                                    The Role of Yoga in Cardiac Health.</a></h3>
+                                                <span class="rec-post-meta"><a href="#">December 12, 2021</a></span>
+                                            </div>
+                                        </div>
+                                        <div class="recent-post-img-text d-flex justify-content-between">
+                                            <div class="recent-post-img ">
+                                                <img src="img/blog_img/blog_thumb/thumbnail-1.jpg" alt="">
+                                            </div>
+                                            <div class="recent-post-text dia-headline">
+                                                <h3><a href="#">
+                                                    The Role of Yoga in Cardiac Health.</a></h3>
+                                                <span class="rec-post-meta"><a href="#">December 12, 2021</a></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="side-bar-widget">
+                                <div class="popular-widget dia-headline ul-li">
+                                    <h3 class="widget-title-2">Popular Tag</h3>
+                                    <ul>
+                                        <li><a href="#">Application </a></li>
+                                        <li><a href="#">Software </a></li>
+                                        <li><a href="#">Landing </a></li>
+                                        <li><a href="#">App </a></li>
+                                        <li><a href="#">Design </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6 ">
+                    <h4 class="text-light mb-4 ">Login </h4>
+                    <a class="btn btn-link" href="">Student Login</a>
+                    <a class="btn btn-link" href="">Zonal Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Franchise Login</a>
+                    <a class="btn btn-link" href="">State Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Staff Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Result</a>
+                    <a class="btn btn-link" href="">Career in Yoga</a>
+                    <a class="btn btn-link" href="">Verify Institute</a>
+                    <a class="btn btn-link" href="">Rules and Regulation</a>
+                    <a class="btn btn-link" href="">Verify Certificate</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/mdvtiindia_Logo.jpg" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider div-transparent div-dot"></div>
+        <div class="container ">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

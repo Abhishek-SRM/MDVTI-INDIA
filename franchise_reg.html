@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTI INDIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Sofia Pro', sans-serif;
+        background-image: url("img/bg.png");
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 31px;
+        text-align: justify;
+        color: #000;
+    }
+
+    a {
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    h1 {
+        color: #150f49;
+    }
+
+    .footer {
+        background-color: #000;
+    }
+
+    .footer p {
+        color: #fff;
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    .footer .btn.btn-link::before {
+        position: relative;
+        content: "";
+        font-weight: 900;
+        margin-right: 10px;
+    }
+
+    .visitor {
+        border: 3px dotted rgba(255, 255, 255, 0.733);
+    }
+
+    .divider {
+        position: relative;
+        margin-top: 9px;
+        margin-bottom: 9px;
+        height: 1px;
+    }
+
+    .div-transparent:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 1px;
+        background-image: linear-gradient(to right, transparent, rgb(48, 49, 51), transparent);
+    }
+
+    .div-dot:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -9px;
+        left: calc(50% - 9px);
+        width: 18px;
+        height: 18px;
+        background-color: goldenrod;
+        border: 1px solid rgb(48, 49, 51);
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
+    }
+
+    select {
+        background-color: #dcdcdc59 !important;
+        border-radius: 5px !important;
+    }
+
+    .mdvti-heading {
+        color: #ffffff;
+        left: -18px;
+        position: absolute;
+        transform: rotate(270deg);
+        top: 83%;
+    }
+
+    .mdvti-heading {
+        color: #ffffff;
+        left: -18px;
+        position: absolute;
+        transform: rotate(270deg);
+        top: 83%;
+    }
+    input {
+  outline: 0;
+  border-width: 0 0 2px;
+
+}
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0" style="font-family: 'Sofia Pro', sans-serif;">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>info@mdvtiindia.org</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>1800-891-9232</small>
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-inline-flex align-items-center justify-content-end">
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Login</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="studentlogin.html" class="dropdown-item">Student Login</a>
+                        <a href="franchise_login.html   " class="dropdown-item">Franchise Login</a>
+                    </div>
+                </div>
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Register</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="student-reg.html" class="dropdown-item">Student Registration</a>
+                        <a href="registerfranchise.html" class="dropdown-item">Franchise Registration</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0"
+        style="font-family: 'Sofia Pro', sans-serif;">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="128px"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training </a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga
+                            Therapy</a>
+                        <a href="#" class="dropdown-item">Diploma in Yoga Teacher Training</a>
+                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
+                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
+                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
+                    </div>
+                </div>
+                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shop<i
+                    class="fa fa-shopping-cart ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!--Login form Start-->
+    <section class="franchise-reg">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-1 bg-primary">
+                    <h1 class="mdvti-heading">MDVTI</h1>
+                </div>
+                <div class="col-md-11">
+                    <div class="container py-5">
+                        <form method="post">
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="form-group row">
+                                        <div class="col-sm-12">
+                                            <p>To,<br>The Chairman,<br><b>MDVTI INDIA, Lucknow</b></p>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <label class="label label-control">Date</label>
+                                            <input type="date" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div id="image-preview">
+                                        <label for="image-upload" id="image-label"> Profile Picture</label>
+                                        <input type="file" class="form-control" id="image-upload" name="owner_image"
+                                            required="" accept="image/*">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-8">
+                                    <label class="label label-control active">Subject</label>
+                                    <input type="text" class="form-control"
+                                        value="Application for becoming New Study Centre" readonly="">
+                                </div>
+                            </div>
+                            <div class="form-group row mt-3">
+                                <div class="col-sm-12">
+                                    <p>I <input type="text" class="border-bottom" name="franchise_name" placeholder="Franchise Name" required="">, wish to
+                                        formalize my interest &amp; intense to pursue Franchise Application. My Details
+                                        are:-</p>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Your Name</label>
+                                    <input type="text" class="form-control" name="franchise_owner_name"
+                                        placeholder="Enter Your Name" required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Contact Person Name</label>
+                                    <input type="text" class="form-control" name="contact_person_name"
+                                        placeholder="Enter Contact Person Name" required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Contact Person Mobile</label>
+                                    <input type="text" class="form-control" maxlength="13" name="contact_person_contact"
+                                        placeholder="Enter Contact Person Mobile" required="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Franchise Mobile No.</label>
+                                    <input type="text" class="form-control" maxlength="13" name="franchise_contact"
+                                        placeholder="Enter Mobile No." required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Franchise Email </label>
+                                    <input type="text" class="form-control" maxlength="30" name="franchise_email"
+                                        placeholder="Enter Email " required="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Franchise Address </label><br>
+                                    <textarea rows="4" name="franchise_address" required="" style="width: 100%;"
+                                        placeholder="Enter Address"></textarea>
+                                    <!--                    <input type="text" class="form-control" name="franchise_address" placeholder="Enter Address" required>-->
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Pin Code</label>
+                                    <input type="number" class="form-control" name="franchise_pincode"
+                                        placeholder="Enter Pin Code" required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">State </label>
+                                    <select class="form-control" name="franchise_state" id="state" required="">
+                                        <option value="">Select State</option>
+                                        <option value="732">Andhra Pradesh</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Aadhar/Pan Number</label>
+                                    <input type="text" class="form-control" name="document_number"
+                                        placeholder="Enter Aadhar/Pan Number" required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Document</label>
+                                    <input type="file" class="form-control" name="document_image" required=""
+                                        accept="image/*">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Centre Photo</label>
+                                    <input type="file" class="form-control" name="centre_image" required=""
+                                        accept="image/*">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Postal Address </label><br>
+                                    <textarea rows="4" name="postaladdress" style="width: 100%;"
+                                        placeholder="Enter Postal Address"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group row pb-3">
+                                <div class="col-sm-12">
+                                    <label class="label label-control">Choose Programs  <br><input type="checkbox"
+                                            value="all" id="fcheck_all_frch">&nbsp;&nbsp;Select All
+                                        Programs&nbsp;</label>
+                                    <br>
+                                    <div class="custom-control display-inline custom-checkbox">
+                                        <input type="checkbox"
+                                            class="custom-control-input porgrams" value="2" id="yogacourse2">
+                                        <label class="custom-control-label" for="yogacourse2">Yoga</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <p>Kindly check all the documents inclosed in Application form &amp; approve my
+                                        study centre.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="fraudterms"
+                                            required="true">
+                                        <label class="custom-control-label" for="fraudterms">&nbsp;&nbsp;&nbsp;I Insure
+                                            that all the
+                                            documents provided by me is totally reliable, if any kind of fraud
+                                            inspected, I will be
+                                            only responsible.</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row ">
+                                <div class="col-sm-12">
+                                    <div class="custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="agreeterms"
+                                            required="true">
+                                        <label class="custom-control-label" for="agreeterms">&nbsp;&nbsp;&nbsp;I Agree
+                                            with all the
+                                            <a href="https://mdvtiindia.org/Terms-And-Condition">Terms &amp;
+                                                Conditions</a> of MDVTI
+                                            INDIA</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-action row">
+                                <div class="col-sm-12 text-center">
+                                    <button class="btn btn-primary btn-block mt-4">Register Now</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer  pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6 ">
+                    <h4 class="text-light mb-4 ">Login </h4>
+                    <a class="btn btn-link" href="">Student Login</a>
+                    <a class="btn btn-link" href="">Zonal Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Franchise Login</a>
+                    <a class="btn btn-link" href="">State Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Staff Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Result</a>
+                    <a class="btn btn-link" href="">Career in Yoga</a>
+                    <a class="btn btn-link" href="">Verify Institute</a>
+                    <a class="btn btn-link" href="">Rules and Regulation</a>
+                    <a class="btn btn-link" href="">Verify Certificate</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/mdvtiindia_Logo.jpg" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider div-transparent div-dot"></div>
+        <div class="container ">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

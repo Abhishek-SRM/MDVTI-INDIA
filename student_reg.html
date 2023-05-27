@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTI INDIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    body {
+        font-family: 'Sofia Pro', sans-serif;
+        background-image: url("img/bg.png");
+    }
+
+    p {
+        font-size: 17px;
+        line-height: 31px;
+        text-align: justify;
+        color: #000;
+    }
+
+    a {
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    h1 {
+        color: #150f49;
+    }
+
+    .footer {
+        background-color: #000;
+    }
+
+    .footer p {
+        color: #fff;
+        font-family: 'Sofia Pro', sans-serif;
+    }
+
+    .footer .btn.btn-link::before {
+        position: relative;
+        content: "";
+        font-weight: 900;
+        margin-right: 10px;
+    }
+
+    .visitor {
+        border: 3px dotted rgba(255, 255, 255, 0.733);
+    }
+
+    .divider {
+        position: relative;
+        margin-top: 9px;
+        margin-bottom: 9px;
+        height: 1px;
+    }
+
+    .div-transparent:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 5%;
+        right: 5%;
+        width: 90%;
+        height: 1px;
+        background-image: linear-gradient(to right, transparent, rgb(48, 49, 51), transparent);
+    }
+
+    .div-dot:after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: -9px;
+        left: calc(50% - 9px);
+        width: 18px;
+        height: 18px;
+        background-color: goldenrod;
+        border: 1px solid rgb(48, 49, 51);
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 2px white, 0 0 0 4px white;
+    }
+    select{
+        background-color: #dcdcdc59 !important;
+        border-radius: 5px !important; 
+    }
+
+    .mdvti-heading{
+        color: #ffffff;
+    left: -18px;
+    position: absolute;
+    transform: rotate(270deg);
+    top: 83%;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0" style="font-family: 'Sofia Pro', sans-serif;">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>info@mdvtiindia.org</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>1800-891-9232</small>
+                </div>
+            </div>
+
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center">
+                    <button class="btn btn-primary shadow" style="margin-right:10px">STUDENT LOGIN</button>
+                    <button class="btn btn-primary shadow ml-2">FRANCHISE LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0"
+        style="font-family: 'Sofia Pro', sans-serif;">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="100px"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <a href="service.html" class="nav-item nav-link">Franchisee</a>
+                <a href="project.html" class="nav-item nav-link">Blog</a>
+                <a href="project.html" class="nav-item nav-link">Shop</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Online Admissions<i
+                    class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <!--Login form Start-->
+    <div class="login-form container-fluid ">
+        <div class="row">
+            <div class="col-md-1 bg-primary ">
+            <h1 class="mdvti-heading">MDVTI</h1>
+            </div>
+            <div class="col-md-11 align-self-center py-5">
+                <section class="student-reg">
+                    <div class="container">
+                        <div class="form-group row">
+                            <div class="col-sm-12">
+                                <h3 class="head-admsn">Registration Details / पंजीयन का विवरण</h3>
+                            </div>
+                        </div>
+                        <form action="https://mdvtiindia.org/addonlineadmission" method="post"
+                            enctype="multipart/form-data">
+                            <input type="hidden" name="_token" value="HT12fxD61ihMePqwvdKm6pjPR0yU4efPhUTt3vne">
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label class="label label-control">Course *</label>
+                                    <select class="form-control" name="course" id="course" required="">
+                                        <option value="">Choose Course</option>
+                                        <option value="1">Diploma in Yoga Teacher/Therapy</option>
+                                        <option value="2">PG Diploma in Yoga Teacher</option>
+                                        <option value="16">Certificate in Yoga Training</option>
+                                        <option value="29">B.A.(Hons)</option>
+                                        <option value="30">MSW</option>
+                                        <option value="31">B.SC. (Agriculture)</option>
+                                        <option value="32">M.Sc. (Agriculture)</option>
+                                        <option value="33">B.ED.</option>
+                                        <option value="34">D.EL.ED.</option>
+                                        <option value="38">Foundation Course In Yoga</option>
+                                        <option value="39">Certificate in Yogasana &amp; Pranayam</option>
+                                        <option value="40">Polytechnic</option>
+                                        <option value="42">Bachelor of Science in Nursing</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="label label-control">Study Mode *</label>
+                                    <select class="form-control" id="stmode" name="study_mode" required="">
+                                        <option value="">Select Study Mode</option>
+                                        <option value="regular">Regular</option>
+                                        <option value="distance">Distance</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-6">
+                                    <label class="label label-control active">Student Full Name *</label>
+                                    <select class="form-control w14 inline" name="student_initial" id="student_initial"
+                                        required="">
+                                        <option value="">Select</option>
+                                        <option value="Mr.">Mr./श्री</option>
+                                        <option value="Ms.">Ms./सुश्री</option>
+                                    </select>
+                                    <input type="text" class="form-control w85 inline" name="student_name"
+                                        id="student_name" placeholder="Enter Student Full Name" required=""><br>
+                                    <span>( Full name as per the highest / latest qualification certificate or legal
+                                        certificate )</span>
+                                </div>
+                        
+                                <div class="col-sm-6">
+                                    <label class="label label-control active">Father's Name *</label>
+                                    <select class="form-control w14 inline" name="father_initial" required="">
+                                        <option value="Mr." selected="">Mr./श्री</option>
+                                    </select>
+                                    <input type="text" class="form-control w85 inline" placeholder="Enter Father's Name"
+                                        name="father_name" id="father_name" required=""><br>
+                                    <span>( Full Name As Per Educational/Legal Certificate )</span>
+                                </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Mobile Number *</label>
+                                    <input type="text" class="form-control" placeholder="Enter Mobile Number"
+                                        maxlength="12" name="student_contact" id="student_contact" required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Date of Birth *</label>
+                                    <input type="date" class="form-control" name="dob" id="dob" required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Gender *</label>
+                                    <select class="form-control" name="gender" id="gender" required="">
+                                        <option value="">Select Gender</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-12">
+                                    <label class="label label-control active">Address *</label>
+                                    <input type="text" class="form-control" id="student_address"
+                                        placeholder="Enter Address here" name="student_address" required="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Email Address</label>
+                                    <input type="email" class="form-control" placeholder="Enter Email Address"
+                                        name="student_email">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Country *</label>
+                                    <select class="form-control" name="student_country" id="country" required="">
+                                        <option value="">Select</option>
+                                        <option value="100">India</option>
+                                        <option value="102">Zimbabwe</option>
+                                        <option value="103">Zambia</option>
+                                        <option value="105">Vietnam</option>
+                                        <option value="104">Yemen</option>
+                                        <option value="106">Venezuela</option>
+                                        <option value="107">Vatican City (Holy See)</option>
+                                        <option value="108">Vanuatu</option>
+                                        <option value="109">Uzbekistan</option>
+                                        <option value="110">Uruguay</option>
+                                        <option value="111">United States of America</option>
+                                        <option value="112">United Kingdom</option>
+                                        <option value="113">United Kingdom</option>
+                                        <option value="114">United Arab Emirates</option>
+                                        <option value="115">Ukraine</option>
+                                        <option value="116">Uganda</option>
+                                        <option value="117">Tuvalu</option>
+                                        <option value="118">Turkmenistan</option>
+                                        <option value="119">Turkey</option>
+                                        <option value="120">Tunisia</option>
+                                        <option value="121">Trinidad and Tobago</option>
+                                        <option value="122">Tonga</option>
+                                        <option value="123">Togo</option>
+                                        <option value="124">Thailand</option>
+                                        <option value="125">Tanzania</option>
+                                        <option value="126">Tajikistan</option>
+                                        <option value="127">Taiwan</option>
+                                        <option value="128">Syria</option>
+                                        <option value="129">Switzerland</option>
+                                        <option value="130">Sweden</option>
+                                        <option value="131">Swaziland</option>
+                                        <option value="132">Suriname</option>
+                                        <option value="133">Sudan</option>
+                                        <option value="134">Sri Lanka</option>
+                                        <option value="135">Spain</option>
+                                        <option value="136">South Sudan</option>
+                                        <option value="137">South Africa</option>
+                                        <option value="138">Somalia</option>
+                                        <option value="139">Solomon Islands</option>
+                                        <option value="140">Slovenia</option>
+                                        <option value="141">Slovakia</option>
+                                        <option value="142">Singapore</option>
+                                        <option value="143">Sierra Leone</option>
+                                        <option value="144">Seychelles</option>
+                                        <option value="145">Serbia</option>
+                                        <option value="146">Senegal</option>
+                                        <option value="147">Saudi Arabia</option>
+                                        <option value="148">Sao Tome and Principe</option>
+                                        <option value="149">San Marino</option>
+                                        <option value="150">Samoa</option>
+                                        <option value="151">Saint Vincent and the Grenadines</option>
+                                        <option value="152">Saint Lucia</option>
+                                        <option value="153">Saint Kitts and Nevis</option>
+                                        <option value="154">Rwanda</option>
+                                        <option value="155">Russia</option>
+                                        <option value="156">Romania</option>
+                                        <option value="157">Qatar</option>
+                                        <option value="158">Portugal</option>
+                                        <option value="159">Poland</option>
+                                        <option value="160">Philippines</option>
+                                        <option value="161">Peru</option>
+                                        <option value="162">Paraguay</option>
+                                        <option value="163">Papua New Guinea</option>
+                                        <option value="164">Panama</option>
+                                        <option value="165">Palau</option>
+                                        <option value="166">Oman</option>
+                                        <option value="167">Norway</option>
+                                        <option value="168">Nigeria</option>
+                                        <option value="169">Niger</option>
+                                        <option value="170">Nicaragua</option>
+                                        <option value="171">New Zealand</option>
+                                        <option value="172">Netherlands</option>
+                                        <option value="173">Nepal</option>
+                                        <option value="174">Nauru</option>
+                                        <option value="175">Namibia</option>
+                                        <option value="176">Myanmar (Burma)</option>
+                                        <option value="177">Mozambique</option>
+                                        <option value="178">Morocco</option>
+                                        <option value="179">Montenegro</option>
+                                        <option value="180">Mongolia</option>
+                                        <option value="181">Monaco</option>
+                                        <option value="182">Moldova</option>
+                                        <option value="183">Micronesia</option>
+                                        <option value="184">Mexico</option>
+                                        <option value="185">Mauritius</option>
+                                        <option value="186">Mauritania</option>
+                                        <option value="187">Marshall Islands</option>
+                                        <option value="188">Malta</option>
+                                        <option value="189">Mali</option>
+                                        <option value="190">Maldives</option>
+                                        <option value="191">Malaysia</option>
+                                        <option value="192">Malawi</option>
+                                        <option value="193">Madagascar</option>
+                                        <option value="194">Macedonia</option>
+                                        <option value="195">Luxembourg</option>
+                                        <option value="196">Lithuania</option>
+                                        <option value="197">Liechtenstein</option>
+                                        <option value="198">Libya</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">State *</label>
+                                    <select class="form-control" name="student_state" id="state" required="">
+                                        <option value="">Select State</option>
+                                        <option value="732">Andhra Pradesh</option>
+                                        <option value="733">Assam</option>
+                                        <option value="734">Bihar</option>
+                                        <option value="735">Chandigarh</option>
+                                        <option value="736">Chhatisgarh</option>
+                                        <option value="737">Delhi</option>
+                                        <option value="760">Goa</option>
+                                        <option value="738">Gujarat</option>
+                                        <option value="739">Haryana</option>
+                                        <option value="1000">Himachal Pradesh</option>
+                                        <option value="740">Jammu and Kashmir</option>
+                                        <option value="741">Jharkhand</option>
+                                        <option value="742">Karnataka</option>
+                                        <option value="743">Kerala</option>
+                                        <option value="744">Madhya Pradesh</option>
+                                        <option value="745">Maharashtra</option>
+                                        <option value="746">Manipur</option>
+                                        <option value="747">Meghalaya</option>
+                                        <option value="748">Mizoram</option>
+                                        <option value="999">NA</option>
+                                        <option value="749">Orissa</option>
+                                        <option value="750">Pondicherry</option>
+                                        <option value="751">Punjab</option>
+                                        <option value="752">Rajasthan</option>
+                                        <option value="753">Tamil Nadu</option>
+                                        <option value="759">Telangana</option>
+                                        <option value="754">Tripura</option>
+                                        <option value="755">Uttar Pradesh</option>
+                                        <option value="756">Uttaranchal</option>
+                                        <option value="758">Uttrakhand</option>
+                                        <option value="757">West Bengal</option>
+                                    </select>
+
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control">City *</label>
+                                    <select class="form-control" name="student_city" id="city" required="">
+                                        <option value="">Select City</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Pincode *</label>
+                                    <input type="number" class="form-control" placeholder="Enter Pincode"
+                                        id="student_pincode" name="student_pincode" required="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="label label-control">Academic Qualification * </label>
+                                <div class="col-sm-4">
+                                    <input type="text" placeholder="Enter Qualification" class="form-control"
+                                        id="qualification" name="qualification" required="">
+                                </div>
+                                <!--<label class="label label-control">Password *</label>-->
+                                <div class="col-sm-4">
+                                    <input type="" placeholder="Enter Password" class="form-control" id="password"
+                                        name="password">
+                                </div>
+                            </div>
+                            <div class="form-group row mt-5">
+                                <div class="col-sm-12">
+                                    <h3 class="head-admsn">Documents Required</h3>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Student Photo *</label>
+                                    <input type="file" class="form-control" id="profile_image" name="profile_image"
+                                        required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Student Signature</label>
+                                    <input type="file" class="form-control" name="signature_image">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control active">Aadhar Number *</label>
+                                    <input type="text" class="form-control" placeholder="Enter Aadhar Number"
+                                        id="adhar_number" maxlength="12" name="adhar_number" required="">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Aadhar Document</label>
+                                    <input type="file" class="form-control" name="adhar_document">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Highschool Marksheet</label>
+                                    <input type="file" class="form-control" name="highschool_marksheet">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="label label-control">Other Document</label>
+                                    <input type="file" class="form-control" name="other_document">
+                                </div>
+                            </div>
+                            <div class="form-action row">
+                                <div class="col-sm-12 text-center">
+                                    <button class="btn btn-primary btn-lg mt-5" type="button">Pay
+                                        Now</button>
+                                    <!--                    <a href="#paynow" data-target="#paynow" data-toggle="modal"> 
+                                        <button class="btn waves-effect waves-light" type="submit">Submit Now</button>
+                                    </a>-->
+                                </div>
+                            </div>
+                            <!--Model-->
+                            <div id="paynow" class="modal fade" role="dialog">
+                                <div class="modal-dialog md7">
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal">×</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h5>Payment Information</h5>
+                                            <input type="hidden" class="form-control" name="course_fee" id="course_fee1"
+                                                value="" disabled="">
+                                            <input type="hidden" class="form-control" name="minimum_amount"
+                                                id="minimum_amount1" value="" disabled="">
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="label label-control">Course Fee</label>
+                                                    <input type="number" class="form-control" id="course_fee" value=""
+                                                        disabled="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="label label-control">Minimum Fee</label>
+                                                    <input type="number" class="form-control" id="minimum_amount"
+                                                        value="" disabled="">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                                <div class="col-sm-12">
+                                                    <label class="label label-control">Paid Amount</label>
+                                                    <input type="number" class="form-control" name="paid_amount"
+                                                        id="paid_amount" value="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!--   <button type="submit" class="btn btn-primary">Send Feedback</button> -->
+                                            <button class="btn waves-effect waves-light" type="submit" id="sbt">Submit
+                                                Now</button>
+                                            <button type="button" class="btn btn-default waves-effect waves-light"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer  pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6 ">
+                    <h4 class="text-light mb-4 ">Login </h4>
+                    <a class="btn btn-link" href="">Student Login</a>
+                    <a class="btn btn-link" href="">Zonal Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Franchise Login</a>
+                    <a class="btn btn-link" href="">State Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Staff Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Result</a>
+                    <a class="btn btn-link" href="">Career in Yoga</a>
+                    <a class="btn btn-link" href="">Verify Institute</a>
+                    <a class="btn btn-link" href="">Rules and Regulation</a>
+                    <a class="btn btn-link" href="">Verify Certificate</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/mdvtiindia_Logo.jpg" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider div-transparent div-dot"></div>
+        <div class="container ">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

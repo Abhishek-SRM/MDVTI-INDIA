@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTI INDIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<style>
+    @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+    body {
+        font-family: 'Source Sans Pro', sans-serif !important;
+        background-color: rgba(238, 238, 238, 0.267);
+        background-image: url("img/bg.png");
+    }
+
+    .wrapper {
+        width: 100%
+    }
+
+    #sidebar {
+        min-width: 270px;
+        max-width: 270px;
+        background: #ffffff;
+        color: #fff;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s;
+        position: relative
+    }
+
+    #sidebar.active {
+        margin-left: -270px;
+    }
+
+    #sidebar ul.components {
+        padding: 0
+    }
+
+    #sidebar ul li>ul {
+        margin-left: 10px
+    }
+
+    #sidebar ul li>ul li {
+        font-size: 14px
+    }
+
+    #sidebar ul li a {
+        padding: 10px 0;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, .1)
+    }
+
+    @media(max-width: 991.98px) {
+        #sidebar {
+            margin-left: -270px
+        }
+
+        #sidebar.active {
+            margin-left: 0;
+        }
+    }
+
+    #sidebar .custom-menu {
+        display: inline-block;
+        position: absolute;
+        top: 20px;
+        right: 0;
+        margin-right: -20px;
+        -webkit-transition: .3s;
+        -o-transition: .3s;
+        transition: .3s
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+        #sidebar .custom-menu {
+            -webkit-transition: none;
+            -o-transition: none;
+            transition: none
+        }
+    }
+
+    #sidebar .custom-menu .btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        position: relative
+    }
+
+    #sidebar .custom-menu .btn i {
+        margin-right: -40px;
+        font-size: 14px
+    }
+
+    #sidebar .custom-menu .btn.btn-primary {
+        background: 0 0;
+        border-color: transparent
+    }
+
+    #sidebar .custom-menu .btn.btn-primary:after {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+        background-color: #8B2025;
+        border-radius: 10px
+    }
+
+    #sidebar .custom-menu .btn.btn-primary:hover,
+    #sidebar .custom-menu .btn.btn-primary:focus {
+        background: 0 0 !important;
+        border-color: transparent !important
+    }
+
+    a[data-toggle=collapse] {
+        position: relative
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        font-family: 'Source Sans Pro', sans-serif !important;
+    }
+
+    .dropdown-toggle::after {
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%)
+    }
+
+    @media(max-width: 991.98px) {
+        #sidebarCollapse span {
+            display: none
+        }
+    }
+
+    #content {
+        overflow: hidden;
+        width: 100%;
+        padding: 0;
+        min-height: 100vh;
+        -webkit-transition: all .3s;
+        -o-transition: all .3s;
+        transition: all .3s
+    }
+
+    .owl-carousel .owl-nav {
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%);
+        width: 100%;
+        text-align: center;
+    }
+
+    .owl-carousel .owl-prev {
+        position: absolute;
+        left: 0;
+    }
+
+    .owl-carousel .owl-next {
+        position: absolute;
+        right: 0;
+    }
+
+    .mdvti-blog-text {
+        margin-top: 10px;
+        letter-spacing: 0.015rem;
+        line-height: 1.67;
+        font-family: 'Source Sans Pro', sans-serif !important;
+        font-size: 17px;
+        color: #2a2a2a
+    }
+
+    #sidebar .heading span {
+        font-size: 18px;
+        color: #000;
+        font-weight: 800;
+    }
+    /* #exampleModalCenter .modal-content{
+        background-image: url(img/3d-female-yoga-pose-against-sunset-landscape.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        color:#fff
+    } */
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Off Canvas -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 id="offcanvasRightLabel">MDVTI INDIA</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="d-flex justify-content-around">
+                <span>
+                    <small class="fa fa-map-marker-alt text-primary "></small>
+                    <small>info@mdvtiindia.org</small>
+                </span>
+                <span>
+                    <small class="fa fa-phone-alt text-primary"></small>
+                    <small>1800-891-9232</small>
+                </span>
+            </div>
+            <div class="px-5 text-end mt-4">
+                <div class="d-inline-flex align-items-center">
+                    <button class="btn btn-primary shadow" style="margin-right:10px">STUDENT LOGIN</button>
+                    <button class="btn btn-primary shadow ml-2">FRANCHISE LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex  px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="128px"></h2>
+        </a>
+        
+       
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training </a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga
+                            Therapy</a>
+                        <a href="#" class="dropdown-item">Diploma in Yoga Teacher Training</a>
+                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
+                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
+                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
+                    </div>
+                </div>
+                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shop<i
+                    class="fa fa-shopping-cart ms-3"></i></a> -->
+            <button class="btn btn-primary" type="button">Shop Now</button>
+        </div>
+        <div>
+            <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="btn btn-secondry" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"><img src="img/application.png"></a>
+        </div>
+    </nav>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">  
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Feedback Form</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="d-flex justify-content-around p-2 shadow border mx-4 mt-2">
+                    <span>
+                        <small class="fa fa-map-marker-alt text-primary "></small>
+                        <small>info@mdvtiindia.org</small>
+                    </span>
+                    <span>
+                        <small class="fa fa-phone-alt text-primary"></small>
+                        <small>1800-891-9232</small>
+                    </span>
+                </div>
+                <div class="modal-body">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <img src="img/Minimal.png" class="img-fluid  rounded" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            
+                            <form>
+                                <div class="form-group">
+                                    <label for="username">Name</label>
+                                    <input type="email" class="form-control" id="username"
+                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="useremail">Email address</label>
+                                    <input type="email" class="form-control" id="useremail"
+                                        aria-describedby="emailHelp" placeholder="Enter email">
+                                </div>
+                                <label for="username">Yoga Preferences</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                    <label class="form-check-label" for="defaultCheck1">
+                                      PGTYT
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                                    <label class="form-check-label" for="defaultCheck2">
+                                      CYT
+                                    </label>
+                                  </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                  
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid wow fadeInUp main_wrapper"
+        style="box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="owl-carousel toppers2">
+                <div class=" text-center">
+                    <a title="Post Graduate Diploma in Yoga Therapy">PGTYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Diploma in Yoga Teacher Training">DYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Certificate in Yoga Therapy">CYT</a>
+                </div>
+                <div class="text-center">
+                    <a title="Certificate in Yogasana & Pranayam">CYP</a>
+                </div>
+                <div class="text-center">
+                    <a title="Foundation Course in Yoga">FCY</a>
+                </div>
+                <div class="text-center">
+                    <a>Trending</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar" class="active">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="p-4 heading">
+                <span>Table of Content</span>
+            </div>
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Data Structure Padding
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="m-0 p-0">
+                                <li><a href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                        to Linear Data Structures</a></li>
+                                <li><a
+                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                        to Hierarchical Data Structure</a></li>
+                                <li><a
+                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                        of Graph, Trie, Segment Tree and Suffix Tree Data
+                                        Structures</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Introduction to Linear Data Structures
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="m-0 p-0">
+                                <li><a href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                        to Linear Data Structures</a></li>
+                                <li><a
+                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                        to Hierarchical Data Structure</a></li>
+                                <li><a
+                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                        of Graph, Trie, Segment Tree and Suffix Tree Data
+                                        Structures</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            The total memory allocated
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <ul class="m-0 p-0">
+                                <li><a href="https://www.geeksforgeeks.org/introduction-to-linear-data-structures/">Introduction
+                                        to Linear Data Structures</a></li>
+                                <li><a
+                                        href="https://www.geeksforgeeks.org/introduction-to-hierarchical-data-structure/">Introduction
+                                        to Hierarchical Data Structure</a></li>
+                                <li><a
+                                        href="https://www.geeksforgeeks.org/overview-of-graph-trie-segment-tree-and-suffix-tree-data-structures/">Overview
+                                        of Graph, Trie, Segment Tree and Suffix Tree Data
+                                        Structures</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="row">
+                <div class="col-md-8 col-sm-12">
+                    <div class="blog-feed-post mb-5">
+                        <div class="blog-feed-img-txt">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="mdvti-blog-text">
+                                        <h3><a href="#" class="text-dark">The Role of Yoga in Cardiac Health.</a></h3>
+                                        <div class="mdvti-post-meta">
+                                            <a href="#"><i class="fas fa-user"></i> Shubham Tripathi | Yoga
+                                                Teacher</a>
+                                        </div>
+                                        <p class="mt-3">Spiritual awakening is a profound experience that is often
+                                            described as a deep connection to the divine, a deep understanding of the
+                                            nature of life, or a sense of inner growth and transformation. It can bring
+                                            a sense of peace and oneness, and it can provide a greater understanding of
+                                            one’s purpose and the meaning of life. Spiritual awakening can also be seen
+                                            as a journey of self-discovery, as well as an opportunity to gain insight
+                                            into the spiritual truths of the universe. Regardless of the form it takes,
+                                            spiritual enlightenment can be an incredibly powerful and life-changing
+                                            experience. If you are looking for answers about life and the universe, you
+                                            may benefit from exploring the definition, signs and symptoms of spiritual
+                                            awakening.<br>Spiritual awakening is a term that has been used to describe a
+                                            variety of experiences. Throughout history, different spiritual paths have
+                                            used various terms to describe spiritual awakening, including enlightenment,
+                                            salvation, liberation, and self-realization. In the yoga tradition, this
+                                            process is described using the terms Kundalini awakening, Moksha, and
+                                            Samadhi. In Buddhism, the term Nirvana is often used. While the terminology
+                                            may differ, the core spiritual experience remains the same or very similar.
+                                        </p>
+                                        <div class="container p-5 d-flex justify-content-center wow fadeInUp">
+                                            <iframe width="760" height="335"
+                                                src="https://www.youtube.com/embed/snPBv1-igjM"
+                                                title="YouTube video player" frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+                                        </div>
+                                        <p class="mt-1">A small or large shift in consciousness is a common experience
+                                            and is marked by a deepened sense of peace and understanding about spiritual
+                                            paths, spiritual experience, religious experience, and mystical experiences.
+                                            An internal journey is initiated in which an individual moves from a
+                                            limited, ego-based perspective to a broader, more enlightened view of
+                                            reality. During this process, the individual gains access to a greater
+                                            source of inner wisdom and knowledge. As this wisdom is accessed, the
+                                            individual can begin to understand the interconnectedness of all things and
+                                            cultivate greater compassion, empathy, and love towards themselves and
+                                            others.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="my-4">
+                    <section class="container important-links mt-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2 class="text-center"><a name="Basics"></a>Python Basics</h2>
+                                <div class="Basics">
+                                    <ul>
+                                        <li><a href="https://www.geeksforgeeks.org/python-language-introduction/"
+                                                rel="noopener" target="_blank">Python language introduction</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-3-basics/" rel="noopener"
+                                                target="_blank">Python 3 basics</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-the-new-generation-language/"
+                                                rel="noopener" target="_blank">Python The new generation
+                                                language</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/important-differences-between-python-2-x-and-python-3-x-with-examples/"
+                                                rel="noopener" target="_blank">Important difference between python
+                                                2.x
+                                                and python 3.x with example</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/keywords-python-set-1/"
+                                                rel="noopener" target="_blank">Keywords in Python | Set 1</a>, <a
+                                                href="https://www.geeksforgeeks.org/keywords-python-set-2/"
+                                                rel="noopener" target="_blank">Set 2</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/namespaces-and-scope-in-python/"
+                                                rel="noopener" target="_blank">Namespaces and Scope in Python</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/statement-indentation-and-comment-in-python/"
+                                                rel="noopener" target="_blank">Statement, Indentation and Comment in
+                                                Python</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/structuring-python-programs/"
+                                                rel="noopener" target="_blank">Structuring Python Programs</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/check-string-valid-keyword-python/"
+                                                rel="noopener" target="_blank">How to check if a string is a valid
+                                                keyword in Python?</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/how-to-assign-values-to-variables-in-python-and-other-languages/"
+                                                rel="noopener" target="_blank">How to assign values to variables in
+                                                Python and other languages</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/print-without-newline-python/"
+                                                rel="noopener" target="_blank">How to print without newline in
+                                                Python?</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/decision-making-python-else-nested-elif/"
+                                                rel="noopener" target="_blank">Decision making</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/make-simple-calculator-using-python/"
+                                                rel="noopener" target="_blank">Basic calculator program using
+                                                Python</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-language-advantages-applications/"
+                                                rel="noopener" target="_blank">Python Language advantages and
+                                                applications</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md -6">
+                                <h2 class="text-center"><a name="Basics"></a>Python Basics</h2>
+                                <div class="Basics">
+                                    <ul>
+                                        <li><a href="https://www.geeksforgeeks.org/python-language-introduction/"
+                                                rel="noopener" target="_blank">Python language introduction</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-3-basics/" rel="noopener"
+                                                target="_blank">Python 3 basics</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-the-new-generation-language/"
+                                                rel="noopener" target="_blank">Python The new generation
+                                                language</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/important-differences-between-python-2-x-and-python-3-x-with-examples/"
+                                                rel="noopener" target="_blank">Important difference between python
+                                                2.x
+                                                and python 3.x with example</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/keywords-python-set-1/"
+                                                rel="noopener" target="_blank">Keywords in Python | Set 1</a>, <a
+                                                href="https://www.geeksforgeeks.org/keywords-python-set-2/"
+                                                rel="noopener" target="_blank">Set 2</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/namespaces-and-scope-in-python/"
+                                                rel="noopener" target="_blank">Namespaces and Scope in Python</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/statement-indentation-and-comment-in-python/"
+                                                rel="noopener" target="_blank">Statement, Indentation and Comment in
+                                                Python</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/structuring-python-programs/"
+                                                rel="noopener" target="_blank">Structuring Python Programs</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/check-string-valid-keyword-python/"
+                                                rel="noopener" target="_blank">How to check if a string is a valid
+                                                keyword in Python?</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/how-to-assign-values-to-variables-in-python-and-other-languages/"
+                                                rel="noopener" target="_blank">How to assign values to variables in
+                                                Python and other languages</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/print-without-newline-python/"
+                                                rel="noopener" target="_blank">How to print without newline in
+                                                Python?</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/decision-making-python-else-nested-elif/"
+                                                rel="noopener" target="_blank">Decision making</a></li>
+                                        <li><a href="https://www.geeksforgeeks.org/make-simple-calculator-using-python/"
+                                                rel="noopener" target="_blank">Basic calculator program using
+                                                Python</a>
+                                        </li>
+                                        <li><a href="https://www.geeksforgeeks.org/python-language-advantages-applications/"
+                                                rel="noopener" target="_blank">Python Language advantages and
+                                                applications</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-4 d-none d-md-block">
+                    <div class="wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="owl-carousel course-caraousel2">
+                            <div class="item">
+                                <div class="service-item  wow fadeInUp">
+                                    <div class="overflow-hidden">
+                                        <img class="img-fluid" src="img/course1.svg" alt="">
+                                    </div>
+                                    <div class="p-2 py-3 bg-white shadow">
+                                        <h6 class="mb-1">Post Graduation in Yoga Teacher</h6>
+                                        <a class="fw-small bg-primary p-1 text-white" style="font-size: 10px;">know
+                                            More<i class="fa fa-arrow-right ms-2"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6 ">
+                    <h4 class="text-light mb-4 ">Login </h4>
+                    <a class="btn btn-link" href="">Student Login</a>
+                    <a class="btn btn-link" href="">Zonal Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Franchise Login</a>
+                    <a class="btn btn-link" href="">State Co-ordinator Login</a>
+                    <a class="btn btn-link" href="">Staff Login</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Result</a>
+                    <a class="btn btn-link" href="">Career in Yoga</a>
+                    <a class="btn btn-link" href="">Verify Institute</a>
+                    <a class="btn btn-link" href="">Rules and Regulation</a>
+                    <a class="btn btn-link" href="">Verify Certificate</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">About Us</a>
+                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/mdvtiindia_Logo.jpg" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="divider div-transparent div-dot"></div>
+        <div class="container ">
+            <div class="row g-5">
+                <div class="col-lg-5 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-5">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- Footer Start -->
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-1">
+                <div class="col-lg-4 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow
+                        (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Latest Events </a>
+                    <a class="btn btn-link" href="">Current Vacancies </a>
+                    <a class="btn btn-link" href="">Authorized Study Center</a>
+                    <a class="btn btn-link" href="">Blacklisted Centers</a>
+                    <a class="btn btn-link" href="">Selected students in Government and Private Jobs</a>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">Refund Policy</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/footer-logo.png" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="text-white bg-primary px-5 py-3">Pay now</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-1">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <script>
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 2000 && $("#exampleModal").attr("displayed") === "false") {
+                $('#exampleModal').modal('show');
+                $("#exampleModal").attr("displayed", "true");
+            }
+        });
+    </script>
+
+</body>
+
+</html>
