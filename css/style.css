@@ -1,10 +1,15 @@
 /********** Template CSS **********/
-@import url('http://fonts.cdnfonts.com/css/sofia-pro');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap');
 
 :root {
     --primary: #8B2025;
     --light: #F5F5F5;
     --dark: #353535;
+}
+
+.blurry-nav {
+    backdrop-filter: blur(6px);
+    background-color: rgb(255 255 255 / 47%);
 }
 
 .dropdown-item {
@@ -136,7 +141,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-family: 'Sofia Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
@@ -678,7 +683,7 @@
 .olcards {
     list-style: none;
     counter-reset: cardCount;
-    font-family: 'Sofia Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     --cardsGap: 1rem;
@@ -1178,14 +1183,14 @@ header:hover .owl-next {
 }
 
 .main_wrapper {
-    font-family: 'Sofia Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #eee;
     border: 1px solid #ebebeb;
     padding: 0.7rem 1.5rem;
 }
 
 #news-feed p {
-    font-family: 'Sofia Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-top: 17px;
     font-weight: 300;
     font-size: 16px;
@@ -1312,7 +1317,7 @@ header:hover .owl-next {
 }
 
 #pills-tab {
-    font-family: 'Sofia Pro', sans-serif;
+    font-family: 'Poppins', sans-serif;
     justify-content: center;
 }
 
@@ -1333,3 +1338,6 @@ header:hover .owl-next {
 .tab-content {
     padding: 1rem 1.5rem;
 }
+
+.decorative-heading {
+    font-family: 'Poppins', sans-serif;}
