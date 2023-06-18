@@ -184,7 +184,48 @@
         list-style-type: none;
         padding-top: 1.2rem;
     }
+    .border-container {
+      display: inline-block;
+      position: relative;
+      width: 10%;
+      animation: rotate 5s linear infinite;
+    }
 
+    .border-container::before,
+    .border-container::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border: 12px solid transparent;
+      border-image: linear-gradient(to right, red, blue) 1;
+      border-radius: 50%;
+      animation: curly 2s linear infinite;
+    }
+
+    .border-container::after {
+      animation-delay: 1s;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes curly {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
     /* Styling for list items */
     li {
         position: relative;
@@ -231,9 +272,9 @@
     .navbar-brand img {
         width: 100px;
     }
-    .container-hero
-    {
-        background-image: linear-gradient(45deg, rgb(31 29 10 / 70%), rgb(255 191 0 / 61%)), url(./img/4799045.jpg);
+
+    .container-hero {
+        background-image: linear-gradient(45deg, rgb(31 29 10 / 70%), rgb(255 191 0 / 61%)), url(./img/bg-hero.png);
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
@@ -431,21 +472,29 @@
             <div class="">
                 <div class="row g-lg-5 py-5 ">
                     <div class="col-md-6">
-                        <h4 class="display-3 decorative-heading text-white" data-aos="fade-up"
-                        data-aos-duration="1000">Transform your Yoga Passion into Profession</h4>
-                        <p class="decorative-subheading mt-2" data-aos="fade-up"
-                        data-aos-duration="1000" data-aos-delay="100" data-aos-anchor-placement="top-bottom">Start your Transformational YTT Jaurney with YOGKULAM 👍
+                        <h4 class="display-4 decorative-heading text-white" data-aos="fade-up" data-aos-duration="1000">
+                            Transform your <br>Yoga Passion into Profession</h4>
+                        <div class="d-flex align-items-center justify-content-start">
+                            <img src="img/affliaction-1.png" class="img-fluid" width="10%">
+                            <a class="text-white px-3">Affliated to Ministry of Ayush</a>
+                        </div>
+                        <p class="decorative-subheading mt-4" data-aos="fade-up" data-aos-duration="1000"
+                            data-aos-delay="100" data-aos-anchor-placement="top-bottom">Start your Transformational YTT
+                            Jaurney with YOGKULAM 👍
                         </p>
+
                         <br>
-                        <ul class="text-white mt-4">
-                            <li data-aos="fade-up"
-                        data-aos-duration="1000" data-aos-delay="130" data-aos-anchor-placement="top-bottom">Very Affordable & less time consuming</li>
-                            <li data-aos="fade-up"
-                        data-aos-duration="1000" data-aos-delay="260" data-aos-anchor-placement="top-bottom">Less Competition & can learn from here.</li>
-                            <li data-aos="fade-up"
-                        data-aos-duration="1000" data-aos-delay="380" data-aos-anchor-placement="top-bottom">Money Comes with Business</li>
-                            <li data-aos="fade-up"
-                        data-aos-duration="1000" data-aos-delay="410" data-aos-anchor-placement="top-bottom">Work Part time or Full time</li>
+                        <ul class="text-white">
+                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="130"
+                                data-aos-anchor-placement="top-bottom"><mark>Very Affordable & less time
+                                    consuming</mark></li>
+                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="260"
+                                data-aos-anchor-placement="top-bottom"><mark>Less Competition & can learn from
+                                    here.</mark></li>
+                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="380"
+                                data-aos-anchor-placement="top-bottom"><mark>Money Comes with Business</mark></li>
+                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="410"
+                                data-aos-anchor-placement="top-bottom"><mark>Work Part time or Full time</mark></li>
 
                         </ul>
                     </div>
