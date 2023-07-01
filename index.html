@@ -158,17 +158,6 @@
         text-shadow: 3px -4px 0px #8b2025;
     }
 
-    .decorative-subheading {
-        word-spacing: 3px;
-        letter-spacing: 1px;
-        font-size: 14px;
-        line-height: 30px;
-        color: #232323;
-        background-color: #fff4e5d6;
-        padding: 6px 15px;
-        border-radius: 7px;
-        display: inline-block;
-    }
 
     /* Remove default list styles */
     ul,
@@ -184,48 +173,52 @@
         list-style-type: none;
         padding-top: 1.2rem;
     }
+
     .border-container {
-      display: inline-block;
-      position: relative;
-      width: 10%;
-      animation: rotate 5s linear infinite;
+        display: inline-block;
+        position: relative;
+        width: 10%;
+        animation: rotate 5s linear infinite;
     }
 
     .border-container::before,
     .border-container::after {
-      content: "";
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      border: 12px solid transparent;
-      border-image: linear-gradient(to right, red, blue) 1;
-      border-radius: 50%;
-      animation: curly 2s linear infinite;
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        right: -5px;
+        bottom: -5px;
+        border: 12px solid transparent;
+        border-image: linear-gradient(to right, red, blue) 1;
+        border-radius: 50%;
+        animation: curly 2s linear infinite;
     }
 
     .border-container::after {
-      animation-delay: 1s;
+        animation-delay: 1s;
     }
 
     @keyframes rotate {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
     }
 
     @keyframes curly {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
     }
+
     /* Styling for list items */
     li {
         position: relative;
@@ -271,13 +264,6 @@
 
     .navbar-brand img {
         width: 100px;
-    }
-
-    .container-hero {
-        background-image: linear-gradient(45deg, rgb(31 29 10 / 70%), rgb(255 191 0 / 61%)), url(./img/bg.png);
-        background-repeat: no-repeat;
-        background-size: cover;
-        width: 100%;
     }
 </style>
 
@@ -467,42 +453,36 @@
                         class="fa fa-shopping-cart ms-3"></i></a>
             </div>
         </nav>
-
-        <div class="container col-xl-12 banner-image">
+        <div class="container py-4 col-xl-12 banner-image">
             <div class="">
                 <div class="row g-lg-5 py-5 ">
                     <div class="col-md-6">
-                        <h4 class="display-3 decorative-heading text-white" data-aos="fade-up" data-aos-duration="1000">
+                        <h4 class="display-4 decorative-heading text-dark" data-aos="fade-up" data-aos-duration="1000">
                             Transform your <br>Yoga Passion into Profession</h4>
 
-                             <p class="decorative-subheading  mt-1" data-aos="fade-up" data-aos-duration="1000"
-                            data-aos-delay="100" data-aos-anchor-placement="top-bottom">Start your Transformational YTT
-                            Jaurney with YOGKULAM 👍
-                        </p>
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="decorative-subheading  mt-1" data-aos="fade-up" data-aos-duration="1000"
+                                    data-aos-delay="100" data-aos-anchor-placement="top-bottom">Embark on a
+                                    transformative journey in Yoga Teacher Training with Yogkulam. Our programs are
+                                    designed to be affordable, time-efficient, and yield profitable results. Join us
+                                    today and unlock the potential of yoga for yourself and others.
+                                </p>
+                            </div>
+                        </div>
+                        <a href="" class="btn btn-primary  mt-3 px-2 shadow rounded">Explore More<i class="fa-solid fa-down"></i></a>
 
-                        <div class="d-flex align-items-center justify-content-start">
+                        <!-- <div class="d-flex align-items-center justify-content-start">
                             <img src="img/affliaction-1.png" class="img-fluid" width="6%">
                             <a class="text-white px-3">Affliated to Ministry of Ayush</a>
-                        </div>
-                       
-                        <br>
-                        <ul class="text-white mt-0">
-                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="130"
-                                data-aos-anchor-placement="top-bottom"><small>Very Affordable & less time
-                                    consuming</small></li>
-                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="260"
-                                data-aos-anchor-placement="top-bottom"><small>Less Competition & can learn from
-                                    here.</small></li>
-                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="380"
-                                data-aos-anchor-placement="top-bottom"><small>Money Comes with Business</small></li>
-                            <li data-aos="fade-up" data-aos-duration="1000" data-aos-delay="410"
-                                data-aos-anchor-placement="top-bottom"><small>Work Part time or Full time</small></li>
+                        </div> -->
 
-                        </ul>
+
                     </div>
                     <div class="col-md-4 mt-sm-3 align-self-center" data-aos-delay="240" style="margin-left: auto;">
                         <form data-aos="zoom-in" class="p-4 border rounded-3 blurry-nav right-form shadow ">
-                            <h5 class="mb-3 text-center">Register For Free Demo Classes</h5>
+                            <p class="mb-3 text-center"><b>Experience our demo classes for free! Register today and join
+                                    us.</b></p>
                             <div class="form-floating mb-3 ">
                                 <input type="text" class="form-control" placeholder="Enter Your Full Name">
                                 <label for="floatingInput"> Name</label>
@@ -528,6 +508,8 @@
             </div>
         </div>
     </section>
+
+
     <!--Announcment Start-->
     <div class="container-fluid bg-white Announcement">
         <div class="row">
