@@ -300,3 +300,25 @@ if ($(window).width() <= 767) {
   $('#sidebar').removeClass('active');
 }
 AOS.init();
+
+function updateBannerImage() {
+  const bannerImage = document.querySelector('.banner-image');
+  
+  if (window.innerWidth <= 768) {
+    bannerImage.style.backgroundPositionY = '0rem';
+    bannerImage.style.backgroundPositionX = '89%';
+    bannerImage.style.backgroundSize = '30rem';
+    bannerImage.style.backgroundImage = 'url(img/DSC_0012.png)';
+  } else {
+    bannerImage.style.backgroundPositionY = '100%';
+    bannerImage.style.backgroundPositionX = '54%';
+    bannerImage.style.backgroundSize = 'contain';
+    bannerImage.style.backgroundImage = 'url(img/DSC_0011.png)';
+  }
+}
+
+// Call the function initially
+updateBannerImage();
+
+// Add event listener for the window resize event
+window.addEventListener('resize', updateBannerImage);
