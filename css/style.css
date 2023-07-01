@@ -1346,16 +1346,14 @@ header:hover .owl-next {
 
 .decorative-subheading {
     font-size: 15px;
-    font-weight: 500;
-    color: #000000cc;
+    font-weight: 300;
+    color: #fde7e7;
     display: inline-block;
 }
 
 .container-hero {
-    background: #f46b45;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #eea94992, #f46b4586);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #eea94974, #f46b457f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background-image: linear-gradient(45deg, rgb(31 29 10 / 70%), rgb(255 191 0 / 61%)), url(./img/4799045.jpg);
+    /* background-image: linear-gradient(45deg, rgba(180, 180, 180, 0.448), rgba(91, 11, 3, 0.671)); */
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

@@ -305,9 +305,9 @@ function updateBannerImage() {
   const bannerImage = document.querySelector('.banner-image');
   
   if (window.innerWidth <= 768) {
-    bannerImage.style.backgroundPositionY = '0rem';
-    bannerImage.style.backgroundPositionX = '89%';
-    bannerImage.style.backgroundSize = '24rem';
+    bannerImage.style.backgroundPosition= 'center';
+    bannerImage.style.backgroundPositionY ='0';
+    bannerImage.style.backgroundSize = '25rem';
     bannerImage.style.backgroundImage = 'url(img/DSC_0012.png)';
   } else {
     bannerImage.style.backgroundPositionY = '100%';
