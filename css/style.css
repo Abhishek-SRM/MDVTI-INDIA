@@ -1344,15 +1344,22 @@ header:hover .owl-next {
     font-weight: 700;
 }
 
-
 .decorative-subheading {
-    font-size: 14px;
-    color: #1b1b1bcc;
+    font-size: 15px;
+    font-weight: 500;
+    color: #000000cc;
     display: inline-block;
 }
+
 .container-hero {
     background-image: linear-gradient(45deg, rgba(243, 222, 31, 0.448), rgba(221, 173, 29, 0.349));
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
 }
+
+@media (max-width: 767.98px) {
+    .right-form {
+      margin-top: 60%;
+    }
+  }
