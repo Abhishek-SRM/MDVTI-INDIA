@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>MDVTI INDIA</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mdvti_blog.css" rel="stylesheet">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;400;600&display=swap');
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: rgba(238, 238, 238, 0.267);
+        background-image: url("img/bg.png");
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 17px;
+        line-height: 31px;
+        text-align: justify;
+        color: #000;
+    }
+
+    a {
+        font-family: 'Poppins', sans-serif;
+        color: #ffffff;
+    }
+
+    #yogkulam-franchise {
+        background-color: antiquewhite;
+    }
+
+    .highlights h6 {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .pr3-get-right .pr3-get-vector-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 400px;
+    }
+
+    .pr3-get-right {
+        position: relative;
+    }
+
+    .pr3-about-section {
+        padding: 100px 0;
+        position: relative;
+    }
+
+    .pr20-project-content .pr20-project-column .pr20-headline h2 {
+        display: inline-block;
+        color: #8B2025;
+    }
+
+    @media (max-width: 991.98px) {
+        .pr20-business-section {
+            padding-top: 100px;
+        }
+    }
+
+    ol,
+    ol::before,
+    ol::after,
+    ol *,
+    ol *::before,
+    ol *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box
+    }
+
+    ol {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+        gap: 1rem;
+
+        width: min(60rem, calc(100% - 2rem));
+        margin-inline: auto;
+        padding-block: 1rem;
+
+        list-style: none;
+        counter-reset: count;
+    }
+
+    /* card layout/styling */
+    ol>li {
+        --card-background-color: #f0f0f0;
+        --card-text-color: #0F0F0F;
+        --card-border-radius: 0.5rem;
+        --card-padding-block: 1.5rem;
+        --card-padding-inline: 1rem;
+
+        --outset-size: 0.75rem;
+        --outset-background-color: #e5e5e5;
+
+        --number-font-size: 3rem;
+        --number-overlap: 0.5rem;
+        --number-font-family: 'Poppins', sans-serif;
+        --number-font-weight: 500;
+
+        margin: var(--outset-size);
+        margin-top: calc(var(--number-font-size) - var(--number-overlap));
+        border-radius: var(--card-border-radius);
+        padding-block: var(--card-padding-block);
+        padding-inline: var(--card-padding-inline);
+
+        color: var(--card-text-color);
+        background-color: var(--card-background-color);
+        box-shadow:
+            inset 1px 1px 0px rgb(255 255 255 / .5),
+            inset -1px -1px 0px rgb(0 0 0 / .25),
+            calc(var(--outset-size) * .25) calc(var(--outset-size) * .25) calc(var(--outset-size) * .5) rgb(0 0 0 / .25);
+        position: relative;
+        counter-increment: count;
+    }
+
+    ol>li::after {
+        content: counter(count, decimal-leading-zero);
+        position: absolute;
+
+        bottom: calc(100% - var(--number-overlap));
+        left: 50%;
+        transform: translateX(-50%);
+
+        color: var(--accent-color);
+        font-family: var(--number-font-family);
+        font-weight: var(--number-font-weight);
+        font-size: var(--number-font-size);
+        line-height: 1;
+        z-index: -1;
+    }
+
+    ol>li::before {
+        content: "";
+        position: absolute;
+        width: calc(100% + (var(--outset-size) * 2));
+        height: 100%;
+        bottom: calc(var(--outset-size) * -1);
+        left: calc(var(--outset-size) * -1);
+        z-index: -1;
+
+        border-bottom-left-radius: calc(var(--card-border-radius) + var(--outset-size));
+        border-bottom-right-radius: calc(var(--card-border-radius) + var(--outset-size));
+
+        background-color: var(--outset-background-color);
+
+        background-image:
+            linear-gradient(to left, var(--outset-background-color) calc(var(--outset-size) * 2), transparent 0),
+            linear-gradient(135deg, var(--accent-color) 80%, var(--outset-background-color) 0);
+    }
+
+    /* card content */
+    h1 {
+        font-size: 2.5rem;
+        font-weight: normal
+    }
+
+    .icon {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: calc(var(--card-padding-block) * .5);
+    }
+
+    .title {
+        font-family: var(--number-font-family);
+        text-transform: uppercase;
+        text-align: center;
+        color: var(--accent-color)
+    }
+
+    .descr {
+        color: var(--text-color);
+        font-size: 0.75rem;
+        text-align: center;
+    }
+
+    .twohrslearning {
+        font-size: 18px;
+    }
+
+    .list-group {
+        list-style: none;
+        padding: 0;
+    }
+
+    .list-group-item {
+        padding: 0.5rem 2rem !important;
+        position: relative;
+        padding-left: 20px;
+        margin-bottom: 10px;
+    }
+
+    .list-group-item::before {
+        content: attr(data-number);
+        position: absolute;
+        left: -16px;
+        top: 18px;
+        width: 30px;
+        height: 30px;
+        background-color: #fd6e00;
+        color: #fff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: 14px;
+        transition: transform 0.2s ease-in-out;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .list-group-item:hover::before {
+        transform: scale(1.2);
+        /* Scale up on hover */
+    }
+
+    .image-container {
+        position: relative;
+
+    }
+
+    .image-container img {
+        box-shadow: 0px 0px 72px 15px rgba(194, 194, 194, 0.344);
+    }
+
+    .border-rotate {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 4px dashed #faa23a;
+        border-radius: 50%;
+        animation: rotateBorder 12s linear infinite;
+        /* Adjust animation duration as needed */
+    }
+
+    @keyframes rotateBorder {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    blockquote p {
+        font-size: 14px;
+        line-height: 23px;
+        word-spacing: 1px;
+    }
+
+    blockquote>footer span>cite {
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0" style="font-family: 'Poppins', sans-serif;">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>info@mdvtiindia.org</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>1800-891-9232</small>
+                </div>
+            </div>
+
+            <div class="col-lg-5 d-inline-flex align-items-center justify-content-end">
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Login</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="studentlogin.html" class="dropdown-item">Student Login</a>
+                        <a href="franchise_login.html   " class="dropdown-item">Franchise Login</a>
+                    </div>
+                </div>
+                <div class="dropdown btn btn-primary shadow" style="margin-right: 10px;">
+                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Register</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="student-reg.html" class="dropdown-item">Student Registration</a>
+                        <a href="registerfranchise.html" class="dropdown-item">Franchise Registration</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top p-0"
+        style="font-family: 'Poppins', sans-serif;">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
+            <h2 class="m-0 text-primary "><img src="img/logo1.png" width="128px"></h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="feature.html" class="dropdown-item">MDVTI INDIA</a>
+                        <a href="quote.html" class="dropdown-item">Management Message</a>
+                        <a href="team.html" class="dropdown-item">Meet the team</a>
+                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training </a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga
+                            Therapy</a>
+                        <a href="#" class="dropdown-item">Diploma in Yoga Teacher Training</a>
+                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
+                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
+                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
+                    </div>
+                </div>
+                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
+                <a href="blog.html" class="nav-item nav-link">Blog</a>
+                <a href="contact.html" class="nav-item nav-link">Contact us </a>
+            </div>
+            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Shop<i
+                    class="fa fa-shopping-cart ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+    <section id="yogkulam-franchise">
+        <div class="container py-4 col-xl-12 banner-image"
+            style="background-position: 62% 100%; background-size: contain; background-image: url(&quot;img/bg-2.png&quot;);">
+            <div class="">
+                <div class="row g-lg-5 py-5">
+                    <div class="col-md-6 order-2 order-md-1 d-none d-md-block">
+                        <h4 class="display-4   text-dark typewriter-text" data-aos="fade-up" data-aos-duration="1000">
+                            Become Our<br>Franchise Partner
+                        </h4>
+
+                        <div class="row">
+                            <div class="col-9">
+                                <p class="decorative-subheading text-dark mt-1" data-aos="fade-up"
+                                    data-aos-duration="1000" data-aos-delay="100">
+                                    Embark on a transformative journey in Yoga Teacher Training with Yogkulam. Our
+                                    programs are
+                                    designed to be affordable, time-efficient, and yield profitable results. Join us
+                                    today and
+                                    unlock the potential of yoga for yourself and others.
+                                </p>
+                            </div>
+                        </div>
+                        <button class="button-48" role="button"><span class="text">Button 48</span></button>
+                    </div>
+                    <div class="col-md-4 form-right align-self-center order-1 order-md-2" data-aos-delay="240"
+                        style="margin-left: auto;">
+                        <form data-aos="zoom-in"
+                            class="p-4 border rounded-3 blurry-nav right-form shadow ms-md-auto mt-md-0">
+                            <p class="mb-3 text-center"><b>Register for Free Classes</b></p>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Enter Your Full Name">
+                                <label for="floatingInput"> Name</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" placeholder="Password">
+                                <label for="floatingPassword">Contact</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" placeholder="Enter Your Email">
+                                <label for="floatingPassword">Email</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" placeholder="Enter Your Email">
+                                <label for="floatingPassword">City</label>
+                            </div>
+                            <button class="button-85" role="button">I am Attending</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container py-5">
+            <div class="twohrslearning pt-4">
+                <div class="section-title text-start">
+                    <h2 class="my-5 text-dark display-5 text-center">Learnings from Yogkulam’s <span
+                            class="text-success">One hour
+                            Franchise Webinar</span>
+                    </h2>
+                </div>
+                <div class="text-center mb-5"> <a class="text-center tag">Todays Agenda</a></div>
+                <div class="container">
+                    <ol>
+                        <li style="--accent-color: #FF6F00">
+                            <div class="icon"><i class="fa-light fa-lightbulb-exclamation-on"></i></div>
+                            <div class="title">About MDVTI<br> India</div>
+
+                        </li>
+                        <li style="--accent-color: #008DC2">
+                            <div class="icon"><i class="fa-light fa-flower-daffodil"></i></div>
+                            <div class="title">Franchise Business <br>Model</div>
+
+                        </li>
+                        <li style="--accent-color: #0B456A">
+                            <div class="icon"><i class="fa-light fa-chart-line-up"></i></div>
+                            <div class="title">Why MDVTI India<br> Franchise</div>
+
+                        </li>
+                        <li style="--accent-color: #6A829A">
+                            <div class="icon"><i class="fa-light fa-chart-mixed"></i></div>
+                            <div class="title">Strong Work & Strong Support System</div>
+                        </li>
+                        <li style="--accent-color: #6A829A">
+                            <div class="icon"><i class="fa-light fa-chart-mixed"></i></div>
+                            <div class="title">How to Earn ?</div>
+                        </li>
+                        <li style="--accent-color: #FF6F00">
+                            <div class="icon"><i class="fa-light fa-chart-mixed"></i></div>
+                            <div class="title">Q & A</div>
+                        </li>
+                    </ol>
+                </div>
+
+                <ul class="list-group list-group-flush mt-5">
+                    <li class="list-group-item" data-number="1">Unpacking the Franchise Business Model: Learn about
+                        our franchise model, our operational approach, the milestones we've reached, and what
+                        Project Avahan has in store for you.</li>
+                    <li class="list-group-item" data-number="2">Why Choose Yogkulam's Avahan: Explore why Yogkulam's
+                        Avahan stands out as the superior option amidst the alternatives available in the market.
+                    </li>
+                    <li class="list-group-item" data-number="3">Our Work, Ethics, and Support System: Understand how
+                        our ethical principles and robust support system have been instrumental in delivering
+                        exceptional Yoga Teacher Training services across India.</li>
+                    <li class="list-group-item" data-number="4">The Path to Earning: Delve into how Yogkulam has
+                        enabled numerous franchises across India to generate substantial income, ranging from 1 Lakh
+                        to 5 Lakhs per month.</li>
+                    <li class="list-group-item" data-number="5">Question and Answer Session: At the culmination of
+                        the session, feel free to address your inquiries and concerns about Project Avahan, a
+                        Franchise Business Opportunity in the Yoga Teacher Training sector.</li>
+                </ul>
+            </div>
+            <div class="my-4 pt-5">
+                <h1 class="mb-5 display-5"> Top 10 Franchise Success Stories with Our Systems.
+                </h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-columns">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="card mb-4">
+                                            <div class="card-body">
+                                                <blockquote class=" ">
+                                                    <i class="fa fa-quote-right fa-2x text-muted pull-right mt-3 mb-3"
+                                                        aria-hidden="true"></i>
+                                                    <p class=" m-0 text-muted ">
+                                                        I'm Sanjib Nayak, the head of "Council for Yoga & Social
+                                                        Transformation"
+                                                        in Bhadrak, Odisha. Our partnership with Yogkulam to sell
+                                                        their yoga
+                                                        teacher training courses has been transformative. With an
+                                                        annual revenue
+                                                        of 15 lakhs, we've trained over 50,000 individuals in yoga,
+                                                        promoting
+                                                        physical and mental well-being.
+                                                    </p>
+                                                    <footer class="blockquote-footer small p-1 mt-2">
+                                                        <span class="small">Sanjib Nayak
+                                                            <cite class="text-success">Council for Yoga & Social
+                                                                Transformation</cite>
+                                                        </span>
+                                                    </footer>
+
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="card mb-4">
+                                            <div class="card-body">
+                                                <blockquote class=" ">
+                                                    <i class="fa fa-quote-right fa-2x text-muted pull-right mt-3 mb-3"
+                                                        aria-hidden="true"></i>
+                                                    <p class=" m-0 text-muted ">
+                                                        I'm Anita Rani Behera, the head of "Satyam Soham Ayur Yoga
+                                                        Institute" in Mayurbhanj, Odisha. Partnering with Yogkulam
+                                                        to offer their training courses has been incredible. With 15
+                                                        lakhs in yearly revenue, we've trained over 10,000 students,
+                                                        spreading the gift of yoga in our community.
+                                                    </p>
+                                                    <footer class="blockquote-footer small p-1 mt-2">
+
+                                                        <span class="small">Anita Rani Behera
+                                                            <cite class="text-success">Satyam Soham Ayur Yoga
+                                                                Institute</cite>
+                                                        </span>
+                                                    </footer>
+
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4">
+                                            <div class="card-body">
+                                                <blockquote class=" ">
+                                                    <i class="fa fa-quote-right fa-2x text-muted pull-right mt-3 mb-3"
+                                                        aria-hidden="true"></i>
+                                                    <p class=" m-0 text-muted ">
+                                                        I'm Rajendra Yadav, leading "Kalawati Yoga Prashikshan
+                                                        Kendra" in Siwan, Bihar. Yogkulam's support has been
+                                                        invaluable in our journey. While our annual revenue is 8
+                                                        lakhs, we have been contributing to the education sector for
+                                                        a decade, making a difference.
+                                                    </p>
+                                                    <footer class="blockquote-footer small p-1 mt-2">
+                                                        <span class="small">Kalawati Yoga Prashikshan Kendra
+                                                            <cite class="text-success">Rajendra Yadav</cite>
+                                                        </span>
+                                                    </footer>
+
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4">
+                                            <div class="card-body">
+                                                <blockquote class=" ">
+                                                    <i class="fa fa-quote-right fa-2x text-muted pull-right mt-3 mb-3"
+                                                        aria-hidden="true"></i>
+                                                    <p class=" m-0 text-muted ">
+                                                        I'm Srikant Parida, running "MDVTI India" in Dhenkanal,
+                                                        Odisha. Yogkulam has enabled us to provide quality yoga
+                                                        education. With an annual revenue of 8-9 lakhs, we've
+                                                        trained nearly 7,000 students over 15 years, promoting
+                                                        holistic wellness.
+                                                    </p>
+                                                    <footer class="blockquote-footer small p-1 mt-2">
+                                                        <span class="small">Srikant Parida
+                                                            <cite class="text-success">MDVTI India(Dhenkanal,
+                                                                Odisha)</cite>
+                                                        </span>
+                                                    </footer>
+
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4">
+                                            <div class="card-body">
+                                                <blockquote class=" ">
+                                                    <i class="fa fa-quote-right fa-2x text-muted pull-right mt-3 mb-3"
+                                                        aria-hidden="true"></i>
+                                                    <p class=" m-0 text-muted ">
+                                                        I'm Vishnu Swami, representing "Shree Rameshwar Das Yoga
+                                                        Education Institutions" in Parihara. Our partnership with
+                                                        Yogkulam generates 10 lakhs in annual revenue, furthering
+                                                        yoga education in our area. We aim to enrich lives through
+                                                        the practice and knowledge of yoga.
+                                                    </p>
+                                                    <footer class="blockquote-footer small p-1 mt-2">
+                                                        <span class="small"> Vishnu Swami
+                                                            <cite class="text-success">Shree Rameshwar Das Yoga
+                                                                Education Institutions</cite>
+                                                        </span>
+                                                    </footer>
+
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card mb-4">
+                                            <div class="card-body">
+                                                <blockquote class=" ">
+                                                    <i class="fa fa-quote-right fa-2x text-muted pull-right mt-3 mb-3"
+                                                        aria-hidden="true"></i>
+                                                    <p class=" m-0 text-muted ">
+                                                        I'm Jatvedav V. Arya, heading "Vaidik Yoga Arogya Kendra" in
+                                                        Surat, Gujarat. Thanks to Yogkulam, our annual revenue is 10
+                                                        lakhs. As an officially trained international yoga teacher,
+                                                        I'm dedicated to sharing the profound benefits of yoga.
+                                                    </p>
+                                                    <footer class="blockquote-footer small p-1 mt-2">
+                                                        <span class="small">Jatvedav V. Arya
+                                                            <cite class="text-success">Vaidik Yoga Arogya
+                                                                Kendra</cite>
+                                                        </span>
+                                                    </footer>
+
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Avanahan my-4">
+                <h1 class="mb-5 display-4"> What is Project Avahan & Why you should Join this Project?
+                </h1>
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="image-container">
+                            <img src="/img/avahan.jpg" class="img-fluid" srcset=""
+                                style="border-radius: 50%; object-fit: cover;">
+                            <div class="border-rotate"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="container">
+                            <p class="text-secondary">The aim is to establish influential centers that nurture and
+                                shape
+                                masters of yoga.’
+
+                                Project Aavahan represents Yogkulam's earnest endeavor to unite a community of
+                                enthusiastic
+                                individuals from India and across the globe. This diverse group includes proponents
+                                of
+                                ancient
+                                yogic
+                                wisdom and practices, those committed to dedicating their time and energy to
+                                cultivate
+                                yoga
+                                masters
+                                worldwide, and individuals possessing a keen business acumen, recognizing the
+                                intrinsic
+                                value of
+                                fitness and the potential for financial gain.
+
+                                In the contemporary landscape, the significance of health and wellness has taken
+                                center
+                                stage,
+                                particularly in the wake of the COVID-19 pandemic. Many individuals have embraced
+                                yoga
+                                as their
+                                preferred way of life, drawn by its myriad advantages encompassing enhanced physical
+                                and
+                                mental
+                                well-being, stress reduction, and the fostering of a positive mindset. Consequently,
+                                there has
+                                been
+                                a substantial surge in demand for trained yoga professionals, as people seek
+                                guidance on
+                                their
+                                spiritual journeys. This upswing mirrors the shifting employment market, evolving
+                                lifestyle
+                                preferences, and a burgeoning yearning for inner tranquility.
+
+                                At Yogkulam, our vision is clear: to impact lives worldwide through the timeless
+                                wisdom
+                                and
+                                traditions of yoga. Project Aavahan serves as a pivotal component of this mission,
+                                aimed
+                                at
+                                establishing influential centers dedicated to nurturing and molding yoga masters.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="our-presence">
+        <div class="our-presence container">
+            <div class="row">
+                <h1 class="display-5 mb-3  py-4">Our Presence</h1>
+                <div class="container-fluid col-xxl-11 px-5 p-2">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Himachal Pradesh</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Madhya Pradesh</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Punjab</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Assam</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Haryana</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Jharkhand</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Uttrakhand</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> West Bengal </h6>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Delhi NCR</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Orissa</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Uttar Pradesh</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Chattisgarh</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Bihar</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Goa</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Rajasthan</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Maharstra</h6>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="state-name bg-light shadow px-3 py-2 my-2">
+                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Gujrat</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md -6">
+                            <img src="img/map.png" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="affiliations">
+        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s"
+            style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+            <div class="container">
+                <h1 class="display-5 mb-3  py-4 ">Our Affiliations</h1>
+                <div class="owl-carousel govlogo-carousel owl-loaded owl-drag">
+                    <div class="owl-stage-outer">
+                        <div class="owl-stage"
+                            style="transform: translate3d(-1513px, 0px, 0px); transition: all 0.25s ease 0s; width: 3406px;">
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/4.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/5.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/6.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/7.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/8.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/1.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/2.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/3.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item active" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/4.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item active" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/5.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item active" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/6.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item active" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/7.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item active" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/8.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/1.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/2.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/3.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/4.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                            <div class="owl-item cloned" style="width: 179.2px; margin-right: 10px;">
+                                <div class="testimonial-item text-center">
+                                    <img class="img-fluid bg-light p-2 mx-auto mb-3 shadow" src="img/gov_logo/5.jpg"
+                                        style="width:250px; height: auto;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><i
+                                class="fas fa-arrow-circle-left"></i></button><button type="button" role="presentation"
+                            class="owl-next"><i class="fas fa-arrow-circle-right"></i></button></div>
+                    <div class="owl-dots"><button role="button" class="owl-dot active"><span></span></button><button
+                            role="button" class="owl-dot"><span></span></button></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="timeline_area section_padding_130">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 mb-5">
+                    <!-- Section Heading-->
+                    <div class="section_heading ">
+                        <h3 class="display-4">Steps to Become our Franchise</h3>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-9">
+                    <!-- Timeline Area-->
+                    <div class="apland-timeline-area">
+                        <!-- Single Timeline Content-->
+                        <div class="single-timeline-area">
+                            <div class="timeline-date" data-wow-delay="0.1s"
+                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                <strong>Step 1</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="single-timeline-content d-flex" data-wow-delay="0.3s"
+                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                        <div class="timeline-icon"><i class="fa fa-check" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Check Business Proposal and Fill the
+                                                Franchise Form
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="single-timeline-area">
+                            <div class="timeline-date" data-wow-delay="0.1s"
+                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                <strong>Step 2</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="single-timeline-content d-flex" data-wow-delay="0.3s"
+                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                        <div class="timeline-icon"><i class="fa fa-" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Location Verification and Inspection</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="single-timeline-area">
+                            <div class="timeline-date" data-wow-delay="0.1s"
+                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                <strong>Step 3</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="single-timeline-content d-flex" data-wow-delay="0.3s"
+                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                        <div class="timeline-icon"><i class="fa fa-id-card" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Document Verification and Franchise Fee
+                                                Deposite</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-timeline-area">
+                            <div class="timeline-date" data-wow-delay="0.1s"
+                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                <strong>Step 4</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="single-timeline-content d-flex" data-wow-delay="0.3s"
+                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                        <div class="timeline-icon"><i class="fa fa-id-card" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Center Code and Franchise Panel Allotment
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="single-timeline-area">
+                            <div class="timeline-date" data-wow-delay="0.1s"
+                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
+                                <strong>Step 5</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="single-timeline-content d-flex" data-wow-delay="0.3s"
+                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
+                                        <div class="timeline-icon"><i class="fa fa-id-card" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Three Day Training Session</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
+        style="background-image: url(img/bg.png); background-size:auto">
+        <div class="container py-3">
+            <div class="row g-1">
+                <div class="col-lg-4 col-md-6 ">
+                    <h4 class="text-light mb-4">Address</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar, Lucknow
+                        (U.P.)-226022
+                    </p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Admission Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry : 1800-891-9232</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry : +91-9628865047</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@mdvtiindia.org</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
+                                class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-light mb-4">Important Links</h4>
+                    <a class="btn btn-link" href="">Latest Events </a>
+                    <a class="btn btn-link" href="">Current Vacancies </a>
+                    <a class="btn btn-link" href="">Authorized Study Center</a>
+                    <a class="btn btn-link" href="">Blacklisted Centers</a>
+                    <a class="btn btn-link" href="">Selected students in Government and Private Jobs</a>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="">Refund Policy</a>
+                    <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Support</a>
+
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <div class="mx-auto text-center">
+                        <img src="img/footer-logo.png" width="100px">
+                        <div class="mt-4 visitor">
+                            <h3 class="mt-2 text-white">Total visitors</h3>
+                            <h4 class="mt-2 text-white">987678</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="text-white bg-primary px-5 py-3">Pay now</a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright mt-1">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <!-- Load the core GSAP file -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- Load the GSAP plugins you want to use -->
+
+    <!-- Load the ScrollMagic library and its plugin for GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/gsapanimation.js"></script>
+
+</body>
+
+</html>

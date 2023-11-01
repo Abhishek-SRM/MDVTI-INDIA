@@ -11,7 +11,7 @@
   };
   spinner();
 
-  $(window).on('DOMContentLoaded', function() {
+  $(window).on('DOMContentLoaded', function () {
     $('#exampleModalCenter').modal('show');
   });
 
@@ -21,11 +21,7 @@
 
   // Sticky Navbar
   $(window).scroll(function () {
-    if ($(this).scrollTop() > 240) {
-      $('.sticky-top').addClass('shadow-sm').css('top', '0px');
-    } else {
-      $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
-    }
+ 
   });
 
 
@@ -35,6 +31,11 @@
       $('.back-to-top').fadeIn('slow');
     } else {
       $('.back-to-top').fadeOut('slow');
+    }
+    if ($(this).scrollTop() > 240) {
+      $('.sticky-top').addClass('shadow-sm').css('top', '0px');
+    } else {
+      $('.sticky-top').removeClass('shadow-sm').css('top', '-100px');
     }
   });
   $('.back-to-top').click(function () {
@@ -216,11 +217,7 @@
       }
     }
   });
-  // Portfolio isotope and filter
-  // var portfolioIsotope = $('.portfolio-container').isotope({
-  //     itemSelector: '.portfolio-item',
-  //     layoutMode: 'fitRows'
-  // });
+
   $('.owl-carousel').owlCarousel({
     autoplay: true,
     smartSpeed: 1000,
@@ -274,18 +271,6 @@
       }
     }
   })
-  // Portfolio isotope and filter
-  // var portfolioIsotope = $('.portfolio-container').isotope({
-  //     itemSelector: '.portfolio-item',
-  //     layoutMode: 'fitRows'
-  // });
-  // $('#portfolio-flters li').on('click', function () {
-  //     $("#portfolio-flters li").removeClass('active');
-  //     $(this).addClass('active');
-
-  //     portfolioIsotope.isotope({filter: $(this).data('filter')});
-  // });
-
 })(jQuery);
 $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {
@@ -299,14 +284,15 @@ if ($(window).width() <= 767) {
 } else {
   $('#sidebar').removeClass('active');
 }
+
 AOS.init();
 
 function updateBannerImage() {
   const bannerImage = document.querySelector('.banner-image');
-  
+
   if (window.innerWidth <= 768) {
-    bannerImage.style.backgroundPosition= 'center';
-    bannerImage.style.backgroundPositionY ='0';
+    bannerImage.style.backgroundPosition = 'center';
+    bannerImage.style.backgroundPositionY = '0';
     bannerImage.style.backgroundSize = '25rem';
     bannerImage.style.backgroundImage = 'url(img/DSC_0012.png)';
   } else {
@@ -317,8 +303,7 @@ function updateBannerImage() {
   }
 }
 
-// Call the function initially
 updateBannerImage();
 
-// Add event listener for the window resize event
 window.addEventListener('resize', updateBannerImage);
+
