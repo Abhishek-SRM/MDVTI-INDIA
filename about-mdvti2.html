@@ -393,26 +393,29 @@
     </nav>
     <!-- Navbar End -->
     <section id="yogkulam-franchise">
-        <div class="px-5">
+        <div class="px-3 px-lg-5">
             <div class="row g-lg-5 pt-5">
                 <div class="col-lg-5 col-md-6 order-1">
-                    <div style="padding-left: 40px;">
-                        <h4 class="display-5 text-dark typewriter-text" data-aos="fade-up" data-aos-duration="1000">
+                    <div>
+                        <h4 class="display-5 text-dark typewriter-text decorative-heading" data-aos="fade-up"
+                            data-aos-duration="1000">
                             Become Our<br>Franchise Partner
                         </h4>
-                        <hr style="width: 65%;">
+                        <hr class="d-none d-lg-block" style="width: 65%;">
                         <h1 class="decorative-heading"><span style="text-shadow: 2px 2px #ffb100;">Avahan</span> by
                             <sub><small>Yogkulam</small></sub>
                         </h1>
                         <hr style="width: 65%;">
 
-                        <div class="rounded-pill">
-                            <a href="#" class="btn btn-lg btn-warning text-dark">
-                                Join Our Free Webinar <span class="fw-bold text-uppercase">with Mr. Manish Sir</span>
-                            </a>
+                        <div class="rounded-pill gsap-animation" id="button-container">
+                            <small> <a href="#" class="btn btn-small btn-warning text-dark" id="webinar-button">
+                                    Join Our Free Webinar <span class="fw-bold text-uppercase">with Mr. Manish
+                                        Sir</span>
+                                </a></small>
                         </div>
 
-                        <div style="width: 85%; margin-top: 30px; font-weight: 600;">
+                        <div style="width: 85%; margin-top: 30px; font-weight: 600;" class="gsap-animation"
+                            id="text-container">
                             <span>आइए सब साथ मिलें इस महायज्ञ से जुड़ जाएं
                                 योग कर संपूर्ण विश्व को पुन: आर्य बनाएं</span>
                         </div>
@@ -1177,82 +1180,6 @@
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Animating the main heading with a typewriter effect
-            gsap.from(".typewriter-text", {
-                opacity: 0,
-                duration: 1.5,
-                y: -20,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".typewriter-text",
-                    start: "top 80%", // Adjust this value for when you want the animation to start
-                    end: "top 50%", // Adjust this value for when you want the animation to end
-                    toggleActions: "play none none none",
-                },
-            });
-
-            // Animating the "Avahan by Yogkulam" heading with a text-shadow effect
-            gsap.from(".decorative-heading span", {
-                opacity: 0,
-                x: -20,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".decorative-heading span",
-                    start: "top 80%",
-                    end: "top 50%",
-                    toggleActions: "play none none none",
-                },
-            });
-
-            // Staggered animation for the list items under "Benefits"
-            gsap.from("ul li", {
-                opacity: 0,
-                x: -80,
-                duration: 0.8,
-                ease: "power2.out",
-                stagger: 0.2, // Add a stagger effect to each list item
-                scrollTrigger: {
-                    start: "top 50%",
-                    end: "top 50%",
-                    toggleActions: "play none none none",
-                },
-            });
-
-            // Zoom-in animation for the form on the right
-            gsap.from(".right-form", {
-                opacity: 0,
-                scale: 0.8,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".right-form",
-                    start: "top 80%",
-                    end: "top 50%",
-                    toggleActions: "play none none none",
-                },
-            });
-
-            // Animating the background image
-            gsap.from(".form-right img", {
-                opacity: 0,
-                x: -40,
-                duration: 1,
-                ease: "power2.out",
-                scrollTrigger: {
-                    trigger: ".form-right",
-                    start: "top 80%",
-                    end: "top 50%",
-                    toggleActions: "play none none none",
-                },
-            });
-        });
-    </script>
 </body>
 
 </html>
