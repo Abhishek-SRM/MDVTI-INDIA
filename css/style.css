@@ -1360,11 +1360,11 @@ header:hover .owl-next {
     width: 100%;
 }
 
-@media (max-width: 767.98px) {
+/* @media (max-width: 767.98px) {
     .right-form {
         margin-top: 45%;
     }
-}
+} */
 
 main {
     display: block;
