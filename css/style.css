@@ -1360,6 +1360,10 @@ header:hover .owl-next {
     width: 100%;
 }
 
+.overflow-hidden {
+    overflow: hidden;
+}
+
 /* @media (max-width: 767.98px) {
     .right-form {
         margin-top: 45%;
