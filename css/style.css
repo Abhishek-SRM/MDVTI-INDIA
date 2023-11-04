@@ -1735,10 +1735,108 @@ main ol.gradient-list>li+li {
     background-position-x: 54%;
     background-size: contain;
 }
-/* 
-#yogkulam-franchise {
-    background-image: url(https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2596.jpg?size=626&ext=jpg&ga=GA1.1.337797375.1697729730&semt=ais);
-    background-size: cover;
-} */
 
-#map { height: 680px; }
+.avahan-image {
+    border-radius: 50%;
+}
+
+/* ======================================START =========================================*/
+/* ======================Learnings from Yogkulam’s  Cards Css ==========================*/
+
+.mdvti-agenda-card .ol,
+ol::before,
+ol::after,
+ol *,
+ol *::before,
+ol *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+.mdvti-agenda-card ol {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1rem;
+
+    width: min(60rem, calc(100% - 2rem));
+    margin-inline: auto;
+    padding-block: 1rem;
+
+    list-style: none;
+    counter-reset: count;
+}
+
+/* card layout/styling */
+.mdvti-agenda-card ol>li {
+    --card-background-color: #f0f0f0;
+    --card-text-color: #0F0F0F;
+    --card-border-radius: 0.5rem;
+    --card-padding-block: 1.5rem;
+    --card-padding-inline: 1rem;
+
+    --outset-size: 0.75rem;
+    --outset-background-color: #e5e5e5;
+
+    --number-font-size: 3rem;
+    --number-overlap: 0.5rem;
+    --number-font-family: 'Poppins', sans-serif;
+    --number-font-weight: 500;
+
+    margin: var(--outset-size);
+    margin-top: calc(var(--number-font-size) - var(--number-overlap));
+    border-radius: var(--card-border-radius);
+    padding-block: var(--card-padding-block);
+    padding-inline: var(--card-padding-inline);
+
+    color: var(--card-text-color);
+    background-color: var(--card-background-color);
+    box-shadow:
+        inset 1px 1px 0px rgb(255 255 255 / .5),
+        inset -1px -1px 0px rgb(0 0 0 / .25),
+        calc(var(--outset-size) * .25) calc(var(--outset-size) * .25) calc(var(--outset-size) * .5) rgb(0 0 0 / .25);
+    position: relative;
+    counter-increment: count;
+}
+
+.mdvti-agenda-card ol>li::after {
+    content: counter(count, decimal-leading-zero);
+    position: absolute;
+
+    bottom: calc(100% - var(--number-overlap));
+    left: 50%;
+    transform: translateX(-50%);
+
+    color: var(--accent-color);
+    font-family: var(--number-font-family);
+    font-weight: var(--number-font-weight);
+    font-size: var(--number-font-size);
+    line-height: 1;
+    z-index: -1;
+}
+
+.mdvti-agenda-card ol>li::before {
+    content: "";
+    position: absolute;
+    width: calc(100% + (var(--outset-size) * 2));
+    height: 100%;
+    bottom: calc(var(--outset-size) * -1);
+    left: calc(var(--outset-size) * -1);
+    z-index: -1;
+
+    border-bottom-left-radius: calc(var(--card-border-radius) + var(--outset-size));
+    border-bottom-right-radius: calc(var(--card-border-radius) + var(--outset-size));
+
+    background-color: var(--outset-background-color);
+
+    background-image:
+        linear-gradient(to left, var(--outset-background-color) calc(var(--outset-size) * 2), transparent 0),
+        linear-gradient(135deg, var(--accent-color) 80%, var(--outset-background-color) 0);
+}
+
+/* ======================Learnings from Yogkulam’s  Cards Css ==========================*/
+/* ======================================END =========================================*/
+
+#map {
+    height: 680px;
+}

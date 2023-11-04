@@ -35,281 +35,6 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/mdvti_blog.css" rel="stylesheet">
 </head>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;400;600&display=swap');
-
-    body {
-        font-family: 'Poppins', sans-serif;
-        background-color: rgba(238, 238, 238, 0.267);
-        background-image: url("img/bg.png");
-    }
-
-    img {
-        max-width: 100%;
-        height: auto;
-
-    }
-
-    p {
-        font-family: 'Poppins', sans-serif;
-        font-size: 17px;
-        line-height: 31px;
-        text-align: justify;
-        color: #000;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    li {
-        margin: 5px 0px;
-        /* Margin for spacing between list items */
-        display: inline-block;
-        /* Display items in a row */
-        position: relative;
-    }
-
-
-    #yogkulam-franchise {
-        background-color: antiquewhite;
-    }
-
-    .highlights h6 {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .pr3-get-right .pr3-get-vector-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 400px;
-    }
-
-    .pr3-get-right {
-        position: relative;
-    }
-
-    .pr3-about-section {
-        padding: 100px 0;
-        position: relative;
-    }
-
-    .pr20-project-content .pr20-project-column .pr20-headline h2 {
-        display: inline-block;
-        color: #8B2025;
-    }
-
-    @media (max-width: 991.98px) {
-        .pr20-business-section {
-            padding-top: 100px;
-        }
-    }
-
-    ol,
-    ol::before,
-    ol::after,
-    ol *,
-    ol *::before,
-    ol *::after {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box
-    }
-
-    ol {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
-        gap: 1rem;
-
-        width: min(60rem, calc(100% - 2rem));
-        margin-inline: auto;
-        padding-block: 1rem;
-
-        list-style: none;
-        counter-reset: count;
-    }
-
-    /* card layout/styling */
-    ol>li {
-        --card-background-color: #f0f0f0;
-        --card-text-color: #0F0F0F;
-        --card-border-radius: 0.5rem;
-        --card-padding-block: 1.5rem;
-        --card-padding-inline: 1rem;
-
-        --outset-size: 0.75rem;
-        --outset-background-color: #e5e5e5;
-
-        --number-font-size: 3rem;
-        --number-overlap: 0.5rem;
-        --number-font-family: 'Poppins', sans-serif;
-        --number-font-weight: 500;
-
-        margin: var(--outset-size);
-        margin-top: calc(var(--number-font-size) - var(--number-overlap));
-        border-radius: var(--card-border-radius);
-        padding-block: var(--card-padding-block);
-        padding-inline: var(--card-padding-inline);
-
-        color: var(--card-text-color);
-        background-color: var(--card-background-color);
-        box-shadow:
-            inset 1px 1px 0px rgb(255 255 255 / .5),
-            inset -1px -1px 0px rgb(0 0 0 / .25),
-            calc(var(--outset-size) * .25) calc(var(--outset-size) * .25) calc(var(--outset-size) * .5) rgb(0 0 0 / .25);
-        position: relative;
-        counter-increment: count;
-    }
-
-    ol>li::after {
-        content: counter(count, decimal-leading-zero);
-        position: absolute;
-
-        bottom: calc(100% - var(--number-overlap));
-        left: 50%;
-        transform: translateX(-50%);
-
-        color: var(--accent-color);
-        font-family: var(--number-font-family);
-        font-weight: var(--number-font-weight);
-        font-size: var(--number-font-size);
-        line-height: 1;
-        z-index: -1;
-    }
-
-    ol>li::before {
-        content: "";
-        position: absolute;
-        width: calc(100% + (var(--outset-size) * 2));
-        height: 100%;
-        bottom: calc(var(--outset-size) * -1);
-        left: calc(var(--outset-size) * -1);
-        z-index: -1;
-
-        border-bottom-left-radius: calc(var(--card-border-radius) + var(--outset-size));
-        border-bottom-right-radius: calc(var(--card-border-radius) + var(--outset-size));
-
-        background-color: var(--outset-background-color);
-
-        background-image:
-            linear-gradient(to left, var(--outset-background-color) calc(var(--outset-size) * 2), transparent 0),
-            linear-gradient(135deg, var(--accent-color) 80%, var(--outset-background-color) 0);
-    }
-
-    /* card content */
-    h1 {
-        font-size: 2.5rem;
-        font-weight: normal
-    }
-
-    .icon {
-        font-size: 2rem;
-        text-align: center;
-        margin-bottom: calc(var(--card-padding-block) * .5);
-    }
-
-    .title {
-        font-family: var(--number-font-family);
-        text-transform: uppercase;
-        text-align: center;
-        color: var(--accent-color)
-    }
-
-    .descr {
-        color: var(--text-color);
-        font-size: 0.75rem;
-        text-align: center;
-    }
-
-    .twohrslearning {
-        font-size: 18px;
-    }
-
-    .list-group {
-        list-style: none;
-        padding: 0;
-    }
-
-    .list-group-item {
-        position: relative;
-        display: block;
-        padding: 0.5rem 1rem;
-        color: #212529;
-        background-color: #fff;
-        border: 1px solid rgba(0, 0, 0, 0.125);
-        font-size: 16px;
-        margin: 16px;
-
-    }
-
-    .list-group-item::before {
-        content: attr(data-number);
-        position: absolute;
-        left: -16px;
-        top: 18px;
-        width: 30px;
-        height: 30px;
-        background-color: #fd6e00;
-        color: #fff;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 14px;
-        transition: transform 0.2s ease-in-out;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .list-group-item:hover::before {
-        transform: scale(1.2);
-        /* Scale up on hover */
-    }
-
-    .image-container {
-        position: relative;
-
-    }
-
-    .image-container img {
-        box-shadow: 0px 0px 72px 15px rgba(194, 194, 194, 0.344);
-    }
-
-    .border-rotate {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 4px dashed #faa23a;
-        border-radius: 50%;
-        animation: rotateBorder 12s linear infinite;
-        /* Adjust animation duration as needed */
-    }
-
-    @keyframes rotateBorder {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    blockquote p {
-        font-size: 14px;
-        line-height: 23px;
-        word-spacing: 1px;
-    }
-
-    blockquote>footer span>cite {
-        font-weight: 700;
-    }
-</style>
 
 <body>
     <!-- Spinner Start -->
@@ -406,12 +131,12 @@
                         <h4 class="display-5 text-dark typewriter-text decorative-heading" data-aos="fade-right">
                             Become Our<br>Franchise Partner
                         </h4>
-                        <hr class="d-none d-lg-block" style="width: 65%;">
+
                         <h1 class="decorative-heading" data-aos="fade-right" data-aos-delay="300"><span
                                 style="text-shadow: 2px 2px #ffb100;">आवाहन</span> by
                             <sub><small>योगकुलम</small></sub>
                         </h1>
-                        <hr style="width: 65%;">
+                        <hr>
 
                         <div class="rounded-pill gsap-animation" data-aos="fade-right" data-aos-delay="300"
                             id="button-container">
@@ -421,8 +146,7 @@
                                 </a></small>
                         </div>
 
-                        <div style="margin-top: 30px; font-weight: 600;" id="text-container" data-aos="fade-right"
-                            data-aos-delay="500">
+                        <div class="mt-5 fw-bolder" id="text-container" data-aos="fade-right" data-aos-delay="500">
                             <small class="text-dark">आइए सब साथ मिलें इस महायज्ञ से जुड़ जाएं
                                 योग कर संपूर्ण विश्व को पुन: आर्य बनाएं</small>
                         </div>
@@ -484,7 +208,7 @@
                 </div>
                 <div class="text-center mb-5" data-aos="fade-up" data-aos-anchor-placement="top-bottom"
                     data-aos-delay="200"> <a class="text-center tag">Todays Agenda</a></div>
-                <div class="container">
+                <div class="container mdvti-agenda-card">
                     <ol data-aos="zoom-in-up">
                         <li style="--accent-color: #FF6F00">
                             <div class="icon"><i class="fa-light fa-lightbulb-exclamation-on"></i></div>
@@ -516,34 +240,36 @@
                     </ol>
                 </div>
 
-                <ul class="list-group list-group-flush mt-5">
-                    <li class="list-group-item" data-number="1" data-aos="fade-left" data-aos-duration="500">Unpacking
+                <ol class="list-group list-group-flush mt-5">
+                    <li class="list-group-item m-3" data-number="1" data-aos="fade-left" data-aos-duration="500">
+                        Unpacking
                         the Franchise Business Model: Learn
                         about
                         our franchise model, our operational approach, the milestones we've reached, and what
                         Project Avahan has in store for you.</li>
-                    <li class="list-group-item" data-number="2" data-aos="fade-left" data-aos-delay="100">Why Choose
+                    <li class="list-group-item m-3" data-number="2" data-aos="fade-left" data-aos-delay="100">Why Choose
                         Yogkulam's Avahan:
                         Explore why Yogkulam's
                         Avahan stands out as the superior option amidst the alternatives available in the market.
                     </li>
-                    <li class="list-group-item" data-number="3" data-aos="fade-left" data-aos-delay="200">
+                    <li class="list-group-item m-3" data-number="3" data-aos="fade-left" data-aos-delay="200">
                         Our Work, Ethics, and
                         Support System: Understand how
                         our ethical principles and robust support system have been instrumental in delivering
                         exceptional Yoga Teacher Training services across India.</li>
-                    <li class="list-group-item" data-number="4" data-aos="fade-left" data-aos-delay="300">The Path to
+                    <li class="list-group-item m-3" data-number="4" data-aos="fade-left" data-aos-delay="300">The Path
+                        to
                         Earning: Delve into
                         how Yogkulam has
                         enabled numerous franchises across India to generate substantial income, ranging from 1 Lakh
                         to 5 Lakhs per month.</li>
-                    <li class="list-group-item" data-number="5" data-aos="fade-left" data-aos-duration="500"
+                    <li class="list-group-item m-3" data-number="5" data-aos="fade-left" data-aos-duration="500"
                         data-aos-delay="400">Question
                         and Answer Session: At
                         the culmination of
                         the session, feel free to address your inquiries and concerns about Project Avahan, a
                         Franchise Business Opportunity in the Yoga Teacher Training sector.</li>
-                </ul>
+                </ol>
             </div>
             <section class="aplit-gt-area py-5" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                 <div class="container ">
@@ -745,15 +471,12 @@
                 </h1>
                 <div class="row align-items-center overflow-hidden">
                     <div class="col-md-4 " data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
-                        <div class="image-container">
-                            <img src="/img/avahan.jpg" class="img-fluid" srcset=""
-                                style="border-radius: 50%; object-fit: cover;">
+                        <div class="image-container ">
+                            <img src="/img/avahan.jpg" class="img-fluid object-fit-cover avahan-image">
                             <div class="border-rotate"></div>
                         </div>
                     </div>
-                    <div class="col-md-8" data-aos="fade-left"
-                    data-aos-offset="300"
-                    data-aos-easing="ease-in-sine">
+                    <div class="col-md-8" data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
                         <div class="container">
                             <p class="text-secondary">The aim is to establish influential centers that nurture and
                                 shape
@@ -923,8 +646,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="map" data-aos="fade-up"
-                            data-aos-anchor-placement="top-center"></div>
+                            <div id="map" data-aos="fade-up" data-aos-anchor-placement="top-center"></div>
 
                         </div>
                     </div>
@@ -1046,9 +768,9 @@
         </div>
     </section>
     <section id="affiliations">
-        <div class="container-xxl py-5" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+        <div class="container-xxl py-5">
             <div class="container">
-                <h1 class="display-5 mb-3  py-4 ">Our Affiliations</h1>
+                <h1 class="display-5 mb-3 py-4 ">Our Affiliations</h1>
                 <div class="owl-carousel govlogo-carousel owl-loaded owl-drag">
                     <div class="owl-stage-outer">
                         <div class="owl-stage" style="transform: translate3d(-1513px, 0px, 0px); width: 3406px;">
