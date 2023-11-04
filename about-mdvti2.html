@@ -21,7 +21,8 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
@@ -527,6 +528,29 @@
                         Franchise Business Opportunity in the Yoga Teacher Training sector.</li>
                 </ul>
             </div>
+            <section class="aplit-gt-area py-5">
+                <div class="container ">
+                    <div class="aplit-gt-wrapper shadow"
+                        style="background-image: url(img/bg.png); background-size: contain; background-repeat: repeat;">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <div class="aplit-gt-left">
+                                    <span class="subtitle">MDVTI INDIA</span>
+                                    <div class="aplit-headline">
+                                        <h3>Register for Free Classes Now</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="aplit-gt-right ">
+                                    <a href="#" class="bg-white px-5 py-3 shadow">Enroll Now</a>
+                                </div>
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <div class="my-4 pt-5">
                 <h1 class="mb-5 display-5"> Top 10 Franchise Success Stories with Our Systems.
                 </h1>
@@ -687,6 +711,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="text-center">
+                        <a class="button-48 bg-primary text-light" href="#">Enroll Now</a>
+                    </div>
                 </div>
             </div>
 
@@ -760,105 +787,236 @@
         <div class="our-presence container">
             <div class="row">
                 <h1 class="display-5 mb-3  py-4">Our Presence</h1>
+                <h3 class="text-center">List of States</h3>
+
                 <div class="container-fluid col-xxl-11 px-5 p-2">
                     <div class="row align-items-center">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Himachal Pradesh</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Himachal Pradesh
+                                        </h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Madhya Pradesh</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Madhya Pradesh</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Punjab</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Punjab</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Assam</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Assam</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Haryana</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Haryana</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Jharkhand</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Jharkhand</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Uttrakhand</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Uttrakhand</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> West Bengal </h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> West Bengal </h6>
                                     </div>
                                 </div>
 
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Delhi NCR</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Delhi NCR</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Orissa</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Orissa</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Uttar Pradesh</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Uttar Pradesh</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Chattisgarh</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Chattisgarh</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Bihar</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Bihar</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Goa</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Goa</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Rajasthan</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Rajasthan</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Maharstra</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Maharstra</h6>
                                     </div>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-3">
                                     <div class="state-name bg-light shadow px-3 py-2 my-2">
-                                        <h6><i class="fas fa-angle-double-right text-primary"></i> Gujrat</h6>
+                                        <h6 class="decorative-heading my-1"><i
+                                                class="fas fa-angle-double-right text-primary"></i> Gujrat</h6>
                                     </div>
                                 </div>
                             </div>
+                            <div id="map"></div>
 
-                        </div>
-                        <div class="col-md -6">
-                            <img src="img/map.png" class="img-fluid">
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="timeline_area section_padding_130">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 mb-5">
+                    <!-- Section Heading-->
+                    <div class="section_heading ">
+                        <h3 class="display-4 mt-5">Steps to Become our Franchise</h3>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Timeline Area-->
+                    <div class="apland-timeline-area">
+                        <!-- Single Timeline Content - Step 1 -->
+                        <div class="single-timeline-area">
+                            <div class="timeline-date">
+                                <strong>Step 1</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="single-timeline-content d-flex">
+                                        <div class="timeline-icon"><i class="fas fa-file-alt" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Check Business Proposal and Fill the
+                                                Franchise Form</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Timeline Content - Step 2 -->
+                        <div class="single-timeline-area">
+                            <div class="timeline-date">
+                                <strong>Step 2</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="single-timeline-content d-flex">
+                                        <div class="timeline-icon"><i class="fas fa-search-location"
+                                                aria-hidden="true"></i></div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Location Verification and Inspection</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Timeline Content - Step 3 -->
+                        <div class="single-timeline-area">
+                            <div class="timeline-date">
+                                <strong>Step 3</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="single-timeline-content d-flex">
+                                        <div class="timeline-icon"><i class="fas fa-id-card" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Document Verification and Franchise Fee
+                                                Deposit</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Timeline Content - Step 4 -->
+                        <div class="single-timeline-area">
+                            <div class="timeline-date">
+                                <strong>Step 4</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="single-timeline-content d-flex">
+                                        <div class="timeline-icon"><i class="fas fa-id-card" aria-hidden="true"></i>
+                                        </div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Center Code and Franchise Panel Allotment
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Single Timeline Content - Step 5 -->
+                        <div class="single-timeline-area">
+                            <div class="timeline-date">
+                                <strong>Step 5</strong>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-md-12">
+                                    <div class="single-timeline-content d-flex">
+                                        <div class="timeline-icon"><i class="fas fa-chalkboard-teacher"
+                                                aria-hidden="true"></i></div>
+                                        <div class="timeline-text">
+                                            <h6 class="decorative-heading">Three Day Training Session</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <section id="affiliations">
@@ -987,122 +1145,7 @@
             </div>
         </div>
     </section>
-    <section class="timeline_area section_padding_130">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 mb-5">
-                    <!-- Section Heading-->
-                    <div class="section_heading ">
-                        <h3 class="display-4">Steps to Become our Franchise</h3>
-                        <div class="line"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <!-- Timeline Area-->
-                    <div class="apland-timeline-area">
-                        <!-- Single Timeline Content-->
-                        <div class="single-timeline-area">
-                            <div class="timeline-date"
-                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                                <strong>Step 1</strong>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-12">
-                                    <div class="single-timeline-content d-flex"
-                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                        <div class="timeline-icon"><i class="fa fa-check" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="timeline-text">
-                                            <h6 class="decorative-heading">Check Business Proposal and Fill the
-                                                Franchise Form
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="single-timeline-area">
-                            <div class="timeline-date"
-                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                                <strong>Step 2</strong>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="single-timeline-content d-flex"
-                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                        <div class="timeline-icon"><i class="fa fa-" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="timeline-text">
-                                            <h6 class="decorative-heading">Location Verification and Inspection</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="single-timeline-area">
-                            <div class="timeline-date"
-                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                                <strong>Step 3</strong>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-12">
-                                    <div class="single-timeline-content d-flex"
-                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                        <div class="timeline-icon"><i class="fa fa-id-card" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="timeline-text">
-                                            <h6 class="decorative-heading">Document Verification and Franchise Fee
-                                                Deposite</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-timeline-area">
-                            <div class="timeline-date"
-                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                                <strong>Step 4</strong>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-12">
-                                    <div class="single-timeline-content d-flex"
-                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                        <div class="timeline-icon"><i class="fa fa-id-card" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="timeline-text">
-                                            <h6 class="decorative-heading">Center Code and Franchise Panel Allotment
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-timeline-area">
-                            <div class="timeline-date"
-                                style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInLeft;">
-                                <strong>Step 5</strong>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-12">
-                                    <div class="single-timeline-content d-flex"
-                                        style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInLeft;">
-                                        <div class="timeline-icon"><i class="fa fa-id-card" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="timeline-text">
-                                            <h6 class="decorative-heading">Three Day Training Session</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <div class="container-fluid text-light footer mt-5 pt-5 footer"
         style="background-image: url(img/bg.png); background-size:auto">
@@ -1182,8 +1225,46 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([22.5937, 83.9629], 5); // Set the initial center and zoom level
+
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Define an array of state names and their coordinates
+        var states = [
+            { name: 'Himachal Pradesh', lat: 32.084206, lon: 77.571167 },
+            { name: 'Madhya Pradesh', lat: 22.9734, lon: 78.6569 },
+            { name: 'Punjab', lat: 31.1471, lon: 75.3412 },
+            { name: 'Assam', lat: 26.2006, lon: 92.9376 },
+            { name: 'Haryana', lat: 29.0588, lon: 76.0856 },
+            { name: 'Jharkhand', lat: 23.6102, lon: 85.2799 },
+            { name: 'Uttrakhand', lat: 30.0668, lon: 79.0193 },
+            { name: 'West Bengal', lat: 22.9868, lon: 87.8550 },
+            { name: 'Delhi NCR', lat: 28.6139, lon: 77.2090 },
+            { name: 'Orissa', lat: 20.9517, lon: 85.0985 },
+            { name: 'Uttar Pradesh', lat: 26.8467, lon: 80.9462 },
+            { name: 'Chattisgarh', lat: 21.2787, lon: 81.8661 },
+            { name: 'Bihar', lat: 25.0961, lon: 85.3131 },
+            { name: 'Goa', lat: 15.2993, lon: 74.1240 },
+            { name: 'Rajasthan', lat: 27.0238, lon: 74.2179 },
+            { name: 'Maharashtra', lat: 19.7515, lon: 75.7139 },
+            { name: 'Gujarat', lat: 22.2587, lon: 71.1924 },
+        ];
+
+        // Loop through the states and add markers to the map
+        states.forEach(function (state) {
+            var marker = L.marker([state.lat, state.lon]).addTo(map);
+            marker.bindPopup('<h6 class="decorative-heading m-0"><i class="fas fa-angle-double-right text-primary"></i> ' + state.name + '</h6>');
+        });
+    </script>
 </body>
 
-</html>
+</html>#c50606#c50606

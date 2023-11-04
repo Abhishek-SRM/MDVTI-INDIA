@@ -1547,7 +1547,6 @@ main ol.gradient-list>li+li {
     transition-duration: 500ms;
     width: 30px;
     height: 30px;
-
     background-color: #8B2025;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 30px;
@@ -1573,15 +1572,7 @@ main ol.gradient-list>li+li {
     margin-bottom: 0;
 }
 
-.single-timeline-area .single-timeline-content:hover .timeline-icon,
-.single-timeline-area .single-timeline-content:focus .timeline-icon {
-    background-color: #020710;
-}
 
-.single-timeline-area .single-timeline-content:hover .timeline-text h6,
-.single-timeline-area .single-timeline-content:focus .timeline-text h6 {
-    color: #3f43fd;
-}
 
 .highlighted {
     fill: yellow;
@@ -1698,7 +1689,7 @@ main ol.gradient-list>li+li {
 .button-48:before {
     animation: opacityFallbackOut .5s step-end forwards;
     backface-visibility: hidden;
-    background-color: #EBEBEB;
+    background-color: rgba(213, 42, 12, 0.414);
     clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
     content: "";
     height: 100%;
@@ -1749,3 +1740,5 @@ main ol.gradient-list>li+li {
     background-image: url(https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2596.jpg?size=626&ext=jpg&ga=GA1.1.337797375.1697729730&semt=ais);
     background-size: cover;
 } */
+
+#map { height: 680px; }

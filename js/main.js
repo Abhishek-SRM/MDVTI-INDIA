@@ -306,4 +306,3 @@ function updateBannerImage() {
 updateBannerImage();
 
 window.addEventListener('resize', updateBannerImage);
-
