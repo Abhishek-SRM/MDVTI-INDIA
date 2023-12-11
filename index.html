@@ -228,17 +228,6 @@
         line-height: 1.5;
     }
 
-    /* Styling for the "amazing" bullet */
-    li::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 8px;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: rgb(255, 255, 255);
-    }
 
     /* Styling for the list item text */
     li span {
@@ -349,41 +338,58 @@
                         class="fa fa-shopping-cart ms-3"></i></a>
             </div>
         </nav>
-
-
-
+        <!-- Navbar End -->
 
         <section id="yogkulam-franchise">
             <div class="px-3 px-lg-5">
                 <div class="row g-lg-5 pt-5">
                     <div class="col-lg-5 col-md-6 order-1">
                         <div>
-                            <!-- Add some space -->
-                            <div class="mb-5"></div>
-
-                            <h4 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);" class="display-3 decorative-heading text-light" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="mb-2"></div>
+                            <h4 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);"
+                                class="display-3 decorative-heading text-light">
                                 Transform your <br>Yoga Passion into Profession
                             </h4>
-                           
-                            <p class="mt-4 p-0 text-light" data-aos="fade-right" data-aos-delay="800">
-                                Embark on a transformative journey in Yoga Teacher Training with Yogkulam. Our programs are designed to be affordable, time-efficient, and yield profitable results. Join us today and unlock the potential of yoga for yourself and others.
-                            </p>
-                            <!-- Add Button -->
-                            <a href="" class="btn btn-primary mt-3 px-2 shadow rounded">Explore More<i
-                                    class="fa-solid fa-down"></i>
-                            </a>
-
+                            <div class="rounded-pill gsap-animation" id="button-container">
+                                <small> <a href="#" class="btn btn-small btn-warning text-dark" id="webinar-button">
+                                        Start your Transformational YTT Jaurney with <span
+                                            class="fw-bold text-uppercase">YOGKULAM</span>
+                                    </a></small>
+                            </div>
+                            <!-- a container with image and text -->
+                            <div class="row mt-3">
+                                <div class="d-flex align-items-center">
+                                    <img src="img/affliaction-1.png" class="img-fluid" width="60px" alt="Avatar" class="image">
+                                    <p class="m-3 pl-4">
+                                        Affiliated to Ministry of Ayush, Govt. of India
+                                    </p>
+                                </div>
+                            </div>
+                            <ul class="text-light text-sm text-md-lg" data-aos-delay="1000"
+                                style="list-style-type: none;">
+                                <li><i class="fa fa-check-circle text-primary"></i> Very Affordable and Less time
+                                    Consuming</li>
+                                <li><i class="fa fa-check-circle text-primary"></i> Less Competition and can Learn
+                                    from
+                                    Here</li>
+                                <li><i class="fa fa-check-circle text-primary"></i> Money comes from Business</li>
+                                <li><i class="fa fa-check-circle text-primary"></i> Work with Purpose: Contribute to
+                                    a
+                                    Noble Cause</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-md-3 d-lg-flex d-none p-0 order-2">
+                    <div class="col-md-3 d-lg-flex d-none p-0 order-2 d-md-none ">
                         <div class="mt-auto">
-                            <img src="img/bg-2.png" class="img-fluid" alt="">
+                            <img src="img/DSC_0011.png" class="img-fluid" alt="">
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 p-0 form-right order-3 py-4" data-aos-delay="240">
                         <form data-aos="zoom-in"
                             class="p-4 border rounded-3 blurry-nav right-form shadow ms-md-auto mt-md-0">
-                            <p class="mb-3 text-center"><b>Experience our demo classes for free! Register today and join us.</b></p>
+                            <p class="mb-3 text-center"><b>Experience our demo classes for free! Register today and
+                                    join
+                                    us.</b></p>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" placeholder="Enter Your Full Name">
                                 <label for="floatingInput">Name</label>

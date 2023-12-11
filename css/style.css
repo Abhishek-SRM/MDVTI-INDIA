@@ -1353,9 +1353,9 @@ header:hover .owl-next {
 }
 
 .container-hero {
-    /* background-image: linear-gradient(45deg, rgb(31 29 10 / 70%), rgb(255 191 0 / 61%)), url(./img/4799045.jpg); */
-    /* Add a linear gradient matching the Theme of the Website */
-    background-image: linear-gradient(45deg, rgba(115, 8, 8, 0.7), rgba(193, 70, 4, 0.61)), url(./img/4799045.jpg);
+    position: relative;
+    width: 100%;
+    background: linear-gradient(107.2deg, rgba(150, 27, 18, 0.723) 10.6%, rgba(230, 132, 4, 0.745) 91.1%) ,url(./img/4799045.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1366,11 +1366,6 @@ header:hover .owl-next {
     overflow: hidden;
 }
 
-/* @media (max-width: 767.98px) {
-    .right-form {
-        margin-top: 45%;
-    }
-} */
 
 main {
     display: block;
