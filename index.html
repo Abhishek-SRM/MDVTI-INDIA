@@ -339,29 +339,29 @@
             </div>
         </nav>
         <!-- Navbar End -->
-
-        <section id="yogkulam-franchise">
-            <div class="px-3 px-lg-5">
+        <section id="yogkulam-franchise" class="d-flex flex-column justify-content-center align-items-center">
+            <div class="container-fluid px-3 px-lg-5">
                 <div class="row g-lg-5 pt-5">
-                    <div class="col-lg-5 col-md-6 order-1">
+                    <div class="col-lg-5 col-md-6 order-md-1 order- d-flex flex-column justify-content-center">
                         <div>
                             <div class="mb-2"></div>
                             <h4 style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); font-size:4vw"
-                                class="display-3 decorative-heading text-light">
+                                class="display-4 decorative-heading text-light text-center text-md-start">
                                 Transform your <br>Yoga Passion into Profession
                             </h4>
-                            <div class="rounded-pill gsap-animation" id="button-container">
-                                <small> <a href="#" class="btn btn-small btn-warning text-dark" id="webinar-button">
-                                        Start your Transformational YTT Jaurney with <span
+                            <div class="rounded-pill gsap-animation d-flex justify-content-center justify-content-md-start"
+                                id="button-container">
+                                <small>
+                                    <a href="#" class="btn btn-small btn-warning text-dark" id="webinar-button">
+                                        Start your Transformational YTT Journey with <span
                                             class="fw-bold text-uppercase">YOGKULAM</span>
-                                    </a></small>
+                                    </a>
+                                </small>
                             </div>
-                            <!-- a container with image and text -->
                             <div class="row mt-3">
                                 <div class="d-flex align-items-center">
-                                    <img src="img/affliaction-1.png" class="img-fluid" width="60px" alt="Avatar"
-                                        class="image">
-                                    <p class="m-3 pl-4">
+                                    <img src="img/affliaction-1.png" class="img-fluid" width="50px" alt="Avatar">
+                                    <p class="m-3 pl-4 text-light">
                                         Affiliated to Ministry of Ayush, Govt. of India
                                     </p>
                                 </div>
@@ -370,27 +370,19 @@
                                 style="list-style-type: none;">
                                 <li><i class="fa fa-check-circle text-primary"></i> Very Affordable and Less time
                                     Consuming</li>
-                                <li><i class="fa fa-check-circle text-primary"></i> Less Competition and can Learn
-                                    from
+                                <li><i class="fa fa-check-circle text-primary"></i> Less Competition and can Learn from
                                     Here</li>
                                 <li><i class="fa fa-check-circle text-primary"></i> Money comes from Business</li>
-                                <li><i class="fa fa-check-circle text-primary"></i> Work with Purpose: Contribute to
-                                    a
+                                <li><i class="fa fa-check-circle text-primary"></i> Work with Purpose: Contribute to a
                                     Noble Cause</li>
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3 d-lg-flex d-none p-0 order-2 d-md-none ">
-                        <div class="mt-auto">
-                            <img src="img/header-2.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 p-0 form-right order-3 py-4" data-aos-delay="240">
-                        <form data-aos="zoom-in"
-                            class="p-4 border rounded-3 blurry-nav right-form shadow ms-md-auto mt-md-0">
-                            <p class="mb-3 text-center"><b>Experience our demo classes for free! Register today and
-                                    join
-                                    us.</b></p>
+                    <div class="col-lg-4 col-md-6 order-md-3 order-1 py-4 d-flex justify-content-center"
+                        id="mdvti-form">
+                        <form data-aos="zoom-in" class="p-4 border rounded-3 blurry-nav right-form shadow w-100">
+                            <p class="mb-3 text-center text-md-start"><b>Experience our demo classes for free! Register
+                                    today and join us.</b></p>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" placeholder="Enter Your Full Name">
                                 <label for="floatingInput">Name</label>
@@ -410,9 +402,17 @@
                             <a class="w-100 btn btn-lg btn-primary" id="otp-btn">Register Now</a>
                         </form>
                     </div>
+                   
+                    <div class="col-md-3 col-sm-6  d-lg-flex d-none order-md-2 order-3 p-0 d-md-none" id="portrait-image">
+                        <div class="mt-auto">
+                            <img src="img/header-2.png" class="img-fluid" alt="" style="min-height: 540px;">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
+
     </section>
 
 
@@ -1119,6 +1119,13 @@
             if ($(document).scrollTop() > 2000 && $("#exampleModal").attr("displayed") === "false") {
                 $('#exampleModal').modal('show');
                 $("#exampleModal").attr("displayed", "true");
+            }
+        }); 
+
+        // if window width is less than 600px, show alert
+        $(window).resize(function () {
+            if ($(window).width() < 1240) {
+               $('#mdvti-form').width() = "100%";
             }
         });
     </script>
