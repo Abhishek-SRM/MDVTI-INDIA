@@ -19,11 +19,6 @@
   new WOW().init();
 
 
-  // Sticky Navbar
-  $(window).scroll(function () {
- 
-  });
-
 
   // Back to top button
   $(window).scroll(function () {
@@ -306,3 +301,10 @@ function updateBannerImage() {
 updateBannerImage();
 
 window.addEventListener('resize', updateBannerImage);
+
+// on Mouse Hover add Event Listener
+const hover = document.querySelector('.feature-item');
+
+hover.addEventListener('mouseover', () => {
+  hover.classList.add('shadow', 'border');
+});
