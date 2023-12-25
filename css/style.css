@@ -1,9 +1,16 @@
 /********** Template CSS **********/
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,1000&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
 :root {
     --primary: #8B2025;
     --light: #F5F5F5;
     --dark: #353535;
+}
+body{
+    color:#4c4c4c;
 }
 
 .blurry-nav {
@@ -140,7 +147,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
@@ -662,7 +669,7 @@
 .olcards {
     list-style: none;
     counter-reset: cardCount;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: flex;
     flex-direction: column;
     --cardsGap: 1rem;
@@ -754,7 +761,7 @@
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 10px;
-    padding: 60px 30px;
+    padding: 30px 50px;
     overflow: hidden;
     position: relative;
     z-index: 10;
@@ -1162,14 +1169,14 @@ header:hover .owl-next {
 }
 
 .main_wrapper {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #eee;
     border: 1px solid #ebebeb;
     padding: 0.7rem 1.5rem;
 }
 
 #news-feed p {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-top: 17px;
     font-weight: 300;
     font-size: 16px;
@@ -1296,7 +1303,7 @@ header:hover .owl-next {
 }
 
 #pills-tab {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     justify-content: center;
 }
 
@@ -1319,7 +1326,7 @@ header:hover .owl-next {
 }
 
 .decorative-heading {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
 }
 
@@ -1755,7 +1762,7 @@ ol *::after {
 
     --number-font-size: 3rem;
     --number-overlap: 0.5rem;
-    --number-font-family: 'DM Sans', sans-serif;
+    --number-font-family: 'Poppins', sans-serif;
     --number-font-weight: 500;
 
     margin: var(--outset-size);

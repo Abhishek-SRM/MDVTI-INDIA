@@ -37,85 +37,11 @@
     <link href="css/style.css" rel="stylesheet" />
 </head>
 <style>
-    /* body {
-        background-color: rgba(238, 238, 238, 0.267);
-        background-image: url("img/bg.png");
-    } */
-
-
-
     .footer .btn.btn-link::before {
         position: relative;
         content: "";
         font-weight: 900;
         margin-right: 10px;
-    }
-
-    .edu_tabs_label {
-        width: 70px;
-        height: 70px;
-        text-align: center;
-        background: #dad5d5;
-        -webkit-border-radius: 100%;
-        -moz-border-radius: 100%;
-        border-radius: 100%;
-        position: absolute;
-        bottom: 186px;
-        right: 40px;
-    }
-
-    .edu_tabs_label p {
-        letter-spacing: 3px;
-        font-size: 11px;
-        color: #ffffff;
-        line-height: 70px;
-        margin: 0px 12px;
-    }
-
-    .edu_tabs_label_inner {
-        width: 70px;
-        height: 70px;
-        text-align: center;
-        background: rgba(116, 66, 93, 1);
-        background: -moz-linear-gradient(left,
-                rgba(116, 66, 93, 1) 0%,
-                rgba(62, 46, 46, 1) 100%);
-        background: -webkit-linear-gradient(left,
-                rgba(116, 66, 93, 1) 0%,
-                rgba(62, 46, 46, 1) 100%);
-        background: -o-linear-gradient(left,
-                rgba(116, 66, 93, 1) 0%,
-                rgba(62, 46, 46, 1) 100%);
-        background: -ms-linear-gradient(left,
-                rgba(116, 66, 93, 1) 0%,
-                rgba(62, 46, 46, 1) 100%);
-        background: linear-gradient(to right,
-                rgb(139 32 37) 0%,
-                rgb(112 43 43) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#74425d', endColorstr='#3e2e2e', GradientType=1);
-        -webkit-border-radius: 100%;
-        -moz-border-radius: 100%;
-        border-radius: 100%;
-        position: absolute;
-        top: 0;
-        -webkit-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        transition: all 0.5s;
-    }
-
-    .edu_tabs_label:after {
-        content: "";
-        border: 10px solid #fff;
-        width: 80px;
-        height: 80px;
-        -webkit-border-radius: 100%;
-        -moz-border-radius: 100%;
-        border-radius: 100%;
-        position: absolute;
-        top: -5px;
-        left: -4px;
     }
 
     .feature h5 {
@@ -152,9 +78,7 @@
         text-shadow: 3px -4px 0px #8b2025;
     }
 
-    /* New Css */
 
-    /* Hide eligibility criteria by default */
     .eligibility-criteria {
         opacity: 0;
         transform: translateY(20px);
@@ -163,21 +87,34 @@
         left: 0;
         width: 100%;
         max-width: 300px;
-        /* Adjust the maximum width as needed */
         background-color: rgba(255, 255, 255, 0.9);
-        /* Use rgba for better transparency */
         padding: 20px;
         z-index: 1;
         border-radius: 0 8px;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         transform-origin: bottom center;
-        /* Set transform origin for smoother animation */
+    }
+
+    .card:hover {
+        box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+        transform: scale(1.10, 1.10);
+        z-index: 1;
+
+    }
+
+    .card {
+        transition: all .4s cubic-bezier(0.175, 0.885, 0, 1);
+        background-color: #fff;
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
     }
 
     .card:hover .eligibility-criteria {
         opacity: 1;
         transform: translateY(0);
     }
+
     .feature-item {
         transition: 0.1s cubic-bezier(0.075, 0.82, 0.165, 1);
         transform: translateZ(0);
@@ -324,8 +261,7 @@
                         <form data-aos="zoom-in"
                             class="p-lg-4 p-md-3 p-4 border rounded-3 blurry-nav right-form shadow w-100">
                             <p class="mb-3 text-center text-md-start" style="line-height: normal">
-                                <b>Experience our demo classes for free! Register today and
-                                    join us.</b>
+                                <b>Experience our demo classes for free! Register today and join us.</b>
                             </p>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" placeholder="Enter Your Full Name" />
@@ -470,7 +406,7 @@
             <div class="col-md-7">
                 <div class="row">
                     <div class="col-4">
-                        <div class="card mt-2">
+                        <div class="card mt-2 shadow">
                             <div class="course-info">
                                 <img class="card-img-top"
                                     src="https://images.pexels.com/photos/6698513/pexels-photo-6698513.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -486,7 +422,7 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card mt-2">
+                        <div class="card mt-2 shadow">
                             <div class="course-info">
                                 <img class="card-img-top"
                                     src="https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -502,7 +438,7 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card mt-2">
+                        <div class="card mt-2 shadow">
                             <div class="course-info">
                                 <img class="card-img-top"
                                     src="https://images.pexels.com/photos/3984340/pexels-photo-3984340.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -518,7 +454,7 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card mt-2">
+                        <div class="card mt-2 shadow">
                             <div class="course-info">
                                 <img class="card-img-top"
                                     src="https://images.pexels.com/photos/4057839/pexels-photo-4057839.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -534,7 +470,7 @@
                         </div>
                     </div>
                     <div class="col-4">
-                        <div class="card mt-2">
+                        <div class="card mt-2 shadow">
                             <div class="course-info">
                                 <img class="card-img-top"
                                     src="https://images.pexels.com/photos/8032917/pexels-photo-8032917.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -592,7 +528,7 @@
     <!--End Enroll now Banner-->
 
     <!-- Feature Start -->
-    <div class="container-fluid p-5">
+    <div class="container-fluid px-5">
         <h5 class="display-5">Why Choose MDVTI-INDIA</h5>
         <p>
             At MDVTI INDIA, our dedication to fostering an unparalleled yoga learning experience sets us apart. We take
@@ -613,13 +549,13 @@
                     <div class="ps-lg-0">
                         <div class="row g-4">
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center bg-white py-2 px-2 feature-item">
+                                <div class="d-flex align-items-center bg-white py-2 px-2 feature-item shadow-sm">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-video text-primary"></i>
                                     </div>
                                     <div class="ms-1">
-                                        <h5 class="my-2 text-dark">Recorded Lectures</h4>
+                                        <h5 class="my-2 text-dark ">Recorded Lectures</h4>
                                             <p class="feature-detail ">Access insightful recorded lectures providing
                                                 flexibility and convenience for
                                                 learning at your own pace, ensuring you never miss a lesson.</p>
@@ -627,7 +563,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item bg-white py-2 px-2">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-book text-primary"></i>
@@ -643,7 +579,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-id-badge text-primary"></i>
@@ -658,7 +594,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-pen text-primary"></i>
@@ -673,7 +609,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-book-reader text-primary"></i>
@@ -688,7 +624,7 @@
                             </div>
 
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-user-check text-primary"></i>
@@ -701,7 +637,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-drafting-compass text-primary"></i>
@@ -715,7 +651,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-brain text-primary"></i>
@@ -730,7 +666,8 @@
                             </div>
 
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item align-item bg-white py-2 px-2 ">
+                                <div
+                                    class="d-flex align-items-center feature-item shadow-sm align-item bg-white py-2 px-2 ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-video text-primary"></i>
@@ -743,7 +680,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 sm-6 wow fadeInUp ">
-                                <div class="d-flex align-items-center feature-item bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-map-signs text-primary"></i>
@@ -758,7 +695,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center bg-white py-2 px-2 feature-item shadow-sm ">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-chalkboard-teacher text-primary"></i>
@@ -773,7 +710,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2 ">
+                                <div class="d-flex align-items-center bg-white py-2 px-2 feature-item shadow-sm">
                                     <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-clipboard-check text-primary"></i>
