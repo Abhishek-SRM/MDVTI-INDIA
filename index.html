@@ -30,43 +30,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
 </head>
 <style>
-    @media (min-width: 992px) {
-        .container.feature {
-            max-width: 100% !important;
-        }
-
-        .feature-text {
-            padding-left: calc(((100% - 960px) / 2) + .75rem);
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .feature-text {
-            padding-left: calc(((100% - 1140px) / 2) + .75rem);
-        }
-    }
-
-    @media (min-width: 1400px) {
-        .feature-text {
-            padding-left: calc(((100% - 1320px) / 2) + .75rem);
-        }
-    }
-
-    body {
-        background-color: rgba(238, 238, 238, 0.267);
-        background-image: url("img/bg.png");
-    }
-
-    h1 {
-        color: #ffffff;
-    }
+  
 
     .footer .btn.btn-link::before {
         position: relative;
@@ -74,76 +43,7 @@
         font-weight: 900;
         margin-right: 10px;
     }
-
-    .edu_tabs_label {
-        width: 70px;
-        height: 70px;
-        text-align: center;
-        background: #dad5d5;
-        -webkit-border-radius: 100%;
-        -moz-border-radius: 100%;
-        border-radius: 100%;
-        position: absolute;
-        bottom: 186px;
-        right: 40px;
-    }
-
-    .edu_tabs_label p {
-        letter-spacing: 3px;
-        font-size: 11px;
-        color: #ffffff;
-        line-height: 70px;
-        margin: 0px 12px;
-    }
-
-    .edu_tabs_label_inner {
-        width: 70px;
-        height: 70px;
-        text-align: center;
-        background: rgba(116, 66, 93, 1);
-        background: -moz-linear-gradient(left,
-                rgba(116, 66, 93, 1) 0%,
-                rgba(62, 46, 46, 1) 100%);
-        background: -webkit-linear-gradient(left,
-                rgba(116, 66, 93, 1) 0%,
-                rgba(62, 46, 46, 1) 100%);
-        background: -o-linear-gradient(left,
-                rgba(116, 66, 93, 1) 0%,
-                rgba(62, 46, 46, 1) 100%);
-        background: -ms-linear-gradient(left,
-                rgba(116, 66, 93, 1) 0%,
-                rgba(62, 46, 46, 1) 100%);
-        background: linear-gradient(to right,
-                rgb(139 32 37) 0%,
-                rgb(112 43 43) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#74425d', endColorstr='#3e2e2e', GradientType=1);
-        -webkit-border-radius: 100%;
-        -moz-border-radius: 100%;
-        border-radius: 100%;
-        position: absolute;
-        top: 0;
-        -webkit-transition: all 0.5s;
-        -o-transition: all 0.5s;
-        -ms-transition: all 0.5s;
-        -moz-transition: all 0.5s;
-        transition: all 0.5s;
-    }
-
-    .edu_tabs_label:after {
-        content: "";
-        border: 10px solid #fff;
-        width: 80px;
-        height: 80px;
-        -webkit-border-radius: 100%;
-        -moz-border-radius: 100%;
-        border-radius: 100%;
-        position: absolute;
-        top: -5px;
-        left: -4px;
-    }
-
     .feature h5 {
-
         font-weight: 400;
         font-size: 18px;
     }
@@ -457,12 +357,10 @@
     <!--Announcment Start-->
     <div class="container-fluid bg-white Announcement">
         <div class="row">
-            <div class="col-lg-2 sm-2 text-center bg-primary align-items-center py-4" style="
-            clip-path: polygon(0% 0%, 85% -1%, 100% 50%, 85% 101%, 0% 100%);
-          ">
-                <h4 class="text-white">Announcement</h4>
+            <div class="col-3 col-lg-2 bg-primary align-items-center d-flex py-4">
+                <h6 class="text-white">Announcement</h6>
             </div>
-            <div class="col-lg-10 bg-white d-flex align-items-center py-4">
+            <div class="col-9 col-lg-10 bg-white d-flex align-items-center py-4">
                 <div class="container wow fadeInUp" data-wow-delay="0.1s">
                     <div class="owl-carousel ann-carousel">
                         <div class="testimonial-item">
@@ -486,36 +384,38 @@
     <!--Announcment END-->
 
     <!-- About Start -->
-    <div class="container-fluid overflow-hidden p-0">
-        <div class="px-lg-0">
-            <div class="row g-0 mx-lg-0">
-                <div class="col-lg-6 ps-lg-0" style="min-height: 400px">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/poster1.jpg"
-                            style="object-fit: cover" alt="" />
-                    </div>
+    <div class="container-fluid p-5">
+        <div class="row">
+            <div class="col-md-5 m-auto">
+                <div class="image-container p-3 bg-white shadow rounded">
+                    <img src="img/poster-1.jpg" class="img-fluid" alt="yoga-trainer">
                 </div>
-                <div class="col-lg-6 p-3 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 pe-lg-0">
-                        <div class="text-start">
-                            <h1 class="display-5 mb-4">What is Yoga Teacher Training?</h1>
-                        </div>
-                        <p class="mb-4 pb-2">
-                            MDVTI INDIA has been a No. 1 Yoga Teacher Training institute for
-                            more than 9 years, growing well rounded, competent, professional
-                            and highly skilled yoga teachers through our well structured
-                            courses.<br />
-
-                            Our Yoga Teacher Training (YTT) Course is focused on training
-                            budding teachers with detailed practice of Yogic Kriyas, Asanas,
-                            Pranayama & teaching methodologies of Yoga. The course
-                            integrates deeper concepts and techniques of Yoga like Anatomy,
-                            Physiology, Psychology, Meditation Techniques, Naturotherapy and
-                            the very essence of Yogic Philosophy into a holistic composite-
-                            thus enabling budding yoga teachers to impart knowledge of Yoga
-                            in its entirety and begin their career in the World of Yoga.
-                        </p>
-                    </div>
+            </div>
+            <div class="col-md-7">
+                <div class="mt-4 px-3">
+                    <h1 class="display-5 mb-4 text-dark">What is Yoga Teacher Training?</h1>
+                    <p class="mb-4">
+                        MDVTI INDIA stands as a premier institution in the realm of Yoga Teacher Training, holding the
+                        esteemed position as the leading institute for over 9 years. Our enduring commitment lies in
+                        nurturing and fostering well-rounded, proficient, and adept yoga teachers. We achieve this
+                        through meticulously crafted and comprehensive courses designed to hone the skills and expertise
+                        of aspiring teachers.
+                        <br>
+                        Our flagship Yoga Teacher Training (YTT) Course is meticulously structured to provide an
+                        immersive experience in Yogic practices, encompassing an in-depth study of Yogic Kriyas, Asanas,
+                        Pranayama, and the intricate methodologies of teaching Yoga. Beyond the fundamentals, our
+                        curriculum delves into the exploration of profound concepts and techniques intrinsic to Yoga.
+                        <br><br>
+                        The course encompasses multifaceted elements such as Anatomy, Physiology, Psychology, Meditation
+                        Techniques, Naturotherapy, and the fundamental essence of Yogic Philosophy. This holistic
+                        approach equips budding yoga teachers with a comprehensive understanding and application of
+                        Yoga, empowering them to impart knowledge that transcends mere physical practice.
+                        <br>
+                        We prioritize the integration of deeper aspects of Yoga, allowing our students to comprehend its
+                        transformative power not only on a physical level but also on mental, emotional, and spiritual
+                        planes. Through this amalgamation of diverse facets of Yoga, our graduates are prepared to
+                        commence their careers in the World of Yoga as proficient and well-versed instructors.
+                    </p>
                 </div>
             </div>
         </div>
@@ -523,112 +423,129 @@
     <!-- About End -->
 
     <!--Courses Start-->
-    <div class="container">
-        <div class="section-title text-center">
-            <h1 class="display-5 mb-5 mt-5 text-dark">Our Courses</h1>
-        </div>
-        <div class="owl-carousel owl-theme py-5">
-            <div class="item">
-                <div class="service-item p-3 wow fadeInUp">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/course1.svg" alt="" />
+    <div class="container-fluid p-5">
+        <div class="row">
+            <!-- Course Information -->
+            <div class="col-md-5">
+                <h1 class="display-5 mb-4">Our Curriculum Offerings</h1>
+
+                <div class="course-info">
+                    <div class="course">
+                        <h3>Yoga Teacher Training (YTT) Course</h3>
+                        <p>
+                            Our flagship program, the Yoga Teacher Training Course, serves as a comprehensive immersion
+                            into the world of yoga instruction. This course is meticulously structured to provide a
+                            profound understanding of various aspects of yoga, including Yogic Kriyas, Asanas,
+                            Pranayama, and Teaching Methodologies.
+                        </p>
                     </div>
-                    <div class="edu_tabs_label">
-                        <p></p>
-                        <div class="edu_tabs_label_inner">
-                            <p>MDVTI</p>
-                        </div>
+
+                    <div class="course">
+                        <h3>Advanced Yoga Teacher Training</h3>
+                        <p>
+                            For those seeking to deepen their expertise, our Advanced Yoga Teacher Training delves into
+                            intricate and specialized areas such as Advanced Asana Practice, Yoga Therapy, Chakra
+                            Balancing, Energy Work, and Yoga Nidra.
+                            <br>
+                            We offer diverse workshops focusing on niche areas like Prenatal Yoga, Yoga for Stress
+                            Management, and Yoga for Athletes. Our courses cater to diverse interests, expertise levels,
+                            and schedules, ensuring a transformative learning experience.
+                        </p>
                     </div>
-                    <div class="p-4 bg-white shadow">
-                        <h5 class="mb-3">Post Graduation in Yoga Teacher</h5>
-                        <div class="d-flex justify-content-start pt-3 text-dark">
-                            <span class="text-primary" style="margin-right: 10px">Eligibility :</span>
-                            <span>Graduation(Min 45% Marks)</span>
-                        </div>
-                        <div class="d-flex justify-content-start text-dark pb-4">
-                            <span class="text-primary" style="margin-right: 10px">Duration :</span>
-                            <span>1 Year</span>
-                        </div>
-                        <a class="fw-medium bg-primary px-3 py-2 text-white" href="">know More<i
-                                class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
+                    <a href="#" class="btn btn-primary mt-4">
+                        Know More about MDVTI-INDIA Courses
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
-            <div class="item">
-                <div class="service-item p-3 wow fadeInUp">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/course1.svg" alt="" />
-                    </div>
-                    <div class="edu_tabs_label">
-                        <p></p>
-                        <div class="edu_tabs_label_inner">
-                            <p>MDVTI</p>
+
+            <!-- Image Section -->
+            <div class="col-md-7">
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card mt-2 shadow">
+                            <div class="course-info">
+                                <img class="card-img-top"
+                                    src="https://images.pexels.com/photos/6698513/pexels-photo-6698513.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <b>Yoga Teacher Training (YTT) Course</b>
+                                    </p>
+                                    <p class="eligibility-criteria">Eligibility Criteria: Insert eligibility criteria
+                                        here</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-4 bg-white shadow">
-                        <h5 class="mb-3">Post Graduation in Yoga Teacher</h5>
-                        <div class="d-flex justify-content-start pt-3 text-dark">
-                            <span class="text-primary" style="margin-right: 10px">Eligibility :</span>
-                            <span>Graduation(Min 45% Marks)</span>
-                        </div>
-                        <div class="d-flex justify-content-start text-dark pb-4">
-                            <span class="text-primary" style="margin-right: 10px">Duration :</span>
-                            <span>1 Year</span>
-                        </div>
-                        <a class="fw-medium bg-primary px-3 py-2 text-white" href="">know More<i
-                                class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="service-item p-3 wow fadeInUp">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/course1.svg" alt="" />
-                    </div>
-                    <div class="edu_tabs_label">
-                        <p></p>
-                        <div class="edu_tabs_label_inner">
-                            <p>MDVTI</p>
+                    <div class="col-4">
+                        <div class="card mt-2 shadow">
+                            <div class="course-info">
+                                <img class="card-img-top"
+                                    src="https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <b>Yoga Teacher Training (YTT) Course</b>
+                                    </p>
+                                    <p class="eligibility-criteria">Eligibility Criteria: Insert eligibility criteria
+                                        here</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-4 bg-white shadow">
-                        <h5 class="mb-3">Post Graduation in Yoga Teacher</h5>
-                        <div class="d-flex justify-content-start pt-3 text-dark">
-                            <span class="text-primary" style="margin-right: 10px">Eligibility :</span>
-                            <span>Graduation(Min 45% Marks)</span>
-                        </div>
-                        <div class="d-flex justify-content-start text-dark pb-4">
-                            <span class="text-primary" style="margin-right: 10px">Duration :</span>
-                            <span>1 Year</span>
-                        </div>
-                        <a class="fw-medium bg-primary px-3 py-2 text-white" href="">know More<i
-                                class="fa fa-arrow-right ms-2"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="service-item p-3 wow fadeInUp">
-                    <div class="overflow-hidden">
-                        <img class="img-fluid" src="img/course1.svg" alt="" />
-                    </div>
-                    <div class="edu_tabs_label">
-                        <p></p>
-                        <div class="edu_tabs_label_inner">
-                            <p>MDVTI</p>
+                    <div class="col-4">
+                        <div class="card mt-2 shadow">
+                            <div class="course-info">
+                                <img class="card-img-top"
+                                    src="https://images.pexels.com/photos/3984340/pexels-photo-3984340.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <b>Yoga Teacher Training (YTT) Course</b>
+                                    </p>
+                                    <p class="eligibility-criteria">Eligibility Criteria: Insert eligibility criteria
+                                        here</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-4 bg-white shadow">
-                        <h5 class="mb-3">Post Graduation in Yoga Teacher</h5>
-                        <div class="d-flex justify-content-start pt-3 text-dark">
-                            <span class="text-primary" style="margin-right: 10px">Eligibility :</span>
-                            <span>Graduation(Min 45% Marks)</span>
+                    <div class="col-4">
+                        <div class="card mt-2 shadow">
+                            <div class="course-info">
+                                <img class="card-img-top"
+                                    src="https://images.pexels.com/photos/4057839/pexels-photo-4057839.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <b>Yoga Teacher Training (YTT) Course</b>
+                                    </p>
+                                    <p class="eligibility-criteria">Eligibility Criteria: Insert eligibility criteria
+                                        here</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="d-flex justify-content-start text-dark pb-4">
-                            <span class="text-primary" style="margin-right: 10px">Duration :</span>
-                            <span>1 Year</span>
+                    </div>
+                    <div class="col-4">
+                        <div class="card mt-2 shadow">
+                            <div class="course-info">
+                                <img class="card-img-top"
+                                    src="https://images.pexels.com/photos/8032917/pexels-photo-8032917.jpeg?auto=compress&cs=tinysrgb&w=600"
+                                    alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <b>Yoga Teacher Training (YTT) Course</b>
+                                    </p>
+                                    <p class="eligibility-criteria">Graduation(Min 45% Marks)</p>
+                                </div>
+                            </div>
                         </div>
-                        <a class="fw-medium bg-primary px-3 py-2 text-white" href="">know More<i
-                                class="fa fa-arrow-right ms-2"></i></a>
+                    </div>
+                    <div class="col-4 m-auto">
+                        <!-- button vertically centered -->
+                        <div class="d-flex justify-content-center">
+                            <a href="#" class="btn btn-primary">View All Courses</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -638,22 +555,23 @@
 
     <!--Banner Enroll now-->
     <section class="aplit-gt-area py-5">
-        <div class="container">
+        <div class="container-fluid p-5">
             <div class="aplit-gt-wrapper shadow" style="
             background-image: url(img/bg.png);
             background-size: contain;
             background-repeat: repeat;
           ">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         <div class="aplit-gt-left">
                             <span class="subtitle">MDVTI INDIA</span>
                             <div class="aplit-headline">
-                                <h3>Join Yoga Course and Become a Certified Yoga Teacher</h3>
+                                <h3>Embark on a Transformational Journey: Join Our Yoga Course and Unleash Your
+                                    Potential as a Certified Yoga Teacher.</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-5">
+                    <div class="col-lg-4">
                         <div class="aplit-gt-right">
                             <a href="#" class="bg-white px-5 py-3 shadow">Enroll Now</a>
                         </div>
@@ -666,203 +584,204 @@
     <!--End Enroll now Banner-->
 
     <!-- Feature Start -->
-    <div class="container-fluid overflow-hidden my-5 px-lg-0">
-        <div class="container feature px-lg-0">
+    <div class="container-fluid px-5">
+        <h5 class="display-5">Why Choose MDVTI-INDIA</h5>
+        <p>
+            At MDVTI INDIA, our dedication to fostering an unparalleled yoga learning experience sets us apart. We take
+            pride in our team of highly experienced and dedicated yoga instructors who bring a wealth of expertise and
+            passion to the table. Our curriculum transcends the conventional, offering a holistic blend of traditional
+            teachings and modern approaches. From comprehensive theoretical knowledge to hands-on practical sessions, we
+            ensure a well-rounded education that delves into the depths of yoga philosophy, anatomy, meditation
+            techniques, and specialized disciplines. What truly distinguishes us is our commitment to creating an
+            inclusive and supportive environment where each individual's journey is honored and nurtured. With a strong
+            focus on personal growth and practical application, we empower our students to not only become skilled
+            instructors but also to embody the essence of yoga in their lives. Our legacy of excellence spanning over 10
+            years stands as a testament to our unwavering dedication to providing transformative yoga education and
+            guiding our students toward a fulfilling and impactful journey in the world of yoga.
+        </p>
+        <div class="feature">
             <div class="row g-0 mx-lg-0">
-                <div class="col-lg-7 feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
-                    <div class="p-lg-5 ps-lg-0">
-                        <div class="section-title text-start">
-                            <h1 class="display-5 mb-4 text-dark">Why Choose Us</h1>
-                        </div>
-
+                <div class="feature-text py-5 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="ps-lg-0">
                         <div class="row g-4">
-                            <div class="col-lg-4 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2 py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch">
+                                <div class="d-flex align-items-center bg-white py-2 px-2 feature-item shadow-sm">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-video text-primary"></i>
                                     </div>
                                     <div class="ms-1">
-                                        <h5 class="mb-0">Recorded Lectures</h5>
+                                        <h5 class="my-2 text-dark ">Recorded Lectures</h4>
+                                            <p class="feature-detail ">Access insightful recorded lectures providing
+                                                flexibility and convenience for
+                                                learning at your own pace, ensuring you never miss a lesson.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-8 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-book text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">
+                                        <h5 class="my-2 text-dark">
                                             Detailed Study Material for Holistic Learning
                                         </h5>
+                                        <p class="feature-detail "> Dive into comprehensive study materials designed
+                                            to nurture a holistic understanding, covering theoretical and practical
+                                            aspects of yoga.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-7 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-id-badge text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">
+                                        <h5 class="my-2 text-dark">
                                             Free Student Kit (ID card, Books, Tshirt)
                                         </h5>
+                                        <p class="feature-detail ">Receive a free student kit comprising an ID card,
+                                            books, and a t-shirt to enhance your learning experience.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-5 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-pen text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">Short notes & E-books</h5>
+                                        <h5 class="my-2 text-dark">Short notes & E-books</h5>
+                                        <p class="feature-detail ">Access insightful recorded lectures providing
+                                            flexibility and convenience for
+                                            learning at your own pace, ensuring you never miss a lesson.</p>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-book-reader text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">Student Care Portal</h5>
+                                        <h5 class="my-2 text-dark">Student Care Portal</h5>
+                                        <p class="feature-detail ">Supplement your learning with concise yet
+                                            comprehensive notes and e-books for quick reference and deeper
+                                            understanding.</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-user-check text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">Virtual Classroom</h5>
+                                        <h5 class="my-2 text-dark">Virtual Classroom</h5>
+                                        <p class="feature-detail ">Experience the benefits of a classroom from the
+                                            comfort of your home with our virtual classroom sessions.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-drafting-compass text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">Live Doubt sessions</h5>
+                                        <h5 class="my-2 text-dark">Live Doubt sessions</h5>
+                                        <p class="feature-detail "> Engage in live doubt-clearing sessions where
+                                            instructors address queries, providing immediate clarification and enhancing
+                                            learning effectiveness.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-brain text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">Affordable Fee</h5>
+                                        <h5 class="my-2 text-dark">Affordable Fee</h5>
+                                        <p class="feature-detail ">Benefit from an affordable fee structure designed to
+                                            make quality yoga education accessible to all, without compromising on
+                                            excellence.</p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="col-lg-6 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch ">
+                                <div
+                                    class="d-flex align-items-center feature-item shadow-sm align-item bg-white py-2 px-2 ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-video text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">Short notes & E-books</h5>
+                                        <h5 class="my-2 text-dark">Short notes & E-books</h5>
+                                        <p class="feature-detail ">Supplement your learning with concise yet
+                                            comprehensive notes and e-books for quick reference of yoga principles.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-6 sm-6 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 sm-6 wow fadeInUp d-flex align-items-stretch ">
+                                <div class="d-flex align-items-center feature-item shadow-sm bg-white py-2 px-2 ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-map-signs text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">
+                                        <h5 class="my-2 text-dark">
                                             Lifetime Guidance from our Yoga Coach
                                         </h5>
+                                        <p class="feature-detail ">Our instructors are committed to guiding you
+                                            throughout your journey, even after course completion.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-12 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 wow fadeInUp d-flex align-items-stretch">
+                                <div class="d-flex align-items-center bg-white py-2 px-2 feature-item shadow-sm ">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-chalkboard-teacher text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">
+                                        <h5 class="my-2 text-dark">
                                             Highly Trained & Certified Yoga Teachers
                                         </h5>
+                                        <p class="feature-detail ">Our instructors are highly experienced and
+                                            certified, bringing a wealth of expertise and passion to the table.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 wow fadeInUp">
-                                <div class="d-flex align-items-center bg-white py-2 px-2" style="
-                      border-radius: 6px;
-                      box-shadow: 0px 12px 24px -8px rgb(0 0 0 / 33%);
-                    ">
-                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center"
+                            <div class="col-lg-4 wow fadeInUp d-flex align-items-stretch">
+                                <div class="d-flex align-items-center bg-white py-2 px-2 feature-item shadow-sm">
+                                    <div class=" d-flex flex-shrink-0 align-items-center justify-content-center"
                                         style="width: 40px; height: 40px">
                                         <i class="fa fa-clipboard-check text-primary"></i>
                                     </div>
                                     <div class="ms-2">
-                                        <h5 class="mb-0">
+                                        <h5 class="my-2 text-dark">
                                             Training for establishing your own Yoga Studio
                                         </h5>
+                                        <p class="feature-detail ">Gain insights and specialized training essential
+                                            for establishing and managing your own successful yoga studio, turning your
+                                            passion into a thriving career.</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-5 pe-lg-0 wow fadeInRight" style="min-height: 400px">
-                    <div class="position-relative h-100">
-                        <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_kvwtrk4n.json"
-                            background="transparent" class="mt-5" speed="1" f ppp loop autoplay></lottie-player>
                     </div>
                 </div>
             </div>

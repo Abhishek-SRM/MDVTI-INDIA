@@ -1264,11 +1264,6 @@ header:hover .owl-next {
 
 }
 
-.feature h5 {
-    font-weight: 400;
-    font-size: 18px;
-}
-
 .owl-nav {
     justify-content: center;
     display: flex;
@@ -1278,7 +1273,6 @@ header:hover .owl-next {
     display: none;
 }
 
-/* Styling for the tab navigation */
 .tab-nav {
     overflow: hidden;
     background-color: #f1f1f1;
