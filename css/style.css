@@ -4,6 +4,10 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,1000&display=swap');
 
+* {
+    transition: all 0.3s ease-out;
+}
+
 :root {
     --primary: #8B2025;
     --light: #F5F5F5;
@@ -1694,4 +1698,73 @@ ol *::after {
     transform: scale(1.031);
     transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     cursor: pointer;
+}
+
+.go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background-color: #00838d;
+    border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+}
+
+.card-social {
+    display: block;
+    top: 0px;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 4px;
+    padding: 32px 24px;
+    margin: 12px;
+    text-decoration: none;
+    overflow: hidden;
+    border: 1px solid #cccccc;
+}
+
+.card-social .go-corner {
+    background-color: #00838d;
+    height: 100%;
+    width: 90px;
+    padding-right: 9px;
+    border-radius: 0;
+    transform: skew(6deg);
+    margin-right: -36px;
+    align-items: start;
+    background-image: linear-gradient(-45deg, #8F479A 1%, #DC2A74 100%);
+}
+
+.card-social .go-arrow {
+    transform: skew(-6deg);
+    margin-left: -2px;
+    margin-top: 9px;
+    opacity: 0;
+}
+
+.card-social:hover {
+    border: 1px solid #CD3D73;
+}
+
+.card-social h3 {
+    margin-top: 8px;
+}
+
+.card-social:hover .go-corner {
+    margin-right: -12px;
+}
+
+.card-social:hover .go-arrow {
+    opacity: 1;
 }
