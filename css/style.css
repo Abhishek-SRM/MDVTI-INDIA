@@ -1,16 +1,17 @@
 /********** Template CSS **********/
 
 
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,1000&display=swap');
 
 :root {
     --primary: #8B2025;
     --light: #F5F5F5;
     --dark: #353535;
 }
-body{
-    color:#4c4c4c;
+
+body {
+    color: #4c4c4c;
 }
 
 .blurry-nav {
@@ -147,7 +148,7 @@ body{
 }
 
 .navbar-light .navbar-nav .nav-link {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     margin-right: 30px;
     padding: 25px 0;
     color: #FFFFFF;
@@ -493,14 +494,14 @@ body{
 
 
 /*** Testimonial ***/
-.testimonial-carousel::before {
+/* .testimonial-carousel::before {
     position: absolute;
     content: "";
     top: 0;
     left: 0;
     height: 100%;
     width: 0;
-    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    background: #fff;
     z-index: 1;
 }
 
@@ -513,7 +514,7 @@ body{
     width: 0;
     background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
     z-index: 1;
-}
+} */
 
 @media (min-width: 768px) {
 
@@ -669,7 +670,7 @@ body{
 .olcards {
     list-style: none;
     counter-reset: cardCount;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
     --cardsGap: 1rem;
@@ -1169,14 +1170,14 @@ header:hover .owl-next {
 }
 
 .main_wrapper {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background-color: #eee;
     border: 1px solid #ebebeb;
     padding: 0.7rem 1.5rem;
 }
 
 #news-feed p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     margin-top: 17px;
     font-weight: 300;
     font-size: 16px;
@@ -1242,28 +1243,6 @@ header:hover .owl-next {
 }
 
 
-.edu_tabs_label {
-    width: 70px;
-    height: 70px;
-    text-align: center;
-    background: #dad5d5;
-    -webkit-border-radius: 100%;
-    -moz-border-radius: 100%;
-    border-radius: 100%;
-    position: absolute;
-    bottom: 186px;
-    right: 40px;
-}
-
-.edu_tabs_label p {
-    letter-spacing: 3px;
-    font-size: 11px;
-    color: #ffffff;
-    line-height: 70px;
-    margin: 0px 12px;
-
-}
-
 .owl-nav {
     justify-content: center;
     display: flex;
@@ -1297,7 +1276,7 @@ header:hover .owl-next {
 }
 
 #pills-tab {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     justify-content: center;
 }
 
@@ -1320,7 +1299,7 @@ header:hover .owl-next {
 }
 
 .decorative-heading {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     font-weight: 700;
 }
 
@@ -1334,7 +1313,7 @@ header:hover .owl-next {
 .container-hero {
     position: relative;
     width: 100%;
-    background: linear-gradient(107.2deg, rgba(150, 27, 18, 0.723) 10.6%, rgba(230, 132, 4, 0.745) 91.1%) ,url(./img/4799045.jpg);
+    background: linear-gradient(107.2deg, rgba(150, 27, 18, 0.723) 10.6%, rgba(230, 132, 4, 0.745) 91.1%), url(./img/4799045.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1561,135 +1540,10 @@ main ol.gradient-list>li+li {
 
 
 
-/* CSS */
-.button-85 {
-    padding: 0.6em 2em;
-    border: none;
-    outline: none;
-    color: rgb(0, 0, 0);
-    background: #ffffff;
-    cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 0px;
-    user-select: none;
-    width: 100%;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-}
-
-.button-85:before {
-    content: "";
-    background: linear-gradient(45deg,
-            #ff0000,
-            #ff7300,
-            #fffb00,
-            #48ff00,
-            #00ffd5,
-            #002bff,
-            #7a00ff,
-            #ff00c8,
-            #ff0000);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing-button-85 20s linear infinite;
-    transition: opacity 0.3s ease-in-out;
-    border-radius: 10px;
-}
-
-@keyframes glowing-button-85 {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
-}
-
-.button-85:after {
-    z-index: -1;
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
 
 
-/* CSS */
-.button-48 {
-    appearance: none;
-    background-color: #FFFFFF;
-    border-width: 0;
-    box-sizing: border-box;
-    color: #000000;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Clarkson, Helvetica, sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 1em;
-    margin: 0;
-    opacity: 1;
-    outline: 0;
-    padding: 1.5em 2.2em;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    text-rendering: geometricprecision;
-    text-transform: uppercase;
-    transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1), background-color 100ms cubic-bezier(.694, 0, 0.335, 1), color 100ms cubic-bezier(.694, 0, 0.335, 1);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: baseline;
-    white-space: nowrap;
-}
 
-.button-48:before {
-    animation: opacityFallbackOut .5s step-end forwards;
-    backface-visibility: hidden;
-    background-color: rgba(213, 42, 12, 0.414);
-    clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
-    content: "";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transform: translateZ(0);
-    transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
-    width: 100%;
-}
 
-.button-48:hover:before {
-    animation: opacityFallbackIn 0s step-start forwards;
-    clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
-}
-
-.button-48:after {
-    background-color: #FFFFFF;
-}
-
-.button-48 span {
-    z-index: 1;
-    position: relative;
-}
 
 .tag {
     font-size: 1.2em;
@@ -1702,15 +1556,7 @@ main ol.gradient-list>li+li {
     margin: 0.25em 0.1em;
 }
 
-.banner-image {
-    background-image: url(/img/img-bg-header.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position-y: 100%;
-    background-position-y: 1rem;
-    background-position-x: 54%;
-    background-size: contain;
-}
+
 
 .avahan-image {
     border-radius: 50%;
@@ -1756,7 +1602,7 @@ ol *::after {
 
     --number-font-size: 3rem;
     --number-overlap: 0.5rem;
-    --number-font-family: 'Poppins', sans-serif;
+    --number-font-family: 'DM Sans', sans-serif;
     --number-font-weight: 500;
 
     margin: var(--outset-size);
@@ -1815,4 +1661,37 @@ ol *::after {
 
 #map {
     height: 680px;
+}
+
+.section-line {
+    width: 120px;
+    height: 1px;
+    margin: 0 auto 0 0;
+    background: #000;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.section-line:hover {
+    background: #8B2025;
+    width: 180px;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.feedback-section {
+    background-image: linear-gradient(107.2deg, rgba(211, 211, 211, 0.664) 10.6%, rgba(216, 216, 216, 0.745) 91.1%), url("https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.social-media-section .card {
+    background-color: rgba(255, 236, 201, 0.801);
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+}
+
+.social-media-section .card:hover {
+    transform: scale(1.031);
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
 }

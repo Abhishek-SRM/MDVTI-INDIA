@@ -281,30 +281,4 @@ if ($(window).width() <= 767) {
 }
 
 AOS.init();
-
-function updateBannerImage() {
-  const bannerImage = document.querySelector('.banner-image');
-
-  if (window.innerWidth <= 768) {
-    bannerImage.style.backgroundPosition = 'center';
-    bannerImage.style.backgroundPositionY = '0';
-    bannerImage.style.backgroundSize = '25rem';
-    bannerImage.style.backgroundImage = 'url(img/DSC_0012.png)';
-  } else {
-    bannerImage.style.backgroundPositionY = '100%';
-    bannerImage.style.backgroundPositionX = '54%';
-    bannerImage.style.backgroundSize = 'contain';
-    bannerImage.style.backgroundImage = 'url(img/DSC_0011.png)';
-  }
-}
-
-updateBannerImage();
-
 window.addEventListener('resize', updateBannerImage);
-
-// on Mouse Hover add Event Listener
-const hover = document.querySelector('.feature-item');
-
-hover.addEventListener('mouseover', () => {
-  hover.classList.add('shadow', 'border');
-});
