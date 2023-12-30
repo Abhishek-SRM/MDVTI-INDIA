@@ -1721,6 +1721,34 @@ ol *::after {
     font-family: courier, sans;
 }
 
+.card-social-1{
+    background-image: linear-gradient(#00000050 , #ffffff36),url('/img/3d-female-yoga-pose-against-sunset-landscape.jpg');
+    background-size: cover;
+    background-position:top;
+    background-position-x: center;
+    background-position-y:center ;
+}
+.card-social-2{
+    background-image: linear-gradient(#00000074 , #1212127b),url('https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;    
+    background-position: center;
+}
+.card-social-3{
+    background-image: linear-gradient(#00000074 , #1212127b),url('https://images.pexels.com/photos/3076509/pexels-photo-3076509.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;    
+    background-position: center;
+
+}
+.card-social-4{
+    background-image: linear-gradient(#00000074 , #1212127b),url('https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;    
+    background-position: center;
+}
+.card-social-5{
+    background-image: linear-gradient(#00000074 , #1212127b),url('https://images.pexels.com/photos/2294363/pexels-photo-2294363.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-position: center;
+    background-size: cover;    
+}
 .card-social {
     display: block;
     top: 0px;
@@ -1743,7 +1771,7 @@ ol *::after {
     transform: skew(6deg);
     margin-right: -36px;
     align-items: start;
-    background-image: linear-gradient(-45deg, #8F479A 1%, #DC2A74 100%);
+    background-image: linear-gradient(-45deg, #8b2025 1%, #390003 100%);
 }
 
 .card-social .go-arrow {
@@ -1781,6 +1809,9 @@ ol *::after {
     box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.114);
     border-radius: 3px;
 }
+.ag-courses_item:hover{
+    transform: scale(1.061);
+}
 
 .ag-courses-item_link {
     display: block;
@@ -1791,7 +1822,13 @@ ol *::after {
 }
 
 .ag-courses-item_link:hover,
-.ag-courses-item_link:hover .ag-courses-item_date {
+.ag-courses-item_link:hover .ag-courses-item_title {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date-box {
     text-decoration: none;
     color: #ffffff;
 }
@@ -1803,13 +1840,12 @@ ol *::after {
 }
 
 .ag-courses-item_title {
-    min-height: 87px;
+    min-height: 57px;
     margin: 0 0 2px;
     overflow: hidden;
     font-weight: bold;
     font-size: 24px;
     color: #262626;
-
     z-index: 2;
     position: relative;
 }
@@ -1840,62 +1876,14 @@ ol *::after {
     position: absolute;
     top: -75px;
     right: -75px;
-
     border-radius: 50%;
-
     -webkit-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;
 }
 
-.ag-courses_item:nth-child(1n) .ag-courses-item_bg {
-    background-color: #ffcc00;
-    /* Elegant Yellow */
-}
-
-.ag-courses_item:nth-child(2n) .ag-courses-item_bg {
-    background-color: #00a5ff;
-    /* Elegant Blue */
-}
-
-.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-    background-color: #ff6fd8;
-    /* Elegant Pink */
-}
-
-.ag-courses_item:nth-child(3n) .ag-courses-item_bg {
-    background-color: #b8ff5c;
-    /* Elegant Green */
-}
-
-.ag-courses_item:nth-child(4n) .ag-courses-item_bg {
-    background-color: #ffae42;
-    /* Elegant Orange */
-}
-
-.ag-courses_item:nth-child(5n) .ag-courses-item_bg {
-    background-color: #8c42ff;
-    /* Elegant Purple */
-}
-
-.ag-courses_item:nth-child(6n) .ag-courses-item_bg {
-    background-color: #00ffbb;
-    /* Elegant Cyan */
-}
-
-.ag-courses_item:nth-child(7n) .ag-courses-item_bg {
-    background-color: #ff4d6d;
-    /* Elegant Red */
-}
-
-.ag-courses_item:nth-child(8n) .ag-courses-item_bg {
-    background-color: #5c96ff;
-    /* Elegant Sky Blue */
-}
-
-.ag-courses_item:nth-child(9n) .ag-courses-item_bg {
-    background-color: #ff66cc;
-    /* Elegant Rose */
+.ag-courses_item .ag-courses-item_bg {
+    background-color: #aa3000;
 }
 
 
@@ -1940,6 +1928,40 @@ ol *::after {
     .ag-courses-item_date-box {
         font-size: 16px;
     }
- 
+
 }
+
+.card-icon-full {
+    position: absolute;
+    font-size: 1rem;
+    top: 8px;
+    right: 12px;
+    color: #ffffff;
+    z-index: 3;
+}
+
+
+/* Quick Links Css */#style-5 {
+  position: relative;
+  font-weight: bold;
+}
+#style-5::before {
+  content: "";
+  background-color: var(--link-3);
+  position: absolute;
+  left: 0.5rem;
+  bottom: 5px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+#style-5:hover::before {
+  left: -5px;
+  bottom: 0;
+  height: 100%;
+  width: calc(100% + 10px);
+}
+  
+
 
