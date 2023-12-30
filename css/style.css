@@ -1940,11 +1940,6 @@ ol *::after {
     .ag-courses-item_date-box {
         font-size: 16px;
     }
-    .blob-1 img{
-        position: absolute;
-        z-index: -1;
-        top: 30px;
-        
-    }
+ 
 }
 
