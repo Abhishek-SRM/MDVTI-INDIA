@@ -1721,34 +1721,39 @@ ol *::after {
     font-family: courier, sans;
 }
 
-.card-social-1{
-    background-image: linear-gradient(#00000050 , #ffffff36),url('/img/3d-female-yoga-pose-against-sunset-landscape.jpg');
+.card-social-1 {
+    background-image: linear-gradient(#00000050, #ffffff36), url('/img/3d-female-yoga-pose-against-sunset-landscape.jpg');
     background-size: cover;
-    background-position:top;
+    background-position: top;
     background-position-x: center;
-    background-position-y:center ;
+    background-position-y: center;
 }
-.card-social-2{
-    background-image: linear-gradient(#00000074 , #1212127b),url('https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-size: cover;    
+
+.card-social-2 {
+    background-image: linear-gradient(#00000074, #1212127b), url('https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;
     background-position: center;
 }
-.card-social-3{
-    background-image: linear-gradient(#00000074 , #1212127b),url('https://images.pexels.com/photos/3076509/pexels-photo-3076509.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-size: cover;    
+
+.card-social-3 {
+    background-image: linear-gradient(#00000074, #1212127b), url('https://images.pexels.com/photos/3076509/pexels-photo-3076509.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;
     background-position: center;
 
 }
-.card-social-4{
-    background-image: linear-gradient(#00000074 , #1212127b),url('https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-size: cover;    
+
+.card-social-4 {
+    background-image: linear-gradient(#00000074, #1212127b), url('https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600');
+    background-size: cover;
     background-position: center;
 }
-.card-social-5{
-    background-image: linear-gradient(#00000074 , #1212127b),url('https://images.pexels.com/photos/2294363/pexels-photo-2294363.jpeg?auto=compress&cs=tinysrgb&w=600');
+
+.card-social-5 {
+    background-image: linear-gradient(#00000074, #1212127b), url('https://images.pexels.com/photos/2294363/pexels-photo-2294363.jpeg?auto=compress&cs=tinysrgb&w=600');
     background-position: center;
-    background-size: cover;    
+    background-size: cover;
 }
+
 .card-social {
     display: block;
     top: 0px;
@@ -1809,7 +1814,8 @@ ol *::after {
     box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.114);
     border-radius: 3px;
 }
-.ag-courses_item:hover{
+
+.ag-courses_item:hover {
     transform: scale(1.061);
 }
 
@@ -1941,27 +1947,161 @@ ol *::after {
 }
 
 
-/* Quick Links Css */#style-5 {
-  position: relative;
-  font-weight: bold;
+/* Quick Links Css */
+#style-5 {
+    position: relative;
+    font-weight: bold;
 }
+
 #style-5::before {
-  content: "";
-  background-color: var(--link-3);
-  position: absolute;
-  left: 0.5rem;
-  bottom: 5px;
-  width: 100%;
-  height: 8px;
-  z-index: -1;
-  transition: all 0.3s ease-in-out;
+    content: "";
+    background-color: var(--link-3);
+    position: absolute;
+    left: 0.5rem;
+    bottom: 5px;
+    width: 100%;
+    height: 8px;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
 }
+
 #style-5:hover::before {
-  left: -5px;
-  bottom: 0;
-  height: 100%;
-  width: calc(100% + 10px);
+    left: -5px;
+    bottom: 0;
+    height: 100%;
+    width: calc(100% + 10px);
 }
-  
+
+.yogi-mandala {
+    position: absolute;
+    left: 0%;
+    z-index: -1;
+    width: 100%;
+    top: 0%;
+    transform: scale(1.3);
+
+}
+
+.custom-shape-divider-top-1704088231 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1704088231 svg {
+    position: relative;
+    display: block;
+    width: calc(235% + 1.3px);
+    height: 82px;
+}
+
+.custom-shape-divider-top-1704088231 .shape-fill {
+    fill: #FFFFFF;
+}
+
+.custom-shape-divider-top-1704088449 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-top-1704088449 svg {
+    position: relative;
+    display: block;
+    width: calc(138% + 1.3px);
+    height: 98px;
+}
+
+.custom-shape-divider-top-1704088449 .shape-fill {
+    fill: #FFFFFF;
+}
+
+/* icon with image  */
+.list-icon {
+    position: absolute;
+    left: -10px;
+    top: 4px;
+    width: 27px;
+    background-image: url(../img/mandala-list.png);
+}
+
+.list-icon {
+    background-repeat: no-repeat;
+    height: 18px;
+    background-size: contain;
+}
 
 
+.card-achiver {
+    width: 17rem;
+    height: 22rem;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    color: #f0f0f0;
+}
+
+.card-achiver img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity 0.2s ease-out;
+}
+
+.card-achiver h5 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset 0.3s 0.3s ease-out;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.card-achiver p,
+.card a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity 0.3s ease-out;
+}
+
+.card-achiver p {
+    inset: auto auto 80px 30px;
+}
+
+.card-achiver a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.card-achiver:hover h5 {
+    inset: auto auto 220px 30px;
+    transition: inset 0.3s ease-out;
+}
+
+.card-achiver:hover p,
+.card-achiver:hover a {
+    opacity: 1;
+    transition: opacity 0.5s 0.1s ease-in;
+}
+
+.card-achiver:hover img {
+    transition: opacity 0.3s ease-in;
+    opacity: 1;
+}
+
+.material-symbols-outlined {
+    vertical-align: middle;
+}
