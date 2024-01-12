@@ -3,10 +3,10 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:wght@100;200;300;400;500;600;700&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,1000&display=swap');
-
+/* 
 * {
     transition: all 0.3s ease-out;
-}
+} */
 
 :root {
     --primary: #8B2025;
@@ -15,7 +15,10 @@
 }
 
 body {
-    color: #4c4c4c;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 .blurry-nav {
@@ -1314,15 +1317,6 @@ header:hover .owl-next {
     display: inline-block;
 }
 
-.container-hero {
-    position: relative;
-    width: 100%;
-    background: linear-gradient(107.2deg, rgba(150, 27, 18, 0.723) 10.6%, rgba(230, 132, 4, 0.745) 91.1%), url(./img/4799045.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-}
 
 .overflow-hidden {
     overflow: hidden;
@@ -1688,119 +1682,148 @@ ol *::after {
 
 }
 
-.social-media-section .card {
-    background-color: rgba(255, 236, 201, 0.801);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-}
 
-.social-media-section .card:hover {
-    transform: scale(1.031);
-    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-    cursor: pointer;
-}
-
-.go-corner {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    width: 32px;
-    height: 32px;
-    overflow: hidden;
-    top: 0;
-    right: 0;
-    background-color: #00838d;
-    border-radius: 0 4px 0 32px;
-}
-
-.go-arrow {
-    margin-top: -4px;
-    margin-right: -4px;
-    color: white;
-    font-family: courier, sans;
-}
-
-.card-social-1 {
-    background-image: linear-gradient(#00000050, #ffffff36), url('/img/3d-female-yoga-pose-against-sunset-landscape.jpg');
-    background-size: cover;
-    background-position: top;
-    background-position-x: center;
-    background-position-y: center;
-}
-
-.card-social-2 {
-    background-image: linear-gradient(#00000074, #1212127b), url('https://images.pexels.com/photos/3823039/pexels-photo-3823039.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-size: cover;
-    background-position: center;
-}
-
-.card-social-3 {
-    background-image: linear-gradient(#00000074, #1212127b), url('https://images.pexels.com/photos/3076509/pexels-photo-3076509.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-size: cover;
-    background-position: center;
-
-}
-
-.card-social-4 {
-    background-image: linear-gradient(#00000074, #1212127b), url('https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-size: cover;
-    background-position: center;
-}
-
-.card-social-5 {
-    background-image: linear-gradient(#00000074, #1212127b), url('https://images.pexels.com/photos/2294363/pexels-photo-2294363.jpeg?auto=compress&cs=tinysrgb&w=600');
-    background-position: center;
-    background-size: cover;
-}
-
-.card-social {
-    display: block;
-    top: 0px;
+/* .social-media-section .container {
+    width: 1000px;
     position: relative;
-    background-color: #ffffff;
-    border-radius: 4px;
-    padding: 32px 24px;
-    margin: 12px;
-    text-decoration: none;
-    overflow: hidden;
-    border: 1px solid #cccccc;
+    display: flex;
+    justify-content: space-between;
+} */
+
+.social-media-section .container .card {
+    position: relative;
+    border-radius: 10px;
 }
 
-.card-social .go-corner {
-    background-color: #00838d;
+.social-media-section .container .card .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
-    width: 90px;
-    padding-right: 9px;
-    border-radius: 0;
-    transform: skew(6deg);
-    margin-right: -36px;
-    align-items: start;
-    background-image: linear-gradient(-45deg, #8b2025 1%, #390003 100%);
+    background: #f00;
+    transition: 0.7s;
+    z-index: 1;
 }
 
-.card-social .go-arrow {
-    transform: skew(-6deg);
-    margin-left: -2px;
-    margin-top: 9px;
-    opacity: 0;
+.social-media-section .container .card:nth-child(1) .icon {
+    background: #e07768;
 }
 
-.card-social:hover {
-    border: 1px solid #CD3D73;
+.social-media-section .container .card:nth-child(2) .icon {
+    background: #6eadd4;
 }
 
-.card-social h3 {
+.social-media-section .container .card:nth-child(3) .icon {
+    background: #4aada9;
+}
+
+
+.social-media-section .container .card .icon .fa {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.social-media-section i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.7s;
+    color: #fff;
+}
+
+.social-media-section  .card .face {
+    width: 300px;
+    height: 200px;
+    transition: 0.5s;
+}
+
+.social-media-section  .card .face.face1 {
+    position: relative;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.social-media-section  .card:hover .face.face1{
+    background: #ff0057;
+    transform: translateY(0px);
+}
+
+.social-media-section  .card .face.face1 .content {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.social-media-section  .card:hover .face.face1 .content {
+    opacity: 1;
+}
+
+.social-media-section  .card .face.face1 .content i{
+    max-width: 100px;
+}
+
+.social-media-section  .card .face.face2 {
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    transform: translateY(-100px);
+}
+
+.social-media-section .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.social-media-section  .card .face.face2 .content p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #414141;
+}
+.social-media-section .card{
+    background-color: #00000000;
+    border: none;
+    justify-content: center;
+    align-items: center;
+}
+.social-media-section  .card .face.face2 .content h3 {
+    margin: 0 0 10px 0;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+    text-align: center;
+    color: #414141;
+} 
+
+.social-media-section  a {
+    text-decoration: none;
+    color: #414141;
+}
+
+.social-media-section .card-social h3 {
     margin-top: 8px;
 }
 
-.card-social:hover .go-corner {
+.social-media-section .card-social:hover .go-corner {
     margin-right: -12px;
 }
 
-.card-social:hover .go-arrow {
-    opacity: 1;
-}
 
 /* Cards Css for MDVTI Features */
 
@@ -1947,30 +1970,6 @@ ol *::after {
 }
 
 
-/* Quick Links Css */
-#style-5 {
-    position: relative;
-    font-weight: bold;
-}
-
-#style-5::before {
-    content: "";
-    background-color: var(--link-3);
-    position: absolute;
-    left: 0.5rem;
-    bottom: 5px;
-    width: 100%;
-    height: 8px;
-    z-index: -1;
-    transition: all 0.3s ease-in-out;
-}
-
-#style-5:hover::before {
-    left: -5px;
-    bottom: 0;
-    height: 100%;
-    width: calc(100% + 10px);
-}
 
 .yogi-mandala {
     position: absolute;
@@ -2047,24 +2046,26 @@ figure {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: hidden;
-  }
+}
 
 
-  figure:hover img {
+figure:hover img {
     transform: scale(1.25);
-  }
-  figure:hover figcaption {
-    bottom: 0;
-  }
+}
 
-  figure img {
+figure:hover figcaption {
+    bottom: 0;
+}
+
+figure img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: 0.25s;
     filter: brightness(0.9);
-  }
-  figure figcaption {
+}
+
+figure figcaption {
     position: absolute;
     bottom: -62%;
     left: 0;
@@ -2076,13 +2077,15 @@ figure {
     color: white;
     line-height: 1;
     transition: 0.25s;
-  }
-  figure figcaption h3 {
+}
+
+figure figcaption h3 {
     margin: 0 0 30px;
     font-size: 25px;
     padding: 0;
-  }
-  figure figcaption h3 span{
+}
+
+figure figcaption h3 span {
     font-size: 17px;
     color: white;
     padding: 2px 9px 2px 9px;
@@ -2090,8 +2093,67 @@ figure {
     /* border-radius: 4px; */
     box-shadow: 3px 2px 0px 0px #ffc107;
 
-  }
-  figure figcaption p  {
+}
+
+figure figcaption p {
     font-size: 14px;
     line-height: 1.75;
-  }
+}
+
+.section-separator {
+    width: 80px;
+}
+
+.container-hero {
+    max-height: 85vh;
+    background-image: url(../img/bg.png);
+}
+
+.bg-gradient-yk {
+    background-image: linear-gradient(123deg, #8b2025, #4f050c);
+}
+
+/* About Yogkulam Card*/
+.abt-ygklm .card {
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow:
+        2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+        6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+        12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+        22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+        41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.abt-ygklm .card-title {
+    font-weight: 400;
+    font-size: 23px;
+    color: #fff;
+}
+
+.abt-ygklm .card-text {
+    font-weight: 300;
+    font-size: 13px;
+    color: #fff;
+}
+
+.abt-ygklm .card {
+    background-color: #00838d;
+}
+
+.section-divider {
+    display: flex;
+    justify-content: center;
+}
+
+.section-divider img {
+    width: 13em;
+}
+
+.demo-banner {
+    background-color: #d9d9d9;
+    padding: 20px;
+    font-style: oblique;
+    font-variant: small-caps;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Teacher Training</title>
+  <!-- Bootstrap CSS link -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- anime.js CDN link -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <style>
+    /* Custom CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+
+  </style>
+</head>
+
+<body>
+
+  <section class="container-hero">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <!-- Animate the image -->
+          <img src="your-image-url.jpg" class="img-fluid animate__animated" alt="Yoga Teacher Training Image">
+        </div>
+        <div class="col-md-6">
+          <h1 class="display-4 font-weight-bold mb-4 animate__animated animate__fadeInLeft">
+            Discover Your Path to Mastery:<br>Elevate Your Journey with MDVTI INDIA's Yoga Teacher Training
+          </h1>
+          <p class="subheading animate__animated animate__fadeInLeft">Transforming lives through the essence of Yoga</p>
+          <div class="program-offers animate__animated animate__fadeInLeft">
+            <p class="font-weight-bold mb-2">Our immersive program offers:</p>
+            <ul>
+              <li class="animate__animated animate__fadeInLeft" style="animation-delay: 200ms;">Expert guidance in Yogic practices</li>
+              <li class="animate__animated animate__fadeInLeft" style="animation-delay: 400ms;">Comprehensive understanding of Yoga philosophy</li>
+              <li class="animate__animated animate__fadeInLeft" style="animation-delay: 600ms;">Tools for teaching and personal growth</li>
+            </ul>
+          </div>
+          <!-- Animate the button -->
+          <a href="#learn-more" class="btn-start btn btn-lg btn-start-bg animate__animated animate__fadeInUp">Start Your Journey</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Animation using anime.js
+    anime.timeline({
+        targets: '.animate__animated',
+        translateY: [-20, 0],
+        opacity: [0, 1],
+        easing: 'easeOutExpo',
+        duration: 1500,
+        delay: anime.stagger(200),
+      })
+      .add({
+        targets: '.btn-start',
+        scale: [0, 1],
+        easing: 'easeInOutQuad',
+        duration: 500,
+      })
+      .add({
+        targets: '.img-fluid',
+        rotate: '360deg',
+        easing: 'easeInOutQuad',
+        duration: 1000,
+      });
+  </script>
+</body>
+
+</html>
