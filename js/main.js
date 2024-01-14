@@ -273,6 +273,8 @@ $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {
     $('#sidebar').toggleClass('active');
   });
+
+  
 });
 
 
@@ -283,4 +285,3 @@ if ($(window).width() <= 767) {
 }
 
 AOS.init();
-window.addEventListener('resize', updateBannerImage);
