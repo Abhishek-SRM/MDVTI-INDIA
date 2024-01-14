@@ -125,6 +125,7 @@
     ],
     autoplay: true,
     autoplayHoverPause: true,
+    
     responsive: {
       0: {
         items: 0
@@ -133,10 +134,10 @@
         items: 1
       },
       700: {
-        items: 1
+        items: 2
       },
       1000: {
-        items: 2
+        items: 3
       }
     }
   });
@@ -150,7 +151,7 @@
       "<i class='fas fa-arrow-circle-right'></i>"
     ],
     autoplay: true,
-  
+
     autoplayHoverPause: true,
     responsive: {
       0: {
