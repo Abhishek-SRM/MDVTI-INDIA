@@ -2591,3 +2591,7 @@ ol *::after {
     -ms-border-radius: 30px;
     border-radius: 30px
 }
+.mentor-img{
+    border:15px solid #8b2025;
+    border-radius: 150px 0 150px 0;
+}
