@@ -284,4 +284,3 @@ if ($(window).width() <= 767) {
   $('#sidebar').removeClass('active');
 }
 
-AOS.init();
