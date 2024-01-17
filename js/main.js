@@ -128,7 +128,7 @@
     
     responsive: {
       0: {
-        items: 0
+        items: 1
       },
       580: {
         items: 1
@@ -173,7 +173,7 @@
     dots: false,
     responsive: {
       0: {
-        items: 3
+        items: 1
       },
       600: {
         items: 3
