@@ -500,29 +500,6 @@ body {
 }
 
 
-/*** Testimonial ***/
-/* .testimonial-carousel::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0;
-    background: #fff;
-    z-index: 1;
-}
-
-.testimonial-carousel::after {
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 0;
-    background: linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    z-index: 1;
-} */
-
 @media (min-width: 768px) {
 
     .testimonial-carousel::before,
@@ -1680,6 +1657,16 @@ ol *::after {
     background-size: cover;
     background-repeat: no-repeat;
 
+}
+.slide-read-more{
+    overflow:hidden;
+}
+.slide-read-more-button{
+    cursor: pointer;
+    text-align: right;
+    margin-top: 8px;
+    color: #488A8A;
+    display: none;
 }
 
 .wallet {

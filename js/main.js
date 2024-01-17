@@ -125,7 +125,7 @@
     ],
     autoplay: true,
     autoplayHoverPause: true,
-    
+
     responsive: {
       0: {
         items: 1
@@ -273,8 +273,44 @@ $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {
     $('#sidebar').toggleClass('active');
   });
+  // resize the slide-read-more Div
+  var box = $(".slide-read-more");
+  var minimumHeight = 200; // max height in pixels
+  var initialHeight = box.innerHeight();
+  // reduce the text if it's longer than 200px
+  if (initialHeight > minimumHeight) {
+    box.css('height', minimumHeight);
+    $(".read-more-button").show();
+  }
 
+  SliderReadMore();
+
+  function SliderReadMore() {
+    $(".slide-read-more-button").on('click', function () {
+      // Get the parent testimonial item
+      var testimonialItem = $(this).closest('.testimonial-item');
   
+      // Find the specific elements within this testimonial item
+      var box = testimonialItem.find('.slide-read-more');
+      var currentHeight = box.innerHeight();
+      var autoHeight = box.css('height', 'auto').innerHeight();
+      var newHeight = (currentHeight | 0) === (autoHeight | 0) ? minimumHeight : autoHeight;
+  
+      // Animate the height and scroll only for the current testimonial item
+      box.css('height', currentHeight).animate({
+        height: newHeight
+      });
+  
+      $('html, body').animate({
+        scrollTop: testimonialItem.offset().top
+      });
+  
+      // Toggle only the buttons within the current testimonial item
+      testimonialItem.find(".slide-read-more-button").toggle();
+    });
+  }
+  
+
 });
 
 
