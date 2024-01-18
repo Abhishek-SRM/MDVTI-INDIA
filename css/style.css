@@ -1684,7 +1684,7 @@ ol *::after {
 }
 
 .social-media-section .card {
-
+    margin: 10px;
     width: 320px;
     height: 221px;
     background: #fff;
