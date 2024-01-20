@@ -1773,18 +1773,7 @@ ol *::after {
     transition: all 0.3s ease-out;
 }
 
-.social-media-section .circle:after {
-    content: "";
-    width: 118px;
-    height: 118px;
-    display: block;
-    position: absolute;
-    background: var(--bg-color);
-    border-radius: 50%;
-    top: 7px;
-    left: 7px;
-    transition: opacity 0.3s ease-out;
-}
+
 
 .social-media-section.circle svg {
     z-index: 10000;
@@ -1796,13 +1785,16 @@ ol *::after {
     position: absolute;
     height: 118px;
     border-radius: 50%;
-    background: var(--bg-color);
     top: 20px;
     left: 100px;
     z-index: 0;
     transition: transform 0.3s ease-out;
 }
+.social-media-section .section1 .overlay
+{
+    background: var(--facebookbg );
 
+}
 .social-media-section .section1:hover .overlay {
     background: var(--facebookbg);
 }
