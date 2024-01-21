@@ -2089,10 +2089,51 @@ ol *::after {
 @media only screen and (max-width: 767px) {
     .container-hero img {
         text-align: center;
-        width: 50%;
+        width: 80%;
         margin-top: 20px;
+
     }
 
+    .container-hero h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .container-hero .subheading {
+        text-align: center;
+    }
+
+    .abt-ygklm li {
+        font-size: 13px;
+        line-height: 1.2;
+    }
+
+    .aplit-gt-area .aplit-gt-wrapper {
+        padding: 19px 22px;
+    }
+
+    .aplit-gt-area .aplit-headline h4 {
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .aplit-gt-area a {
+        font-size: 14px;
+        padding: 10px 20px !important;
+    }
+
+    .ag-courses_item {
+        margin: 10px 0px;
+        padding: 12px 12px
+    }
+    .ag-courses-item_link{
+        padding: 11px 12px;
+    }
+
+    .ag-courses-item_title {
+        min-height: 35px;
+        font-size: 20px;
+    }
 }
 
 .bg-gradient-yk {
