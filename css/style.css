@@ -2134,6 +2134,12 @@ ol *::after {
         min-height: 35px;
         font-size: 20px;
     }
+    .why-yogkulm{
+        padding-top: 50px;
+    }
+    .why-yogkulm p{
+        font-size: 14px;
+    }
 }
 
 .bg-gradient-yk {
