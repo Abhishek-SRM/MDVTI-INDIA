@@ -220,6 +220,7 @@
     smartSpeed: 1000,
     center: true,
     dots: true,
+    autoplayHoverPause: true,
     loop: true,
     nav: true,
     navText: [
