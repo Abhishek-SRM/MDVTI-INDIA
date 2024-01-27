@@ -518,35 +518,16 @@ body {
     transform: scale(1);
 }
 
-.testimonial-carousel .owl-nav {
+.testimonial-carousel .owl-item.center .testimonial-text::before {
+    content: "";
     position: absolute;
-    width: 350px;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    opacity: 0;
-    transition: .5s;
-    z-index: 1;
-}
-
-.testimonial-carousel:hover .owl-nav {
-    width: 300px;
-    opacity: 1;
-}
-
-.testimonial-carousel .owl-nav .owl-prev,
-.testimonial-carousel .owl-nav .owl-next {
-    position: relative;
-    color: var(--primary);
-    font-size: 45px;
-    transition: .5s;
-}
-
-.testimonial-carousel .owl-nav .owl-prev:hover,
-.testimonial-carousel .owl-nav .owl-next:hover {
-    color: var(--dark);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 20px 20px 0;
+    border-color: transparent var(--light) transparent transparent;
+    top: 0;
+    left: -40px;
 }
 
 
@@ -1219,10 +1200,7 @@ header:hover .owl-next {
 }
 
 
-.owl-nav {
-    justify-content: center;
-    display: flex;
-}
+
 
 .tab {
     display: none;
@@ -2012,6 +1990,7 @@ ol *::after {
     background-size: contain;
 }
 
+
 .toppers figure {
     position: relative;
     display: flex;
@@ -2103,7 +2082,7 @@ ol *::after {
     }
 
     .abt-ygklm li {
-        font-size: 13px;
+        font-size: 14px;
         line-height: 1.2;
     }
 
@@ -2113,7 +2092,7 @@ ol *::after {
     }
 
     .aplit-gt-area .aplit-headline h4 {
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
     }
 
@@ -2126,7 +2105,8 @@ ol *::after {
         margin: 10px 0px;
         padding: 12px 12px
     }
-    .ag-courses-item_link{
+
+    .ag-courses-item_link {
         padding: 11px 12px;
     }
 
@@ -2134,23 +2114,29 @@ ol *::after {
         min-height: 35px;
         font-size: 20px;
     }
-    .why-yogkulm{
+
+    .why-yogkulm {
         padding-top: 50px;
     }
-    .why-yogkulm p{
+
+    .why-yogkulm p {
         font-size: 14px;
     }
-    .yogi p{
+
+    .yogi p {
         font-size: 14px;
     }
-    .mentors p{
+
+    .mentors p {
         font-size: 14px;
     }
-    .mentors .mentor-img{
+
+    .mentors .mentor-img {
         border: 4px solid #757575;
         border-radius: 50px 0 50px 0;
     }
-    .mentors ul{
+
+    .mentors ul {
         padding: 0px;
     }
 }
@@ -2180,7 +2166,7 @@ ol *::after {
 
 .abt-ygklm .card-text {
     font-weight: 300;
-    font-size: 13px;
+    font-size: 15px;
     color: #fff;
 }
 
@@ -2232,17 +2218,34 @@ ol *::after {
     clip-path: polygon(7% 0, 100% 0%, 90% 100%, 0% 100%);
 }
 
-.owl-carousel .card {
-    border: 7px solid #eeeeeec0;
-}
-
-.owl-carousel .card img {
-    position: absolute;
-    width: 100px;
-
-}
 
 .mentor-img {
     border: 15px solid #8b2025;
     border-radius: 150px 0 150px 0;
+}
+
+.yogkulam-glimpses .galllery img {
+    --brightness: 0.75;
+    --grayscale: 1;
+    transition: flex 0.5s, filter 0.5s;
+    height: 100%;
+    filter: grayscale(var(--grayscale)) brightness(var(--brightness));
+    object-fit: cover;
+    overflow: hidden;
+    flex: 1;
+}
+
+.yogkulam-glimpses .galllery img:hover {
+    --brightness: 1.15;
+    --grayscale: 0;
+    flex: 6;
+}
+
+.yogkulam-glimpses .container {
+    width: 80vw;
+    height: 50vmin;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vmin;
 }

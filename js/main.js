@@ -87,188 +87,8 @@
   });
 
 
-  // Testimonials carousel
-  $(".govlogo-carousel").owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    navText: [
-      "<i class='fas fa-arrow-circle-left'></i>",
-      "<i class='fas fa-arrow-circle-right'></i>"
-    ],
-    autoplay: true,
-    autoplayHoverPause: true,
-    responsive: {
-      0: {
-        items: 2
-      },
-      600: {
-        items: 3
-      },
-      700: {
-        items: 3
-      },
-      1000: {
-        items: 5
-      }
-    }
-  });
 
 
-  $(".course-caraousel2").owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    navText: [
-      "<i class='fas fa-arrow-circle-left'></i>",
-      "<i class='fas fa-arrow-circle-right'></i>"
-    ],
-    autoplay: true,
-    autoplayHoverPause: true,
-
-    responsive: {
-      0: {
-        items: 1
-      },
-      580: {
-        items: 1
-      },
-      700: {
-        items: 2
-      },
-      1000: {
-        items: 3
-      }
-    }
-  });
-  // Our toppers Carousel
-  $(".toppers").owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    navText: [
-      "<i class='fas fa-arrow-circle-left'></i>",
-      "<i class='fas fa-arrow-circle-right'></i>"
-    ],
-    autoplay: true,
-
-    autoplayHoverPause: true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      700: {
-        items: 2
-      },
-      1000: {
-        items: 3
-      }
-    }
-  });
-  $(".toppers2").owlCarousel({
-    nav: true,
-    dots: false,
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 3
-      },
-      700: {
-        items: 5
-      },
-      1000: {
-        items: 6
-      }
-    }
-  });
-
-
-  $('.ann-carousel').owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    center: true,
-    dots: false,
-    loop: true,
-    nav: true,
-    navText: [
-      '<i class="bi bi-arrow-left"></i>',
-      '<i class="bi bi-arrow-right"></i>'
-    ],
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      720: {
-        items: 1
-      },
-      1000: {
-        items: 1
-      }
-    }
-  });
-
-  $('.owl-carousel').owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    center: true,
-    dots: true,
-    autoplayHoverPause: true,
-    loop: true,
-    nav: true,
-    navText: [
-      '<i class="bi bi-arrow-left"></i>',
-      '<i class="bi bi-arrow-right"></i>'
-    ],
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      720: {
-        items: 1
-      },
-      1000: {
-        items: 3
-      }
-    }
-  });
-
-  $('.owl-carousel').owlCarousel({
-    autoplay: true,
-    smartSpeed: 1000,
-    center: true,
-    dots: true,
-    loop: true,
-    nav: true,
-    navText: [
-      '<i class="bi bi-arrow-left"></i>',
-      '<i class="bi bi-arrow-right"></i>'
-    ],
-    responsive: {
-      0: {
-        items: 1
-      },
-      600: {
-        items: 1
-      },
-      720: {
-        items: 1
-      },
-      1000: {
-        items: 3
-      }
-    }
-  })
 })(jQuery);
 $(document).ready(function () {
   $('#sidebarCollapse').on('click', function () {
@@ -290,27 +110,27 @@ $(document).ready(function () {
     $(".slide-read-more-button").on('click', function () {
       // Get the parent testimonial item
       var testimonialItem = $(this).closest('.testimonial-item');
-  
+
       // Find the specific elements within this testimonial item
       var box = testimonialItem.find('.slide-read-more');
       var currentHeight = box.innerHeight();
       var autoHeight = box.css('height', 'auto').innerHeight();
       var newHeight = (currentHeight | 0) === (autoHeight | 0) ? minimumHeight : autoHeight;
-  
+
       // Animate the height and scroll only for the current testimonial item
       box.css('height', currentHeight).animate({
         height: newHeight
       });
-  
+
       $('html, body').animate({
         scrollTop: testimonialItem.offset().top
       });
-  
+
       // Toggle only the buttons within the current testimonial item
       testimonialItem.find(".slide-read-more-button").toggle();
     });
   }
-  
+
 
 });
 
@@ -321,3 +141,98 @@ if ($(window).width() <= 767) {
   $('#sidebar').removeClass('active');
 }
 
+// Carousel
+
+$(document).ready(function () {
+  $('.course-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    autoplay: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    navText: ["<i class='fa fa-caret-left'></i>", "<i class='fa fa-caret-right'></i>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  })
+
+  $('.testimonial-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    navText: ["<i class='fa fa-caret-left'></i>", "<i class='fa fa-caret-right'></i>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  })
+  $('.achievers-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    navText: ["<i class='fa fa-caret-left'></i>", "<i class='fa fa-caret-right'></i>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+      600: {
+        items: 2
+      },
+      1000: {
+        items: 3
+      }
+    }
+  })
+
+  $('.affiliations-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    autoplayTimeout: 3000,
+    autoplayHoverPause: true,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    navText: ["<i class='fa fa-caret-left'></i>", "<i class='fa fa-caret-right'></i>"],
+    responsive: {
+      0: {
+        items: 2
+      },
+      400:{
+        items :3
+      },
+      600: {
+        items: 3
+      },
+      1000: {
+        items: 6
+      }
+    }
+  })
+
+});
