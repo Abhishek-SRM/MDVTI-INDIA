@@ -2249,3 +2249,14 @@ ol *::after {
     justify-content: center;
     gap: 1vmin;
 }
+
+/* Franchise-new Css */
+
+/* Hero Section Css */
+
+#yogkulam-franchise {
+    background-color: #898989;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23898989' cx='50' cy='0' r='50'/%3E%3Cg fill='%238f8e89' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23959288' cx='50' cy='100' r='50'/%3E%3Cg fill='%239b9788' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a19c88' cx='50' cy='200' r='50'/%3E%3Cg fill='%23a7a187' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23ada687' cx='50' cy='300' r='50'/%3E%3Cg fill='%23b3ab86' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b9b085' cx='50' cy='400' r='50'/%3E%3Cg fill='%23bfb585' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c5ba84' cx='50' cy='500' r='50'/%3E%3Cg fill='%23cbbf83' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%23d0c483' cx='50' cy='600' r='50'/%3E%3Cg fill='%23d6c982' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23dcce81' cx='50' cy='700' r='50'/%3E%3Cg fill='%23e2d380' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23e8d87f' cx='50' cy='800' r='50'/%3E%3Cg fill='%23eedd7e' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23f3e37d' cx='50' cy='900' r='50'/%3E%3Cg fill='%23f9e87b' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23FFED7A' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
+}
