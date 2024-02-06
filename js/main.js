@@ -167,7 +167,7 @@ $(document).ready(function () {
     }
   })
 
-  $('.testimonial-carous').owlCarousel({
+  $('.testimonial-carousal').owlCarousel({
     loop: true,
     margin: 10,
     nav: true,

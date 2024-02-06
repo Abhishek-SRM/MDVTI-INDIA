@@ -523,7 +523,7 @@ body {
 
 #customers-testimonials .item {
     text-align: center;
-    padding: 50px;
+    padding: 10px;
     margin-bottom: 80px;
     opacity: .2;
     -webkit-transform: scale3d(0.8, 0.8, 1);
@@ -1680,26 +1680,12 @@ ol *::after {
     display: none;
 }
 
-.wallet {
-    --facebookbg: #3b5998;
-    --facebookbglight: #8b9dc3;
-    --linkedinbg: #0077b5;
-    --linkedinbglight: #8bb4d9;
-    --instagrambg: #e4405f;
-    --whatsappbg: #25d366;
-
-    --bg-color: #8a1313;
-    --bg-color-light: #f0e7ff;
-    --text-color-hover: #fff;
-    --box-shadow-color: rgba(206, 178, 252, 0.48);
-}
-
 .social-media-section .card {
+    background-color: #ffffff ;
     margin: 10px;
     width: 320px;
     height: 221px;
-    background: #fff;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
@@ -1712,68 +1698,9 @@ ol *::after {
 }
 
 .social-media-section .card:hover {
-    transform: translateY(-5px) scale(1.005) translateZ(0);
-    box-shadow: 0 24px 36px rgba(0, 0, 0, 0.11),
-        0 24px 46px var(--box-shadow-color);
+    background-color: #ffdb9c83 ;
 }
-
-.social-media-section .card:hover .overlay {
-    transform: scale(4) translateZ(0);
-}
-
-.social-media-section .card:hover .circle {
-    border-color: var(--bg-color-light);
-    background: var(--bg-color);
-}
-
-.social-media-section .card:hover .circle:after {
-    background: var(--bg-color-light);
-}
-
-.social-media-section.card:hover p {
-    color: var(--text-color-hover);
-}
-
-.social-media-section .card p {
-    font-size: 17px;
-    color: #efefef;
-    margin-top: 30px;
-    z-index: 1000;
-    transition: color 0.3s ease-out;
-}
-
-.social-media-section .circlefb {
-    border: 2px solid var(--facebookbg);
-}
-
-.social-media-section .circleinsta {
-    border: 2px solid var(--instagrambg);
-}
-
-.social-media-section .circlewa {
-    border: 2px solid var(--whatsappbg);
-}
-
-.social-media-section .card:hover .circlefb {
-    border-color: var(--bg-color-light);
-    background: var(--facebookbg);
-}
-
-.social-media-section .card:hover .circleinsta {
-    border-color: var(--bg-color-light);
-
-    background: var(--instagrambg);
-}
-
-.social-media-section .card:hover .circlewa {
-    border-color: var(--bg-color-light);
-
-    background: var(--whatsappbg);
-}
-
 .social-media-section .circle {
-    width: 131px;
-    height: 131px;
     border-radius: 50%;
     background: #fff;
     display: flex;
@@ -1783,78 +1710,37 @@ ol *::after {
     z-index: 1;
     transition: all 0.3s ease-out;
 }
-
-
-
-.social-media-section.circle svg {
-    z-index: 10000;
-    transform: translateZ(0);
+.social-media-section .circle img {
+    width: 100px;
+    height: 100px;
+    transition: all 0.3s ease-out;
 }
 
-.social-media-section .overlay {
-    width: 118px;
-    position: absolute;
-    height: 118px;
-    border-radius: 50%;
-    top: 20px;
-    left: 100px;
-    z-index: 0;
-    transition: transform 0.3s ease-out;
-}
-
-.social-media-section .section1:hover .overlay {
-    background: var(--facebookbg);
-}
-
-
-
-.social-media-section .section1:hover i {
-    color: var(--facebookbg);
-}
-
-.social-media-section .section2:hover i {
-    color: var(--instagrambg);
-}
-
-.social-media-section .section4:hover i {
-    color: var(--whatsappbg);
-}
-
-.social-media-section .section2:hover .overlay {
-    background: var(--linkedinbg);
-}
-
-.social-media-section .section3:hover .overlay {
-    background: var(--instagrambg);
-}
-
-.social-media-section .section4:hover .overlay {
-    background: var(--whatsappbg);
-}
-
-.social-media-section i {
-    font-size: 50px;
-    z-index: 1;
-    color: #FFFFFF;
-}
-
-/* Cards Css for MDVTI Features */
-
+/* Base styles */
 .ag-courses_item {
-    -ms-flex-preferred-size: calc(33.333% - 30px);
     flex-basis: calc(33.333% - 30px);
     margin: 0 15px 30px;
-    padding: 0%;
+    padding: 0;
     overflow: hidden;
     border: 1px dotted rgb(33, 33, 33);
     box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.114);
     border-radius: 3px;
+    transition: color .5s ease, transform .5s ease, box-shadow .5s ease; /* Combined transitions */
+    background-color: #ffffff;
 }
 
 .ag-courses_item:hover {
     transform: scale(1.061);
+    box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.314);
 }
 
+.ag-courses_item .ag-courses-item_bg,
+.ag-courses-item_link:hover .ag-courses-item_bg {
+    background-color: #8B2025;
+    transition: transform .5s ease; /* Ensure smooth scaling */
+}
+
+/* Link and its hover states */
 .ag-courses-item_link {
     display: block;
     padding: 15px 20px;
@@ -1864,82 +1750,57 @@ ol *::after {
 }
 
 .ag-courses-item_link:hover,
-.ag-courses-item_link:hover .ag-courses-item_title {
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_title,
 .ag-courses-item_link:hover .ag-courses-item_date-box {
+    color: #ffffff; /* Unified hover color changes */
     text-decoration: none;
-    color: #ffffff;
 }
 
 .ag-courses-item_link:hover .ag-courses-item_bg {
-    -webkit-transform: scale(10);
-    -ms-transform: scale(10);
-    transform: scale(10);
+    transform: scale(10); /* Dramatic scaling effect on hover */
+}
+
+/* Title and Date box styles */
+.ag-courses-item_title,
+.ag-courses-item_date-box {
+    overflow: hidden;
+    z-index: 2;
+    position: relative;
+    color: #262626; /* Default text color */
+    transition: color .5s ease; /* Smooth color transition */
 }
 
 .ag-courses-item_title {
     min-height: 57px;
     margin: 0 0 2px;
-    overflow: hidden;
     font-weight: bold;
     font-size: 24px;
-    color: #262626;
-    z-index: 2;
-    position: relative;
 }
 
 .ag-courses-item_date-box {
     font-size: 14px;
-    color: #0f0f0fdd;
-
-    z-index: 2;
-    position: relative;
 }
 
 .ag-courses-item_date {
     font-weight: bold;
-    color: #f9b234;
-
-    -webkit-transition: color .5s ease;
-    -o-transition: color .5s ease;
-    transition: color .5s ease
+    color: #8B2025;
 }
 
+/* Background circle */
 .ag-courses-item_bg {
     height: 128px;
     width: 128px;
-    background-color: #f9b234;
-
     z-index: 1;
     position: absolute;
     top: -75px;
     right: -75px;
     border-radius: 50%;
-    -webkit-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    transition: all .5s ease;
 }
 
-.ag-courses_item .ag-courses-item_bg {
-    background-color: #aa3000;
-}
-
-
-
-
-
+/* Responsive adjustments */
 @media only screen and (max-width: 979px) {
     .ag-courses_item {
-        -ms-flex-preferred-size: calc(50% - 30px);
         flex-basis: calc(50% - 30px);
-    }
-
-    .ag-courses-item_title {
-        font-size: 24px;
     }
 }
 
@@ -1947,19 +1808,15 @@ ol *::after {
     .ag-format-container {
         width: 96%;
     }
-
 }
 
 @media only screen and (max-width: 639px) {
     .ag-courses_item {
-        -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
     }
 
     .ag-courses-item_title {
         min-height: 72px;
-        line-height: 1;
-
         font-size: 24px;
     }
 
@@ -1970,7 +1827,6 @@ ol *::after {
     .ag-courses-item_date-box {
         font-size: 16px;
     }
-
 }
 
 .card-icon-full {
@@ -1993,10 +1849,6 @@ ol *::after {
     transform: scale(1.3);
 
 }
-
-
-
-
 
 .custom-shape-divider-top-1704088449 .shape-fill {
     fill: #FFFFFF;
