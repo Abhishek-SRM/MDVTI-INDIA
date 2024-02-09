@@ -504,7 +504,7 @@ body {
 
 .testimonials #customers-testimonials .shadow-effect p {
     font-family: inherit;
-    font-size: 17px;
+    font-size: 14px;
     line-height: 1.5;
     margin: 0 0 17px 0;
     font-weight: 300;
@@ -524,7 +524,7 @@ body {
 #customers-testimonials .item {
     text-align: center;
     padding: 10px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
     opacity: .2;
     -webkit-transform: scale3d(0.8, 0.8, 1);
     transform: scale3d(0.8, 0.8, 1);

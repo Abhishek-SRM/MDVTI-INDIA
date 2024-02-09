@@ -266,18 +266,16 @@ jQuery(document).ready(function($) {
 
 $(document).ready(function() {
   $('.read-more-btn').each(function() {
-      var $btn = $(this); // The "Read More" button
-      var $text = $btn.prev('.testimonial-text'); // The text container
-      var fullText = $text.text(); // Full text content
-      var shortText = fullText.substr(0, 150) + '...'; // Shortened text
+      var $btn = $(this); 
+      var $text = $btn.prev('.testimonial-text');
+      var fullText = $text.text(); 
+      var shortText = fullText.substr(0, 400) + '...'; 
       
-      // Initially set the text to the shortened version
       $text.data('full-text', fullText).text(shortText);
 
       $btn.on('click', function() {
-          // Check if the button is in "Read More" or "Read Less" state
+      
           if ($btn.data('isExpanded')) {
-              // Collapse the text
               $text.text(shortText);
               $btn.text('Read More').data('isExpanded', false);
           } else {
