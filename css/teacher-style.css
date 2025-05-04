@@ -534,7 +534,6 @@
 .teacher-list-name {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #8B2025;
     margin-bottom: 0;
     letter-spacing: 0.01em;
 }
@@ -779,7 +778,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    background: beige;
+    background-color: #fff;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
     padding-top: 1rem;
@@ -818,7 +817,6 @@
 }
 
 .sidebar-section h5 {
-    color: #8B2025;
     font-weight: 700;
     margin-bottom: 0.7rem;
     font-size: 1.1rem;
@@ -1276,11 +1274,9 @@
     color: #d32f2f;
 }
 
-/* Additional styles for teachers page */
 @media (max-width: 768px) {
     .teachers-sidebar {
         display: none;
-        /* Initially hidden on mobile */
         position: fixed;
         top: 0;
         left: 0;
@@ -1325,7 +1321,6 @@
 
     .teachers-content {
         width: 100%;
-        /* Make content take full width */
     }
 
     .teachers-fixed-topbar {
