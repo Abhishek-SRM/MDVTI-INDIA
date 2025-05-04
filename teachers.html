@@ -108,6 +108,21 @@
                 min-width: 140px;
             }
         }
+
+        .teacher-list-link:hover,
+        .teacher-list-link:focus {
+            background: #f7fafd;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+            text-decoration: none;
+        }
+
+        .teacher-redirect-icon {
+            pointer-events: none;
+        }
+
+        .teacher-list-link {
+            transition: background 0.18s, box-shadow 0.18s;
+        }
     </style>
 </head>
 
@@ -503,7 +518,10 @@
 
             const teacherList = document.getElementById('teacherList');
             teacherList.innerHTML = teachers.map(t => `
-                <div class="teacher-list-item">
+                <a class="teacher-list-item teacher-list-link" href="${t.profile}" style="text-decoration:none; color:inherit; position:relative;">
+                    <span class="teacher-redirect-icon" title="View Profile" style="position:absolute;top:12px;right:18px;z-index:2;">
+                        <i class="fas fa-arrow-up-right-from-square" style="font-size:1.1em;opacity:0.7;"></i>
+                    </span>
                     <div class="teacher-list-details">
                         <div class="teacher-list-header">
                             <span class="teacher-list-name">${t.name}</span>
@@ -525,17 +543,17 @@
                         <div class="teacher-list-tagline">${t.tagline}</div>
                         <div class="teacher-list-badges" aria-label="Teacher availability">
                             ${Object.entries(t.available).map(([type, isAvailable]) =>
-                isAvailable ? `
+                                isAvailable ? `
                                     <span class="teacher-badge ${type}" 
                                           data-availability="${type}"
                                           title="Available for ${type.charAt(0).toUpperCase() + type.slice(1)} sessions">
                                         <i class="fas ${type === 'online' ? 'fa-globe' :
-                        type === 'home' ? 'fa-home' :
-                            type === 'studio' ? 'fa-university' : 'fa-briefcase'
-                    }"></i>
+                                            type === 'home' ? 'fa-home' :
+                                            type === 'studio' ? 'fa-university' : 'fa-briefcase'
+                                        }"></i>
                                         <span class="badge-text">${type.charAt(0).toUpperCase() + type.slice(1)}</span>
                                     </span>` : ''
-            ).join('')}
+                            ).join('')}
                         </div>
                         <div>
                             <span class="teacher-list-rating">${'★'.repeat(Math.round(t.rating))}${'☆'.repeat(5 - Math.round(t.rating))}</span>
@@ -545,9 +563,8 @@
                     </div>
                     <div class="teacher-list-actions">
                         <img src="${t.img}" class="teacher-thumb" alt="${t.name}">
-                        <a href="${t.profile}" class="teacher-list-view-btn">View Profile</a>
                     </div>
-                </div>
+                </a>
             `).join('');
 
             renderPagination();
