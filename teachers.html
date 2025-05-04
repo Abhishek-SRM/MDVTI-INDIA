@@ -34,11 +34,71 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/teacher-style.css" rel="stylesheet">
+    <style>
+        /* Additional styles for teachers page */
+        @media (max-width: 991.98px) {
+            .teachers-fixed-topbar {
+                display: none;
+            }
+            .teachers-fixed-topbar.show {
+                display: block;
+            }
+            .teachers-toggle-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                background: #f8f9fa;
+                border: none;
+                padding: 12px 0;
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #333;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                cursor: pointer;
+                margin-bottom: 0;
+                position: relative;
+            }
+            .teacher-list-item {
+                display: block !important;
+            }
+            .teacher-list-details {
+                width: 100%;
+            }
+            .teacher-list-actions .teacher-thumb {
+                display: none !important;
+            }
+            .teacher-mobile-img {
+                display: block !important;
+                margin: 10px auto 10px auto;
+                max-width: 120px;
+                border-radius: 8px;
+            }
+        }
+        @media (min-width: 992px) {
+            .teachers-toggle-btn {
+                display: none;
+            }
+            .teachers-fixed-topbar {
+                display: block !important;
+            }
+            .teacher-mobile-img {
+                display: none !important;
+            }
+            .teacher-list-item {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .teacher-list-actions {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                min-width: 140px;
+            }
+        }
+    </style>
 </head>
-<style>
-    /* Additional styles for teachers page */
-
-</style>
 
 <body>
     <!-- Spinner Start -->
@@ -127,7 +187,11 @@
 
     <!-- Teachers Start -->
     <section class="teachers-section py-5">
-        <div class="teachers-fixed-topbar">
+        <!-- Toggle button for mobile -->
+        <button class="teachers-toggle-btn" id="teachersToggleBtn">
+            <i class="fas fa-filter"></i>&nbsp; Show Filters & Search
+        </button>
+        <div class="teachers-fixed-topbar" id="teachersFixedTopbar">
             <div class="mb-3 d-flex justify-content-center">
                 <input type="text" id="teacher-search" class="form-control w-50"
                     placeholder="Search Teacher by Name...">
@@ -434,6 +498,8 @@
                     <div class="teacher-list-details">
                         <div class="teacher-list-header">
                             <span class="teacher-list-name">${t.name}</span>
+                            <!-- Mobile image after name -->
+                            <img src="${t.img}" class="teacher-mobile-img" alt="${t.name}">
                             <span class="teacher-list-specialization">${t.specialization}</span>
                             ${t.certification ? `<span class="teacher-list-cert"><i class="fas fa-certificate"></i> ${t.certification}</span>` : ''}
                         </div>
@@ -448,7 +514,7 @@
                             <span><i class="fas fa-language"></i> ${t.languages.join(', ')}</span>
                         </div>
                         <div class="teacher-list-tagline">${t.tagline}</div>
-                                                <div class="teacher-list-badges" aria-label="Teacher availability">
+                        <div class="teacher-list-badges" aria-label="Teacher availability">
                             ${Object.entries(t.available).map(([type, isAvailable]) => 
                                 isAvailable ? `
                                     <span class="teacher-badge ${type}" 
@@ -645,6 +711,30 @@
         $(document).ready(function () {
             // ...existing code...
             renderFeaturedTeacher();
+        });
+
+        // Mobile filter/search toggle logic
+        $(function () {
+            var $topbar = $('#teachersFixedTopbar');
+            var $btn = $('#teachersToggleBtn');
+            var shown = false;
+            function updateBtnText() {
+                $btn.html(`<i class="fas fa-filter"></i>&nbsp; ${shown ? 'Hide Filters & Search' : 'Show Filters & Search'}`);
+            }
+            $btn.on('click', function () {
+                shown = !shown;
+                $topbar.toggleClass('show', shown);
+                updateBtnText();
+            });
+            // Hide on resize to desktop
+            $(window).on('resize', function () {
+                if (window.innerWidth >= 992) {
+                    $topbar.removeClass('show');
+                    shown = false;
+                    updateBtnText();
+                }
+            });
+            updateBtnText();
         });
     </script>
 </body>
