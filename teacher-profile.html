@@ -552,7 +552,6 @@
                 const name = decodeURIComponent(getQueryParam('name') || '');
                 const teacher = teachers[name];
 
-                // Initialize WOW.js
                 new WOW().init();
 
                 function renderStars(rating) {
@@ -616,7 +615,6 @@
 
                 function updateReviewsUI() {
                     document.getElementById('teacherReviews').innerHTML = renderReviews(teacher.reviews);
-                    // Update rating
                     if (teacher.reviews && teacher.reviews.length > 0) {
                         const avg = teacher.reviews.reduce((a, b) => a + b.rating, 0) / teacher.reviews.length;
                         teacher.rating = avg;
@@ -642,14 +640,12 @@
                     document.getElementById('teacherQuickInfo').innerHTML = renderQuickInfo(teacher);
                     updateReviewsUI();
 
-                    // Star rating in the form
                     const stars = document.querySelectorAll('.star-icon');
                     stars.forEach(star => {
                         star.addEventListener('click', function () {
                             const value = parseInt(this.getAttribute('data-value'));
                             document.getElementById('reviewRating').value = value;
 
-                            // Update star display
                             stars.forEach(s => {
                                 const starValue = parseInt(s.getAttribute('data-value'));
                                 if (starValue <= value) {
@@ -685,7 +681,6 @@
                         });
                     });
 
-                    // Add Review button
                     const addReviewBtn = document.getElementById('addReviewBtn');
                     if (addReviewBtn) {
                         addReviewBtn.onclick = function () {
@@ -697,7 +692,6 @@
                         };
                     }
 
-                    // Handle review form submit
                     document.getElementById('reviewForm').onsubmit = function (e) {
                         e.preventDefault();
                         const author = document.getElementById('reviewAuthor').value.trim();
@@ -714,7 +708,6 @@
                         }
                     };
 
-                    // Social sharing functions
                     window.shareOnFacebook = function () {
                         const url = encodeURIComponent(window.location.href);
                         window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');

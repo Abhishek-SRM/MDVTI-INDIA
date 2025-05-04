@@ -40,9 +40,11 @@
             .teachers-fixed-topbar {
                 display: none;
             }
+
             .teachers-fixed-topbar.show {
                 display: block;
             }
+
             .teachers-toggle-btn {
                 display: flex;
                 align-items: center;
@@ -54,20 +56,24 @@
                 font-size: 1.1rem;
                 font-weight: 600;
                 color: #333;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
                 cursor: pointer;
                 margin-bottom: 0;
                 position: relative;
             }
+
             .teacher-list-item {
                 display: block !important;
             }
+
             .teacher-list-details {
                 width: 100%;
             }
+
             .teacher-list-actions .teacher-thumb {
                 display: none !important;
             }
+
             .teacher-mobile-img {
                 display: block !important;
                 margin: 10px auto 10px auto;
@@ -75,21 +81,26 @@
                 border-radius: 8px;
             }
         }
+
         @media (min-width: 992px) {
             .teachers-toggle-btn {
                 display: none;
             }
+
             .teachers-fixed-topbar {
                 display: block !important;
             }
+
             .teacher-mobile-img {
                 display: none !important;
             }
+
             .teacher-list-item {
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-start;
             }
+
             .teacher-list-actions {
                 display: flex;
                 flex-direction: column;
@@ -365,7 +376,6 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
@@ -482,7 +492,6 @@
             }
         ];
 
-        // Pagination and rendering logic
         const TEACHERS_PER_PAGE = 3;
         let currentPage = 1;
         let filteredTeachers = teacherData;
@@ -515,19 +524,18 @@
                         </div>
                         <div class="teacher-list-tagline">${t.tagline}</div>
                         <div class="teacher-list-badges" aria-label="Teacher availability">
-                            ${Object.entries(t.available).map(([type, isAvailable]) => 
-                                isAvailable ? `
+                            ${Object.entries(t.available).map(([type, isAvailable]) =>
+                isAvailable ? `
                                     <span class="teacher-badge ${type}" 
                                           data-availability="${type}"
                                           title="Available for ${type.charAt(0).toUpperCase() + type.slice(1)} sessions">
-                                        <i class="fas ${
-                                            type === 'online' ? 'fa-globe' : 
-                                            type === 'home' ? 'fa-home' : 
-                                            type === 'studio' ? 'fa-university' : 'fa-briefcase'
-                                        }"></i>
+                                        <i class="fas ${type === 'online' ? 'fa-globe' :
+                        type === 'home' ? 'fa-home' :
+                            type === 'studio' ? 'fa-university' : 'fa-briefcase'
+                    }"></i>
                                         <span class="badge-text">${type.charAt(0).toUpperCase() + type.slice(1)}</span>
                                     </span>` : ''
-                            ).join('')}
+            ).join('')}
                         </div>
                         <div>
                             <span class="teacher-list-rating">${'★'.repeat(Math.round(t.rating))}${'☆'.repeat(5 - Math.round(t.rating))}</span>
@@ -566,7 +574,6 @@
             window.scrollTo({ top: document.getElementById('teacherList').offsetTop - 80, behavior: 'smooth' });
         };
 
-        // Filter and search logic
         function applyFilters() {
             const activeFilter = $('.filter-btn.active').data('filter');
             const searchVal = $('#teacher-search').val().toLowerCase();
@@ -584,7 +591,6 @@
                         matchCategory = t.specialization.toLowerCase().includes('philosophy');
                     }
                 }
-                // Filter by search
                 let matchSearch = t.name.toLowerCase().includes(searchVal);
                 return matchCategory && matchSearch;
             });
@@ -601,11 +607,9 @@
             $('#teacher-search').on('input', function () {
                 applyFilters();
             });
-            // Initial render
             renderTeacherList(currentPage);
         });
 
-        // Animate teacher cards on filter/search/page change
         function animateTeacherCards() {
             const cards = document.querySelectorAll('.teacher-list-item');
             cards.forEach((card, idx) => {
@@ -619,19 +623,16 @@
             });
         }
 
-        // Sort logic
         function sortTeachers(sortBy) {
             if (sortBy === "rating") {
                 filteredTeachers.sort((a, b) => b.rating - a.rating);
             } else if (sortBy === "experience") {
                 filteredTeachers.sort((a, b) => {
-                    // Extract years from "xx years experience"
                     const getYears = t => parseInt(t.experience);
                     return getYears(b) - getYears(a);
                 });
             } else if (sortBy === "students") {
                 filteredTeachers.sort((a, b) => {
-                    // Extract number from "Trained xxxx+ students"
                     const getNum = t => parseInt((t.students.match(/\d+/) || [0])[0]);
                     return getNum(b) - getNum(a);
                 });
@@ -646,17 +647,14 @@
                     return getPrice(b) - getPrice(a);
                 });
             } else {
-                // Default: restore original order
                 filteredTeachers = teacherData.slice().filter(t => filteredTeachers.includes(t));
             }
         }
 
-        // Update applyFilters to include sorting
         function applyFilters() {
             const activeFilter = $('.filter-btn.active').data('filter');
             const searchVal = $('#teacher-search').val().toLowerCase();
             filteredTeachers = teacherData.filter(t => {
-                // Filter by category
                 let matchCategory = true;
                 if (activeFilter && activeFilter !== 'all') {
                     if (activeFilter === 'asana') {
@@ -669,35 +667,28 @@
                         matchCategory = t.specialization.toLowerCase().includes('philosophy');
                     }
                 }
-                // Filter by search
                 let matchSearch = t.name.toLowerCase().includes(searchVal);
                 return matchCategory && matchSearch;
             });
-            // Sort
             sortTeachers($('#sort-select').val());
             currentPage = 1;
             renderTeacherList(currentPage);
         }
 
-        // Sidebar category links
         $(document).on('click', '.sidebar-category-link', function (e) {
             e.preventDefault();
             const filter = $(this).data('filter');
             $('.filter-btn').removeClass('active');
             $(`.filter-btn[data-filter="${filter}"]`).addClass('active');
             applyFilters();
-            // Scroll to teacher list
             $('html,body').animate({ scrollTop: $('.teachers-section').offset().top - 60 }, 400);
         });
 
-        // Sort select event
         $('#sort-select').on('change', function () {
             applyFilters();
         });
 
-        // Fill featured teacher in sidebar
         function renderFeaturedTeacher() {
-            // Pick highest rated teacher
             const featured = teacherData.reduce((prev, curr) => (curr.rating > prev.rating ? curr : prev), teacherData[0]);
             $('#sidebarFeaturedTeacher').html(`
                 <img src="${featured.img}" alt="${featured.name}">
@@ -709,11 +700,9 @@
         }
 
         $(document).ready(function () {
-            // ...existing code...
             renderFeaturedTeacher();
         });
 
-        // Mobile filter/search toggle logic
         $(function () {
             var $topbar = $('#teachersFixedTopbar');
             var $btn = $('#teachersToggleBtn');
@@ -726,7 +715,6 @@
                 $topbar.toggleClass('show', shown);
                 updateBtnText();
             });
-            // Hide on resize to desktop
             $(window).on('resize', function () {
                 if (window.innerWidth >= 992) {
                     $topbar.removeClass('show');
