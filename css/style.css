@@ -1,16 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&display=swap');
 
 :root {
     --primary: #8B2025;
     --light: #F5F5F5;
     --dark: #353535;
+    --heading-font: 'El Messiri', 'DM Sans', sans-serif;
+    --body-font: 'DM Sans', sans-serif;
 }
 
 body {
     background-color: #f8f9fa;
     color: #333;
     margin: 0;
-    padding: 0;
+    padding: 0 clamp(0.75rem, 2vw, 1.75rem);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 0.75em;
+    text-wrap: balance;
+    letter-spacing: 0.2px;
+}
+
+h1 {
+    font-size: clamp(2rem, 2.5vw + 1rem, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 2vw + 0.9rem, 2.55rem);
+}
+
+h3 {
+    font-size: clamp(1.45rem, 1.75vw + 0.7rem, 2.1rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 1.25vw + 0.55rem, 1.75rem);
+}
+
+h5 {
+    font-size: clamp(1.05rem, 1vw + 0.45rem, 1.3rem);
+}
+
+h6 {
+    font-size: clamp(0.98rem, 0.75vw + 0.4rem, 1.15rem);
+}
+
+section {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1rem, 3vw, 2.75rem);
+    padding-right: clamp(1rem, 3vw, 2.75rem);
 }
 
 .blurry-nav {
@@ -313,6 +365,9 @@ body {
     position: relative;
     display: inline-block;
     padding: 0 60px;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    font-size: clamp(1.9rem, 2vw + 1rem, 2.7rem);
 }
 
 .section-title.text-start h1 {
@@ -853,13 +908,13 @@ header .item .cover .header-content .line {
 }
 
 header .item .cover .header-content h2 {
-    font-weight: 300;
-    font-size: 35px;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2vw + 0.75rem, 2.35rem);
     color: #fff;
 }
 
 header .item .cover .header-content h1 {
-    font-size: 56px;
+    font-size: clamp(2.35rem, 3vw + 1.35rem, 3.5rem);
     font-weight: 600;
     margin: 5px 0 20px;
     word-spacing: 3px;
@@ -867,8 +922,8 @@ header .item .cover .header-content h1 {
 }
 
 header .item .cover .header-content h4 {
-    font-size: 24px;
-    font-weight: 300;
+    font-size: clamp(1.1rem, 1.6vw + 0.6rem, 1.65rem);
+    font-weight: 400;
     line-height: 36px;
     color: #fff;
 }
