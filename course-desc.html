@@ -322,13 +322,125 @@
         .cutout-ring img {
             border-radius: 9999px;
         }
+
+        /* Testimonials Carousel Custom Styling */
+        #testimonials-carousel .owl-nav button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background: white !important;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7d0400 !important;
+        }
+
+        #testimonials-carousel .owl-nav button:hover {
+            background: #7d0400 !important;
+            color: white !important;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(125, 4, 0, 0.3);
+        }
+
+        #testimonials-carousel .owl-nav .owl-prev {
+            left: -25px;
+        }
+
+        #testimonials-carousel .owl-nav .owl-next {
+            right: -25px;
+        }
+
+        #testimonials-carousel .owl-dots {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        #testimonials-carousel .owl-dots .owl-dot {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        #testimonials-carousel .owl-dots .owl-dot span {
+            width: 10px;
+            height: 10px;
+            background: #d1d5db;
+            display: block;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        #testimonials-carousel .owl-dots .owl-dot.active span {
+            background: #7d0400;
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        #testimonials-carousel .owl-dots .owl-dot:hover span {
+            background: #7d0400;
+        }
+
+        /* Responsive adjustments for carousel navigation */
+        @media (max-width: 768px) {
+            #testimonials-carousel .owl-nav button {
+                width: 40px;
+                height: 40px;
+            }
+
+            #testimonials-carousel .owl-nav .owl-prev {
+                left: -15px;
+            }
+
+            #testimonials-carousel .owl-nav .owl-next {
+                right: -15px;
+            }
+        }
+
+        /* Owl Carousel equal height items */
+        #testimonials-carousel .owl-item {
+            display: flex;
+            opacity: 0.4;
+            transition: opacity 0.3s ease;
+        }
+
+        #testimonials-carousel .owl-item.active {
+            opacity: 1;
+        }
+
+        #testimonials-carousel .item {
+            display: flex;
+            height: 100%;
+        }
+
+        /* Video container glow animation */
+        @keyframes glow-pulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .video-container>div:first-child {
+            animation: glow-pulse 3s ease-in-out infinite;
+        }
     </style>
 
     <!-- DotLottie Player for .lottie format Animations -->
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 
     <!-- ...existing code... -->
-    <!-- removed: Bootstrap CSS, owlcarousel CSS -->
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="lib/owlcarousel/assets/owl.theme.default.min.css">
 </head>
 
 <body class="bg-gray-50 text-gray-700 bg-noise"
@@ -388,15 +500,6 @@
             style="transform: rotate(10deg) translate(35%, -55%);">
 
         <div class="page-shell max-w-5xl w-full relative z-10">
-            <div class="flex justify-center mb-4">
-                <div class="micro-banner">
-                    <span class="text-[#7d0400]">Next cohort starts Jan 10</span>
-                    <span class="dot">•</span>
-                    <span>Early-bird 15% off</span>
-                    <span class="dot">•</span>
-                    <span>100% placement assist</span>
-                </div>
-            </div>
             <div class="border border-gray-200 rounded-2xl md:rounded-3xl shadow-2xl p-4 sm:p-6 md:p-12 relative overflow-hidden bg-white"
                 style="background-image: linear-gradient(to bottom, rgba(189, 36, 36, 0.06) 0%, rgba(99,102,241,0.02) 50%, transparent 100%), linear-gradient(0deg,transparent 24%,rgba(99,102,241,0.06) 25%,rgba(99,102,241,0.06) 26%,transparent 27%,transparent 74%,rgba(99,102,241,0.06) 75%,rgba(99,102,241,0.06) 76%,transparent 77%),linear-gradient(90deg,transparent 24%,rgba(99,102,241,0.06) 25%,rgba(99,102,241,0.06) 26%,transparent 27%,transparent 74%,rgba(99,102,241,0.06) 75%,rgba(99,102,241,0.06) 76%,transparent 77%); background-size: auto, 60px 60px, 60px 60px;">
                 <!-- Layered Wave Background - Bottom of Card -->
@@ -425,34 +528,41 @@
                         Post Graduate Diploma in Yoga Therapy In Lucknow
                     </p>
 
-                    <!-- Trust Markers -->
-                    <div
-                        class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm font-medium text-gray-600 pb-4 md:pb-10">
-                        <div class="flex items-center gap-2">
-                            <i class="bi bi-shield-fill-check text-[#7d0400]"></i>
-                            <span>Trusted By 40,381+ Students</span>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <div class="flex text-yellow-400 text-xs">
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                                <i class="bi bi-star-fill"></i>
-                            </div>
-                            <span>4.9/5 * Rated</span>
-                        </div>
+                    <!-- Video CTA (opens popup modal) -->
+                    <div class="flex justify-center mb-6 md:mb-10">
+                        <button id="heroVideoOpen" type="button"
+                            class="group relative inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-white/90 backdrop-blur border border-gray-200 shadow-sm hover:shadow-md transition-all overflow-hidden min-w-[270px]"
+                            data-video-src="https://www.youtube.com/embed/snPBv1-igjM"
+                            data-video-title="Course Introduction" aria-haspopup="dialog"
+                            aria-controls="heroVideoModal">
+                            <span class="sr-only">Watch the course intro</span>
+
+                            <!-- Default layout: Icon left, text right -->
+                            <span
+                                class="inline-flex items-center gap-3 transition-all duration-500 ease-in-out opacity-100 translate-x-0 group-hover:opacity-0 group-hover:-translate-x-10">
+                                <span
+                                    class="w-10 h-10 rounded-full bg-gradient-to-br from-[#7d0400] to-[#4a0d0d] text-white flex items-center justify-center shadow-sm transition-transform duration-300 ease-out group-hover:scale-105">
+                                    <i class="bi bi-play-fill text-2xl ml-0.5"></i>
+                                </span>
+                                <span class="text-sm sm:text-base font-semibold text-gray-900">Watch the course
+                                    intro</span>
+                                <span class="text-xs text-gray-500 hidden sm:inline">(2 min)</span>
+                            </span>
+
+
+                            <span
+                                class="absolute inset-0 inline-flex items-center justify-center gap-3 px-4 transition-all duration-500 ease-in-out opacity-0 translate-x-10 group-hover:opacity-100 group-hover:translate-x-0">
+                                <span class="text-sm sm:text-base font-semibold text-gray-900">Watch the course
+                                    intro</span>
+                                <span class="text-xs text-gray-500 hidden sm:inline">(2 min)</span>
+                                <span
+                                    class="w-10 h-10 rounded-full bg-gradient-to-br from-[#7d0400] to-[#4a0d0d] text-white flex items-center justify-center shadow-sm transition-transform duration-300 ease-out group-hover:scale-105">
+                                    <i class="bi bi-play-fill text-2xl ml-0.5"></i>
+                                </span>
+                            </span>
+                        </button>
                     </div>
 
-                    <!-- Scarcity / Early Bird -->
-                    <div
-                        class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-[11px] sm:text-xs md:text-sm font-semibold text-red-700 bg-red-50 px-3 py-1.5 md:px-6 md:py-2 rounded-full border border-red-100 mb-4 md:mb-6 animate-pulse">
-                        <span><i class="bi bi-fire text-red-600"></i> Only 28 Seats Left</span>
-                        <span class="hidden md:inline text-gray-300">|</span>
-                        <span>Early-Bird 15% OFF Ends in 3 Days</span>
-                    </div>
-
-                    <!-- Feature Grid (Duration | Mode | etc) -->
                     <div
                         class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 w-full max-w-4xl mb-4 md:mb-10 text-left">
                         <div
@@ -491,10 +601,60 @@
                             </div>
                         </div>
                     </div>
-
+                    <div
+                        class="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-[11px] sm:text-xs md:text-sm font-semibold text-red-700 bg-red-50 px-3 py-1.5 md:px-6 md:py-2 rounded-full border border-red-100 mb-4 md:mb-6 animate-pulse">
+                        <span><i class="bi bi-fire text-red-600"></i> Only 28 Seats Left</span>
+                        <span class="hidden md:inline text-gray-300">|</span>
+                        <span>Early-Bird 15% OFF Ends in 3 Days</span>
+                    </div>
+                    <div
+                        class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm font-medium text-gray-600  md:pb-10">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-shield-fill-check text-[#7d0400]"></i>
+                            <span>Trusted By 40,381+ Students</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <span>4.9/5 * Rated</span>
+                        </div>
+                    </div>
                 </div>
             </div>
     </section>
+
+    <!-- Hero Video Modal -->
+    <div id="heroVideoModal" class="fixed inset-0 z-[9999] hidden" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="heroVideoTitle">
+        <div class="absolute inset-0 bg-black/70"></div>
+
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="w-full max-w-4xl bg-white rounded-2xl shadow-2xl overflow-hidden border border-white/20">
+                <div class="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50">
+                    <h3 id="heroVideoTitle" class="font-bold text-gray-900">Course Introduction</h3>
+                    <button id="heroVideoClose" type="button"
+                        class="inline-flex items-center justify-center w-9 h-9 rounded-full hover:bg-gray-100 text-gray-700"
+                        aria-label="Close video">
+                        <i class="bi bi-x-lg"></i>
+                    </button>
+                </div>
+
+                <div class="p-3 sm:p-4 bg-black">
+                    <div class="relative w-full pt-[56.25%] rounded-xl overflow-hidden bg-black">
+                        <iframe id="heroVideoFrame" class="absolute inset-0 w-full h-full" src="" title="Course video"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -520,7 +680,7 @@
                     </h2>
                 </div>
                 <p class="section-subtitle font-serif text-gray-600 mt-4 italic">
-                    (Emotional Hook) This Course Is For You If…
+                    This Course Is For You If…
                 </p>
             </div>
 
@@ -623,6 +783,122 @@
                             </h3>
                             <p class="text-sm text-white/90 leading-relaxed">Master the art of online teaching and build
                                 a global student base.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-6xl mx-auto mb-12">
+                <div class="text-center mb-6">
+                    <span
+                        class="inline-block px-4 py-1 rounded-full bg-[#edcf9c] text-[#7d0400] font-bold text-sm mb-4 tracking-wider uppercase border border-[#d4b886] shadow-sm">
+                        Who Is This Course For?
+                    </span>
+                </div>
+
+                <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 relative"
+                    style="background: linear-gradient(135deg, #720a07de 0%, #7d0400d6 55%, #7d0400a9 100%);">
+                    <div class="absolute inset-0 opacity-15"
+                        style="background-image: radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px); background-size: 22px 22px;">
+                    </div>
+
+                    <div class="relative z-10 p-6 md:p-10">
+                        <h4 class="text-2xl md:text-3xl font-serif font-bold text-white leading-tight text-center mb-2">
+                            "I Feel Exactly Like This…"
+                        </h4>
+                        <p class="text-white/85 text-center mt-3 max-w-3xl mx-auto text-lg italic">
+                            This Course Is For You If…
+                        </p>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                            <div
+                                class="bg-white/95 backdrop-blur-sm rounded-2xl p-5 md:p-6 shadow-sm border border-white/30 flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-sm flex-shrink-0">
+                                    <i class="bi bi-check2 text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <p class="text-gray-800 font-medium leading-relaxed">
+                                        Stuck in a 9-5 Job, Craving Meaningful Work?
+                                    </p>
+                                    <p class="text-gray-700 text-sm leading-relaxed">Transform your daily grind into a
+                                        life of
+                                        purpose and holistic wellness.</p>
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="bg-white/95 backdrop-blur-sm rounded-2xl p-5 md:p-6 shadow-sm border border-white/30 flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-sm flex-shrink-0">
+                                    <i class="bi bi-check2 text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-gray-900 font-bold mb-1">Dealing with Fatigue, Stress, Back Pain,
+                                        High BP, or Thyroid Issues?</h5>
+                                    <p class="text-gray-700 text-sm leading-relaxed">Heal your own body with Yoga
+                                        Therapy while learning to guide others.</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white/95 backdrop-blur-sm rounded-2xl p-5 md:p-6 shadow-sm border border-white/30 flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-sm flex-shrink-0">
+                                    <i class="bi bi-check2 text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-gray-900 font-bold mb-1">You Love Yoga but Feel Shy About Teaching?
+                                    </h5>
+                                    <p class="text-gray-700 text-sm leading-relaxed">Our step-by-step method builds your
+                                        voice and confidence from Day 1.</p>
+                                </div>
+                            </div>
+
+                            <div
+                                class="bg-white/95 backdrop-blur-sm rounded-2xl p-5 md:p-6 shadow-sm border border-white/30 flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-sm flex-shrink-0">
+                                    <i class="bi bi-check2 text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-gray-900 font-bold mb-1">Confused About Certificates and
+                                        Recognition?</h5>
+                                    <p class="text-gray-700 text-sm leading-relaxed">Get valid, dual certification: Yoga
+                                        Alliance + AYUSH (Govt of India).</p>
+                                </div>
+                            </div>
+
+                            <!-- Point 5 - Earning Potential -->
+                            <div
+                                class="bg-white/95 backdrop-blur-sm rounded-2xl p-5 md:p-6 shadow-sm border border-white/30 flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-sm flex-shrink-0">
+                                    <i class="bi bi-check2 text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-gray-900 font-bold mb-1">Dreaming of Earning ₹50k–₹1 Lakh/Month?
+                                    </h5>
+                                    <p class="text-gray-700 text-sm leading-relaxed">We teach you the business of yoga:
+                                        online classes, therapy clients, and studio setup.</p>
+                                </div>
+                            </div>
+
+                            <!-- Point 6 - Work from Home -->
+                            <div
+                                class="bg-white/95 backdrop-blur-sm rounded-2xl p-5 md:p-6 shadow-sm border border-white/30 flex items-start gap-4">
+                                <div
+                                    class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-sm flex-shrink-0">
+                                    <i class="bi bi-check2 text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h5 class="text-gray-900 font-bold mb-1">Seeking a Flexible Work-from-Home
+                                        Opportunity?</h5>
+                                    <p class="text-gray-700 text-sm leading-relaxed">Master the art of online teaching
+                                        and build a global student base.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -918,11 +1194,12 @@
     </section>
 
     <!-- ========================================
-         BENTO GRID CURRICULUM SECTION (MOVED)
+         COMPACT TWO-COLUMN CURRICULUM SECTION
          ======================================== -->
-    <section id="curriculum" class="curriculum-section relative">
+    <section id="curriculum" class="curriculum-section relative py-16 lg:py-20">
         <div class="page-shell">
-            <div class="text-center mb-16 max-w-2xl mx-auto">
+            <!-- Header -->
+            <div class="text-center mb-12 max-w-2xl mx-auto">
                 <div class="relative inline-block mb-6">
                     <h2 class="section-title font-serif font-bold text-gray-900 relative z-10">The
                         Curriculum</h2>
@@ -930,12 +1207,34 @@
                         class="absolute bottom-[-60px] left-0 w-full h-auto -z-0 opacity-60"
                         style="transform: rotate(-1deg);">
                 </div>
-                <p class="section-subtitle text-gray-600">Designed for depth. Our bento-style curriculum ensures you
-                    master every
-                    facet of yoga, from the physical to the philosophical.</p>
+                <p class="section-subtitle text-gray-600">Master every facet of yoga—from philosophy to practice.
+                    Click any module to view its content.</p>
             </div>
-            <div id="bentoGrid" class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(200px,auto)]">
-                <!-- Content will be generated by JavaScript -->
+
+            <!-- Two-Column Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+                <!-- Left: Module List (Compact) -->
+                <div class="lg:col-span-6">
+                    <h3 class="font-serif text-lg font-bold text-gray-900 mb-3">Modules</h3>
+                    <div id="curriculumList">
+                        <!-- Generated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Right: Module Details -->
+                <div class="lg:col-span-6">
+                    <div class="lg:sticky lg:top-24">
+                        <div id="curriculumDetail"
+                            class="min-h-[400px] bg-white rounded-lg border border-gray-200 p-6 lg:p-8">
+                            <!-- Generated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div id="syllabusBtnWrapper" class="text-center mt-12">
+                <!-- Filled by JavaScript (kept consistent with existing CTA) -->
             </div>
         </div>
     </section>
@@ -944,6 +1243,8 @@
          MEET THE FOUNDER SECTION
          ======================================== -->
     <section class="py-20 bg-gray-50 overflow-hidden relative">
+        <img src="img/assets/abstract-lines/Line 3.svg"
+            class="absolute object-cover scale-105 h-auto opacity-10 pointer-events-none ">
         <div class="page-shell">
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left: Image/Video -->
@@ -1027,157 +1328,136 @@
                     special guest lectures across therapy, anatomy, and practice-building.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
-                <div class="relative overflow-hidden rounded-[2rem] border border-gray-200 shadow-2xl bg-[#eef3ff]">
+            <div class="grid lg:grid-cols-2 md:gap-6 items-stretch">
+                <div class="relative overflow-hidden rounded-[1.5rem] border border-gray-300 shadow- bg-[#eef3ff]">
                     <div class="absolute inset-0 pointer-events-none"
-                        style="background-image: url('img/assets/gradients/02 - Distance Nebulae.svg'); background-size: cover, 64px 64px, 64px 64px; background-position: center; opacity: 0.55;">
+                        style="background-image: url('img/assets/gradients/05\ -\ Poseidon\'s\ Realm.svg'); background-size: cover, 64px 64px, 64px 64px; background-position: center; opacity: 0.55;">
                     </div>
 
-                    <div class="relative z-10 p-2 md:p-10">
-                        <div class="grid md:grid-cols-12 gap-6 items-center">
-                            <div class="md:col-span-7">
-                                <h3 class="text-3xl md:text-4xl font-serif font-extrabold text-gray-900 leading-tight">
+                    <div class="relative z-10 flex flex-col h-full">
+                        <div class="grid md:grid-cols-12 gap-4 items-center flex-grow">
+                            <div class="md:col-span-7 pl-4 md:pl-8 pt-3">
+                                <h3 class="text-2xl md:text-4xl font-serif font-extrabold text-gray-900 leading-tight">
                                     Instructed By
-                                    <span class="block text-[#2e3d6f]">Maneesh Pratap Singh</span>
+                                    <span class="block text-[#0b1b3a]">Manish Singh</span>
                                 </h3>
 
-                                <div class="mt-6 space-y-4">
-                                    <div class="flex items-start gap-3">
-                                        <div
-                                            class="shrink-0 w-9 h-9 rounded-xl bg-white/80 border border-white flex items-center justify-center shadow-sm">
-                                            <i class="bi bi-people-fill text-[#2e3d6f]"></i>
+                                <div class="mt-6">
+                                    <div class="">
+                                        <div class="text-2xl md:text-3xl font-extrabold text-[#2e6fba]">16.5 Million+
                                         </div>
-                                        <div>
-                                            <div class="text-2xl font-extrabold text-[#2e3d6f]">40,000+</div>
-                                            <div class="text-sm text-gray-600">students impacted across cohorts</div>
-                                        </div>
+                                        <div class="text-xs md:text-sm text-gray-600 font-medium">followers across
+                                            social platforms</div>
                                     </div>
-                                    <div class="flex items-start gap-3">
-                                        <div
-                                            class="shrink-0 w-9 h-9 rounded-xl bg-white/80 border border-white flex items-center justify-center shadow-sm">
-                                            <i class="bi bi-award-fill text-[#2e3d6f]"></i>
+                                    <div class="">
+                                        <div class="text-2xl md:text-3xl font-extrabold text-[#2e6fba]">10.2 Million+
                                         </div>
-                                        <div>
-                                            <div class="text-2xl font-extrabold text-[#2e3d6f]">13+ Years</div>
-                                            <div class="text-sm text-gray-600">teaching + mentorship experience</div>
-                                        </div>
+                                        <div class="text-xs md:text-sm text-gray-600 font-medium">monthly impressions on
+                                            LinkedIn</div>
                                     </div>
-                                    <div class="flex items-start gap-3">
-                                        <div
-                                            class="shrink-0 w-9 h-9 rounded-xl bg-white/80 border border-white flex items-center justify-center shadow-sm">
-                                            <i class="bi bi-patch-check-fill text-[#2e3d6f]"></i>
+                                    <div class="">
+                                        <div class="text-2xl md:text-3xl font-extrabold text-[#2e6fba]">2.5 Million+
                                         </div>
-                                        <div>
-                                            <div class="text-2xl font-extrabold text-[#2e3d6f]">Certified</div>
-                                            <div class="text-sm text-gray-600">guided by therapy + anatomy standards
-                                            </div>
+                                        <div class="text-xs md:text-sm text-gray-600 font-medium">followers on LinkedIn
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="md:col-span-5">
-                                <div class="relative">
+                            <div class="md:col-span-5 flex justify-center md:justify-start h-full items-end -ml-16">
+                                <div class="relative w-full h-full scale-110">
                                     <div
-                                        class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-[#2e3d6f]/25 to-[#7d0400]/10 blur-2xl">
+                                        class="absolute bg-gradient-to-br from-[#2e3d6f]/25 to-[#7d0400]/10 blur-2xl inset-0">
                                     </div>
-                                    <div class="relative cutout-ring flex justify-center">
-                                        <div
-                                            class="p-2 rounded-full bg-white/90 border border-white shadow-xl ring-4 ring-[#2e3d6f]/30">
-                                            <img src="img/assets/founder.webp" alt="Lead Instructor"
-                                                class="w-56 h-56 md:w-64 md:h-64 object-cover"
-                                                onerror="this.src='img/assets/founder.jpg'">
-                                        </div>
-                                    </div>
+                                    <img src="img/mentor/IMG_8083g.png" alt="Manish Singh"
+                                        class="relative z-10 drop-shadow-2xl rounded-b-2xl md:rounded-none w-full h-full object-cover"
+                                        style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
                                 </div>
                             </div>
                         </div>
 
                         <div
-                            class="mt-8 bg-[#0b1b3a] text-white/90 rounded-2xl px-5 py-3 text-sm font-semibold shadow-lg">
-                            “Learn the craft. Then learn how to heal and teach.”
+                            class="mt-6 bg-[#0b1b3a] text-white/90 rounded-lg px-4 py-3 text-xs md:text-sm font-medium shadow-lg text-center italic">
+                            Manish is 1 of the only 4 people in the world with 2 Million+ followers on YouTube,
+                            Instagram, and LinkedIn each!
                         </div>
                     </div>
                 </div>
 
                 <!-- Right: Guest lecturers stack -->
-                <div class="flex flex-col gap-4 md:gap-5">
-                    <div class="relative overflow-hidden rounded-[1.6rem] border border-gray-200 shadow-2xl">
-                        <div class="absolute inset-0 pointer-events-none" style="background-image:url('img/assets/abstract-lines/Line 6.svg'); background-repeat:no-repeat; background-size:140%;
-                             background-position:center;"></div>
-                        <div
-                            class="absolute inset-0 pointer-events-none bg-gradient-to-br from-slate-900 to-slate-600/70">
-                        </div>
+                <div class="flex flex-col gap-3 md:gap-4">
 
-                        <div class="relative z-10 p-6 md:p-7 grid grid-cols-12 gap-4 items-center">
+                    <!-- Card 1 -->
+                    <div
+                        class="relative overflow-hidden rounded-[1.2rem] border border-gray-200 shadow-xl bg-[#004e7c]">
+                        <div class="relative z-10 p-4 md:p-5 grid grid-cols-12 gap-3 items-center">
                             <div class="col-span-8">
                                 <div class="flex items-center gap-2">
-                                    <h4 class="text-xl md:text-2xl font-bold text-white">Dr. Priya Sharma</h4>
-                                    <i class="bi bi-patch-check-fill text-[#60a5fa]"></i>
+                                    <h4 class="text-lg md:text-xl font-bold text-white">Shreya Pattar</h4>
+                                    <i class="bi bi-patch-check-fill text-[#60a5fa] text-sm"></i>
                                 </div>
-                                <div class="text-white/80 text-sm font-semibold">Yoga Therapy Specialist</div>
-                                <p class="mt-3 text-white/80 text-sm leading-relaxed">Case-based therapy sessions:
-                                    thyroid, BP, back pain, stress protocols.</p>
+                                <div class="text-white/80 text-xs font-semibold">@shreyapattar</div>
+                                <p class="mt-2 text-white/90 text-xs leading-relaxed">Founder of a personal branding
+                                    agency, Shreya shares insights on building engagement.</p>
                             </div>
                             <div class="col-span-4 flex justify-end">
                                 <div
-                                    class="p-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm cutout-ring">
-                                    <img src="img/mentor/mentor4.png" alt="Guest Lecturer"
-                                        class="w-20 h-20 md:w-24 md:h-24 object-cover">
+                                    class="overflow-hidden border-2 border-white/30 shadow-lg bg-cover scale-150 relative">
+                                    <img src="img/mentor/mentor4.png" alt="Shreya Pattar"
+                                        class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/20"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="relative overflow-hidden rounded-[1.6rem] border border-gray-200 shadow-2xl">
-                        <div class="absolute inset-0 pointer-events-none" style="background-image:url('img/assets/abstract-lines/Line 6.svg'); background-repeat:no-repeat; background-size:140%;
-                             background-position:center;"></div>
-                        <div
-                            class="absolute inset-0 pointer-events-none bg-gradient-to-br from-slate-900 to-slate-600/70">
-                        </div>
-
-                        <div class="relative z-10 p-6 md:p-7 grid grid-cols-12 gap-4 items-center">
+                    <!-- Card 2 -->
+                    <div
+                        class="relative overflow-hidden rounded-[1.2rem] border border-gray-200 shadow-xl bg-[#005f89]">
+                        <div class="relative z-10 p-4 md:p-5 grid grid-cols-12 gap-3 items-center">
                             <div class="col-span-8">
                                 <div class="flex items-center gap-2">
-                                    <h4 class="text-xl md:text-2xl font-bold text-white">Acharya Rahul</h4>
-                                    <i class="bi bi-patch-check-fill text-[#60a5fa]"></i>
+                                    <h4 class="text-lg md:text-xl font-bold text-white">Vaibhav Sisinty</h4>
+                                    <i class="bi bi-patch-check-fill text-[#60a5fa] text-sm"></i>
                                 </div>
-                                <div class="text-white/80 text-sm font-semibold">Senior Hatha Yogi</div>
-                                <p class="mt-3 text-white/80 text-sm leading-relaxed">Alignment, breathwork, and
-                                    teaching drills to build confidence from Day 1.</p>
+                                <div class="text-white/80 text-xs font-semibold">@vaibhavsisinty</div>
+                                <p class="mt-2 text-white/90 text-xs leading-relaxed">An entrepreneur and marketing
+                                    consultant, Vaibhav helps you leverage your profile for professional growth.</p>
                             </div>
                             <div class="col-span-4 flex justify-end">
-                                <div
-                                    class="p-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm cutout-ring">
-                                    <img src="img/mentor/mentor1.png" alt="Guest Lecturer"
-                                        class="w-20 h-20 md:w-24 md:h-24 object-cover">
+                                <div class="col-span-4 flex justify-end">
+                                    <div
+                                        class="overflow-hidden border-2 border-white/30 shadow-lg bg-cover scale-150 relative">
+                                        <img src="img/mentor/mentor1.png" alt="Shreya Pattar"
+                                            class="w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-black/20"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="relative overflow-hidden rounded-[1.6rem] border border-gray-200 shadow-2xl">
-                        <div class="absolute inset-0 pointer-events-none" style="background-image:url('img/assets/abstract-lines/Line 6.svg'); background-repeat:no-repeat; background-size:140%;
-                             background-position:center;"></div>
-                        <div
-                            class="absolute inset-0 pointer-events-none bg-gradient-to-br from-slate-900 to-slate-600/70">
-                        </div>
-
-                        <div class="relative z-10 p-6 md:p-7 grid grid-cols-12 gap-4 items-center">
+                    <!-- Card 3 -->
+                    <div
+                        class="relative overflow-hidden rounded-[1.2rem] border border-gray-200 shadow-xl bg-[#004e7c]">
+                        <div class="relative z-10 p-4 md:p-5 grid grid-cols-12 gap-3 items-center">
                             <div class="col-span-8">
                                 <div class="flex items-center gap-2">
-                                    <h4 class="text-xl md:text-2xl font-bold text-white">Amrita Gupta</h4>
-                                    <i class="bi bi-patch-check-fill text-[#60a5fa]"></i>
+                                    <h4 class="text-lg md:text-xl font-bold text-white">Vedika Bhaia</h4>
+                                    <i class="bi bi-patch-check-fill text-[#60a5fa] text-sm"></i>
                                 </div>
-                                <div class="text-white/80 text-sm font-semibold">Anatomy + Ayurveda</div>
-                                <p class="mt-3 text-white/80 text-sm leading-relaxed">Understand anatomy the simple
-                                    way—so you teach safely and effectively.</p>
+                                <div class="text-white/80 text-xs font-semibold">@vedikabhaia</div>
+                                <p class="mt-2 text-white/90 text-xs leading-relaxed">A LinkedIn strategist, Vedika
+                                    guides you through the basics of building a personal brand online.</p>
                             </div>
                             <div class="col-span-4 flex justify-end">
-                                <div
-                                    class="p-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm cutout-ring">
-                                    <img src="img/mentor/Amrita-Gupta.jpg" alt="Guest Lecturer"
-                                        class="w-20 h-20 md:w-24 md:h-24 object-cover">
+                                <div class="col-span-4 flex justify-end">
+                                    <div
+                                        class="overflow-hidden border-2 border-white/30 shadow-lg bg-cover scale-150 relative">
+                                        <img src="img/mentor/mentor2.png" alt="Shreya Pattar"
+                                            class="w-full h-full object-cover">
+                                        <div class="absolute inset-0 bg-black/20"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1238,74 +1518,547 @@
                         class="text-[#edcf9c] font-bold">₹58,000 worth of bonuses</span> for FREE.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Bonus 1 -->
+            <!-- Main Features Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <!-- Feature 1 -->
                 <div
-                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group">
-                    <div
-                        class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
-                        1</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Yoga Business Masterclass</h3>
-                    <p class="text-white/60 text-sm mb-4">How to get your first 10 paying clients online.</p>
-                    <div class="text-[#edcf9c] font-bold text-lg">Value: ₹15,000</div>
-                    <div class="text-white/40 text-xs uppercase tracking-wider font-bold mt-1">Free</div>
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-camera-video-fill"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-white mb-1">Daily 2–3 Live Classes</h3>
+                            <p class="text-white/60 text-sm">+ Recordings Forever</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Bonus 2 -->
+                <!-- Feature 2 -->
                 <div
-                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group">
-                    <div
-                        class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
-                        2</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Ayurveda Diet Essentials</h3>
-                    <p class="text-white/60 text-sm mb-4">Complete nutrition guide for patients and self.</p>
-                    <div class="text-[#edcf9c] font-bold text-lg">Value: ₹8,000</div>
-                    <div class="text-white/40 text-xs uppercase tracking-wider font-bold mt-1">Free</div>
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-gift-fill"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-white mb-1">Free Student Kit</h3>
+                            <p class="text-white/60 text-sm">Worth ₹15,000 (Neti pot, Mala, T-shirt, Books)</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Bonus 3 -->
+                <!-- Feature 3 -->
                 <div
-                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group">
-                    <div
-                        class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
-                        3</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Therapy Props Workshop</h3>
-                    <p class="text-white/60 text-sm mb-4">Using belts, blocks, and chairs for healing.</p>
-                    <div class="text-[#edcf9c] font-bold text-lg">Value: ₹10,000</div>
-                    <div class="text-white/40 text-xs uppercase tracking-wider font-bold mt-1">Free</div>
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-book-fill"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-white mb-1">Sunday Gita Class</h3>
+                            <p class="text-white/60 text-sm">with Founder Maneesh ji (LIVE)</p>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Bonus 4 -->
+                <!-- Feature 4 -->
                 <div
-                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group">
-                    <div
-                        class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl font-bold mb-4 group-hover:scale-110 transition-transform">
-                        4</div>
-                    <h3 class="text-xl font-bold text-white mb-2">Lifetime Comm. Access</h3>
-                    <p class="text-white/60 text-sm mb-4">Network with 40,000+ alumni & experts.</p>
-                    <div class="text-[#edcf9c] font-bold text-lg">Value: Priceless</div>
-                    <div class="text-white/40 text-xs uppercase tracking-wider font-bold mt-1">Free</div>
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-white mb-1">Lifetime WhatsApp Group</h3>
+                            <p class="text-white/60 text-sm">+ Personal Service Manager</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-building-fill"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-white mb-1">Full Yoga Studio Setup Training</h3>
+                            <p class="text-white/60 text-sm">(never taught elsewhere)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div
+                    class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all group">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                            <i class="bi bi-shield-check-fill"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-lg font-bold text-white mb-1">0% EMI Available</h3>
+                            <p class="text-white/60 text-sm">+ 7-Day Money-Back Guarantee</p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="mt-12 text-center">
+            <!-- Free Bonuses Section -->
+            <div
+                class="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-3xl p-8 mb-12">
+                <div class="text-center mb-8">
+                    <h3 class="text-2xl font-bold text-[#edcf9c] mb-2">Free Bonuses</h3>
+                    <p class="text-white/70">Exclusive bonuses worth thousands – included FREE</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-4">
+                    <!-- Bonus 1 -->
+                    <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-sm font-bold flex-shrink-0">
+                            1
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm mb-1">Complete Student Kit</h4>
+                            <p class="text-white/60 text-xs">(Neti, Mala, Books, T-shirt)</p>
+                        </div>
+                    </div>
+
+                    <!-- Bonus 2 -->
+                    <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-sm font-bold flex-shrink-0">
+                            2
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm mb-1">Lifetime Recording Access</h4>
+                            <p class="text-white/60 text-xs">+ WhatsApp Group</p>
+                        </div>
+                    </div>
+
+                    <!-- Bonus 3 -->
+                    <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-sm font-bold flex-shrink-0">
+                            3
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm mb-1">Studio Setup Masterclass</h4>
+                            <p class="text-white/60 text-xs">(11 modules)</p>
+                        </div>
+                    </div>
+
+                    <!-- Bonus 4 -->
+                    <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-sm font-bold flex-shrink-0">
+                            4
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm mb-1">Sunday Live Gita Sessions</h4>
+                            <p class="text-white/60 text-xs">with Founder</p>
+                        </div>
+                    </div>
+
+                    <!-- Bonus 5 -->
+                    <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-sm font-bold flex-shrink-0">
+                            5
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm mb-1">Facial Yoga + Sound Healing</h4>
+                            <p class="text-white/60 text-xs">Workshops</p>
+                        </div>
+                    </div>
+
+                    <!-- Bonus 6 -->
+                    <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#7d0400] text-sm font-bold flex-shrink-0">
+                            6
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-sm mb-1">Personal Service Manager</h4>
+                            <p class="text-white/60 text-xs">+ Job Help</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="text-center">
                 <div class="inline-block p-1 rounded-full bg-gradient-to-r from-[#edcf9c] to-[#d4b886] shadow-lg">
                     <a href="student-reg.html"
                         class="block px-10 py-4 bg-[#7d0400] text-white rounded-full font-bold text-xl hover:bg-[#5a0300] transition-all">
-                        Claim My ₹58,000 Bonuses Now
+                        Enroll Now & Get Everything
                     </a>
                 </div>
-                <p class="text-white/50 text-sm mt-4">Offer expires when the timer hits zero.</p>
+                <p class="text-white/50 text-sm mt-4">Limited time offer • 7-Day Money-Back Guarantee</p>
             </div>
         </div>
     </section>
 
-    <!-- Main content, Admission, Testimonials and FAQ -->
-    <main class="content-section">
-        <div class="page-shell">
-            <!-- ...existing code... -->
+    <!-- ========================================
+         STUDENT SUCCESS STORIES & REVIEWS SECTION
+         ======================================== -->
+    <section class="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden" id="testimonials">
+        <!-- Decorative Background Elements -->
+        <img src="img/assets/abstract-lines/Line 3.svg"
+            class="absolute top-10 right-0 w-[600px] h-auto opacity-[0.06] pointer-events-none transform rotate-12"
+            onerror="this.style.display='none'">
+        <img src="img/assets/handdrawn-misc/Misc_02.svg"
+            class="absolute bottom-20 left-10 w-32 opacity-20 pointer-events-none" onerror="this.style.display='none'">
+
+        <div class="page-shell relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="relative inline-block">
+                    <h2 class="section-title font-serif font-bold text-gray-900 mb-1 relative z-10 testimonial-heading">
+                        Testimonials & Success Stories
+                    </h2>
+                </div>
+
+                <p class="section-subtitle text-gray-600 max-w-3xl mx-auto mt-8 text-lg leading-relaxed">
+                    "Over <span class="font-bold text-[#7d0400]">40,000+ students</span> have transformed their lives
+                    with YogKulam — here are a few of them."
+                </p>
+            </div>
+
+            <!-- Rating Overview Card -->
+            <div class="max-w-4xl mx-auto mb-16 rating-card">
+                <div
+                    class="bg-gradient-to-br from-[#7d0400] to-[#5a0300] rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden">
+                    <!-- Decorative Pattern -->
+                    <div class="absolute inset-0 opacity-10"
+                        style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 20px 20px;">
+                    </div>
+
+                    <div class="relative z-10 grid md:grid-cols-3 gap-8 text-center text-white">
+                        <!-- Average Rating -->
+                        <div class="space-y-3">
+                            <div class="text-6xl md:text-7xl font-bold text-[#edcf9c]">4.9</div>
+                            <div class="flex justify-center gap-1 text-2xl text-yellow-400">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                            </div>
+                            <p class="text-white/80 text-sm font-medium">Average Rating</p>
+                        </div>
+
+                        <!-- Total Reviews -->
+                        <div class="space-y-3 border-x border-white/20">
+                            <div class="text-5xl md:text-6xl font-bold text-[#edcf9c]">40,381+</div>
+                            <i class="bi bi-people-fill text-4xl text-[#edcf9c]"></i>
+                            <p class="text-white/80 text-sm font-medium">Happy Students</p>
+                        </div>
+
+                        <!-- Success Rate -->
+                        <div class="space-y-3">
+                            <div class="text-5xl md:text-6xl font-bold text-[#edcf9c]">98%</div>
+                            <i class="bi bi-trophy-fill text-4xl text-yellow-400"></i>
+                            <p class="text-white/80 text-sm font-medium">Success Rate</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Carousel -->
+            <div class="testimonials-carousel-wrapper">
+                <div class="owl-carousel owl-theme" id="testimonials-carousel">
+
+                    <!-- Testimonial 1 -->
+                    <div class="item">
+                        <div
+                            class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7d0400]/15 flex flex-col w-full">
+                            <div
+                                class="absolute top-3 right-3 text-4xl text-[#edcf9c]/20 rotate-12 transition-all duration-300 group-hover:rotate-[24deg] group-hover:scale-110 group-hover:opacity-30">
+                                <i class="bi bi-quote"></i>
+                            </div>
+
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full shadow-md flex-shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Sharma"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Priya+Sharma&background=7d0400&color=fff&size=128';">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-gray-900 text-sm truncate">Priya Sharma</h4>
+                                        <p class="text-xs text-gray-500 truncate">Yoga Therapist, Mumbai</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-0.5 text-yellow-400 mb-3 text-sm">
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-75"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-100"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-150"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-200"></i>
+                                </div>
+
+                                <p
+                                    class="text-gray-600 text-sm leading-relaxed italic flex-grow group-hover:text-gray-800 transition-colors duration-300">
+                                    "I was stuck in a corporate job and suffering from chronic back pain. After
+                                    completing PGDYT, not only did I heal myself, but I also started my own yoga therapy
+                                    practice. Now I earn ₹80,000/month doing what I love!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="item">
+                        <div
+                            class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7d0400]/15 flex flex-col w-full">
+                            <div
+                                class="absolute top-3 right-3 text-4xl text-[#edcf9c]/20 rotate-12 transition-all duration-300 group-hover:rotate-[24deg] group-hover:scale-110 group-hover:opacity-30">
+                                <i class="bi bi-quote"></i>
+                            </div>
+
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full shadow-md flex-shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Kumar"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Rajesh+Kumar&background=7d0400&color=fff&size=128';">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-gray-900 text-sm truncate">Rajesh Kumar</h4>
+                                        <p class="text-xs text-gray-500 truncate">Wellness Coach, Delhi</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-0.5 text-yellow-400 mb-3 text-sm">
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-75"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-100"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-150"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-200"></i>
+                                </div>
+
+                                <p
+                                    class="text-gray-600 text-sm leading-relaxed italic flex-grow group-hover:text-gray-800 transition-colors duration-300">
+                                    "The best investment I've ever made! The curriculum is comprehensive, teachers are
+                                    amazing, and the placement support helped me land a job at a top wellness center. My
+                                    thyroid issues have also improved significantly."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="item">
+                        <div
+                            class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7d0400]/15 flex flex-col w-full">
+                            <div
+                                class="absolute top-3 right-3 text-4xl text-[#edcf9c]/20 rotate-12 transition-all duration-300 group-hover:rotate-[24deg] group-hover:scale-110 group-hover:opacity-30">
+                                <i class="bi bi-quote"></i>
+                            </div>
+
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full shadow-md flex-shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Anita Verma"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Anita+Verma&background=7d0400&color=fff&size=128';">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-gray-900 text-sm truncate">Anita Verma</h4>
+                                        <p class="text-xs text-gray-500 truncate">Online Yoga Teacher, Bangalore</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-0.5 text-yellow-400 mb-3 text-sm">
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-75"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-100"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-150"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-200"></i>
+                                </div>
+
+                                <p
+                                    class="text-gray-600 text-sm leading-relaxed italic flex-grow group-hover:text-gray-800 transition-colors duration-300">
+                                    "As a complete beginner, I was nervous about joining. But the step-by-step teaching
+                                    method and personal mentorship built my confidence. Now I teach 15 students online
+                                    and work from home!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="item">
+                        <div
+                            class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7d0400]/15 flex flex-col w-full">
+                            <div
+                                class="absolute top-3 right-3 text-4xl text-[#edcf9c]/20 rotate-12 transition-all duration-300 group-hover:rotate-[24deg] group-hover:scale-110 group-hover:opacity-30">
+                                <i class="bi bi-quote"></i>
+                            </div>
+
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full shadow-md flex-shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                        <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Vikram Singh"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Vikram+Singh&background=7d0400&color=fff&size=128';">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-gray-900 text-sm truncate">Vikram Singh</h4>
+                                        <p class="text-xs text-gray-500 truncate">Yoga Studio Owner, Lucknow</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-0.5 text-yellow-400 mb-3 text-sm">
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-75"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-100"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-150"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-200"></i>
+                                </div>
+
+                                <p
+                                    class="text-gray-600 text-sm leading-relaxed italic flex-grow group-hover:text-gray-800 transition-colors duration-300">
+                                    "The dual certification (ISO + AYUSH) gave me credibility to open my own yoga
+                                    therapy center. Within 6 months of completing the course, I had 50+ regular clients.
+                                    Thank you YogKulam!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="item">
+                        <div
+                            class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7d0400]/15 flex flex-col w-full">
+                            <div
+                                class="absolute top-3 right-3 text-4xl text-[#edcf9c]/20 rotate-12 transition-all duration-300 group-hover:rotate-[24deg] group-hover:scale-110 group-hover:opacity-30">
+                                <i class="bi bi-quote"></i>
+                            </div>
+
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full shadow-md flex-shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                        <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Meera Patel"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Meera+Patel&background=7d0400&color=fff&size=128';">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-gray-900 text-sm truncate">Meera Patel</h4>
+                                        <p class="text-xs text-gray-500 truncate">Corporate Yoga Instructor, Pune</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-0.5 text-yellow-400 mb-3 text-sm">
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-75"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-100"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-150"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-200"></i>
+                                </div>
+
+                                <p
+                                    class="text-gray-600 text-sm leading-relaxed italic flex-grow group-hover:text-gray-800 transition-colors duration-300">
+                                    "Life-changing experience! Not just the curriculum, but the community support and
+                                    lifetime access to masterclasses makes this program worth every penny. I'm now
+                                    teaching at two corporate offices."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="item">
+                        <div
+                            class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#7d0400]/15 flex flex-col w-full">
+                            <div
+                                class="absolute top-3 right-3 text-4xl text-[#edcf9c]/20 rotate-12 transition-all duration-300 group-hover:rotate-[24deg] group-hover:scale-110 group-hover:opacity-30">
+                                <i class="bi bi-quote"></i>
+                            </div>
+
+                            <div class="relative z-10 flex flex-col h-full">
+                                <div class="flex items-center gap-3 mb-4">
+                                    <div
+                                        class="w-12 h-12 rounded-full shadow-md flex-shrink-0 overflow-hidden transition-transform duration-300 group-hover:scale-110 group-hover:rotate-6">
+                                        <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Suresh Reddy"
+                                            class="w-full h-full object-cover"
+                                            onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Suresh+Reddy&background=7d0400&color=fff&size=128';">
+                                    </div>
+                                    <div class="flex-1 min-w-0">
+                                        <h4 class="font-bold text-gray-900 text-sm truncate">Suresh Reddy</h4>
+                                        <p class="text-xs text-gray-500 truncate">Yoga Therapist, Hyderabad</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex gap-0.5 text-yellow-400 mb-3 text-sm">
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-75"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-100"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-150"></i>
+                                    <i
+                                        class="bi bi-star-fill transition-transform duration-300 group-hover:scale-125 delay-200"></i>
+                                </div>
+
+                                <p
+                                    class="text-gray-600 text-sm leading-relaxed italic flex-grow group-hover:text-gray-800 transition-colors duration-300">
+                                    "I was dealing with high BP and stress. This course not only taught me to heal
+                                    myself but also gave me a new career path. The hybrid model with 15 days practical
+                                    training was perfect for hands-on learning!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
         </div>
-    </main>
+    </section>
 
     <!-- FAQ Section - rebuild accordion with minimal JS -->
     <section class="py-16 bg-white">
@@ -1336,176 +2089,173 @@
             <div class="text-center">
                 <h2 class="section-title font-serif font-bold text-gray-900 mb-4">Transparent Pricing. No Hidden Fees.
                 </h2>
-                <div
-                    class="inline-flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-100">
-                    <div class="flex items-center gap-2 text-red-600 font-bold animate-pulse">
-                        <i class="bi bi-record-circle-fill"></i>
-                        <span>14/28 Seats Filled</span>
-                    </div>
-                    <div class="h-4 w-px bg-gray-300"></div>
-                    <div class="text-gray-600 font-medium">
-                        Offer Expires in: <span
-                            class="font-mono font-bold text-gray-900 bg-gray-100 px-2 py-1 rounded">02 : 14 : 35</span>
-                    </div>
-                </div>
             </div>
         </div>
 
-        <!-- Horizontal Scroll Track -->
-        <div class="pricing-wrapper w-full overflow-hidden pl-[5vw]">
-            <div id="pricing-track" class="flex gap-8 w-fit pr-[10vw]">
+        <!-- Owl Carousel Track -->
+        <div class="page-shell">
+            <div class="owl-carousel owl-theme" id="pricing-carousel">
 
                 <!-- Plan 1: Online -->
-                <div
-                    class="pricing-card w-[85vw] md:w-[450px] flex-shrink-0 bg-white rounded-3xl p-8 border hover:border-[#7d0400] transition-all shadow-lg hover:shadow-2xl relative group card-quiet">
+                <div class="item p-4">
                     <div
-                        class="absolute top-0 right-0 bg-[#edcf9c] text-[#7d0400] text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-3xl">
-                        POPULAR</div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">PGDYT (Online)</h3>
-                    <p class="text-gray-500 text-sm mb-6">Perfect for working professionals & remote learners.</p>
+                        class="pricing-card bg-white rounded-3xl p-8 border hover:border-[#7d0400] transition-all shadow-lg hover:shadow-2xl relative group card-quiet h-full">
+                        <div
+                            class="absolute top-0 right-0 bg-[#edcf9c] text-[#7d0400] text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-3xl">
+                            POPULAR</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">PGDYT (Online)</h3>
+                        <p class="text-gray-500 text-sm mb-6">Perfect for working professionals & remote learners.</p>
 
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span class="text-4xl font-bold text-[#7d0400]">₹25,000</span>
-                        <span class="text-gray-400 line-through">₹35,000</span>
+                        <div class="flex items-baseline gap-2 mb-6">
+                            <span class="text-4xl font-bold text-[#7d0400]">₹25,000</span>
+                            <span class="text-gray-400 line-through">₹35,000</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>1 Year Live Interactive Classes</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>Full Recordings Access</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>Dual Certification (Iso + Govt)</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>Digital Study Material</span>
+                            </li>
+                        </ul>
+
+                        <a href="student-reg.html?plan=online"
+                            class="block w-full py-4 bg-[#7d0400] text-white text-center rounded-xl font-bold hover:bg-[#5a0300] transition-all shadow-lg">
+                            Choose Online Plan
+                        </a>
                     </div>
-
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>1 Year Live Interactive Classes</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>Full Recordings Access</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>Dual Certification (Iso + Govt)</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>Digital Study Material</span>
-                        </li>
-                    </ul>
-
-                    <a href="student-reg.html?plan=online"
-                        class="block w-full py-4 bg-[#7d0400] text-white text-center rounded-xl font-bold hover:bg-[#5a0300] transition-all shadow-lg">
-                        Choose Online Plan
-                    </a>
                 </div>
 
                 <!-- Plan 2: Hybrid -->
-                <div
-                    class="pricing-card w-[85vw] md:w-[450px] flex-shrink-0 bg-gradient-to-br from-[#2e3d6f] to-[#1a2342] rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden border border-blue-900/50 card-quiet">
-                    <div class="absolute inset-0 opacity-10"
-                        style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 20px 20px;">
+                <div class="item p-4">
+                    <div
+                        class="pricing-card bg-gradient-to-br from-[#2e3d6f] to-[#1a2342] rounded-3xl p-8 text-white shadow-2xl relative overflow-hidden border border-blue-900/50 card-quiet h-full">
+                        <div class="absolute inset-0 opacity-10"
+                            style="background-image: radial-gradient(circle, white 1px, transparent 1px); background-size: 20px 20px;">
+                        </div>
+
+                        <h3 class="text-2xl font-bold mb-2">PGDYT (Hybrid)</h3>
+                        <p class="text-gray-300 text-sm mb-6">Online Theory + 15 Days Offline Training.</p>
+
+                        <div class="flex items-baseline gap-2 mb-6">
+                            <span class="text-4xl font-bold text-[#edcf9c]">₹35,000</span>
+                            <span class="text-white/40 line-through">₹50,000</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-white/90 text-sm">
+                                <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5"></i>
+                                <span>Everything in Online Plan</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/90 text-sm">
+                                <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5"></i>
+                                <span>15 Days Practical Ashram Stay</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/90 text-sm">
+                                <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5"></i>
+                                <span>Personal Hands-on Corrections</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-white/90 text-sm">
+                                <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5"></i>
+                                <span>Printed Hardcopy Books</span>
+                            </li>
+                        </ul>
+
+                        <a href="student-reg.html?plan=hybrid"
+                            class="block w-full py-4 bg-[#edcf9c] text-[#7d0400] text-center rounded-xl font-bold hover:bg-white transition-all shadow-lg hover:shadow-orange-500/20 relative z-10">
+                            Choose Hybrid Plan
+                        </a>
                     </div>
-
-                    <h3 class="text-2xl font-bold mb-2">PGDYT (Hybrid)</h3>
-                    <p class="text-gray-300 text-sm mb-6">Online Theory + 15 Days Offline Training.</p>
-
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span class="text-4xl font-bold text-[#edcf9c]">₹35,000</span>
-                        <span class="text-white/40 line-through">₹50,000</span>
-                    </div>
-
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3 text-white/90 text-sm">
-                            <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5"></i>
-                            <span>Everything in Online Plan</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-white/90 text-sm">
-                            <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5"></i>
-                            <span>15 Days Practical Ashram Stay</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-white/90 text-sm">
-                            <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5"></i>
-                            <span>Personal Hands-on Corrections</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-white/90 text-sm">
-                            <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5"></i>
-                            <span>Printed Hardcopy Books</span>
-                        </li>
-                    </ul>
-
-                    <a href="student-reg.html?plan=hybrid"
-                        class="block w-full py-4 bg-[#edcf9c] text-[#7d0400] text-center rounded-xl font-bold hover:bg-white transition-all shadow-lg hover:shadow-orange-500/20 relative z-10">
-                        Choose Hybrid Plan
-                    </a>
                 </div>
 
                 <!-- Plan 3: International (New) -->
-                <div
-                    class="pricing-card w-[85vw] md:w-[450px] flex-shrink-0 bg-white rounded-3xl p-8 border border-gray-200 hover:border-[#7d0400] transition-all shadow-lg hover:shadow-2xl relative group card-quiet">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">International</h3>
-                    <p class="text-gray-500 text-sm mb-6">For students joining from outside India.</p>
-
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span class="text-4xl font-bold text-gray-900">$850</span>
-                        <span class="text-gray-400 line-through">$1,200</span>
-                    </div>
-
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>International Yoga Alliance Cert.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>Timezone Friendly Batches</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>Global Career Mentorship</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>1-on-1 Visa Assistance for Retreats</span>
-                        </li>
-                    </ul>
-
-                    <a href="student-reg.html?plan=international"
-                        class="block w-full py-4 bg-gray-900 text-white text-center rounded-xl font-bold hover:bg-black transition-all shadow-lg">
-                        Choose International
-                    </a>
-                </div>
-                <!-- Plan 4: Studio Owner (New) -->
-                <div
-                    class="pricing-card w-[85vw] md:w-[450px] flex-shrink-0 bg-[#fdf8f6] rounded-3xl p-8 border border-[#edcf9c] hover:border-[#7d0400] transition-all shadow-lg hover:shadow-2xl relative group card-quiet">
+                <div class="item p-4">
                     <div
-                        class="absolute top-0 right-0 bg-gray-900 text-white text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-3xl">
-                        BUSINESS</div>
-                    <h3 class="text-2xl font-bold text-gray-900 mb-2">Sudio Owner</h3>
-                    <p class="text-gray-500 text-sm mb-6">PGDYT + Business Franchise License.</p>
+                        class="pricing-card bg-white rounded-3xl p-8 border border-gray-200 hover:border-[#7d0400] transition-all shadow-lg hover:shadow-2xl relative group card-quiet h-full">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">International</h3>
+                        <p class="text-gray-500 text-sm mb-6">For students joining from outside India.</p>
 
-                    <div class="flex items-baseline gap-2 mb-6">
-                        <span class="text-4xl font-bold text-[#7d0400]">₹1.5 Lakh</span>
-                        <span class="text-gray-400 line-through">₹2.5 Lakh</span>
+                        <div class="flex items-baseline gap-2 mb-6">
+                            <span class="text-4xl font-bold text-gray-900">$850</span>
+                            <span class="text-gray-400 line-through">$1,200</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>International Yoga Alliance Cert.</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>Timezone Friendly Batches</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>Global Career Mentorship</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>1-on-1 Visa Assistance for Retreats</span>
+                            </li>
+                        </ul>
+
+                        <a href="student-reg.html?plan=international"
+                            class="block w-full py-4 bg-gray-900 text-white text-center rounded-xl font-bold hover:bg-black transition-all shadow-lg">
+                            Choose International
+                        </a>
                     </div>
+                </div>
 
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>Complete PGDYT Course</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>YogKulam Franchise License</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>Studio Setup & Marketing Team</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-gray-700 text-sm">
-                            <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                            <span>Legal & Staff Hiring Support</span>
-                        </li>
-                    </ul>
+                <!-- Plan 4: Studio Owner (New) -->
+                <div class="item p-4">
+                    <div
+                        class="pricing-card bg-[#fdf8f6] rounded-3xl p-8 border border-[#edcf9c] hover:border-[#7d0400] transition-all shadow-lg hover:shadow-2xl relative group card-quiet h-full">
+                        <div
+                            class="absolute top-0 right-0 bg-gray-900 text-white text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-3xl">
+                            BUSINESS</div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Sudio Owner</h3>
+                        <p class="text-gray-500 text-sm mb-6">PGDYT + Business Franchise License.</p>
 
-                    <a href="student-reg.html?plan=franchise"
-                        class="block w-full py-4 bg-white border-2 border-[#7d0400] text-[#7d0400] text-center rounded-xl font-bold hover:bg-[#7d0400] hover:text-white transition-all shadow-lg">
-                        Become a Partner
-                    </a>
+                        <div class="flex items-baseline gap-2 mb-6">
+                            <span class="text-4xl font-bold text-[#7d0400]">₹1.5 Lakh</span>
+                            <span class="text-gray-400 line-through">₹2.5 Lakh</span>
+                        </div>
+
+                        <ul class="space-y-4 mb-8">
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>Complete PGDYT Course</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>YogKulam Franchise License</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>Studio Setup & Marketing Team</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-700 text-sm">
+                                <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
+                                <span>Legal & Staff Hiring Support</span>
+                            </li>
+                        </ul>
+
+                        <a href="student-reg.html?plan=franchise"
+                            class="block w-full py-4 bg-white border-2 border-[#7d0400] text-[#7d0400] text-center rounded-xl font-bold hover:bg-[#7d0400] hover:text-white transition-all shadow-lg">
+                            Become a Partner
+                        </a>
+                    </div>
                 </div>
 
             </div>
@@ -1517,6 +2267,232 @@
             </p>
         </div>
     </section>
+
+    <!-- ========================================
+         FINAL PUSH 
+         ======================================== -->
+    <section class="py-16 bg-gradient-to-br from-[#edcf9c]-100 via-white to-[#edcf9c]-50 relative overflow-hidden">
+        <!-- Decorative background elements -->
+        <div class="page-shell relative z-10">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <div class="text-center mb-12">
+
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-3">
+                        Seats Are Filling Fast!
+                    </h2>
+                    <p class="text-lg text-gray-600">Don't miss your chance to transform your life</p>
+                </div>
+
+                <!-- Main FOMO Card -->
+                <div class="bg-white rounded-3xl shadow-2xl border-2 border-red-200 overflow-hidden">
+                    <!-- Seats Counter Section -->
+                    <div class="bg-gradient-to-r from-[#7d0400] to-[#7d0400] px-8 py-8 text-center">
+                        <div class="mb-6">
+                            <div class="text-white/90 text-lg font-medium mb-3">Available Seats This Week</div>
+
+                            <!-- Animated Counter -->
+                            <div class="flex items-center justify-center gap-4 mb-4">
+                                <div class="text-5xl md:text-6xl font-bold text-white" id="totalSeats">73</div>
+                                <div class="text-3xl md:text-4xl text-white/70">→</div>
+                                <div class="relative">
+                                    <div class="text-5xl md:text-6xl font-bold text-[#ffffff]" id="takenSeats">49</div>
+                                    <div
+                                        class="absolute -top-1 -right-20 bg-yellow-400 text-red-700 text-xs font-bold px-2 py-1 rounded-full animate-bounce">
+                                        Already Taken!
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Visual Progress Bar -->
+                            <div class="max-w-md mx-auto">
+                                <div
+                                    class="bg-white/20 backdrop-blur-sm rounded-full h-4 overflow-hidden border border-white/30">
+                                    <div id="seatsProgressBar"
+                                        class="bg-[#edcf9c] h-full rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-2"
+                                        style="width: 67%">
+                                        <span class="text-xs font-bold text-red-700">67% Full</span>
+                                    </div>
+                                </div>
+                                <div class="flex justify-between mt-2 text-sm text-white/80">
+                                    <span>73 Total</span>
+                                    <span id="remainingSeats" class="font-bold text-white">24 Seats Left</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Timer Section -->
+                    <div class="px-8 py-10 bg-gradient-to-b from-gray-50 to-white">
+                        <div class="text-center mb-6">
+                            <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                                Early Bird Discount Ends In:
+                            </h3>
+                            <p class="text-gray-600">Lock in your <span class="text-red-600 font-bold">15% OFF</span>
+                                before the timer runs out!</p>
+                        </div>
+
+                        <!-- Countdown Timer -->
+                        <div class="flex justify-center gap-3 md:gap-6 mb-8">
+                            <!-- Days -->
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="bg-gradient-to-br from-[#7d0400] to-[#5a0300] text-white rounded-2xl w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-4 border-white">
+                                    <span id="days" class="text-3xl md:text-4xl font-bold">08</span>
+                                </div>
+                                <span class="text-xs md:text-sm text-gray-600 font-semibold mt-2 uppercase">Days</span>
+                            </div>
+
+                            <div class="flex items-center text-3xl text-gray-400 font-bold pb-6">:</div>
+
+                            <!-- Hours -->
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="bg-gradient-to-br from-[#7d0400] to-[#5a0300] text-white rounded-2xl w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-4 border-white">
+                                    <span id="hours" class="text-3xl md:text-4xl font-bold">14</span>
+                                </div>
+                                <span class="text-xs md:text-sm text-gray-600 font-semibold mt-2 uppercase">Hours</span>
+                            </div>
+
+                            <div class="flex items-center text-3xl text-gray-400 font-bold pb-6">:</div>
+
+                            <!-- Minutes -->
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="bg-gradient-to-br from-[#7d0400] to-[#5a0300] text-white rounded-2xl w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-4 border-white">
+                                    <span id="minutes" class="text-3xl md:text-4xl font-bold">23</span>
+                                </div>
+                                <span
+                                    class="text-xs md:text-sm text-gray-600 font-semibold mt-2 uppercase">Minutes</span>
+                            </div>
+
+                            <div class="flex items-center text-3xl text-gray-400 font-bold pb-6">:</div>
+
+                            <!-- Seconds -->
+                            <div class="flex flex-col items-center">
+                                <div
+                                    class="bg-gradient-to-br from-[#7d0400] to-[#5a0300] text-white rounded-2xl w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-4 border-white">
+                                    <span id="seconds" class="text-3xl md:text-4xl font-bold">45</span>
+                                </div>
+                                <span
+                                    class="text-xs md:text-sm text-gray-600 font-semibold mt-2 uppercase">Seconds</span>
+                            </div>
+                        </div>
+
+                        <!-- Urgency Messages -->
+                        <div class="grid md:grid-cols-3 gap-4 mb-8">
+                            <div class="bg-red-50 border border-red-200 rounded-xl p-4 text-center">
+                                <i class="bi bi-exclamation-triangle-fill text-red-600 text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold text-gray-800">Price increases to ₹35,000 after timer
+                                    ends</p>
+                            </div>
+                            <div class="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
+                                <i class="bi bi-gift-fill text-orange-600 text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold text-gray-800">₹58,000 worth of bonuses expire soon</p>
+                            </div>
+                            <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-center">
+                                <i class="bi bi-people-fill text-yellow-600 text-2xl mb-2"></i>
+                                <p class="text-sm font-semibold text-gray-800">Only 24 seats remain this batch</p>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <div class="text-center">
+                            <a href="student-reg.html" class="inline-block">
+                                <div
+                                    class="bg-gradient-to-r from-[#7d0400] to-[#5a0300] text-white px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden group">
+                                    <div
+                                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000">
+                                    </div>
+                                    <span class="relative z-10 flex items-center gap-3">
+                                        <i class="bi bi-lightning-charge-fill"></i>
+                                        Claim My Early Bird Discount Now
+                                        <i class="bi bi-arrow-right-circle-fill"></i>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timer Script -->
+    <script>
+        // Countdown Timer
+        function startCountdown() {
+            // Set end date to 8 days and 14 hours from now
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + 8);
+            endDate.setHours(endDate.getHours() + 14);
+
+            function updateTimer() {
+                const now = new Date();
+                const timeLeft = endDate - now;
+
+                if (timeLeft <= 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        // Live counter animation for seats
+        function animateSeats() {
+            const takenSeats = document.getElementById('takenSeats');
+            const remainingSeats = document.getElementById('remainingSeats');
+            const progressBar = document.getElementById('seatsProgressBar');
+
+            let current = 45;
+            const target = 49;
+            const interval = setInterval(() => {
+                if (current >= target) {
+                    clearInterval(interval);
+                    return;
+                }
+                current++;
+                takenSeats.textContent = current;
+                const remaining = 73 - current;
+                remainingSeats.textContent = remaining + ' Seats Left';
+                const percentage = (current / 73) * 100;
+                progressBar.style.width = percentage + '%';
+                progressBar.querySelector('span').textContent = Math.round(percentage) + '% Full';
+            }, 100);
+        }
+
+        // Random live viewers count
+        function updateLiveViewers() {
+            const viewers = document.getElementById('liveViewers');
+            setInterval(() => {
+                const count = Math.floor(Math.random() * 5) + 6; // Random between 6-10
+                viewers.textContent = count;
+            }, 8000);
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            startCountdown();
+            animateSeats();
+            updateLiveViewers();
+        });
+    </script>
 
     <!-- ========================================
          FINAL CTA BANNER
@@ -1533,22 +2509,112 @@
                 Don’t Let Another Year Pass Without Following Your Passion.
             </h2>
 
-            <p class="text-xl text-gray-300 mb-10">
-                Join 40,381+ Certified Yoga Teachers. Your Mat Is Waiting.
-            </p>
+            <div class="flex flex-col items-center gap-6">
+                <!-- Main Huge CTA Button -->
+                <a href="student-reg.html" id="mainCTAButton"
+                    class="group relative px-12 py-6 md:px-16 md:py-8 bg-gradient-to-r from-[#7d0400] via-[#9d0500] to-[#7d0400] text-white rounded-2xl font-bold text-xl md:text-3xl shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(125,4,0,0.6)] transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-4 border-4 border-[#edcf9c] overflow-hidden min-w-full md:min-w-[600px]">
+                    <!-- Shine effect -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000">
+                    </div>
 
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="student-reg.html"
-                    class="px-10 py-5 bg-[#7d0400] text-white rounded-full font-bold text-xl shadow-2xl hover:bg-[#5a0300] hover:scale-105 transition-all flex items-center justify-center gap-3">
-                    Start My Journey Now <i class="bi bi-arrow-right-circle"></i>
+                    <!-- Pulsing glow -->
+                    <div
+                        class="absolute inset-0 bg-[#7d0400] opacity-0 group-hover:opacity-50 blur-xl transition-opacity duration-300">
+                    </div>
+
+                    <span class="relative z-10 flex items-center gap-3 md:gap-4">
+                        <i class="bi bi-lightning-charge-fill text-[#edcf9c] text-2xl md:text-4xl animate-pulse"></i>
+                        <span class="text-center leading-tight">
+                            Yes! Lock My Seat<br class="md:hidden" />
+                            <span class="hidden md:inline"> </span>Before Price Increases
+                        </span>
+                        <i class="bi bi-arrow-right-circle-fill text-[#edcf9c] text-2xl md:text-4xl"></i>
+                    </span>
                 </a>
-                <a href="https://wa.me/9118008919232"
-                    class="px-10 py-5 bg-white/10 backdrop-blur-sm border border-white/30 text-white rounded-full font-bold text-xl hover:bg-white/20 transition-all flex items-center justify-center gap-3">
-                    <i class="bi bi-whatsapp"></i> Chat with Advisor
-                </a>
+
+                <!-- Trust indicators -->
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6 text-white/80 text-sm mt-4">
+                    <div class="flex items-center gap-2">
+                        <i class="bi bi-shield-check-fill text-green-400"></i>
+                        <span>100% Secure</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="bi bi-award-fill text-[#edcf9c]"></i>
+                        <span>Money-Back Guarantee</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="bi bi-people-fill text-blue-400"></i>
+                        <span>40,381+ Students</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Sticky CTA Button for Mobile -->
+    <div id="stickyMobileCTA"
+        class="fixed bottom-0 left-0 right-0 z-50 md:hidden transform translate-y-full transition-transform duration-300 shadow-2xl">
+        <a href="student-reg.html"
+            class="block bg-gradient-to-r from-[#7d0400] via-[#9d0500] to-[#7d0400] text-white px-6 py-5 font-bold text-lg text-center border-t-4 border-[#edcf9c] relative overflow-hidden group">
+            <!-- Animated background -->
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-active:translate-x-[200%] transition-transform duration-700">
+            </div>
+
+            <span class="relative z-10 flex items-center justify-center gap-3">
+                <i class="bi bi-lightning-charge-fill text-[#edcf9c] text-xl animate-pulse"></i>
+                <span>Yes! Lock My Seat Before Price Increases</span>
+                <i class="bi bi-arrow-right-circle-fill text-[#edcf9c] text-xl"></i>
+            </span>
+        </a>
+    </div>
+
+    <!-- Sticky CTA Script -->
+    <script>
+        // Show sticky CTA on mobile when user scrolls past the main CTA
+        document.addEventListener('DOMContentLoaded', function () {
+            const stickyButton = document.getElementById('stickyMobileCTA');
+            const mainCTA = document.getElementById('mainCTAButton');
+
+            if (!stickyButton || !mainCTA) return;
+
+            let lastScroll = 0;
+            const showOffset = 300; // Show after scrolling 300px
+
+            function handleScroll() {
+                const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                const mainCTARect = mainCTA.getBoundingClientRect();
+                const mainCTAVisible = mainCTARect.top < window.innerHeight && mainCTARect.bottom > 0;
+
+                // Show sticky button if:
+                // 1. Scrolled past threshold
+                // 2. Main CTA is not visible on screen
+                // 3. User is scrolling down
+                if (currentScroll > showOffset && !mainCTAVisible && currentScroll > lastScroll) {
+                    stickyButton.style.transform = 'translateY(0)';
+                } else if (mainCTAVisible || currentScroll < lastScroll) {
+                    // Hide when main CTA is visible or scrolling up
+                    stickyButton.style.transform = 'translateY(100%)';
+                }
+
+                lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+            }
+
+            // Throttle scroll event for better performance
+            let throttleTimer;
+            window.addEventListener('scroll', function () {
+                if (throttleTimer) return;
+                throttleTimer = setTimeout(function () {
+                    handleScroll();
+                    throttleTimer = null;
+                }, 100);
+            });
+
+            // Initial check
+            handleScroll();
+        });
+    </script>
 
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-100 py-8">
@@ -1612,19 +2678,32 @@
 
         <!-- Primary: Enroll Now -->
         <a href="student-reg.html"
-            class="flex items-center justify-center gap-2 px-6 py-2.5 md:px-10 md:py-3 text-white rounded-full shadow-lg font-semibold tracking-wide text-sm transition-all md:min-w-[200px]"
+            class="flex items-center justify-center gap-2 px-6 py-2.5 md:px-10 md:py-3 text-white rounded-full shadow-lg font-semibold tracking-wide text-sm transition-all hover:scale-105 group relative overflow-hidden"
             style="background-color: #7d0400; box-shadow: 0 10px 15px -3px rgba(125, 4, 0, 0.3);">
-            <span>Enroll Now</span>
-            <span class="bg-white/20 px-1.5 py-0.5 rounded text-[10px] font-bold">25% OFF</span>
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000">
+            </div>
+            <span class="relative z-10">Enrol Now</span>
+            <span
+                class="relative z-10 bg-[#edcf9c] text-[#7d0400] px-2 py-0.5 rounded-md text-xs font-bold">₹25,000</span>
         </a>
     </div>
+
+    <!-- jQuery (required for Owl Carousel) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <!-- WOW JS -->
+    <script src="lib/wow/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 
     <!-- GSAP Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 
 
     <style>
@@ -1780,94 +2859,231 @@
 
 
         function renderCurriculumCards() {
-            const grid = document.getElementById('bentoGrid');
-            if (!grid) return;
-            grid.innerHTML = ''; // Clear existing
+            const list = document.getElementById('curriculumList');
+            const detail = document.getElementById('curriculumDetail');
+            const btnWrapper = document.getElementById('syllabusBtnWrapper');
+            if (!list || !detail) return;
 
-            pageData.curriculumCards.forEach((c, i) => {
-                const div = document.createElement('div');
-                div.className = `bento-card-wrapper opacity-0 translate-y-8 ${c.colSpan || ''} ${c.rowSpan || ''}`;
+            const cards = Array.isArray(pageData.curriculumCards)
+                ? pageData.curriculumCards.filter(c => c && c.title)
+                : [];
+            if (!cards.length) return;
 
-                // Generate Items List
-                let itemsHtml = '';
-                if (c.items && c.items.length > 0) {
-                    itemsHtml = `<ul class="space-y-2 mt-4">
-                        ${c.items.map(item => `
-                            <li class="flex items-start gap-2 text-sm ${c.textColor.includes('white') ? 'text-white/80' : 'text-gray-600'}">
-                                <i class="bi bi-check2-circle flex-shrink-0 mt-0.5 ${c.textColor.includes('white') ? 'text-[#edcf9c]' : 'text-[#7d0400]'}"></i>
-                                <span>${item}</span>
+            list.innerHTML = '';
+            detail.innerHTML = '';
+
+            let activeIndex = 0;
+            const tabs = [];
+
+            const escapeHtml = (str) => String(str)
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#039;');
+
+            const buildItemsListHtml = (c) => {
+                const items = Array.isArray(c.items) ? c.items : [];
+                if (!items.length) return '';
+
+                return `
+                    <ul class="space-y-3 mt-4">
+                        ${items.map((item, idx) => `
+                            <li class="flex items-start gap-3 text-sm text-gray-700 opacity-0 translate-y-2 detail-item-anim" style="animation-delay: ${idx * 50}ms">
+                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-[#7d0400]/10 flex items-center justify-center mt-0.5">
+                                    <i class="bi bi-check2 text-[#7d0400] text-xs font-bold"></i>
+                                </div>
+                                <span class="leading-relaxed">${escapeHtml(item)}</span>
                             </li>
                         `).join('')}
-                    </ul>`;
-                }
+                    </ul>
+                `;
+            };
 
-                // Lottie Player HTML (if lottieUrl exists)
-                let lottieHtml = '';
-                if (c.lottieUrl) {
-                    lottieHtml = `
-                        <div class="mt-4 flex justify-center items-center">
-                            <dotlottie-player 
-                                src="${c.lottieUrl}"
-                                background="transparent"
-                                speed="1"
-                                style="width: 400px; height: 200px;"
-                                loop
-                                autoplay>
-                            </dotlottie-player>
-                        </div>
-                    `;
-                }
-
-                // Card Inner
-                let innerHTML = `
-                    <div class="bento-inner h-full w-full rounded-3xl p-8 relative overflow-hidden group transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${c.bgClass || ''} ${c.borderClass || ''} ${c.textColor} ${c.hoverBorder ? `hover:${c.hoverBorder}` : ''}" ${c.bgStyle ? `style="${c.bgStyle}"` : ''}>
-                        
-                        ${c.hasImage ? `
-                            <img src="${c.imageUrl}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
-                            <div class="absolute inset-0" style="${c.overlay}"></div>
-                        ` : ''}
-                        
-                        ${c.pattern ? `<div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>` : ''}
-                        
-                        <div class="relative z-10 h-full flex flex-col justify-between">
-                            <div>
-                                <div class="flex justify-between items-start mb-4">
-                                    <div class="w-12 h-12 rounded-2xl ${c.type === 'tall' ? 'bg-white/20' : 'bg-white shadow-sm'} flex items-center justify-center backdrop-blur-sm">
-                                        <i class="bi ${c.icon} text-2xl ${c.iconColor}"></i>
-                                    </div>
-                                    ${c.badge ? `<span class="inline-block px-3 py-1 rounded-full ${c.badgeClass || ''} text-xs font-bold tracking-wide" ${c.badgeStyle ? `style="${c.badgeStyle}"` : ''}>${c.badge}</span>` : ''}
-                                </div>
-                                
-                                <h3 class="text-xl md:text-2xl font-bold mb-3 leading-tight group-hover:text-opacity-80 transition-colors">${c.title}</h3>
-                                ${c.description ? `<p class="${c.descriptionClass || 'text-gray-600'} text-sm leading-relaxed mb-4">${c.description}</p>` : ''}
-                                ${lottieHtml}
-                                ${itemsHtml}
-                            </div>
-                        </div>
+            const buildLottieHtml = (c) => {
+                if (!c.lottieUrl) return '';
+                return `
+                    <div class="mt-6 flex justify-center items-center bg-gray-50 rounded-xl p-4 border border-gray-100">
+                        <dotlottie-player 
+                            src="${c.lottieUrl}"
+                            background="transparent"
+                            speed="1"
+                            style="width: 100%; max-width: 280px; height: 160px;"
+                            loop
+                            autoplay>
+                        </dotlottie-player>
                     </div>
                 `;
-                div.innerHTML = innerHTML;
-                grid.appendChild(div);
+            };
+
+            const renderDetail = (index) => {
+                activeIndex = Math.max(0, Math.min(cards.length - 1, index));
+                const c = cards[activeIndex];
+
+                // Update active state for all tabs
+                tabs.forEach((t, i) => {
+                    const isActive = i === activeIndex;
+                    t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+
+                    const indicator = t.querySelector('.active-indicator');
+                    const chevron = t.querySelector('.bi-chevron-right');
+
+                    // Reset base classes
+                    t.className = 'curriculum-tab group w-full text-left p-4 rounded-xl border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7d0400]/40 relative overflow-hidden';
+
+                    if (isActive) {
+                        t.classList.add('bg-white', 'border-[#7d0400]', 'shadow-lg', 'shadow-[#7d0400]/5', 'scale-[1.02]', 'z-10');
+                        if (indicator) indicator.classList.remove('opacity-0');
+                        if (chevron) chevron.classList.add('text-[#7d0400]', 'translate-x-1');
+                    } else {
+                        t.classList.add('bg-white/50', 'border-transparent', 'hover:bg-white', 'hover:shadow-md', 'hover:border-gray-200');
+                        if (indicator) indicator.classList.add('opacity-0');
+                        if (chevron) chevron.classList.remove('text-[#7d0400]', 'translate-x-1');
+                    }
+                });
+
+                const itemsHtml = buildItemsListHtml(c);
+                const lottieHtml = buildLottieHtml(c);
+
+                // Animate out old content if needed, but for simplicity we just replace and animate in
+                detail.innerHTML = `
+                    <div class="detail-content opacity-0">
+                        <div class="flex items-start gap-4 mb-6">
+                            <div class="w-14 h-14 rounded-2xl ${c.bgClass || 'bg-blue-100'} flex items-center justify-center flex-shrink-0 shadow-sm">
+                                <i class="bi ${c.icon || 'bi-book'} text-2xl ${c.iconColor || 'text-blue-900'}"></i>
+                            </div>
+                            <div class="flex-1 pt-1">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="px-2 py-0.5 rounded-full bg-gray-100 text-[10px] font-bold uppercase tracking-wider text-gray-500 border border-gray-200">${escapeHtml(c.badge || 'Module')}</span>
+                                </div>
+                                <h3 class="text-2xl lg:text-3xl font-serif font-bold text-gray-900 leading-tight">${escapeHtml(c.title)}</h3>
+                            </div>
+                        </div>
+
+                        <div class="prose prose-sm max-w-none">
+                            ${c.description ? `<p class="text-base text-gray-600 leading-relaxed mb-6">${escapeHtml(c.description)}</p>` : ''}
+                        </div>
+                        
+                        ${lottieHtml}
+                        ${itemsHtml ? `<div class="mt-2">${itemsHtml}</div>` : ''}
+                    </div>
+                `;
+
+                // GSAP Animation for Detail Content
+                gsap.fromTo(detail.querySelector('.detail-content'),
+                    { opacity: 0, y: 20, filter: 'blur(10px)' },
+                    { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, ease: "power2.out" }
+                );
+
+                // Stagger list items in detail view
+                gsap.to(detail.querySelectorAll('.detail-item-anim'), {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.4,
+                    stagger: 0.05,
+                    ease: "back.out(1.7)",
+                    delay: 0.1
+                });
+            };
+
+            // Create list items
+            cards.forEach((c, i) => {
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                // Initial class - will be updated by renderDetail
+                btn.className = 'curriculum-tab group w-full text-left p-4 rounded-xl border border-transparent transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#7d0400]/40 relative overflow-hidden bg-white/50 hover:bg-white hover:shadow-md hover:border-gray-200';
+                btn.setAttribute('role', 'tab');
+                btn.id = `curriculumTab-${i}`;
+                btn.setAttribute('aria-controls', 'curriculumDetail');
+
+                btn.innerHTML = `
+                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#7d0400] opacity-0 transition-opacity duration-300 active-indicator"></div>
+                    <div class="flex items-center gap-4 relative z-10">
+                        <div class="w-10 h-10 rounded-lg ${c.bgClass || 'bg-blue-100'} flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                            <i class="bi ${c.icon || 'bi-book'} text-lg ${c.iconColor || 'text-blue-900'}"></i>
+                        </div>
+                        <div class="min-w-0 flex-1 text-left">
+                            <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">${escapeHtml(c.badge || '')}</div>
+                            <div class="text-base font-semibold text-gray-900 truncate group-hover:text-[#7d0400] transition-colors">${escapeHtml(c.title)}</div>
+                        </div>
+                        <i class="bi bi-chevron-right text-gray-300 group-hover:text-[#7d0400] group-hover:translate-x-1 transition-all"></i>
+                    </div>
+                `;
+
+                btn.addEventListener('click', () => {
+                    renderDetail(i);
+                });
+
+                btn.addEventListener('keydown', (e) => {
+                    const key = e.key;
+                    if (key !== 'ArrowUp' && key !== 'ArrowDown' && key !== 'Home' && key !== 'End') return;
+                    e.preventDefault();
+
+                    if (key === 'Home') {
+                        tabs[0]?.focus();
+                        renderDetail(0);
+                        return;
+                    }
+                    if (key === 'End') {
+                        tabs[tabs.length - 1]?.focus();
+                        renderDetail(tabs.length - 1);
+                        return;
+                    }
+
+                    const dir = key === 'ArrowDown' ? 1 : -1;
+                    const next = (i + dir + tabs.length) % tabs.length;
+                    tabs[next]?.focus();
+                    renderDetail(next);
+                });
+
+                tabs.push(btn);
+                list.appendChild(btn);
             });
 
-            // Append "Download Syllabus" button wrapper after grid if not exists
-            let btnWrapper = document.getElementById('syllabusBtnWrapper');
-            if (!btnWrapper) {
-                btnWrapper = document.createElement('div');
-                btnWrapper.id = 'syllabusBtnWrapper';
-                btnWrapper.className = 'text-center mt-12 col-span-full';
+            // Initial Render
+            renderDetail(0);
+
+            // GSAP Animation for List Items Entrance
+            // We use a small timeout to ensure the DOM is fully painted and calculated
+            setTimeout(() => {
+                ScrollTrigger.batch(tabs, {
+                    onEnter: batch => gsap.fromTo(batch,
+                        { opacity: 0, y: 20 },
+                        { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: "power2.out", overwrite: true }
+                    ),
+                    start: "top 90%",
+                    once: true // Only animate once to avoid issues
+                });
+            }, 100);
+
+            // Animate Detail Card Entrance
+            gsap.fromTo(detail,
+                { opacity: 0, x: 20 },
+                {
+                    scrollTrigger: {
+                        trigger: detail,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    },
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    delay: 0.2
+                }
+            );
+            renderDetail(0);
+
+            if (btnWrapper && btnWrapper.innerHTML.trim() === '') {
                 btnWrapper.innerHTML = `
-                   <a href="#" class="inline-flex items-center gap-3 px-8 py-3 bg-[#7d0400] text-white rounded-xl font-bold hover:bg-[#5a0300] transition-colors shadow-lg">
+                    <a href="#" class="inline-flex items-center gap-3 px-8 py-3 bg-[#7d0400] text-white rounded-xl font-bold hover:bg-[#5a0300] transition-colors shadow-lg">
                         <i class="bi bi-file-earmark-pdf-fill"></i>
                         <span>Download Full Syllabus PDF</span>
-                   </a>
-                   <div class="mt-4 text-sm text-gray-500">
+                    </a>
+                    <div class="mt-4 text-sm text-gray-500">
                         OR <a href="#" class="text-[#7d0400] font-semibold hover:underline">Watch Detailed Syllabus Video</a>
-                   </div>
+                    </div>
                 `;
-                // Append this output AFTER the grid, which means we might need to insert it in parent if grid is just for cards.
-                // The grid element is inside a section.
-                grid.parentNode.appendChild(btnWrapper);
             }
         }
 
@@ -1911,9 +3127,6 @@
                     const icon = el.querySelector('.bi-chevron-down');
                     const isOpen = body.style.gridTemplateRows === '1fr';
 
-                    // Close others (optional, maybe distinct behavior requested? Standard accordion closes others)
-                    // Let's keep it simple: independent toggle for now or close others. 
-                    // User didn't specify, so independent is safer/easier.
 
                     if (isOpen) {
                         body.style.gridTemplateRows = '0fr';
@@ -1929,7 +3142,6 @@
 
 
         function renderTestimonial() {
-            // Simplified for brevity, same structure
             const video = document.getElementById('testimonialVideo');
             const links = document.getElementById('reviewLinks');
             if (!video || !links) return;
@@ -1952,14 +3164,6 @@
 
         function initAnimations() {
             gsap.registerPlugin(ScrollTrigger);
-
-            // 0. Smooth Scroll
-            const lenis = new Lenis({
-                duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-                direction: 'vertical', gestureDirection: 'vertical', smooth: true, mouseMultiplier: 1, smoothTouch: false, touchMultiplier: 2,
-            });
-            function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-            requestAnimationFrame(raf);
 
             // 1. Hero Animations (Split Text)
             // ------------------------------------
@@ -2040,37 +3244,175 @@
                 });
             });
 
-            // 6. Horizontal Pricing Scroll ("Wow Scroller")
+            // 6. Owl Carousel Initialization
             // ------------------------------------
-            const pricingTrack = document.getElementById("pricing-track");
-            const pricingSection = document.getElementById("pricing-section");
-
-            if (pricingTrack && pricingSection) {
-                // Ensure we recalculate on resize
-                const getScrollAmount = () => {
-                    // Total width of track minus viewport width -> how much we need to shift left
-                    // Add some buffer for padding-right
-                    let trackWidth = pricingTrack.scrollWidth;
-                    let viewportWidth = window.innerWidth;
-                    return -(trackWidth - viewportWidth + 30); // 30px buffer
-                };
-
-                // Only enable horizontal scroll if content overflows
-                if (pricingTrack.scrollWidth > window.innerWidth) {
-                    gsap.to(pricingTrack, {
-                        x: getScrollAmount,
-                        ease: "none",
-                        scrollTrigger: {
-                            trigger: pricingSection,
-                            pin: true,
-                            scrub: 1,
-                            // The scroll length (duration) corresponds to the width of the content
-                            end: () => "+=" + (pricingTrack.scrollWidth - window.innerWidth),
-                            invalidateOnRefresh: true
-                        }
-                    });
+            $('#pricing-carousel').owlCarousel({
+                loop: false,
+                margin: 20,
+                nav: true,
+                dots: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
                 }
-            }
+            });
+
+            // 7. Testimonials Carousel Initialization
+            // ------------------------------------
+            $('#testimonials-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                navText: [
+                    '<i class="bi bi-chevron-left text-2xl"></i>',
+                    '<i class="bi bi-chevron-right text-2xl"></i>'
+                ],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    1024: {
+                        items: 3
+                    }
+                }
+            });
+
+            // 8. Testimonials Section Animations
+            // ------------------------------------
+
+            // Animate Section Heading
+            gsap.from('.testimonial-heading', {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: '.testimonial-heading',
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Animate Rating Card with Scale Effect
+            gsap.from('.rating-card', {
+                duration: 1.2,
+                scale: 0.9,
+                opacity: 0,
+                y: 30,
+                ease: "back.out(1.2)",
+                scrollTrigger: {
+                    trigger: '.rating-card',
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Animate Rating Stats Individually
+            gsap.from('.rating-card .grid > div', {
+                duration: 0.8,
+                y: 30,
+                opacity: 0,
+                stagger: 0.2,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.rating-card',
+                    start: "top 75%",
+                    toggleActions: "play none none reverse"
+                },
+                delay: 0.3
+            });
+
+            // Animate Video Testimonial Section
+            gsap.from('.video-testimonial-heading', {
+                duration: 1,
+                x: -50,
+                opacity: 0,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: '.video-testimonial-heading',
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            gsap.from('.video-container', {
+                duration: 1.2,
+                scale: 0.95,
+                opacity: 0,
+                y: 40,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: '.video-container',
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Animate Social Proof Banner
+            gsap.from('.social-proof-banner', {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: '.social-proof-banner',
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+
+            // Counter Animation for Stats
+            gsap.from('.social-proof-banner .font-bold', {
+                duration: 2,
+                textContent: 0,
+                ease: "power1.out",
+                snap: { textContent: 1 },
+                scrollTrigger: {
+                    trigger: '.social-proof-banner',
+                    start: "top 80%",
+                    toggleActions: "play none none reverse"
+                },
+                stagger: 0.3
+            });
+
+            // Testimonial Cards Stagger Animation (for Owl Carousel items)
+            ScrollTrigger.batch('.testimonials-carousel-wrapper .item', {
+                start: "top 85%",
+                onEnter: batch => gsap.to(batch, {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.15,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    overwrite: true
+                })
+            });
+
+            // Parallax effect for decorative elements
+            gsap.to('#testimonials img[src*="abstract"]', {
+                y: 100,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: '#testimonials',
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1
+                }
+            });
         }
 
         // ====================================
@@ -2082,6 +3424,74 @@
             setTimeout(initAnimations, 100);
         });
 
+    </script>
+
+    <script>
+        (() => {
+            const withAutoplay = (url) => {
+                if (!url) return '';
+                try {
+                    const u = new URL(url);
+                    u.searchParams.set('autoplay', '1');
+                    u.searchParams.set('mute', u.searchParams.get('mute') ?? '0');
+                    return u.toString();
+                } catch {
+                    // Fallback if URL() can't parse (e.g. relative URLs)
+                    const hasQuery = url.includes('?');
+                    const separator = hasQuery ? '&' : '?';
+                    return `${url}${separator}autoplay=1`;
+                }
+            };
+
+            const initHeroVideoModal = () => {
+                const openBtn = document.getElementById('heroVideoOpen');
+                const modal = document.getElementById('heroVideoModal');
+                const closeBtn = document.getElementById('heroVideoClose');
+                const frame = document.getElementById('heroVideoFrame');
+                const title = document.getElementById('heroVideoTitle');
+
+                if (!openBtn || !modal || !closeBtn || !frame || !title) return;
+
+                const open = () => {
+                    const src = openBtn.getAttribute('data-video-src') || '';
+                    const videoTitle = openBtn.getAttribute('data-video-title') || 'Video';
+
+                    title.textContent = videoTitle;
+                    frame.setAttribute('title', videoTitle);
+                    frame.setAttribute('src', withAutoplay(src));
+
+                    modal.classList.remove('hidden');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.classList.add('overflow-hidden');
+                    closeBtn.focus();
+                };
+
+                const close = () => {
+                    modal.classList.add('hidden');
+                    modal.setAttribute('aria-hidden', 'true');
+                    frame.setAttribute('src', '');
+                    document.body.classList.remove('overflow-hidden');
+                    openBtn.focus();
+                };
+
+                openBtn.addEventListener('click', open);
+                closeBtn.addEventListener('click', close);
+
+                // Close on backdrop click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal || (e.target instanceof HTMLElement && e.target.classList.contains('bg-black/70'))) {
+                        close();
+                    }
+                });
+
+                // Close on Escape
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && !modal.classList.contains('hidden')) close();
+                });
+            };
+
+            document.addEventListener('DOMContentLoaded', initHeroVideoModal);
+        })();
     </script>
 </body>
 
