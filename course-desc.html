@@ -4305,12 +4305,39 @@
                 }, 300); // Match transition duration
             };
 
-            // Trigger on mouse leave to top
+            // Trigger on mouse leave to top (Desktop)
             document.addEventListener('mouseleave', (e) => {
                 if (e.clientY < 10) {
                     showModal();
                 }
             });
+
+            // Mobile trigger: Show modal after user scrolls to 40% of page or after 45 seconds
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+            if (isMobile) {
+                let scrollTriggered = false;
+                
+                const handleScroll = () => {
+                    if (scrollTriggered) return;
+                    const scrollPercentage = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                    if (scrollPercentage > 40) {
+                        scrollTriggered = true;
+                        showModal();
+                        window.removeEventListener('scroll', handleScroll);
+                    }
+                };
+                
+                window.addEventListener('scroll', handleScroll, { passive: true });
+                
+                // Fallback: Show modal after 45 seconds on mobile if user hasn't scrolled enough
+                setTimeout(() => {
+                    if (!scrollTriggered && !hasShown) {
+                        scrollTriggered = true;
+                        showModal();
+                        window.removeEventListener('scroll', handleScroll);
+                    }
+                }, 45000);
+            }
 
             // Close events
             closeBtn.addEventListener('click', closeModal);
