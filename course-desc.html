@@ -762,34 +762,20 @@
                         <!-- Video CTA (opens popup modal) -->
                         <div class="flex justify-center mb-6 md:mb-10">
                             <button id="heroVideoOpen" type="button"
-                                class="group relative inline-flex items-center justify-center px-4 py-2.5 rounded-full bg-white/90 backdrop-blur border border-gray-200 shadow-sm hover:shadow-md transition-all overflow-hidden min-w-[270px]"
+                                class="group relative inline-flex items-center justify-center w-40 h-40 rounded-lg backdrop-blur border border-white/30 shadow-lg hover:shadow-xl transition-all overflow-hidden"
+                                style="background-image: url('img/3d-female-yoga-pose-against-sunset-landscape.jpg'); background-size: cover; background-position: center; background-color: rgba(255, 255, 255, 0.15);"
                                 data-video-src="https://www.youtube.com/embed/snPBv1-igjM"
                                 data-video-title="Course Introduction" aria-haspopup="dialog"
                                 aria-controls="heroVideoModal">
                                 <span class="sr-only">Watch the course intro</span>
 
-                                <!-- Default layout: Icon left, text right -->
-                                <span
-                                    class="inline-flex items-center gap-3 transition-all duration-500 ease-in-out opacity-100 translate-x-0 group-hover:opacity-0 group-hover:-translate-x-10">
-                                    <span
-                                        class="w-10 h-10 rounded-full bg-gradient-to-br from-[#c2410c] to-[#4a0d0d] text-white flex items-center justify-center shadow-sm transition-transform duration-300 ease-out group-hover:scale-105">
-                                        <i class="bi bi-play-fill text-2xl ml-0.5"></i>
-                                    </span>
-                                    <span class="text-sm sm:text-base font-semibold text-gray-900">Watch the course
-                                        intro</span>
-                                    <span class="text-xs text-gray-500 hidden sm:inline">(2 min)</span>
-                                </span>
+                                <!-- Overlay -->
+                                <div class="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all"></div>
 
-
+                                <!-- Play Icon -->
                                 <span
-                                    class="absolute inset-0 inline-flex items-center justify-center gap-3 px-4 transition-all duration-500 ease-in-out opacity-0 translate-x-10 group-hover:opacity-100 group-hover:translate-x-0">
-                                    <span class="text-sm sm:text-base font-semibold text-gray-900">Watch the course
-                                        intro</span>
-                                    <span class="text-xs text-gray-500 hidden sm:inline">(2 min)</span>
-                                    <span
-                                        class="w-10 h-10 rounded-full bg-gradient-to-br from-[#c2410c] to-[#4a0d0d] text-white flex items-center justify-center shadow-sm transition-transform duration-300 ease-out group-hover:scale-105">
-                                        <i class="bi bi-play-fill text-2xl ml-0.5"></i>
-                                    </span>
+                                    class="relative z-10 w-16 h-16 rounded-full bg-gradient-to-br from-[#98989862] to-[#fbfbfb48] text-white flex items-center justify-center shadow-lg transition-transform duration-300 ease-out group-hover:scale-110">
+                                    <i class="bi bi-play-fill text-3xl ml-1"></i>
                                 </span>
                             </button>
                         </div>
@@ -845,7 +831,7 @@
                             <span>Early-Bird 15% OFF Ends in 3 Days</span>
                         </div>
                         <div
-                            class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm font-medium text-white  md:pb-10">
+                            class="flex flex-wrap justify-center items-center sm:gap-4 md:gap-6 text-xs sm:text-sm font-medium text-white  md:pb-10">
                             <div class="flex items-center gap-2">
                                 <i class="bi bi-shield-fill-check text-white"></i>
                                 <span>Trusted By 40,381+ Students</span>
