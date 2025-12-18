@@ -1,3 +1,54 @@
+:root {
+	/* Centralized color variables — update these to change theme */
+	--color-primary: #5B7B6D;
+	--color-primary-hover: #3D5A4C;
+	--color-primary-light: #7FA08C;
+
+	--color-bg-light: #F8F6F5;
+	--color-surface: #FFFFFF;
+	--color-black: #000000;
+	--color-white: #ffffff;
+	--color-dot: #d1d5db;
+	--color-success: #10b981;
+	--color-border: #E5E2E0;
+	--color-text-muted: #7A7A7A;
+	--color-text-primary: #2B2B2B;
+
+	--color-gray-secondary: #E8E4E1;
+	--color-gray-hover: #F5F3F1;
+
+	--color-sand: #D4CFC9;
+	--color-stone: #A8A29E;
+
+	/* RGB fallbacks for alpha gradients: R, G, B */
+	--color-primary-rgb: 91,123,109;
+	--color-primary-hover-rgb: 61,90,76;
+	--color-primary-light-rgb: 127,160,140;
+	--color-gray-secondary-rgb: 232,228,225;
+	--color-bg-light-rgb: 248,246,245;
+
+	--color-btn-secondary-hover: #EFF5F2;
+}
+
+
+/* Compatibility overrides: map arbitrary Tailwind hex classes to CSS variables
+	This lets existing HTML with arbitrary color classes keep working while using centralized variables. */
+.from-\[\#5B7B6D\] { --tw-gradient-from: var(--color-primary); }
+.to-\[\#3D5A4C\] { --tw-gradient-to: var(--color-primary-hover); }
+.to-\[\#7FA08C\] { --tw-gradient-to: var(--color-primary-light); }
+.from-\[\#E8E4E1\]\/30 { --tw-gradient-from: rgba(232,228,225,0.3); }
+.to-\[\#E8E4E1\]\/10 { --tw-gradient-to: rgba(232,228,225,0.1); }
+.border-\[\#E8E4E1\]\/50 { border-color: rgba(232,228,225,0.5); }
+.bg-\[\#E8E4E1\] { background-color: var(--color-gray-secondary) !important; }
+.text-\[\#5B7B6D\] { color: var(--color-primary) !important; }
+.text-\[\#2e6fba\] { color: #2e6fba !important; }
+.bg-\[\#fffafa\] { background-color: #fffafa !important; }
+.border-\[\#5B7B6D\] { border-color: var(--color-primary) !important; }
+.border-\[\#E5E2E0\] { border-color: var(--color-border) !important; }
+.from-\[\#A8A29E\]\/25 { --tw-gradient-from: rgba(168,162,158,0.25); }
+.from-\[\#1f2937\] { --tw-gradient-from: #1f2937; }
+.bg-\[\#E8E4E1\]\/30 { background-color: rgba(232,228,225,0.3) !important; }
+.bg-\[\#E8E4E1\]\/10 { background-color: rgba(232,228,225,0.1) !important; }
 
 
 /* Color schemes */
