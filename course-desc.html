@@ -62,6 +62,27 @@
         style="width: 0%;"></div>
 
     <style>
+        /* Typography System - Compact Font Sizes */
+        :root {
+            /* Heading Sizes - Compact */
+            --text-h1: clamp(1.75rem, 3vw + 0.75rem, 2.5rem);
+            --text-h2: clamp(1.5rem, 2.5vw + 0.625rem, 2rem);
+            --text-h3: clamp(1.25rem, 2vw + 0.5rem, 1.75rem);
+            --text-h4: clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem);
+            --text-h5: clamp(1rem, 1vw + 0.375rem, 1.25rem);
+            --text-h6: clamp(0.9375rem, 0.75vw + 0.375rem, 1.125rem);
+
+            /* Body Text Sizes - Compact */
+            --text-base: clamp(0.875rem, 0.25vw + 0.8125rem, 0.9375rem);
+            --text-lg: clamp(0.9375rem, 0.5vw + 0.875rem, 1.0625rem);
+            --text-xl: clamp(1rem, 0.75vw + 0.9375rem, 1.1875rem);
+            --text-2xl: clamp(1.125rem, 1vw + 1rem, 1.375rem);
+
+            /* Small Text Sizes - Compact */
+            --text-sm: clamp(0.75rem, 0.25vw + 0.6875rem, 0.875rem);
+            --text-xs: clamp(0.625rem, 0.25vw + 0.5625rem, 0.75rem);
+        }
+
         h1,
         h2,
         h3,
@@ -70,6 +91,97 @@
         h6,
         .hero-title {
             font-family: 'El Messiri', serif;
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+        }
+
+        h1 {
+            font-size: var(--text-h1);
+        }
+
+        h2 {
+            font-size: var(--text-h2);
+        }
+
+        h3 {
+            font-size: var(--text-h3);
+        }
+
+        h4 {
+            font-size: var(--text-h4);
+        }
+
+        h5 {
+            font-size: var(--text-h5);
+        }
+
+        h6 {
+            font-size: var(--text-h6);
+        }
+
+        /* Text Utility Classes */
+        .text-body {
+            font-size: var(--text-base);
+            line-height: 1.5;
+        }
+
+        .text-body-lg {
+            font-size: var(--text-lg);
+            line-height: 1.5;
+        }
+
+        .text-body-xl {
+            font-size: var(--text-xl);
+            line-height: 1.5;
+        }
+
+        .text-body-2xl {
+            font-size: var(--text-2xl);
+            line-height: 1.4;
+        }
+
+        .text-body-sm {
+            font-size: var(--text-sm);
+            line-height: 1.5;
+        }
+
+        .text-body-xs {
+            font-size: var(--text-xs);
+            line-height: 1.4;
+        }
+
+        /* ================================
+           Curriculum: refreshed skin only
+           (layout/structure stays the same)
+           ================================ */
+        .curriculum-section {
+            position: relative;
+            isolation: isolate;
+        }
+
+        .curriculum-section::before {
+            content: '';
+            position: absolute;
+            inset: -40px -20px;
+            background:
+                radial-gradient(800px 420px at 12% 10%, rgba(237, 207, 156, 0.35), transparent 60%),
+                radial-gradient(700px 380px at 90% 20%, rgba(139, 32, 37, 0.12), transparent 62%),
+                radial-gradient(800px 520px at 55% 100%, rgba(46, 61, 111, 0.10), transparent 60%);
+            z-index: -2;
+        }
+
+        /* Detail card: subtle top accent + depth */
+        #curriculumDetail {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .curriculum-tab {
+            transform-origin: center;
+        }
+
+        .curriculum-tab:focus-visible {
+            outline: none;
         }
 
         #backToTop {
@@ -150,8 +262,7 @@
     <main id="main-content">
         <!-- Hero Section - LinkedIn Mastery Course -->
         <section
-            class="hero-section py-16 md:pt-5 md:pb-16 sm:py-24 relative overflow-hidden flex justify-center items-center  min-h-[500px] md:min-h-[600px] ">
-            <!-- Line 1 - Top Left -->
+            class="hero-section bg-[#fffdf892] md:pt-5 md:pb-16 sm:py-28 relative overflow-hidden flex justify-center items-center  min-h-[540px] md:min-h-[600px] ">
             <img src="img/assets/abstract-lines/Line 1.svg"
                 class="absolute top-0 left-0 w-[800px] h-auto opacity-20 pointer-events-none"
                 style="transform: rotate(-15deg) translate(-10%, -20%);" alt="" role="presentation" loading="eager">
@@ -159,14 +270,13 @@
             <!-- Line 5 - Top Right -->
             <img src="img/assets/abstract-lines/Line 5.svg"
                 class="absolute top-0 right-0 w-[700px] h-auto opacity-15 pointer-events-none"
-                style="transform: rotate(10deg) translate(35%, -55%);" alt="" role="presentation" loading="eager">
-
-            <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 relative z-10">
+                style="transform: rotate(40deg) translate(15%, -1%);" alt="" role="presentation" loading="eager">
+            <div class="max-w-[1140px] w-full lg:px-4 relative z-10">
                 <div
-                    class="border border-gray-200 rounded-2xl md:rounded-3xl shadow-2xl py-12 px-2 sm:p-6 md:p-12 relative overflow-hidden bg-white bg-center bg-no-repeat">
+                    class="lg:border border-gray-200 md:rounded-3xl shadow-2xl py-20 px-14 sm:p-6 md:p-12 relative overflow-hidden bg-white bg-center bg-no-repeat">
                     <!-- Background Video -->
-                    <video class="absolute inset-0 w-full h-full object-cover rounded-2xl md:rounded-3xl" autoplay muted
-                        loop playsinline>
+                    <video class="absolute inset-0 w-full h-full object-cover  md:rounded-3xl" autoplay muted loop
+                        playsinline>
                         <source src="img/assets/1752607_Indonesia_Bali_1280x720.mp4" type="video/mp4">
                         <source src="img/assets/hero-background.webm" type="video/webm">
                         Your browser does not support the video tag.
@@ -181,22 +291,21 @@
                     </div>
                     <div class="relative z-10 w-full flex flex-col items-center text-center">
                         <span
-                            class="inline-block px-2 sm:px-3 py-1 rounded-full font-semibold text-[10px] sm:text-xs mb-3 md:mb-4 border tracking-wide uppercase text-center bg-[#edcf9c] text-[#8b2025] border-[#d4b886]">
+                            class="inline-block px-2 sm:px-3 py-1 rounded-full font-semibold text-[10px] sm:text-sm mb-3 md:mb-4 border tracking-wide uppercase text-center bg-[#edcf9c] text-[#8b2025] border-[#d4b886]">
                             Post Graduate Diploma in Yoga Therapy In Lucknow
                         </span>
-                        <h1
-                            class="text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] text-gray-900 font-bold mb-3 md:mb-4 leading-tight tracking-tight">
-                            <span class="hero-title block text-white text-2xl sm:text-3xl md:text-4xl">Turn Your Love
-                                for Yoga into a</span>
-                            <span
-                                class="hero-title block mt-1 md:mt-2 text-white text-2xl sm:text-3xl md:text-4xl font-semibold">₹50,000–₹1
-                                Lakh/Month
-                                Career</span>
+                        <h1 class="text-gray-900 font-bold mb-3 md:mb-4 leading-tight tracking-tight"
+                            style="font-size: var(--text-h1);">
+                            <span class="hero-title block text-white" style="font-size: var(--text-h1);">Turn
+                                Your Love for Yoga into a</span>
+                            <span class="hero-title block mt-1 md:mt-2 text-white font-semibold"
+                                style="font-size: var(--text-h1);">₹50,000–₹1
+                                Lakh/Month Career</span>
                         </h1>
 
                         <div class="flex justify-center mb-6 md:mb-10">
                             <button id="heroVideoOpen" type="button"
-                                class="group relative inline-flex items-center justify-center md:w-36 md:h-36 rounded-lg transition-all overflow-hidden"
+                                class="group relative inline-flex items-center justify-center md:w-28 md:h-28 rounded-lg transition-all overflow-hidden"
                                 data-video-src="https://www.youtube.com/embed/snPBv1-igjM"
                                 data-video-title="Course Introduction" aria-haspopup="dialog"
                                 aria-controls="heroVideoModal">
@@ -213,51 +322,59 @@
                             class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 w-full max-w-4xl mb-4 md:mb-10 text-left">
                             <div
                                 class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
-                                <div class="text-[10px] sm:text-xs text-white uppercase tracking-wider mb-1">Duration
+                                <div class="text-white uppercase tracking-wider mb-1"
+                                    style="font-size: var(--text-xs);">Duration
                                 </div>
-                                <div class="font-bold text-sm sm:text-base text-white flex items-center gap-1 sm:gap-2">
-                                    <i class="bi bi-clock text-white text-xs sm:text-base"></i> <span
-                                        class="text-xs sm:text-base">1 Year</span>
-                                </div>
-                            </div>
-                            <div
-                                class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
-                                <div class="text-[10px] sm:text-xs text-white uppercase tracking-wider mb-1">Mode
-                                </div>
-                                <div class="font-bold text-sm sm:text-base text-white flex items-center gap-1 sm:gap-2">
-                                    <i class="bi bi-laptop text-white text-xs sm:text-base"></i> <span
-                                        class="text-xs sm:text-base">Online / Hybrid</span>
+                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2"
+                                    style="font-size: var(--text-base);">
+                                    <i class="bi bi-clock text-white" style="font-size: var(--text-base);"></i> <span
+                                        style="font-size: var(--text-base);">1 Year</span>
                                 </div>
                             </div>
                             <div
                                 class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
-                                <div class="text-[10px] sm:text-xs text-white uppercase tracking-wider mb-1">Language
+                                <div class="text-white uppercase tracking-wider mb-1"
+                                    style="font-size: var(--text-xs);">Mode
                                 </div>
-                                <div class="font-bold text-sm sm:text-base text-white flex items-center gap-1 sm:gap-2">
-                                    <i class="bi bi-translate text-white text-xs sm:text-base"></i> <span
-                                        class="text-xs sm:text-base">Hindi / English</span>
+                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2"
+                                    style="font-size: var(--text-base);">
+                                    <i class="bi bi-laptop text-white" style="font-size: var(--text-base);"></i> <span
+                                        style="font-size: var(--text-base);">Online / Hybrid</span>
                                 </div>
                             </div>
                             <div
                                 class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
-                                <div class="text-[10px] sm:text-xs text-white uppercase tracking-wider mb-1">
+                                <div class="text-white uppercase tracking-wider mb-1"
+                                    style="font-size: var(--text-xs);">Language
+                                </div>
+                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2"
+                                    style="font-size: var(--text-base);">
+                                    <i class="bi bi-translate text-white" style="font-size: var(--text-base);"></i>
+                                    <span style="font-size: var(--text-base);">Hindi / English</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
+                                <div class="text-white uppercase tracking-wider mb-1"
+                                    style="font-size: var(--text-xs);">
                                     Affiliations
                                 </div>
-                                <div class="font-bold text-sm sm:text-base text-white flex items-center gap-1 sm:gap-2">
-                                    <i class="bi bi-patch-check text-white text-xs sm:text-base"></i> <span
-                                        class="text-xs sm:text-base">ISO + Govt.</span>
+                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2"
+                                    style="font-size: var(--text-base);">
+                                    <i class="bi bi-patch-check text-white" style="font-size: var(--text-base);"></i>
+                                    <span style="font-size: var(--text-base);">ISO + Govt.</span>
                                 </div>
                             </div>
 
                         </div>
-                        <div
-                            class="flex flex-wrap justify-center items-center sm:gap-4 md:gap-6 text-xs sm:text-sm font-medium text-white md:pb-1 bg-black/30 rounded-lg px-4 py-2">
+                        <div class="flex flex-wrap justify-center items-center sm:gap-4 md:gap-6 font-medium text-white md:pb-1 bg-black/30 rounded-lg px-4 py-2"
+                            style="font-size: var(--text-sm);">
                             <div class="flex items-center gap-2">
                                 <i class="bi bi-shield-fill-check text-white"></i>
                                 <span>Trusted By 40,381+ Students</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <div class="flex text-yellow-400 text-xs">
+                                <div class="flex text-yellow-400" style="font-size: var(--text-xs);">
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
@@ -319,15 +436,15 @@
                 <!-- Section Header -->
                 <div class="text-center mb-10 max-w-3xl mx-auto">
                     <div class="relative inline-block mb-4">
-                        <h2
-                            class="text-2xl sm:text-3xl md:text-4xl leading-tight font-serif font-bold text-gray-900 mt-3 relative z-10 transition-colors">
+                        <h2 class="leading-tight font-serif font-bold text-gray-900 mt-3 relative z-10 transition-colors"
+                            style="font-size: var(--text-h2);">
                             Who Is This Course For?
                         </h2>
                         <img src="img/assets/handdrawn-underline/Underline_01.svg"
-                            class="absolute bottom-[-75px] left-0 w-full h-auto -z-0 opacity-60"
+                            class="absolute bottom-[-50px] left-0 w-full h-auto -z-0 opacity-60"
                             style="transform: rotate(-1deg);">
                     </div>
-                    <p class="text-lg sm:text-lg leading-relaxed font-serif text-gray-600 mt-4 italic">
+                    <p class="leading-relaxed font-serif text-gray-600 italic" style="font-size: var(--text-lg);">
                         "I Feel Exactly Like This…"
                     </p>
                 </div>
@@ -336,34 +453,39 @@
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[minmax(140px,auto)] mb-10">
                     <!-- Card 1 - Stuck in 9-5 -->
                     <div
-                        class="md:row-span-2 group bg-gradient-to-br from-[#edcf9c]/30 to-[#edcf9c]/10 rounded-3xl p-6 border-2 border-[#edcf9c]/50 hover:border-[#8b2025] transition-all duration-300 hover:shadow-2xl relative overflow-hidden">
+                        class="md:row-span-2 group bg-gradient-to-br from-[#edcf9c]/30 to-[#edcf9c]/10 rounded-3xl p-6 border-2 border-[#edcf9c]/50 hover:border-[#edcf9c] transition-all duration-300 hover:shadow-2xl relative overflow-hidden">
                         <div class="absolute top-4 right-4">
                             <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8b2025] to-[#4a0d0d] flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
-                                <i class="bi bi-briefcase-fill text-white text-2xl"></i>
+                                class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform">
+                                <img src="img/assets/icons/stuck-in-9to5.svg" alt="Stuck in 9-5 Job" class="w-8 h-8">
                             </div>
                         </div>
                         <div class="absolute bottom-6 left-6 right-6">
-                            <h3 class="text-xl font-bold text-gray-900 mb-2">Stuck in a 9-5 Job, Craving
+                            <h3 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h4);">Stuck in a 9-5
+                                Job, Craving
                                 Meaningful Work?</h3>
-                            <p class="text-sm text-gray-700 leading-relaxed">Transform your daily grind into a life of
+                            <p class="text-gray-700 leading-relaxed" style="font-size: var(--text-sm);">Transform your
+                                daily grind into a life of
                                 purpose and holistic wellness.</p>
                         </div>
                     </div>
 
                     <!-- Card 2 - Health Issues -->
                     <div
-                        class="md:col-span-2 group bg-white rounded-3xl p-6 border border-[#8b2025] transition-all duration-300 hover:shadow-2xl">
+                        class="md:col-span-2 group bg-white rounded-3xl p-6 border border-[#8f252a69] transition-all duration-300 hover:shadow-2xl">
                         <div class="flex items-start gap-4">
                             <div
-                                class="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#8b2025] to-[#4a0d0d] flex items-center justify-center shadow-lg">
-                                <i class="bi bi-heart-pulse-fill text-white text-2xl"></i>
+                                class="flex-shrink-0 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg">
+                                <img src="img/assets/icons/brainstorming_11069095.svg" alt="Stuck in 9-5 Job"
+                                    class="w-8 h-8">
                             </div>
                             <div>
-                                <h3 class="text-lg md:text-xl font-bold text-gray-900 mb-2">Dealing with Fatigue,
+                                <h3 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Dealing with
+                                    Fatigue,
                                     Stress,
                                     Back Pain, High BP, or Thyroid Issues?</h3>
-                                <p class="text-sm text-gray-600 leading-relaxed">Heal your own body with Yoga Therapy
+                                <p class="text-gray-600 leading-relaxed" style="font-size: var(--text-sm);">Heal your
+                                    own body with Yoga Therapy
                                     while
                                     learning to guide others.</p>
                             </div>
@@ -372,15 +494,17 @@
 
                     <!-- Card 3 - Shy About Teaching -->
                     <div
-                        class="group bg-gradient-to-br from-[#8b2025] to-[#4a0d0d] rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                        class="group bg-gradient-to-br from-[#8b2025] to-[#4a0d0df4] rounded-3xl p-6 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
                         <div
-                            class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-3">
-                            <i class="bi bi-person-hearts text-white text-xl"></i>
+                            class="w-10 h-10 rounded-xl bg-white/50 backdrop-blur-sm flex items-center justify-center mb-3">
+                            <img src="img/assets/icons/manga_9852180.svg" alt="Stuck in 9-5 Job" class="w-8 h-8">
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-white mb-2">You Love Yoga but Feel Shy About Teaching?
+                            <h3 class="font-bold text-white mb-2" style="font-size: var(--text-h5);">You Love Yoga but
+                                Feel Shy About Teaching?
                             </h3>
-                            <p class="text-sm text-white/90 leading-relaxed">Our step-by-step method builds your voice
+                            <p class="text-white/90 leading-relaxed" style="font-size: var(--text-sm);">Our step-by-step
+                                method builds your voice
                                 and
                                 confidence from Day 1.</p>
                         </div>
@@ -389,15 +513,17 @@
                     <!-- Card 4 - Certificates Confusion -->
                     <div
                         class="group bg-white rounded-3xl p-6 border border-[#8b2025] transition-all duration-300 hover:shadow-2xl flex flex-col justify-between">
-                        <div
-                            class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8b2025] to-[#4a0d0d] flex items-center justify-center mb-3">
-                            <i class="bi bi-patch-check-fill text-white text-xl"></i>
+                        <div class="w-10 h-10 rounded-xl bg-white flex items-center justify-center mb-3">
+                            <img src="img/assets/icons/certificate_1040994.svg" alt="Certificates Confusion"
+                                class="w-6 h-6">
                         </div>
                         <div>
-                            <h3 class="text-lg font-bold text-gray-900 mb-2">Confused About Certificates and
+                            <h3 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Confused About
+                                Certificates and
                                 Recognition?
                             </h3>
-                            <p class="text-sm text-gray-600 leading-relaxed">Get valid, dual certification: Yoga
+                            <p class="text-gray-600 leading-relaxed" style="font-size: var(--text-sm);">Get valid, dual
+                                certification: Yoga
                                 Alliance +
                                 AYUSH (Govt of India).</p>
                         </div>
@@ -410,13 +536,15 @@
                             <i class="bi bi-currency-rupee text-[#8b2025] text-7xl"></i>
                         </div>
                         <div class="relative z-10">
-                            <div
-                                class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8b2025] to-[#4a0d0d] flex items-center justify-center shadow-lg mb-4">
-                                <i class="bi bi-currency-rupee text-white text-2xl"></i>
+                            <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg mb-4">
+                                <img src="img/assets/icons/money-bag_2108625.svg" alt="Earning Potential"
+                                    class="w-6 h-6">
                             </div>
-                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Dreaming of Earning ₹50k–₹1
+                            <h3 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Dreaming of
+                                Earning ₹50k–₹1
                                 Lakh/Month?</h3>
-                            <p class="text-base text-gray-700 leading-relaxed">We teach you the business of yoga: online
+                            <p class="text-gray-700 leading-relaxed" style="font-size: var(--text-base);">We teach you
+                                the business of yoga: online
                                 classes, therapy clients, and studio setup.</p>
                         </div>
                     </div>
@@ -431,13 +559,15 @@
                         <div class="relative z-10 h-full flex flex-col justify-between">
                             <div
                                 class="w-10 h-10 rounded-xl bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                                <i class="bi bi-house-heart-fill text-white text-xl"></i>
+                                <img src="img/assets/icons/online_5517014.svg" alt="Work from Home" class="w-6 h-6">
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold text-white mb-2">Seeking a Flexible Work-from-Home
+                                <h3 class="font-bold text-white mb-2" style="font-size: var(--text-h5);">Seeking a
+                                    Flexible Work-from-Home
                                     Opportunity?
                                 </h3>
-                                <p class="text-sm text-white/90 leading-relaxed">Master the art of online teaching and
+                                <p class="text-white/90 leading-relaxed" style="font-size: var(--text-sm);">Master the
+                                    art of online teaching and
                                     build
                                     a global student base.</p>
                             </div>
@@ -456,122 +586,321 @@
                         </div>
 
                         <div class="relative z-10">
-                            <p class="text-xl md:text-3xl font-serif font-bold text-white mb-4 leading-tight">
+                            <p class="font-serif font-bold text-white mb-4 leading-tight"
+                                style="font-size: var(--text-2xl);">
                                 If even <span
                                     class="bg-[#edcf9c] text-[#8b2025] px-2 py-0 rounded transform -skew-x-6 inline-block">ONE</span>
                                 line feels like YOU
                             </p>
-                            <p class="text-xl md:text-2xl text-white/90 font-medium tracking-wide">
+                            <p class="text-white/90 font-medium tracking-wide" style="font-size: var(--text-xl);">
                                 → This PGDYT is calling your name
                             </p>
                         </div>
                     </div>
                 </div>
 
-                <!-- The Big Promise Table -->
-                <div class="max-w-5xl mx-auto mb-20">
-                    <div class="text-center mb-10">
-                        <h3 class="text-2xl md:text-3xl font-serif font-bold text-gray-900 mb-3">
+                <!-- The Big Promise Section -->
+                <div class="max-w-6xl mx-auto mb-24 px-4">
+                    <div class="text-center mb-12">
+                        <h3 class="font-serif font-bold text-gray-900 mb-4" style="font-size: var(--text-h2);">
                             The Big Promise
                         </h3>
-                        <p class="text-lg text-gray-600">In 12 Months, You Will Transform Your Life</p>
+                        <p class="text-gray-600 max-w-2xl mx-auto" style="font-size: var(--text-xl);">In just 12 months,
+                            we don't just teach you
+                            yoga - we transform your entire career and life path.</p>
                     </div>
 
-                    <!-- Promise Table -->
-                    <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden mb-16">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Card 1 -->
+                        <div
+                            class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-[#8b2025]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#8b2025] transition-colors duration-300">
+                                    <i
+                                        class="bi bi-heart-pulse-fill text-[#8b2025] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Heal
+                                        Chronic Pain & Stress</h4>
+                                    <p class="text-gray-600 mb-3" style="font-size: var(--text-base);">Master the art of
+                                        healing yourself and others from
+                                        lifestyle disorders.</p>
+                                    <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1"
+                                            style="font-size: var(--text-xs);">How
+                                            We Do It</span>
+                                        <p class="font-medium text-[#8b2025]" style="font-size: var(--text-sm);">40% of
+                                            syllabus is pure <span class="bg-[#edcf9c]/30 px-1 rounded">Yoga
+                                                Therapy</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div
+                            class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-[#8b2025]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#8b2025] transition-colors duration-300">
+                                    <i
+                                        class="bi bi-person-video3 text-[#8b2025] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Teach
+                                        with Unshakable Confidence
+                                    </h4>
+                                    <p class="text-gray-600 mb-3" style="font-size: var(--text-base);">Stand in front of
+                                        any class and deliver world-class
+                                        sessions without hesitation.</p>
+                                    <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1"
+                                            style="font-size: var(--text-xs);">How
+                                            We Do It</span>
+                                        <p class="font-medium text-[#8b2025]" style="font-size: var(--text-sm);">
+                                            Step-by-step method + <span class="bg-[#edcf9c]/30 px-1 rounded">Lifetime
+                                                Masterclasses</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div
+                            class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-[#8b2025]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#8b2025] transition-colors duration-300">
+                                    <i
+                                        class="bi bi-currency-rupee text-[#8b2025] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">₹50k–₹1
+                                        Lakh/Month</h4>
+                                    <p class="text-gray-600 mb-3" style="font-size: var(--text-base);">Build a
+                                        sustainable career teaching online, offline,
+                                        or 1-on-1.</p>
+                                    <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1"
+                                            style="font-size: var(--text-xs);">How
+                                            We Do It</span>
+                                        <p class="font-medium text-[#8b2025]" style="font-size: var(--text-sm);">Career
+                                            Guidance + <span class="bg-[#edcf9c]/30 px-1 rounded">Lifetime Job
+                                                Support</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div
+                            class="bg-white rounded-2xl p-6 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-[#8b2025]/10 flex items-center justify-center flex-shrink-0 group-hover:bg-[#8b2025] transition-colors duration-300">
+                                    <i
+                                        class="bi bi-award-fill text-[#8b2025] text-2xl group-hover:text-white transition-colors duration-300"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Get
+                                        Govt-Recognized Certified</h4>
+                                    <p class="text-gray-600 mb-3" style="font-size: var(--text-base);">Earn a diploma
+                                        that is respected globally and
+                                        recognized by the government.</p>
+                                    <div class="bg-gray-50 rounded-lg p-3 border border-gray-100">
+                                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1"
+                                            style="font-size: var(--text-xs);">How
+                                            We Do It</span>
+                                        <div class="flex flex-wrap gap-2 mt-1">
+                                            <span
+                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600"
+                                                style="font-size: var(--text-xs);">ISO
+                                                Certified</span>
+                                            <span
+                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600"
+                                                style="font-size: var(--text-xs);">IYA
+                                                Member</span>
+                                            <span
+                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600"
+                                                style="font-size: var(--text-xs);">Yoga
+                                                Alliance</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW SECTION: Why Yogkulam PGDYT is Different -->
+                <div class="text-center mb-12">
+                    <h3 class="font-serif font-bold text-gray-900 mt-2" style="font-size: var(--text-h2);">
+                        Why <span class="text-[#8b2025] relative inline-block">
+                            400+ Students
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-[#edcf9c] -z-10" viewBox="0 0 100 10"
+                                preserveAspectRatio="none">
+                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
+                            </svg>
+                        </span> Chose Yogkulam
+                    </h3>
+                    <p class="text-gray-600 mt-6 max-w-2xl mx-auto font-medium" style="font-size: var(--text-lg);">Don't
+                        settle for less. Compare
+                        the value before you decide.</p>
+                </div>
+
+                <div class="max-w-6xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 relative">
+                        <!-- Decorative background for the table -->
+                        <div
+                            class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-gray-200 via-[#8b2025] to-gray-200">
+                        </div>
+
                         <div class="overflow-x-auto">
-                            <table class="w-full min-w-[600px]">
+                            <table class="w-full min-w-[800px] border-collapse">
                                 <thead>
-                                    <tr class="bg-gradient-to-r from-[#8b2025] to-[#4a0d0d]">
-                                        <th
-                                            class="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider border-r border-white/20 w-1/2">
-                                            In 12 Months, You Will...
+                                    <tr>
+                                        <th class="px-8 py-8 text-left text-gray-500 font-bold w-1/4 uppercase tracking-wider bg-gray-50/50 border-b border-gray-100"
+                                            style="font-size: var(--text-sm);">
+                                            Features
                                         </th>
-                                        <th
-                                            class="px-6 py-5 text-left text-sm font-bold text-white uppercase tracking-wider w-1/2">
-                                            How YogKulam Makes It Happen
+                                        <th class="px-8 py-8 text-center bg-[#8b2025] text-white font-bold w-1/3 relative overflow-hidden shadow-lg transform scale-y-105 origin-top z-10 rounded-b-xl"
+                                            style="font-size: var(--text-xl);">
+                                            <div class="absolute top-0 right-0 p-2 opacity-10">
+                                                <i class="bi bi-trophy-fill transform rotate-12"
+                                                    style="font-size: var(--text-h1);"></i>
+                                            </div>
+                                            <!-- Best Choice Badge -->
+                                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-[#edcf9c] text-[#8b2025] font-extrabold px-6 py-1.5 rounded-b-lg uppercase tracking-widest shadow-md z-10 border-x border-b border-[#d4b886]"
+                                                style="font-size: var(--text-xs);">
+                                                Best Choice
+                                            </div>
+                                            <span class="relative z-10 mt-4 block font-serif"
+                                                style="font-size: var(--text-2xl);">Yogkulam
+                                                PGDYT</span>
+                                        </th>
+                                        <th class="px-8 py-8 text-center text-gray-700 font-bold w-1/3 uppercase tracking-wider bg-gray-50 border-b border-gray-200"
+                                            style="font-size: var(--text-sm);">
+                                            Other Schools
                                         </th>
                                     </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-100">
-                                    <!-- Row 1 -->
-                                    <tr class="hover:bg-gray-50 transition-colors group">
-                                        <td class="px-6 py-6 border-r border-gray-100 bg-gray-50/50">
-                                            <div class="flex items-start gap-3">
-                                                <i
-                                                    class="bi bi-check-circle-fill text-green-500 text-xl mt-1 flex-shrink-0"></i>
-                                                <span class="font-semibold text-gray-900 text-lg">Heal chronic pain,
-                                                    stress,
-                                                    BP, thyroid</span>
+                                    <!-- Row 1: Certification -->
+                                    <tr class="group hover:bg-gray-50 transition-colors">
+                                        <td class="px-8 py-6 font-bold text-gray-800 border-r border-gray-50"
+                                            style="font-size: var(--text-lg);">
+                                            Certification</td>
+                                        <td
+                                            class="px-8 py-6 text-center bg-[#fffafa] border-x-2 border-[#8b2025]/10 relative">
+                                            <div class="absolute inset-y-0 left-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div class="absolute inset-y-0 right-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div class="flex flex-col items-center gap-2">
+                                                <div class="font-bold text-[#8b2025] flex items-center justify-center gap-2"
+                                                    style="font-size: var(--text-xl);">
+                                                    <img src="img/assets/check.png" alt="Duration Icon"
+                                                        class="w-12 h-12">
+                                                    Dual Certification
+                                                </div>
+                                                <span
+                                                    class="text-[#8b2025] font-bold bg-[#8b2025]/10 px-3 py-1 rounded-full border border-[#8b2025]/20"
+                                                    style="font-size: var(--text-xs);">Yoga
+                                                    Alliance + AYUSH</span>
                                             </div>
                                         </td>
-                                        <td class="px-6 py-6">
-                                            <span class="text-gray-700">40% syllabus is pure <strong
-                                                    class="text-[#8b2025] bg-[#edcf9c]/30 px-1 rounded">Yoga
-                                                    Therapy</strong></span>
+                                        <td class="px-8 py-6 text-center text-gray-500 bg-gray-50/50">
+                                            <div
+                                                class="flex items-center justify-center gap-2 text-gray-600 font-medium">
+                                                <span>Usually Only One</span>
+                                            </div>
                                         </td>
                                     </tr>
-
-                                    <!-- Row 2 -->
-                                    <tr class="hover:bg-gray-50 transition-colors group">
-                                        <td class="px-6 py-6 border-r border-gray-100 bg-gray-50/50">
-                                            <div class="flex items-start gap-3">
-                                                <i
-                                                    class="bi bi-check-circle-fill text-green-500 text-xl mt-1 flex-shrink-0"></i>
-                                                <span class="font-semibold text-gray-900 text-lg">Confidently teach yoga
-                                                    to
-                                                    students</span>
+                                    <!-- Row 2: Duration -->
+                                    <tr class="group hover:bg-gray-50 transition-colors">
+                                        <td class="px-8 py-6 font-bold text-gray-800 border-r border-gray-50"
+                                            style="font-size: var(--text-lg);">
+                                            Duration</td>
+                                        <td
+                                            class="px-8 py-6 text-center bg-[#fffafa] border-x-2 border-[#8b2025]/10 relative">
+                                            <div class="absolute inset-y-0 left-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div class="absolute inset-y-0 right-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div
+                                                class="font-bold text-gray-900 text-lg flex items-center justify-center gap-2">
+                                                <img src="img/assets/check.png" alt="Duration Icon" class="w-12 h-12">
+                                                Intensive 1 Year
                                             </div>
                                         </td>
-                                        <td class="px-6 py-6">
-                                            <span class="text-gray-700">Step-by-step teaching method + <strong
-                                                    class="text-[#8b2025] bg-[#edcf9c]/30 px-1 rounded">Lifetime Special
-                                                    Masterclasses</strong></span>
+                                        <td class="px-8 py-6 text-center text-gray-500 bg-gray-50/50">
+                                            <div
+                                                class="flex items-center justify-center gap-2 text-gray-600 font-medium">
+                                                <i class="bi bi-x-circle text-red-300"></i>
+                                                <span>3–6 months</span>
+                                            </div>
                                         </td>
                                     </tr>
-
-                                    <!-- Row 3 -->
-                                    <tr class="hover:bg-gray-50 transition-colors group">
-                                        <td class="px-6 py-6 border-r border-gray-100 bg-gray-50/50">
-                                            <div class="flex items-start gap-3">
-                                                <i
-                                                    class="bi bi-check-circle-fill text-green-500 text-xl mt-1 flex-shrink-0"></i>
-                                                <span class="font-semibold text-gray-900 text-lg">Earn ₹50k–₹1
-                                                    lakh/month
-                                                    (online/offline)</span>
+                                    <!-- Row 3: Therapeutic Focus -->
+                                    <tr class="group hover:bg-gray-50 transition-colors">
+                                        <td class="px-8 py-6 font-bold text-gray-800 text-lg border-r border-gray-50">
+                                            Therapeutic Focus</td>
+                                        <td
+                                            class="px-8 py-6 text-center bg-[#fffafa] border-x-2 border-[#8b2025]/10 relative">
+                                            <div class="absolute inset-y-0 left-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div class="absolute inset-y-0 right-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div
+                                                class="font-bold text-gray-900 text-lg flex items-center justify-center gap-2">
+                                                <img src="img/assets/check.png" alt="Duration Icon" class="w-12 h-12">
+                                                40% Curriculum
                                             </div>
                                         </td>
-                                        <td class="px-6 py-6">
-                                            <span class="text-gray-700">Career Guidance + <strong
-                                                    class="text-[#8b2025] bg-[#edcf9c]/30 px-1 rounded">Lifetime job
-                                                    support</strong> + Studio Setup Training</span>
+                                        <td class="px-8 py-6 text-center text-gray-500 bg-gray-50/50">
+                                            <div
+                                                class="flex items-center justify-center gap-2 text-gray-600 font-medium">
+                                                <i class="bi bi-x-circle text-red-300"></i>
+                                                <span>&lt;10%</span>
+                                            </div>
                                         </td>
                                     </tr>
-
-                                    <!-- Row 4 -->
-                                    <tr class="hover:bg-gray-50 transition-colors group">
-                                        <td class="px-6 py-6 border-r border-gray-100 bg-gray-50/50">
-                                            <div class="flex items-start gap-3">
-                                                <i
-                                                    class="bi bi-check-circle-fill text-green-500 text-xl mt-1 flex-shrink-0"></i>
-                                                <span class="font-semibold text-gray-900 text-lg">Get govt-recognized
-                                                    certificate</span>
+                                    <!-- Row 4: Class Size -->
+                                    <tr class="group hover:bg-gray-50 transition-colors">
+                                        <td class="px-8 py-6 font-bold text-gray-800 text-lg border-r border-gray-50">
+                                            Class Size</td>
+                                        <td
+                                            class="px-8 py-6 text-center bg-[#fffafa] border-x-2 border-[#8b2025]/10 relative">
+                                            <div class="absolute inset-y-0 left-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div class="absolute inset-y-0 right-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div
+                                                class="font-bold text-gray-900 text-lg flex items-center justify-center gap-2">
+                                                <img src="img/assets/check.png" alt="Duration Icon" class="w-12 h-12">
+                                                Max 20 Students
                                             </div>
                                         </td>
-                                        <td class="px-6 py-6">
-                                            <div class="flex flex-wrap gap-2">
-                                                <span
-                                                    class="inline-flex items-center gap-1 px-3 py-1 bg-[#edcf9c] text-[#8b2025] rounded-full text-xs font-bold border border-[#d4b886]">
-                                                    <i class="bi bi-patch-check-fill"></i> ISO
-                                                </span>
-                                                <span
-                                                    class="inline-flex items-center gap-1 px-3 py-1 bg-[#edcf9c] text-[#8b2025] rounded-full text-xs font-bold border border-[#d4b886]">
-                                                    <i class="bi bi-patch-check-fill"></i> Indian Yoga Association
-                                                </span>
-                                                <span
-                                                    class="inline-flex items-center gap-1 px-3 py-1 bg-[#edcf9c] text-[#8b2025] rounded-full text-xs font-bold border border-[#d4b886]">
-                                                    <i class="bi bi-patch-check-fill"></i> Yoga Alliance
-                                                </span>
+                                        <td class="px-8 py-6 text-center text-gray-500 bg-gray-50/50">
+                                            <div
+                                                class="flex items-center justify-center gap-2 text-gray-600 font-medium">
+                                                <i class="bi bi-x-circle text-red-300"></i>
+                                                <span>40–80</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Row 5: Personal Mentorship -->
+                                    <tr class="group hover:bg-gray-50 transition-colors">
+                                        <td class="px-8 py-6 font-bold text-gray-800 text-lg border-r border-gray-50">
+                                            Personal Mentorship</td>
+                                        <td
+                                            class="px-8 py-6 text-center bg-[#fffafa] border-x-2 border-[#8b2025]/10 relative">
+                                            <div class="absolute inset-y-0 left-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div class="absolute inset-y-0 right-0 w-1 bg-[#8b2025]/5"></div>
+                                            <div
+                                                class="font-bold text-gray-900 text-lg flex items-center justify-center gap-2">
+                                                <img src="img/assets/check.png" alt="Duration Icon" class="w-12 h-12">
+                                                Yes (1:6 ratio)
+                                            </div>
+                                        </td>
+                                        <td class="px-8 py-6 text-center text-gray-500 bg-gray-50/50">
+                                            <div
+                                                class="flex items-center justify-center gap-2 text-gray-600 font-medium">
+                                                <i class="bi bi-x-circle text-red-300"></i>
+                                                <span>Rarely</span>
                                             </div>
                                         </td>
                                     </tr>
@@ -579,176 +908,28 @@
                             </table>
                         </div>
                     </div>
-
-                    <!-- NEW SECTION: Why Yogkulam PGDYT is Different -->
-                        <div class="text-center mb-10">
-                            <h3 class="text-2xl md:text-4xl font-serif font-bold text-gray-900 mt-2">
-                                Why <span class="text-[#8b2025]">400+ Students</span> Chose Yogkulam
-                            </h3>
-                            <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto font-medium">Don't settle for less.
-                                Compare the value before you decide.</p>
-                        </div>
-                        <div
-                            class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100 transform hover:scale-[1.01] transition-transform duration-500">
-                            <div class="overflow-x-auto">
-                                <table class="w-full min-w-[800px]">
-                                    <thead>
-                                        <tr>
-                                            <th
-                                                class="px-8 py-6 text-left text-gray-400 font-bold w-1/4 uppercase tracking-wider text-sm">
-                                                Features</th>
-                                            <th
-                                                class="px-8 py-6 text-center bg-[#8b2025] text-white font-bold text-xl w-1/3 relative overflow-hidden">
-                                                <div class="absolute top-0 right-0 p-2 opacity-10">
-                                                    <i class="bi bi-trophy-fill text-6xl transform rotate-12"></i>
-                                                </div>
-                                                <!-- Best Choice Badge -->
-                                                <div
-                                                    class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-[#edcf9c] text-[#8b2025] text-[10px] font-extrabold px-4 py-1 rounded-b-lg uppercase tracking-widest shadow-md z-10 border-x border-b border-[#d4b886]">
-                                                    Best Choice
-                                                </div>
-                                                <span class="relative z-10 mt-2 block">Yogkulam PGDYT</span>
-                                            </th>
-                                            <th
-                                                class="px-8 py-6 text-center text-gray-400 font-bold w-1/3 uppercase tracking-wider text-sm bg-gray-50">
-                                                Other Schools</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="divide-y divide-gray-100">
-                                        <!-- Row 1: Certification -->
-                                        <tr class="group hover:bg-gray-50 transition-colors">
-                                            <td class="px-8 py-5 font-bold text-gray-800 text-lg">Certification</td>
-                                            <td class="px-8 py-5 text-center bg-[#fffafa] border-x border-[#8b2025]/5">
-                                                <div class="flex flex-col items-center gap-1.5">
-                                                    <div
-                                                        class="font-bold text-[#8b2025] text-lg flex items-center justify-center gap-2">
-                                                        <i class="bi bi-check-circle-fill text-green-600"></i>
-                                                        Dual Certification
-                                                    </div>
-                                                    <span
-                                                        class="text-xs text-[#8b2025] font-bold bg-[#8b2025]/10 px-3 py-1 rounded-full">Yoga
-                                                        Alliance + AYUSH</span>
-                                                </div>
-                                            </td>
-                                            <td class="px-8 py-5 text-center text-gray-500 bg-gray-50/50">
-                                                <div class="flex items-center justify-center gap-2 text-gray-400">
-                                                    <span>Usually Only One</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Row 2: Duration -->
-                                        <tr class="group hover:bg-gray-50 transition-colors">
-                                            <td class="px-8 py-5 font-bold text-gray-800 text-lg">Duration</td>
-                                            <td class="px-8 py-5 text-center bg-[#fffafa] border-x border-[#8b2025]/5">
-                                                <div
-                                                    class="font-bold text-gray-900 flex items-center justify-center gap-2">
-                                                    <i class="bi bi-check-circle-fill text-green-600"></i>
-                                                    Intensive 1 Year
-                                                </div>
-                                            </td>
-                                            <td class="px-8 py-5 text-center text-gray-500 bg-gray-50/50">
-                                                <div class="flex items-center justify-center gap-2 text-gray-400">
-                                                    <i class="bi bi-x-circle"></i>
-                                                    <span>3–6 months</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Row 3: Therapeutic Focus -->
-                                        <tr class="group hover:bg-gray-50 transition-colors">
-                                            <td class="px-8 py-5 font-bold text-gray-800 text-lg">Therapeutic Focus</td>
-                                            <td class="px-8 py-5 text-center bg-[#fffafa] border-x border-[#8b2025]/5">
-                                                <div
-                                                    class="font-bold text-gray-900 flex items-center justify-center gap-2">
-                                                    <i class="bi bi-check-circle-fill text-green-600"></i>
-                                                    40% Curriculum
-                                                </div>
-                                            </td>
-                                            <td class="px-8 py-5 text-center text-gray-500 bg-gray-50/50">
-                                                <div class="flex items-center justify-center gap-2 text-gray-400">
-                                                    <i class="bi bi-x-circle"></i>
-                                                    <span>&lt;10%</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Row 4: Class Size -->
-                                        <tr class="group hover:bg-gray-50 transition-colors">
-                                            <td class="px-8 py-5 font-bold text-gray-800 text-lg">Class Size</td>
-                                            <td class="px-8 py-5 text-center bg-[#fffafa] border-x border-[#8b2025]/5">
-                                                <div
-                                                    class="font-bold text-gray-900 flex items-center justify-center gap-2">
-                                                    <i class="bi bi-check-circle-fill text-green-600"></i>
-                                                    Max 20 Students
-                                                </div>
-                                            </td>
-                                            <td class="px-8 py-5 text-center text-gray-500 bg-gray-50/50">
-                                                <div class="flex items-center justify-center gap-2 text-gray-400">
-                                                    <i class="bi bi-x-circle"></i>
-                                                    <span>40–80</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Row 5: Personal Mentorship -->
-                                        <tr class="group hover:bg-gray-50 transition-colors">
-                                            <td class="px-8 py-5 font-bold text-gray-800 text-lg">Personal Mentorship
-                                            </td>
-                                            <td class="px-8 py-5 text-center bg-[#fffafa] border-x border-[#8b2025]/5">
-                                                <div
-                                                    class="font-bold text-gray-900 flex items-center justify-center gap-2">
-                                                    <i class="bi bi-check-circle-fill text-green-600"></i>
-                                                    Yes (1:6 ratio)
-                                                </div>
-                                            </td>
-                                            <td class="px-8 py-5 text-center text-gray-500 bg-gray-50/50">
-                                                <div class="flex items-center justify-center gap-2 text-gray-400">
-                                                    <i class="bi bi-x-circle"></i>
-                                                    <span>Rare</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <!-- Row 6: Job Support -->
-                                        <tr class="group hover:bg-gray-50 transition-colors">
-                                            <td class="px-8 py-5 font-bold text-gray-800 text-lg">Job Support</td>
-                                            <td class="px-8 py-5 text-center bg-[#fffafa] border-x border-[#8b2025]/5">
-                                                <div class="flex flex-col items-center gap-1.5">
-                                                    <div
-                                                        class="font-bold text-gray-900 text-lg flex items-center justify-center gap-2">
-                                                        <i class="bi bi-check-circle-fill text-green-600"></i>
-                                                        Lifetime Support
-                                                    </div>
-                                                    <span
-                                                        class="text-xs text-green-700 font-bold bg-green-100 px-3 py-1 rounded-full">100%
-                                                        Assistance</span>
-                                                </div>
-                                            </td>
-                                            <td class="px-8 py-5 text-center text-gray-500 bg-gray-50/50">
-                                                <div class="flex items-center justify-center gap-2 text-gray-400">
-                                                    <i class="bi bi-x-circle"></i>
-                                                    <span>None</span>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                 </div>
+
         </section>
 
         <!-- ========================================
          COMPACT TWO-COLUMN CURRICULUM SECTION
          ======================================== -->
-        <section id="curriculum" class="curriculum-section relative py-16 lg:py-20">
+        <section id="curriculum" class="curriculum-section relative overflow-hidden py-16 lg:py-20">
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4">
                 <!-- Header -->
                 <div class="text-center mb-12 max-w-2xl mx-auto">
-                    <div class="relative inline-block mb-6">
-                        <h2 class="section-title font-serif font-bold text-gray-900 relative z-10">The
-                            Curriculum</h2>
+                    <div class="relative inline-block mb-4">
+                        <h2 class="leading-tight font-serif font-bold text-gray-900 mt-3 relative z-10 transition-colors"
+                            style="font-size: var(--text-h2);">
+                            The Curriculum
+                        </h2>
                         <img src="img/assets/handdrawn-underline/Underline_01.svg"
-                            class="absolute bottom-[-60px] left-0 w-full h-auto -z-0 opacity-60"
+                            class="absolute bottom-[-30px] left-0 w-full h-auto -z-0 opacity-60"
                             style="transform: rotate(-1deg);">
                     </div>
-                    <p class="text-base sm:text-lg leading-relaxed text-gray-600">Master every facet of yoga—from
+                    <p class="leading-relaxed text-gray-600" style="font-size: var(--text-base);">Master every facet of
+                        yoga—from
                         philosophy to practice.
                         Click any module to view its content.</p>
                 </div>
@@ -757,22 +938,26 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                     <!-- Left: Module List (Compact) -->
                     <div class="lg:col-span-6">
-                        <h3 class="font-serif text-lg font-bold text-gray-900 mb-3">Modules</h3>
-                        <div id="curriculumList">
+                        <h3 class="font-serif font-bold text-gray-900 mb-3 hidden lg:block"
+                            style="font-size: var(--text-h5);">Modules</h3>
+                        <div id="curriculumList" class="space-y-3">
                             <!-- Generated by JavaScript -->
                         </div>
                     </div>
 
-                    <!-- Right: Module Details -->
-                    <div class="lg:col-span-6">
+                    <!-- Right: Module Details (desktop only, mobile shows below selected tab) -->
+                    <div class="lg:col-span-6 hidden lg:block">
                         <div class="lg:sticky lg:top-24">
                             <div id="curriculumDetail"
-                                class="min-h-[400px] bg-white rounded-lg border border-gray-200 p-6 lg:p-8">
+                                class="min-h-[400px] bg-white/80 backdrop-blur-md rounded-2xl border border-white/70 ring-1 ring-black/5 shadow-xl shadow-black/5 p-6 lg:p-8">
                                 <!-- Generated by JavaScript -->
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Mobile Detail Container (dynamically populated) -->
+                <div id="curriculumDetailMobile" class="lg:hidden"></div>
 
                 <!-- CTA Button -->
                 <div id="syllabusBtnWrapper" class="text-center mt-12">
@@ -784,7 +969,7 @@
         <!-- ========================================
          CAREER OPPORTUNITIES SECTION
          ======================================== -->
-        <section class="py-20 md:py-32 bg-white relative overflow-hidden flex flex-col items-center">
+        <section class="py-20 md:py-8 bg-white relative overflow-hidden flex flex-col items-center">
             <!-- Abstract Background -->
             <img src="img/assets/abstract-lines/Line 5.svg"
                 class="absolute top-0 right-0 w-[600px] h-auto opacity-20 pointer-events-none"
@@ -795,37 +980,27 @@
                 style="background: radial-gradient(circle at 50% 100%, #f3f4f6 0%, transparent 70%);">
             </div>
 
-            <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 relative z-10 w-full text-center mb-16 md:mb-24">
-                <h2 class="text-4xl md:text-6xl font-serif text-gray-600 mb-6 leading-tight tracking-tight">
+            <div class="max-w-[1140px] mx-auto px-3 lg:px-4 relative z-10 text-center">
+                <h2 class="leading-tight font-serif font-bold text-gray-900 mt-2 relative z-10 transition-colors"
+                    style="font-size: var(--text-h2);">
                     Dive into the world <br>
                     <span class="text-gray-900 font-bold inline-flex items-center gap-3 relative">
                         of Career Opportunities!
-                        <img src="img/assets/handdrawn-misc/Misc_02.svg"
-                            class="absolute -top-6 -right-8 w-10 h-10 md:w-14 md:h-14 opacity-80"
-                            onerror="this.style.display='none'">
                     </span>
                 </h2>
-
-                <p class="max-w-2xl mx-auto text-lg md:text-xl text-gray-500 mb-10 font-medium">
+                <img src="img/assets/handdrawn-underline/Underline_07.svg"
+                    class="absolute bottom-24 left-[248px] w-52 h-auto -z-0 opacity-60"
+                    style="transform: rotate(-1deg);">
+                <p class="max-w-2xl mx-auto text-gray-500 mb-10 font-medium" style="font-size: var(--text-xl);">
                     PGDYT prepares you for teaching, therapy, entrepreneurship, and digital careers in yoga & wellness.
                 </p>
 
-                <div class="flex flex-wrap justify-center gap-4 relative z-20">
-                    <a href="#admission"
-                        class="px-8 py-3.5 rounded-full bg-gray-900 text-white font-semibold hover:bg-black transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 min-w-[160px]">
-                        Join Now
-                    </a>
-                    <a href="#curriculum"
-                        class="px-8 py-3.5 rounded-full bg-white text-gray-900 border border-gray-200 font-semibold hover:bg-gray-50 transition-all shadow-sm hover:shadow-md min-w-[160px]">
-                        Curriculum
-                    </a>
-                </div>
+
             </div>
 
             <!-- Bookshelf / Cards Row -->
             <div class="w-full max-w-[1400px] mx-auto px-4 overflow-x-auto pb-16 hide-scrollbar relative z-10">
                 <div class="flex flex-nowrap md:justify-center gap-6 md:gap-10 min-w-max px-4 items-end h-[420px]">
-
                     <!-- Card 1: Teaching -->
                     <div
                         class="interactive-book relative w-56 md:w-64 h-[350px] md:h-[380px] cursor-pointer group perspective-1000">
@@ -863,28 +1038,39 @@
                                 <div class="text-left space-y-4">
                                     <h4 class="font-bold text-gray-900 border-b border-gray-100 pb-2">Career Paths</h4>
                                     <ul class="space-y-2">
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Professional Yoga Instructor</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Corporate Trainer</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Online Yoga Teacher (Global Reach)</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Yoga Teacher in Schools & Colleges</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Government Certified Yoga Trainer (AYUSH / YCB)</span>
                                         </li>
                                     </ul>
-                                    <p class="text-xs text-gray-400 italic mt-4">"Inspire others with your knowledge."
+                                    <p class="text-gray-400 italic mt-4" style="font-size: var(--text-xs);">"Inspire
+                                        others with your knowledge."
                                     </p>
                                 </div>
                             </div>
@@ -902,10 +1088,11 @@
                                     class="w-full h-full bg-white rounded-r-xl rounded-l-md shadow-2xl border border-gray-200 flex flex-col p-6 border-l-[12px] border-gray-300 relative overflow-hidden">
                                     <div class="h-full flex flex-col justify-between relative z-10 text-gray-800">
                                         <div class="border-b border-gray-100 pb-4">
-                                            <h3 class="text-3xl font-serif font-bold leading-none mb-1 text-gray-900">
+                                            <h3 class="font-serif font-bold leading-none mb-1 text-gray-900"
+                                                style="font-size: var(--text-h3);">
                                                 Therapy</h3>
-                                            <p class="text-[10px] font-bold text-[#8b2025] uppercase tracking-[0.2em]">&
-                                                Healing</p>
+                                            <p class="font-bold text-[#8b2025] uppercase tracking-[0.2em]"
+                                                style="font-size: var(--text-xs);">& Healing</p>
                                         </div>
                                         <div class="mt-auto flex justify-end">
                                             <i class="bi bi-heart-pulse-fill text-6xl text-gray-200"></i>
@@ -919,20 +1106,27 @@
                                 <div class="text-left space-y-4">
                                     <h4 class="font-bold text-gray-900 border-b border-gray-200 pb-2">Healing Paths</h4>
                                     <ul class="space-y-2">
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Yoga Therapist</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Private Yoga Coach (1-to-1 Sessions)</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Yoga Sports Coach (State / National / International)</span>
                                         </li>
                                     </ul>
-                                    <p class="text-xs text-gray-400 italic mt-4">"Heal the world, one breath at a time."
+                                    <p class="text-gray-400 italic mt-4" style="font-size: var(--text-xs);">"Heal the
+                                        world, one breath at a time."
                                     </p>
                                 </div>
                             </div>
@@ -950,9 +1144,10 @@
                                     class="w-full h-full bg-[#edcf9c] rounded-r-xl rounded-l-md shadow-2xl flex flex-col p-6 border-l-[12px] border-[#d4b886] relative overflow-hidden">
                                     <div class="h-full flex flex-col justify-between relative z-10 text-[#5c3a18]">
                                         <div class="border-b border-[#5c3a18]/10 pb-4">
-                                            <h3 class="text-3xl font-serif font-bold leading-none mb-1">Business</h3>
-                                            <p class="text-[10px] font-bold opacity-70 uppercase tracking-[0.2em]">&
-                                                Leadership</p>
+                                            <h3 class="font-serif font-bold leading-none mb-1"
+                                                style="font-size: var(--text-h3);">Business</h3>
+                                            <p class="font-bold opacity-70 uppercase tracking-[0.2em]"
+                                                style="font-size: var(--text-xs);">& Leadership</p>
                                         </div>
                                         <div class="mt-auto flex justify-end">
                                             <i class="bi bi-briefcase-fill text-6xl opacity-30"></i>
@@ -967,20 +1162,27 @@
                                     <h4 class="font-bold text-gray-900 border-b border-gray-100 pb-2">Business Roles
                                     </h4>
                                     <ul class="space-y-2">
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Yoga Studio Owner / Wellness Entrepreneur</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Retreat & Workshop Leader</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-sm text-gray-600">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] text-[10px] mt-1"></i>
+                                        <li class="flex items-start gap-2 text-gray-600"
+                                            style="font-size: var(--text-sm);">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
+                                                style="font-size: var(--text-xs);"></i>
                                             <span>Yoga Products / Wellness Brand Owner</span>
                                         </li>
                                     </ul>
-                                    <p class="text-xs text-gray-400 italic mt-4">"Lead the wellness revolution."</p>
+                                    <p class="text-gray-400 italic mt-4" style="font-size: var(--text-xs);">"Lead the
+                                        wellness revolution."</p>
                                 </div>
                             </div>
                         </div>
@@ -1069,13 +1271,10 @@
 
                     <!-- Right: Content -->
                     <div class="relative z-10">
-                        <span class="text-[#8b2025] font-bold tracking-wider uppercase text-sm mb-2 block">Video
-                            Introduction</span>
-                        <h2 class="section-title font-serif font-bold text-gray-900 mb-6">
-                            Meet Our Founder:<br><span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-[#8b2025] to-[#4a0d0d]">Maneesh
-                                Pratap Singh</span>
+                        <h2 class="font-bold text-gray-900 mb-2">
+                            Meet Our Founder:<br>
                         </h2>
+                        <h1 class="font-serif font-bold text-[#8b2025] mb-6">Maneesh Pratap Singh</h1>
                         <p class="text-lg text-gray-600 mb-6 leading-relaxed">
                             Experience wisdom from a visionary yogi, educator, and entrepreneur with <strong>13+
                                 years</strong> of global yoga advocacy. He founded YogKulam and BharatShila Foundation,
@@ -1121,7 +1320,7 @@
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 relative z-10">
                 <div class="text-center mb-10 md:mb-12">
                     <div class="relative inline-block">
-                        <h2 class="section-title font-serif font-bold text-gray-900">Meet The Team</h2>
+                        <h2 class=" font-serif font-bold text-gray-900">Meet The Team</h2>
                         <img src="img/assets/handdrawn-underline/Underline_01.svg"
                             class="absolute bottom-[-42px] left-0 w-full h-auto -z-0 opacity-60"
                             style="transform: rotate(-1deg);">
@@ -1280,7 +1479,7 @@
          ======================================== -->
         <section class="py-16 bg-gray-50">
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 text-center">
-                <h2 class="section-title font-serif font-bold text-gray-900 mb-8">Valid Worldwide. Recognized by
+                <h2 class=" font-serif font-bold text-gray-900 mb-8">Valid Worldwide. Recognized by
                     Govt. of India.</h2>
 
                 <div class="flex flex-wrap justify-center gap-8 md:gap-16 items-center opacity-80 mb-6">
@@ -1322,7 +1521,7 @@
                     <span
                         class="inline-block px-4 py-1 rounded-full bg-[#edcf9c] text-[#8b2025] font-bold text-sm mb-4">LIMITED
                         TIME OFFER</span>
-                    <h2 class="section-title font-serif font-bold text-white mb-4">Wait! There’s More…</h2>
+                    <h2 class=" font-serif font-bold text-white mb-4">Wait! There’s More…</h2>
                     <p class="text-base sm:text-lg leading-relaxed text-white/80">Enroll in the next 3 days and unlock
                         these <span class="text-[#edcf9c] font-bold">₹58,000 worth of bonuses</span> for FREE.</p>
                 </div>
@@ -1420,89 +1619,6 @@
                     </div>
                 </div>
 
-                <!-- Free Bonuses Section -->
-                <div
-                    class="bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md border border-white/20 rounded-3xl p-8 mb-12">
-                    <div class="text-center mb-8">
-                        <h3 class="text-2xl font-bold text-[#edcf9c] mb-2">Free Bonuses</h3>
-                        <p class="text-white/70">Exclusive bonuses worth thousands – included FREE</p>
-                    </div>
-
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <!-- Bonus 1 -->
-                        <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-sm font-bold flex-shrink-0">
-                                1
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm mb-1">Complete Student Kit</h4>
-                                <p class="text-white/60 text-xs">(Neti, Mala, Books, T-shirt)</p>
-                            </div>
-                        </div>
-
-                        <!-- Bonus 2 -->
-                        <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-sm font-bold flex-shrink-0">
-                                2
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm mb-1">Lifetime Recording Access</h4>
-                                <p class="text-white/60 text-xs">+ WhatsApp Group</p>
-                            </div>
-                        </div>
-
-                        <!-- Bonus 3 -->
-                        <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-sm font-bold flex-shrink-0">
-                                3
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm mb-1">Studio Setup Masterclass</h4>
-                                <p class="text-white/60 text-xs">(11 modules)</p>
-                            </div>
-                        </div>
-
-                        <!-- Bonus 4 -->
-                        <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-sm font-bold flex-shrink-0">
-                                4
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm mb-1">Sunday Live Gita Sessions</h4>
-                                <p class="text-white/60 text-xs">with Founder</p>
-                            </div>
-                        </div>
-
-                        <!-- Bonus 5 -->
-                        <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-sm font-bold flex-shrink-0">
-                                5
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm mb-1">Facial Yoga + Sound Healing</h4>
-                                <p class="text-white/60 text-xs">Workshops</p>
-                            </div>
-                        </div>
-
-                        <!-- Bonus 6 -->
-                        <div class="flex items-start gap-3 bg-white/5 rounded-xl p-4 border border-white/10">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-sm font-bold flex-shrink-0">
-                                6
-                            </div>
-                            <div>
-                                <h4 class="text-white font-bold text-sm mb-1">Personal Service Manager</h4>
-                                <p class="text-white/60 text-xs">+ Job Help</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- CTA Button -->
                 <div class="text-center">
                     <div class="inline-block p-1 rounded-full bg-gradient-to-r from-[#edcf9c] to-[#d4b886] shadow-lg">
@@ -1532,8 +1648,7 @@
                 <!-- Section Header -->
                 <div class="text-center mb-16">
                     <div class="relative inline-block">
-                        <h2
-                            class="section-title font-serif font-bold text-gray-900 mb-1 relative z-10 testimonial-heading">
+                        <h2 class=" font-serif font-bold text-gray-900 mb-1 relative z-10 testimonial-heading">
                             Testimonials & Success Stories
                         </h2>
                     </div>
@@ -1886,7 +2001,7 @@
                 <div class="text-center mb-8">
 
                     <div class="relative inline-block mt-2">
-                        <h2 class="section-title font-semibold text-gray-900 relative z-10">Frequently Asked
+                        <h2 class=" font-semibold text-gray-900 relative z-10">Frequently Asked
                             <em>Questions</em>
                         </h2>
                     </div>
@@ -1907,7 +2022,7 @@
             class="py-20 bg-gray-50 relative overflow-hidden min-h-screen flex flex-col justify-center">
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 relative z-10 mb-12">
                 <div class="text-center">
-                    <h2 class="section-title font-serif font-bold text-gray-900 mb-4">Transparent Pricing. No Hidden
+                    <h2 class=" font-serif font-bold text-gray-900 mb-4">Transparent Pricing. No Hidden
                         Fees.
                     </h2>
                 </div>
@@ -2333,7 +2448,7 @@
             </div>
 
             <div class="relative z-10 text-center max-w-[1140px] w-full mx-auto px-3 lg:px-4 max-w-3xl">
-                <h2 class="section-title font-serif font-bold text-white mb-6 leading-tight">
+                <h2 class=" font-serif font-bold text-white mb-6 leading-tight">
                     Don’t Let Another Year Pass Without Following Your Passion.
                 </h2>
 
@@ -2675,7 +2790,7 @@
                 {
                     type: 'large', colSpan: 'md:col-span-2', bgClass: 'bg-orange-50',
                     borderClass: 'border border-orange-100', textColor: 'text-gray-900',
-                    icon: 'bi-flower1', iconColor: 'text-orange-900',
+                    iconSrc: 'img/assets/icons/chakra_4841474.svg',
                     badge: 'Module 1', badgeClass: 'text-[#8b2025] bg-[#edcf9c]',
                     title: 'Yoga Philosophy & Basics of Naturopathy',
                     description: '',
@@ -2690,7 +2805,7 @@
                 },
                 {
                     type: 'standard', bgClass: 'bg-blue-50', borderClass: 'border border-blue-100',
-                    textColor: 'text-gray-900', icon: 'bi-body-text', iconColor: 'text-blue-900',
+                    textColor: 'text-gray-900', iconSrc: 'img/assets/icons/peace-mind_4841491.svg',
                     badge: 'Module 2', badgeClass: 'text-blue-800 bg-blue-200',
                     title: 'Anatomy & Physiology for Yogic Practices',
                     items: [
@@ -2700,8 +2815,8 @@
                     ]
                 },
                 {
-                    type: 'tall', rowSpan: 'md:row-span-2', bgClass: 'bg-[#8b2025]',
-                    textColor: 'text-white', icon: 'bi-lungs-fill', iconColor: 'text-[#edcf9c]',
+                    type: 'tall', rowSpan: 'md:row-span-2', bgClass: 'bg-blue-50',
+                    textColor: 'text-white', iconSrc: 'img/assets/icons/lotus_4841215.svg',
                     title: 'Traditional Yoga & Yogic Kriyas',
                     items: [
                         'Master 100+ classic yogasanas for strength, flexibility, and clarity',
@@ -2716,7 +2831,7 @@
                 },
                 {
                     type: 'standard', bgClass: 'bg-green-50', borderClass: 'border border-green-100',
-                    textColor: 'text-gray-900', icon: 'bi-heart-pulse', iconColor: 'text-green-900',
+                    textColor: 'text-gray-900', iconSrc: 'img/assets/icons/surya_4841505.svg',
                     badge: 'Module 4', badgeClass: 'text-green-800 bg-green-200',
                     title: 'Yoga and Mental Health',
                     items: [
@@ -2727,7 +2842,7 @@
                 {
                     type: 'standard', bgClass: 'bg-gradient-to-br from-blue-50 to-indigo-50',
                     borderClass: 'border-2 border-dashed border-blue-200',
-                    textColor: 'text-gray-900', icon: 'bi-play-circle-fill', iconColor: 'text-blue-600',
+                    textColor: 'text-gray-900', iconSrc: 'img/assets/icons/chakra_4841119.svg',
                     title: 'Mindful Practice',
                     descriptionClass: 'text-gray-600',
                     lottieUrl: 'https://lottie.host/7dff6c34-56c8-40c7-88d0-7e3d1ad4bdb5/dEuKVCNkaY.lottie'
@@ -2735,7 +2850,7 @@
                 {
                     type: 'large', colSpan: 'md:col-span-2', bgClass: 'bg-purple-50',
                     borderClass: 'border border-purple-100', textColor: 'text-gray-900',
-                    icon: 'bi-people-fill', iconColor: 'text-purple-900',
+                    iconSrc: 'img/assets/icons/yoga-mat_4841371.svg',
                     badge: 'Module 5', badgeClass: 'text-purple-800 bg-purple-200',
                     title: 'Teaching Methodology for Yogis',
                     items: [
@@ -2774,18 +2889,6 @@
             renderFAQs();
         }
 
-        function renderMarquee() {
-            const track = document.getElementById('marqueeTrack');
-            if (!track) return;
-            const content = pageData.marqueeItems.map(item =>
-                `<span class="marquee-item">${item} <i class="bi bi-star-fill marquee-separator"></i></span>`
-            ).join('');
-            track.innerHTML = `<div class="marquee-group">${content}</div><div class="marquee-group" aria-hidden="true">${content}</div>`;
-        }
-
-
-
-
         function renderCurriculumCards() {
             const list = document.getElementById('curriculumList');
             const detail = document.getElementById('curriculumDetail');
@@ -2801,6 +2904,7 @@
             detail.innerHTML = '';
 
             let activeIndex = 0;
+            let mobileOpenIndex = null; // Track which tab is open on mobile
             const tabs = [];
 
             const escapeHtml = (str) => String(str)
@@ -2815,12 +2919,12 @@
                 if (!items.length) return '';
 
                 return `
-                    <ul class="space-y-3 mt-4">
+                    <ul class="space-y-3 mt-5">
                         ${items.map((item, idx) => `
-                            <li class="flex items-start gap-3 text-sm text-gray-700 opacity-0 translate-y-2 detail-item-anim" style="animation-delay: ${idx * 50}ms">
-                                <div class="flex-shrink-0 w-5 h-5 rounded-full bg-[#8b2025]/10 flex items-center justify-center mt-0.5">
-                                    <i class="bi bi-check2 text-[#8b2025] text-xs font-bold"></i>
-                                </div>
+                            <li class="flex items-start gap-3 text-sm text-gray-800 opacity-0 translate-y-2 detail-item-anim" style="animation-delay: ${idx * 50}ms">
+                               
+                                   <img src="img/assets/check.png" alt="Duration Icon"
+                                                        class="w-12 h-12">
                                 <span class="leading-relaxed">${escapeHtml(item)}</span>
                             </li>
                         `).join('')}
@@ -2831,7 +2935,7 @@
             const buildLottieHtml = (c) => {
                 if (!c.lottieUrl) return '';
                 return `
-                    <div class="mt-6 flex justify-center items-center bg-gray-50 rounded-xl p-4 border border-gray-100">
+                    <div class="mt-6 flex justify-center items-center bg-white/70 backdrop-blur rounded-2xl p-4 border border-white/70 ring-1 ring-black/5">
                         <dotlottie-player 
                             src="${c.lottieUrl}"
                             background="transparent"
@@ -2855,18 +2959,47 @@
 
                     const indicator = t.querySelector('.active-indicator');
                     const chevron = t.querySelector('.bi-chevron-right');
+                    const icon = t.querySelector('.bi-book, .bi-dumbbell, .bi-heart, .bi-briefcase, .bi-person, .bi-home');
+                    const iconContainer = t.querySelector('[class*="rounded-lg"]');
 
-                    // Reset base classes
-                    t.className = 'curriculum-tab group w-full text-left p-4 rounded-xl border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8b2025]/40 relative overflow-hidden';
+                    t.className = 'curriculum-tab group w-full text-left p-4 rounded-2xl border transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8b2025]/30 relative overflow-hidden bg-white/60 backdrop-blur ring-1 ring-black/5 shadow-sm hover:shadow-md ';
 
                     if (isActive) {
-                        t.classList.add('bg-white', 'border-[#8b2025]', 'shadow-lg', 'shadow-[#8b2025]/5', 'scale-[1.02]', 'z-10');
-                        if (indicator) indicator.classList.remove('opacity-0');
-                        if (chevron) chevron.classList.add('text-[#8b2025]', 'translate-x-1');
+                        t.classList.add('bg-[#8b2025]', 'border-[#8b2025]', 'shadow-lg', 'shadow-[#8b2025]/20', 'scale-[1.02]', 'z-10', 'text-white');
+
+                        if (chevron) chevron.classList.add('text-[#edcf9c]', 'translate-x-2', 'font-bold');
+                        if (iconContainer) {
+                            iconContainer.classList.add('ring-2', 'ring-white/30', 'scale-110', 'bg-white/10');
+                        }
+                        // Highlight the title text
+                        const titleEl = t.querySelector('.text-base.font-semibold');
+                        if (titleEl) titleEl.classList.add('text-white', 'font-bold');
+                        // Highlight badge
+                        const badgeEl = t.querySelector('.text-xs.font-bold.text-gray-400');
+                        if (badgeEl) badgeEl.classList.remove('text-gray-400');
+                        if (badgeEl) badgeEl.classList.add('text-[#edcf9c]');
                     } else {
-                        t.classList.add('bg-white/50', 'border-transparent', 'hover:bg-white', 'hover:shadow-md', 'hover:border-gray-200');
+                        t.classList.remove('bg-[#8b2025]', 'border-[#8b2025]', 'shadow-lg', 'shadow-[#8b2025]/20', 'scale-[1.02]', 'z-10', 'text-white');
+                        t.classList.add('border-white/70');
                         if (indicator) indicator.classList.add('opacity-0');
-                        if (chevron) chevron.classList.remove('text-[#8b2025]', 'translate-x-1');
+                        if (chevron) {
+                            chevron.classList.remove('text-[#edcf9c]', 'text-[#8b2025]', 'translate-x-1', 'translate-x-2', 'font-bold');
+                        }
+                        if (iconContainer) {
+                            iconContainer.classList.remove('ring-2', 'ring-white/30', 'ring-[#8b2025]/25', 'scale-110', 'bg-white/10');
+                        }
+                        // Reset title text
+                        const titleEl = t.querySelector('.text-base.font-semibold');
+                        if (titleEl) {
+                            titleEl.classList.remove('text-[#8b2025]', 'font-bold', 'text-white');
+                            titleEl.classList.add('text-gray-900');
+                        }
+                        // Reset badge
+                        const badgeEl = t.querySelector('.text-xs.font-bold');
+                        if (badgeEl) {
+                            badgeEl.classList.remove('text-[#8b2025]', 'text-[#edcf9c]');
+                            badgeEl.classList.add('text-gray-400');
+                        }
                     }
                 });
 
@@ -2874,15 +3007,15 @@
                 const lottieHtml = buildLottieHtml(c);
 
                 // Animate out old content if needed, but for simplicity we just replace and animate in
-                detail.innerHTML = `
+                const detailContent = `
                     <div class="detail-content opacity-0">
                         <div class="flex items-start gap-4 mb-6">
-                            <div class="w-14 h-14 rounded-2xl ${c.bgClass || 'bg-blue-100'} flex items-center justify-center flex-shrink-0 shadow-sm">
-                                <i class="bi ${c.icon || 'bi-book'} text-2xl ${c.iconColor || 'text-blue-900'}"></i>
+                            <div class="w-14 h-14 rounded-2xl ${c.bgClass || 'bg-blue-100'} flex items-center justify-center flex-shrink-0 shadow-sm ring-1 ring-black/5 p-2">
+                                <img src="${c.iconSrc}" alt="${escapeHtml(c.title)}" class="w-full h-full object-contain" />
                             </div>
                             <div class="flex-1 pt-1">
                                 <div class="flex items-center gap-2 mb-1">
-                                    <span class="px-2 py-0.5 rounded-full bg-gray-100 text-[10px] font-bold uppercase tracking-wider text-gray-500 border border-gray-200">${escapeHtml(c.badge || 'Module')}</span>
+                                    <span class="px-2.5 py-1 rounded-full bg-[#edcf9c]/35 text-[10px] font-bold uppercase tracking-wider text-[#8b2025] border border-[#d4b886]/60">${escapeHtml(c.badge || 'Module')}</span>
                                 </div>
                                 <h3 class="text-2xl lg:text-3xl font-serif font-bold text-gray-900 leading-tight">${escapeHtml(c.title)}</h3>
                             </div>
@@ -2897,13 +3030,111 @@
                     </div>
                 `;
 
-                // GSAP Animation for Detail Content
+                detail.innerHTML = detailContent;
+
+                // Handle mobile toggle behavior (like FAQ accordion)
+                const detailMobile = document.getElementById('curriculumDetailMobile');
+                const isMobile = window.innerWidth < 1024;
+
+                if (detailMobile && isMobile) {
+                    // Check if clicking the same tab again - toggle close
+                    if (mobileOpenIndex === activeIndex) {
+                        // Close it with animation
+                        const gridWrapper = detailMobile.querySelector('.grid');
+                        if (gridWrapper) {
+                            gridWrapper.style.gridTemplateRows = '0fr';
+                            gridWrapper.style.opacity = '0';
+                        }
+
+                        // Update chevron back to right
+                        const activeTab = tabs[activeIndex];
+                        const chevron = activeTab?.querySelector('.bi-chevron-right, .bi-chevron-down');
+                        if (chevron) {
+                            chevron.classList.remove('bi-chevron-down', 'rotate-180');
+                            chevron.classList.add('bi-chevron-right');
+                        }
+
+                        // Clear mobile open index after animation
+                        setTimeout(() => {
+                            mobileOpenIndex = null;
+                            detailMobile.innerHTML = '';
+                        }, 300);
+
+                        return;
+                    }
+
+                    // Update mobile open index
+                    mobileOpenIndex = activeIndex;
+
+                    // Create detail content wrapper with grid for smooth animation
+                    detailMobile.innerHTML = `
+                        <div class="grid transition-all duration-300 ease-out" style="grid-template-rows: 0fr; opacity: 0;">
+                            <div class="overflow-hidden">
+                                <div class="bg-white/80 backdrop-blur-md rounded-2xl border border-white/70 ring-1 ring-black/5 shadow-xl shadow-black/5 p-6 mt-3">
+                                    ${detailContent}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    // Move mobile detail below the active tab
+                    const activeTab = tabs[activeIndex];
+                    if (activeTab && activeTab.parentNode) {
+                        detailMobile.remove();
+                        activeTab.insertAdjacentElement('afterend', detailMobile);
+                    }
+
+                    // Update all chevrons
+                    tabs.forEach((tab, idx) => {
+                        const chevron = tab.querySelector('.bi-chevron-right, .bi-chevron-down');
+                        if (chevron) {
+                            if (idx === activeIndex) {
+                                chevron.classList.remove('bi-chevron-right');
+                                chevron.classList.add('bi-chevron-down', 'rotate-180');
+                            } else {
+                                chevron.classList.remove('bi-chevron-down', 'rotate-180');
+                                chevron.classList.add('bi-chevron-right');
+                            }
+                        }
+                    });
+
+                    // Trigger animation after DOM update
+                    setTimeout(() => {
+                        const gridWrapper = detailMobile.querySelector('.grid');
+                        if (gridWrapper) {
+                            gridWrapper.style.gridTemplateRows = '1fr';
+                            gridWrapper.style.opacity = '1';
+                        }
+                    }, 10);
+
+                    // GSAP animation for content inside
+                    setTimeout(() => {
+                        const mobileContent = detailMobile.querySelector('.detail-content');
+                        if (mobileContent) {
+                            gsap.fromTo(mobileContent,
+                                { opacity: 0, y: 10 },
+                                { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }
+                            );
+
+                            gsap.to(detailMobile.querySelectorAll('.detail-item-anim'), {
+                                opacity: 1,
+                                y: 0,
+                                duration: 0.4,
+                                stagger: 0.05,
+                                ease: "back.out(1.7)",
+                                delay: 0.1
+                            });
+                        }
+                    }, 150);
+                }
+
+                // GSAP Animation for Detail Content (desktop)
                 gsap.fromTo(detail.querySelector('.detail-content'),
                     { opacity: 0, y: 20, filter: 'blur(10px)' },
                     { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, ease: "power2.out" }
                 );
 
-                // Stagger list items in detail view
+                // Stagger list items in detail view (desktop)
                 gsap.to(detail.querySelectorAll('.detail-item-anim'), {
                     opacity: 1,
                     y: 0,
@@ -2918,23 +3149,22 @@
             cards.forEach((c, i) => {
                 const btn = document.createElement('button');
                 btn.type = 'button';
-                // Initial class - will be updated by renderDetail
-                btn.className = 'curriculum-tab group w-full text-left p-4 rounded-xl border border-transparent transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8b2025]/40 relative overflow-hidden bg-white/50 hover:bg-white hover:shadow-md hover:border-gray-200';
+                btn.className = 'curriculum-tab group w-full text-left p-4 rounded-2xl border border-white/70 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#8b2025]/30 relative overflow-hidden bg-white/60 backdrop-blur ring-1 ring-black/5 shadow-sm hover:shadow-md';
                 btn.setAttribute('role', 'tab');
                 btn.id = `curriculumTab-${i}`;
                 btn.setAttribute('aria-controls', 'curriculumDetail');
 
                 btn.innerHTML = `
-                    <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#8b2025] opacity-0 transition-opacity duration-300 active-indicator"></div>
+                    <div class="absolute left-0 top-3 bottom-3 w-1.5 rounded-r-full bg-gradient-to-b from-[#edcf9c] to-white opacity-0 transition-opacity duration-300 active-indicator"></div>
                     <div class="flex items-center gap-4 relative z-10">
-                        <div class="w-10 h-10 rounded-lg ${c.bgClass || 'bg-blue-100'} flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                            <i class="bi ${c.icon || 'bi-book'} text-lg ${c.iconColor || 'text-blue-900'}"></i>
+                        <div class="w-11 h-11 rounded-xl ${c.bgClass || 'bg-blue-100'} flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-110 ring-1 ring-black/5 p-2">
+                            <img src="${c.iconSrc || 'img/icons/default.png'}" alt="${escapeHtml(c.title)}" class="w-full h-full object-contain" />
                         </div>
                         <div class="min-w-0 flex-1 text-left">
                             <div class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">${escapeHtml(c.badge || '')}</div>
-                            <div class="text-base font-semibold text-gray-900 truncate group-hover:text-[#8b2025] transition-colors">${escapeHtml(c.title)}</div>
+                            <div class="text-base font-semibold text-gray-900 truncate  transition-colors">${escapeHtml(c.title)}</div>
                         </div>
-                        <i class="bi bi-chevron-right text-gray-300 group-hover:text-[#8b2025] group-hover:translate-x-1 transition-all"></i>
+                        <i class="bi bi-chevron-right text-gray-300 group-hover:translate-x-1 transition-all duration-300"></i>
                     </div>
                 `;
 
