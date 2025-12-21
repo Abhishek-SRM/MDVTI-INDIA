@@ -43,6 +43,11 @@
     <link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="lib/owlcarousel/assets/owl.theme.default.min.css">
 
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js"></script>
+
 
 
 </head>
@@ -163,10 +168,7 @@
             content: '';
             position: absolute;
             inset: -40px -20px;
-            background:
-                radial-gradient(800px 420px at 12% 10%, rgba(237, 207, 156, 0.35), transparent 60%),
-                radial-gradient(700px 380px at 90% 20%, rgba(139, 32, 37, 0.12), transparent 62%),
-                radial-gradient(800px 520px at 55% 100%, rgba(46, 61, 111, 0.10), transparent 60%);
+
             z-index: -2;
         }
 
@@ -305,7 +307,7 @@
 
                         <div class="flex justify-center mb-6 md:mb-10">
                             <button id="heroVideoOpen" type="button"
-                                class="group relative inline-flex items-center justify-center md:w-28 md:h-28 rounded-lg transition-all overflow-hidden"
+                                class="group relative inline-flex items-center justify-center md:w-20 md:h-20 rounded-lg transition-all overflow-hidden"
                                 data-video-src="https://www.youtube.com/embed/snPBv1-igjM"
                                 data-video-title="Course Introduction" aria-haspopup="dialog"
                                 aria-controls="heroVideoModal">
@@ -915,7 +917,7 @@
         <!-- ========================================
          COMPACT TWO-COLUMN CURRICULUM SECTION
          ======================================== -->
-        <section id="curriculum" class="curriculum-section relative overflow-hidden py-16 lg:py-20">
+        <section id="curriculum" class="curriculum-section relative overflow-hidden py-8 lg:py-10">
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4">
                 <!-- Header -->
                 <div class="text-center mb-12 max-w-2xl mx-auto">
@@ -1244,13 +1246,13 @@
         <!-- ========================================
          MEET THE FOUNDER SECTION
          ======================================== -->
-        <section class="py-20 bg-gray-50 overflow-hidden relative">
+        <section class="py-10 md:py-20 bg-gray-50 overflow-hidden relative">
             <img src="img/assets/abstract-lines/Line 3.svg"
                 class="absolute object-cover scale-105 h-auto opacity-10 pointer-events-none ">
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
                     <!-- Left: Image/Video -->
-                    <div class="relative">
+                    <div class="relative mb-6 md:mb-0">
                         <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative group">
                             <div class="aspect-[4/5] bg-gray-200 relative">
                                 <img src="img/assets/founder.jpg"
@@ -1258,35 +1260,36 @@
                                     alt="Maneesh Pratap Singh"
                                     onerror="this.src='https://images.unsplash.com/photo-1599447421405-075115d6e33e?q=80&w=600&auto=format&fit=crop'">
 
-                                <div class="absolute bottom-6 left-6 text-white">
-                                    <p class="font-bold text-lg">Maneesh Pratap Singh</p>
+                                <div class="absolute bottom-4 md:bottom-6 left-4 md:left-6 text-white">
+                                    <p class="font-bold text-sm md:text-lg">Maneesh Pratap Singh</p>
                                     <p class="text-xs tracking-wider opacity-80">FOUNDER, YOGKULAM</p>
                                 </div>
                             </div>
                         </div>
                         <div
-                            class="absolute -bottom-6 -right-6 w-38 h-38 bg-[#edcf9c] rounded-full mix-blend-multiply filter blur-xl opacity-70">
+                            class="hidden md:block absolute -bottom-6 -right-6 w-38 h-38 bg-[#edcf9c] rounded-full mix-blend-multiply filter blur-xl opacity-70">
                         </div>
                     </div>
 
                     <!-- Right: Content -->
                     <div class="relative z-10">
-                        <h2 class="font-bold text-gray-900 mb-2">
+                        <h2 class="font-bold text-gray-900 mb-2 text-sm md:text-base">
                             Meet Our Founder:<br>
                         </h2>
-                        <h1 class="font-serif font-bold text-[#8b2025] mb-6">Maneesh Pratap Singh</h1>
-                        <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        <h1 class="font-serif font-bold text-[#8b2025] mb-6 text-2xl md:text-3xl lg:text-4xl">Maneesh
+                            Pratap Singh</h1>
+                        <p class="text-sm md:text-base lg:text-lg text-gray-600 mb-6 leading-relaxed">
                             Experience wisdom from a visionary yogi, educator, and entrepreneur with <strong>13+
                                 years</strong> of global yoga advocacy. He founded YogKulam and BharatShila Foundation,
                             co-founded IndiKulam for equitable education, and believes:
                         </p>
                         <blockquote
-                            class="border-l-4 border-[#edcf9c] pl-6 italic text-xl text-gray-800 font-serif mb-6">
+                            class="border-l-4 border-[#edcf9c] pl-6 italic text-base md:text-lg lg:text-xl text-gray-800 font-serif mb-6">
                             "Yoga is 5% on the mat, 95% in practicing seva (service) and sadhana (awakening) for
                             ultimate
                             healing."
                         </blockquote>
-                        <p class="text-lg text-gray-700 font-medium">
+                        <p class="text-sm md:text-base lg:text-lg text-gray-700 font-medium">
                             “I started YogKulam to help people build a meaningful life and career through yoga. Now it’s
                             your turn.”
                         </p>
@@ -1306,7 +1309,7 @@
         </section>
 
         <!-- ========================================
-         TEAM SECTION (RECREATED FROM SCREENSHOT STYLE)
+         TEAM SECTION
          ======================================== -->
         <section class="py-10 md:py-16 bg-white relative overflow-hidden" id="team">
             <!-- Decorative assets -->
@@ -1391,85 +1394,328 @@
                         </div>
                     </div>
 
-                    <!-- Right: Guest lecturers stack -->
-                    <div class="flex flex-col gap-3 md:gap-4">
+                    <!-- Right: Guest lecturers GSAP Slider -->
+                    <div class="w-full h-[500px] relative overflow-hidden flex items-center justify-center select-none"
+                        id="teacherSliderContainer">
+                        <div class="teacher-slider-track relative w-full h-full flex items-center justify-center"
+                            style="perspective: 1000px;">
 
-                        <!-- Card 1 -->
-                        <div
-                            class="relative overflow-hidden rounded-[1.2rem] border border-gray-200 shadow-xl bg-[#004e7c]">
-                            <div class="relative z-10 p-4 md:p-5 grid grid-cols-12 gap-3 items-center">
-                                <div class="col-span-8">
-                                    <div class="flex items-center gap-2">
-                                        <h4 class="text-lg md:text-xl font-bold text-white">Shreya Pattar</h4>
-                                        <i class="bi bi-patch-check-fill text-[#60a5fa] text-sm"></i>
-                                    </div>
-                                    <div class="text-white/80 text-xs font-semibold">@shreyapattar</div>
-                                    <p class="mt-2 text-white/90 text-xs leading-relaxed">Founder of a personal branding
-                                        agency, Shreya shares insights on building engagement.</p>
+                            <!-- Card 1 -->
+                            <div class="teacher-slide absolute w-[280px] h-[420px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer bg-gray-900 group "
+                                data-index="0">
+                                <img src="img/mentor/mentor4.png" alt="Shreya Pattar"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                                 </div>
-                                <div class="col-span-4 flex justify-end">
-                                    <div
-                                        class="overflow-hidden border-2 border-white/30 shadow-lg bg-cover scale-150 relative">
-                                        <img src="img/mentor/mentor4.png" alt="Shreya Pattar"
-                                            class="w-full h-full object-cover">
-                                        <div class="absolute inset-0 bg-black/20"></div>
-                                    </div>
+                                <div
+                                    class="absolute inset-0 bg-black/40 transition-opacity duration-500 opacity-0 dimmer-overlay">
                                 </div>
-                            </div>
-                        </div>
+                                <div
+                                    class="absolute bottom-0 left-0 w-full p-6 text-white flex flex-col justify-end h-full z-10">
+                                    <div class="transform transition-all duration-500 translate-y-0">
+                                        <span
+                                            class="inline-block px-3 py-1 bg-[#ff4d30] text-white text-[10px] font-bold uppercase tracking-wider rounded mb-3 shadow-lg">Branding</span>
+                                        <h3 class="text-2xl font-serif font-bold leading-tight mb-1 drop-shadow-md">
+                                            Shreya Pattar</h3>
+                                        <p class="text-sm text-gray-300 font-medium mb-4 drop-shadow-sm">Agency Founder
+                                        </p>
 
-                        <!-- Card 2 -->
-                        <div
-                            class="relative overflow-hidden rounded-[1.2rem] border border-gray-200 shadow-xl bg-[#005f89]">
-                            <div class="relative z-10 p-4 md:p-5 grid grid-cols-12 gap-3 items-center">
-                                <div class="col-span-8">
-                                    <div class="flex items-center gap-2">
-                                        <h4 class="text-lg md:text-xl font-bold text-white">Vaibhav Sisinty</h4>
-                                        <i class="bi bi-patch-check-fill text-[#60a5fa] text-sm"></i>
-                                    </div>
-                                    <div class="text-white/80 text-xs font-semibold">@vaibhavsisinty</div>
-                                    <p class="mt-2 text-white/90 text-xs leading-relaxed">An entrepreneur and marketing
-                                        consultant, Vaibhav helps you leverage your profile for professional growth.</p>
-                                </div>
-                                <div class="col-span-4 flex justify-end">
-                                    <div class="col-span-4 flex justify-end">
                                         <div
-                                            class="overflow-hidden border-2 border-white/30 shadow-lg bg-cover scale-150 relative">
-                                            <img src="img/mentor/mentor1.png" alt="Shreya Pattar"
-                                                class="w-full h-full object-cover">
-                                            <div class="absolute inset-0 bg-black/20"></div>
+                                            class="slide-content overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+                                            <p class="text-xs text-gray-200 mb-4 leading-relaxed drop-shadow-sm">Founder
+                                                of a personal branding agency, Shreya shares insights on building
+                                                engagement and personal brand.</p>
+                                            <div
+                                                class="flex items-center gap-2 text-sm font-medium text-white group/link">
+                                                <div
+                                                    class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover/link:bg-white group-hover/link:text-black transition-colors backdrop-blur-sm">
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </div>
+                                                <span class="drop-shadow-sm">Read more</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Card 3 -->
-                        <div
-                            class="relative overflow-hidden rounded-[1.2rem] border border-gray-200 shadow-xl bg-[#004e7c]">
-                            <div class="relative z-10 p-4 md:p-5 grid grid-cols-12 gap-3 items-center">
-                                <div class="col-span-8">
-                                    <div class="flex items-center gap-2">
-                                        <h4 class="text-lg md:text-xl font-bold text-white">Vedika Bhaia</h4>
-                                        <i class="bi bi-patch-check-fill text-[#60a5fa] text-sm"></i>
-                                    </div>
-                                    <div class="text-white/80 text-xs font-semibold">@vedikabhaia</div>
-                                    <p class="mt-2 text-white/90 text-xs leading-relaxed">A LinkedIn strategist, Vedika
-                                        guides you through the basics of building a personal brand online.</p>
+                            <!-- Card 2 -->
+                            <div class="teacher-slide absolute w-[280px] h-[420px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer bg-gray-900 group"
+                                data-index="1">
+                                <img src="img/mentor/mentor1.png" alt="Vaibhav Sisinty"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
                                 </div>
-                                <div class="col-span-4 flex justify-end">
-                                    <div class="col-span-4 flex justify-end">
+                                <div
+                                    class="absolute inset-0 bg-black/40 transition-opacity duration-500 opacity-0 dimmer-overlay">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 left-0 w-full p-6 text-white flex flex-col justify-end h-full z-10">
+                                    <div class="transform transition-all duration-500 translate-y-0">
+                                        <span
+                                            class="inline-block px-3 py-1 bg-[#ff4d30] text-white text-[10px] font-bold uppercase tracking-wider rounded mb-3 shadow-lg">Marketing</span>
+                                        <h3 class="text-2xl font-serif font-bold leading-tight mb-1 drop-shadow-md">
+                                            Vaibhav Sisinty</h3>
+                                        <p class="text-sm text-gray-300 font-medium mb-4 drop-shadow-sm">Growth
+                                            Consultant</p>
+
                                         <div
-                                            class="overflow-hidden border-2 border-white/30 shadow-lg bg-cover scale-150 relative">
-                                            <img src="img/mentor/mentor2.png" alt="Shreya Pattar"
-                                                class="w-full h-full object-cover">
-                                            <div class="absolute inset-0 bg-black/20"></div>
+                                            class="slide-content overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+                                            <p class="text-xs text-gray-200 mb-4 leading-relaxed drop-shadow-sm">An
+                                                entrepreneur and marketing consultant, Vaibhav helps you leverage your
+                                                profile for professional growth.</p>
+                                            <div
+                                                class="flex items-center gap-2 text-sm font-medium text-white group/link">
+                                                <div
+                                                    class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover/link:bg-white group-hover/link:text-black transition-colors backdrop-blur-sm">
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </div>
+                                                <span class="drop-shadow-sm">Read more</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Card 3 -->
+                            <div class="teacher-slide absolute w-[280px] h-[420px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer bg-gray-900 group "
+                                data-index="2">
+                                <img src="img/mentor/mentor2.png" alt="Vedika Bhaia"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-black/40 transition-opacity duration-500 opacity-0 dimmer-overlay">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 left-0 w-full p-6 text-white flex flex-col justify-end h-full z-10">
+                                    <div class="transform transition-all duration-500 translate-y-0">
+                                        <span
+                                            class="inline-block px-3 py-1 bg-[#ff4d30] text-white text-[10px] font-bold uppercase tracking-wider rounded mb-3 shadow-lg">Strategy</span>
+                                        <h3 class="text-2xl font-serif font-bold leading-tight mb-1 drop-shadow-md">
+                                            Vedika Bhaia</h3>
+                                        <p class="text-sm text-gray-300 font-medium mb-4 drop-shadow-sm">LinkedIn
+                                            Strategist</p>
+
+                                        <div
+                                            class="slide-content overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+                                            <p class="text-xs text-gray-200 mb-4 leading-relaxed drop-shadow-sm">A
+                                                LinkedIn strategist, Vedika guides you through the basics of building a
+                                                personal brand online.</p>
+                                            <div
+                                                class="flex items-center gap-2 text-sm font-medium text-white group/link">
+                                                <div
+                                                    class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover/link:bg-white group-hover/link:text-black transition-colors backdrop-blur-sm">
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </div>
+                                                <span class="drop-shadow-sm">Read more</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="teacher-slide absolute w-[280px] h-[420px] rounded-[2rem] overflow-hidden shadow-2xl cursor-pointer bg-gray-900 group "
+                                data-index="3">
+                                <img src="img/mentor/mentor3.png" alt="Ankur Warikoo"
+                                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent">
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-black/40 transition-opacity duration-500 opacity-0 dimmer-overlay">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 left-0 w-full p-6 text-white flex flex-col justify-end h-full z-10">
+                                    <div class="transform transition-all duration-500 translate-y-0">
+                                        <span
+                                            class="inline-block px-3 py-1 bg-[#ff4d30] text-white text-[10px] font-bold uppercase tracking-wider rounded mb-3 shadow-lg">Business</span>
+                                        <h3 class="text-2xl font-serif font-bold leading-tight mb-1 drop-shadow-md">
+                                            Ankur Warikoo</h3>
+                                        <p class="text-sm text-gray-300 font-medium mb-4 drop-shadow-sm">Entrepreneur
+                                        </p>
+
+                                        <div
+                                            class="slide-content overflow-hidden transition-all duration-500 max-h-0 opacity-0">
+                                            <p class="text-xs text-gray-200 mb-4 leading-relaxed drop-shadow-sm">
+                                                Entrepreneur, content creator, and author, Ankur shares life lessons and
+                                                business insights.</p>
+                                            <div
+                                                class="flex items-center gap-2 text-sm font-medium text-white group/link">
+                                                <div
+                                                    class="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center group-hover/link:bg-white group-hover/link:text-black transition-colors backdrop-blur-sm">
+                                                    <i class="bi bi-arrow-right"></i>
+                                                </div>
+                                                <span class="drop-shadow-sm">Read more</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="absolute bottom-6 right-1/2 translate-x-1/2 flex gap-3 z-20">
+                            <button id="prevTeacher"
+                                class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group shadow-lg">
+                                <i class="bi bi-arrow-left text-lg group-hover:scale-110 transition-transform"></i>
+                            </button>
+                            <button id="nextTeacher"
+                                class="w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white flex items-center justify-center hover:bg-white hover:text-black transition-all duration-300 group shadow-lg">
+                                <i class="bi bi-arrow-right text-lg group-hover:scale-110 transition-transform"></i>
+                            </button>
                         </div>
                     </div>
+
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function () {
+                            gsap.registerPlugin(Draggable);
+
+                            const slides = document.querySelectorAll('.teacher-slide');
+                            const track = document.querySelector('.teacher-slider-track');
+                            const nextBtn = document.getElementById('nextTeacher');
+                            const prevBtn = document.getElementById('prevTeacher');
+
+                            let currentIndex = 0;
+                            const totalSlides = slides.length;
+
+                            // Initial setup
+                            function updateSlides() {
+                                slides.forEach((slide, index) => {
+                                    const distance = index - currentIndex;
+                                    const absDistance = Math.abs(distance);
+
+                                    // Calculate properties based on distance from center
+                                    let xPos = distance * 300; // Base spacing
+                                    let scale = 1;
+                                    let zIndex = 10 - absDistance;
+                                    let rotateY = 0;
+                                    let brightness = 1;
+
+                                    if (distance === 0) {
+                                        // Center slide
+                                        scale = 1.1;
+                                        xPos = 0;
+                                        brightness = 1;
+                                    } else if (distance > 0) {
+                                        // Right slides
+                                        scale = 0.85;
+                                        xPos = 220 + (distance - 1) * 100; // Overlap effect
+                                        rotateY = -15;
+                                        brightness = 0.5;
+                                    } else {
+                                        // Left slides
+                                        scale = 0.85;
+                                        xPos = -220 + (distance + 1) * 100; // Overlap effect
+                                        rotateY = 15;
+                                        brightness = 0.5;
+                                    }
+
+                                    // Animate using GSAP
+                                    gsap.to(slide, {
+                                        duration: 0.6,
+                                        x: xPos,
+                                        scale: scale,
+                                        opacity: 1, // Keep fully opaque to prevent see-through
+                                        zIndex: zIndex,
+                                        rotateY: rotateY,
+                                        ease: "power2.out",
+                                        boxShadow: distance === 0 ? "0 25px 50px -12px rgba(0, 0, 0, 0.5)" : "0 10px 15px -3px rgba(0, 0, 0, 0.3)"
+                                    });
+
+                                    // Handle dimmer overlay
+                                    const dimmer = slide.querySelector('.dimmer-overlay');
+                                    if (dimmer) {
+                                        gsap.to(dimmer, {
+                                            opacity: distance === 0 ? 0 : 0.6,
+                                            duration: 0.6
+                                        });
+                                    }
+
+                                    // Handle content visibility
+                                    const content = slide.querySelector('.slide-content');
+                                    if (distance === 0) {
+                                        gsap.to(content, {
+                                            maxHeight: 200,
+                                            opacity: 1,
+                                            duration: 0.5,
+                                            delay: 0.2
+                                        });
+                                    } else {
+                                        gsap.to(content, {
+                                            maxHeight: 0,
+                                            opacity: 0,
+                                            duration: 0.3
+                                        });
+                                    }
+                                });
+                            }
+
+                            // Initialize
+                            updateSlides();
+
+                            // Event Listeners
+                            nextBtn.addEventListener('click', () => {
+                                if (currentIndex < totalSlides - 1) {
+                                    currentIndex++;
+                                    updateSlides();
+                                } else {
+                                    // Loop back to start
+                                    currentIndex = 0;
+                                    updateSlides();
+                                }
+                            });
+
+                            prevBtn.addEventListener('click', () => {
+                                if (currentIndex > 0) {
+                                    currentIndex--;
+                                    updateSlides();
+                                } else {
+                                    // Loop to end
+                                    currentIndex = totalSlides - 1;
+                                    updateSlides();
+                                }
+                            });
+
+                            // Click on slide to navigate
+                            slides.forEach((slide, index) => {
+                                slide.addEventListener('click', () => {
+                                    if (currentIndex !== index) {
+                                        currentIndex = index;
+                                        updateSlides();
+                                    }
+                                });
+                            });
+
+                            // Auto play
+                            let autoPlayInterval = setInterval(() => {
+                                if (currentIndex < totalSlides - 1) {
+                                    currentIndex++;
+                                } else {
+                                    currentIndex = 0;
+                                }
+                                updateSlides();
+                            }, 5000);
+
+                            // Pause on hover
+                            const container = document.getElementById('teacherSliderContainer');
+                            container.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+                            container.addEventListener('mouseleave', () => {
+                                autoPlayInterval = setInterval(() => {
+                                    if (currentIndex < totalSlides - 1) {
+                                        currentIndex++;
+                                    } else {
+                                        currentIndex = 0;
+                                    }
+                                    updateSlides();
+                                }, 5000);
+                            });
+                        });
+                    </script>
                 </div>
             </div>
         </section>
@@ -2053,17 +2299,22 @@
                                     <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
                                     <span>1 Year Live Interactive Classes</span>
                                 </li>
-                                <li class="flex items-start gap-3 text-gray-700 text-sm">
-                                    <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                                    <span>Full Recordings Access</span>
-                                </li>
-                                <li class="flex items-start gap-3 text-gray-700 text-sm">
-                                    <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
-                                    <span>Dual Certification (Iso + Govt)</span>
-                                </li>
+
                                 <li class="flex items-start gap-3 text-gray-700 text-sm">
                                     <i class="bi bi-check-circle-fill text-green-500 mt-0.5"></i>
                                     <span>Digital Study Material</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-gray-400 text-sm line-through">
+                                    <i class="bi bi-x-circle-fill text-gray-300 mt-0.5"></i>
+                                    <span>Practical Ashram Stay</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-gray-400 text-sm line-through">
+                                    <i class="bi bi-x-circle-fill text-gray-300 mt-0.5"></i>
+                                    <span>Printed Hardcopy Books</span>
+                                </li>
+                                <li class="flex items-start gap-3 text-gray-400 text-sm line-through">
+                                    <i class="bi bi-x-circle-fill text-gray-300 mt-0.5"></i>
+                                    <span>Personal Hands-on Corrections</span>
                                 </li>
                             </ul>
 
@@ -2199,22 +2450,27 @@
             </div>
 
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 text-center mt-12 relative z-10">
-                <p class="text-sm text-gray-500 flex items-center justify-center gap-2">
-                    <i class="bi bi-shield-lock-fill"></i> Secure Payment Gateway | 7-Day Money Back Guarantee
-                </p>
+                <div
+                    class="inline-block bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-full px-6 py-3 shadow-lg">
+                    <p class="text-sm font-semibold text-gray-800 flex items-center justify-center gap-2">
+                        <i class="bi bi-shield-check-fill text-green-600 text-lg"></i>
+                        <span class="text-green-700 font-bold">Secure Payment Gateway</span>
+                        <span class="text-gray-400">|</span>
+                        <span class="text-blue-700 font-semibold">7-Day Money Back Guarantee</span>
+                    </p>
+                </div>
             </div>
         </section>
 
         <!-- ========================================
          FINAL PUSH 
          ======================================== -->
-        <section class="py-16 bg-gradient-to-br from-[#edcf9c]-100 via-white to-[#edcf9c]-50 relative overflow-hidden">
+        <section class="bg-gradient-to-br from-[#edcf9c]-100 via-white to-[#edcf9c]-50 relative overflow-hidden">
             <!-- Decorative background elements -->
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 relative z-10">
                 <div class="max-w-4xl mx-auto">
                     <!-- Header -->
                     <div class="text-center mb-12">
-
                         <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-3">
                             Seats Are Filling Fast!
                         </h2>
@@ -2261,95 +2517,95 @@
                         </div>
 
                         <!-- Timer Section -->
-                        <div class="px-8 py-10 bg-gradient-to-b from-gray-50 to-white">
+                        <div class="px-4 md:px-8 py-8 md:py-10 bg-gradient-to-b from-gray-50 to-white">
                             <div class="text-center mb-6">
-                                <h3 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                                <h3 class="text-xl md:text-3xl font-bold text-gray-900 mb-2">
                                     Early Bird Discount Ends In:
                                 </h3>
-                                <p class="text-gray-600">Lock in your <span class="text-orange-600 font-bold">15%
+                                <p class="text-sm md:text-base text-gray-600">Lock in your <span class="text-orange-600 font-bold">15%
                                         OFF</span>
                                     before the timer runs out!</p>
                             </div>
 
                             <!-- Countdown Timer -->
-                            <div class="flex justify-center gap-3 md:gap-6 mb-8">
+                            <div class="flex justify-center gap-2 md:gap-6 mb-8 overflow-x-auto pb-2">
                                 <!-- Days -->
-                                <div class="flex flex-col items-center">
+                                <div class="flex flex-col items-center flex-shrink-0">
                                     <div
-                                        class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] text-white rounded-2xl w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-4 border-white">
-                                        <span id="days" class="text-3xl md:text-4xl font-bold">08</span>
+                                        class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] text-white rounded-xl md:rounded-2xl w-16 h-16 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-2 md:border-4 border-white">
+                                        <span id="days" class="text-2xl md:text-4xl font-bold">08</span>
                                     </div>
                                     <span
-                                        class="text-xs md:text-sm text-gray-600 font-semibold mt-2 uppercase">Days</span>
+                                        class="text-xs text-gray-600 font-semibold mt-1 md:mt-2 uppercase">Days</span>
                                 </div>
 
-                                <div class="flex items-center text-3xl text-gray-400 font-bold pb-6">:</div>
+                                <div class="flex items-center text-xl md:text-3xl text-gray-400 font-bold self-center">:</div>
 
                                 <!-- Hours -->
-                                <div class="flex flex-col items-center">
+                                <div class="flex flex-col items-center flex-shrink-0">
                                     <div
-                                        class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] text-white rounded-2xl w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-4 border-white">
-                                        <span id="hours" class="text-3xl md:text-4xl font-bold">14</span>
+                                        class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] text-white rounded-xl md:rounded-2xl w-16 h-16 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-2 md:border-4 border-white">
+                                        <span id="hours" class="text-2xl md:text-4xl font-bold">14</span>
                                     </div>
                                     <span
-                                        class="text-xs md:text-sm text-gray-600 font-semibold mt-2 uppercase">Hours</span>
+                                        class="text-xs text-gray-600 font-semibold mt-1 md:mt-2 uppercase">Hours</span>
                                 </div>
 
-                                <div class="flex items-center text-3xl text-gray-400 font-bold pb-6">:</div>
+                                <div class="flex items-center text-xl md:text-3xl text-gray-400 font-bold self-center">:</div>
 
                                 <!-- Minutes -->
-                                <div class="flex flex-col items-center">
+                                <div class="flex flex-col items-center flex-shrink-0">
                                     <div
-                                        class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] text-white rounded-2xl w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-4 border-white">
-                                        <span id="minutes" class="text-3xl md:text-4xl font-bold">23</span>
+                                        class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] text-white rounded-xl md:rounded-2xl w-16 h-16 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-2 md:border-4 border-white">
+                                        <span id="minutes" class="text-2xl md:text-4xl font-bold">23</span>
                                     </div>
                                     <span
-                                        class="text-xs md:text-sm text-gray-600 font-semibold mt-2 uppercase">Minutes</span>
+                                        class="text-xs text-gray-600 font-semibold mt-1 md:mt-2 uppercase">Minutes</span>
                                 </div>
 
-                                <div class="flex items-center text-3xl text-gray-400 font-bold pb-6">:</div>
+                                <div class="flex items-center text-xl md:text-3xl text-gray-400 font-bold self-center">:</div>
 
                                 <!-- Seconds -->
-                                <div class="flex flex-col items-center">
+                                <div class="flex flex-col items-center flex-shrink-0">
                                     <div
-                                        class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] text-white rounded-2xl w-20 h-20 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-4 border-white">
-                                        <span id="seconds" class="text-3xl md:text-4xl font-bold">45</span>
+                                        class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] text-white rounded-xl md:rounded-2xl w-16 h-16 md:w-24 md:h-24 flex items-center justify-center shadow-xl border-2 md:border-4 border-white">
+                                        <span id="seconds" class="text-2xl md:text-4xl font-bold">45</span>
                                     </div>
                                     <span
-                                        class="text-xs md:text-sm text-gray-600 font-semibold mt-2 uppercase">Seconds</span>
+                                        class="text-xs text-gray-600 font-semibold mt-1 md:mt-2 uppercase">Seconds</span>
                                 </div>
                             </div>
 
                             <!-- Urgency Messages -->
-                            <div class="grid md:grid-cols-3 gap-4 mb-8">
-                                <div class="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
-                                    <i class="bi bi-exclamation-triangle-fill text-orange-600 text-2xl mb-2"></i>
-                                    <p class="text-sm font-semibold text-gray-800">Price increases to ₹35,000 after
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 mb-8">
+                                <div class="bg-orange-50 border border-orange-200 rounded-xl p-3 md:p-4 text-center">
+                                    <i class="bi bi-exclamation-triangle-fill text-orange-600 text-xl md:text-2xl mb-2"></i>
+                                    <p class="text-xs md:text-sm font-semibold text-gray-800">Price increases to ₹35,000 after
                                         timer
                                         ends</p>
                                 </div>
-                                <div class="bg-orange-50 border border-orange-200 rounded-xl p-4 text-center">
-                                    <i class="bi bi-gift-fill text-orange-600 text-2xl mb-2"></i>
-                                    <p class="text-sm font-semibold text-gray-800">₹58,000 worth of bonuses expire soon
+                                <div class="bg-orange-50 border border-orange-200 rounded-xl p-3 md:p-4 text-center">
+                                    <i class="bi bi-gift-fill text-orange-600 text-xl md:text-2xl mb-2"></i>
+                                    <p class="text-xs md:text-sm font-semibold text-gray-800">₹58,000 worth of bonuses expire soon
                                     </p>
                                 </div>
-                                <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-4 text-center">
-                                    <i class="bi bi-people-fill text-yellow-600 text-2xl mb-2"></i>
-                                    <p class="text-sm font-semibold text-gray-800">Only 24 seats remain this batch</p>
+                                <div class="bg-yellow-50 border border-yellow-200 rounded-xl p-3 md:p-4 text-center">
+                                    <i class="bi bi-people-fill text-yellow-600 text-xl md:text-2xl mb-2"></i>
+                                    <p class="text-xs md:text-sm font-semibold text-gray-800">Only 24 seats remain this batch</p>
                                 </div>
                             </div>
 
                             <!-- CTA Button -->
                             <div class="text-center">
-                                <a href="student-reg.html" class="inline-block">
+                                <a href="student-reg.html" class="inline-block w-full md:w-auto">
                                     <div
-                                        class="bg-gradient-to-r from-[#8b2025] to-[#5a0300] text-white px-12 py-5 rounded-full font-bold text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden group">
+                                        class="bg-gradient-to-r from-[#8b2025] to-[#5a0300] text-white px-6 md:px-12 py-3 md:py-5 rounded-full font-bold text-base md:text-xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 relative overflow-hidden group">
                                         <div
                                             class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000">
                                         </div>
-                                        <span class="relative z-10 flex items-center gap-3">
+                                        <span class="relative z-10 flex items-center justify-center gap-2 md:gap-3">
                                             <i class="bi bi-lightning-charge-fill"></i>
-                                            Claim My Early Bird Discount Now
+                                            <span class="text-sm md:text-base">Claim My Early Bird Discount Now</span>
                                             <i class="bi bi-arrow-right-circle-fill"></i>
                                         </span>
                                     </div>
@@ -3409,7 +3665,8 @@
                 dots: true,
                 responsive: {
                     0: {
-                        items: 1
+                        items: 1.2,
+                        margin: 12
                     },
                     600: {
                         items: 2
@@ -3589,7 +3846,6 @@
 
             const timelines = new Map();
 
-            // Build one timeline per book (paused). We coordinate playback ourselves.
             books.forEach((book) => {
                 const cover = book.querySelector('.book-cover');
                 const wrapper = book.querySelector('.book-wrapper');
@@ -3630,7 +3886,6 @@
                     return;
                 }
 
-                // Restore the left sibling back to its original position.
                 shiftLeftSibling(book, 0);
 
                 clearReverseCallback(tl);
@@ -3689,21 +3944,16 @@
             };
 
             books.forEach((book) => {
-                // Desktop hover behavior
                 book.addEventListener('mouseenter', () => requestOpen(book));
 
                 book.addEventListener('mouseleave', () => {
-                    // If the pointer is moving to another book, that book's mouseenter will set pendingBook.
-                    // Defer one tick so we can detect the new hover target.
                     setTimeout(() => {
-                        // If this book was queued to open but the pointer already left it, cancel.
                         if (pendingBook === book && book !== activeBook) pendingBook = null;
                         if (pendingBook && pendingBook !== book) return;
                         requestCloseIfStillActive(book);
                     }, 0);
                 });
 
-                // Mobile / touch-friendly: tap to toggle.
                 book.addEventListener('click', () => {
                     if (book === activeBook && !switching) {
                         requestCloseIfStillActive(book);
@@ -3714,7 +3964,6 @@
             });
         }
 
-        // Add styling for 3D preservation which might not be fully covered by utility classes
         const style = document.createElement('style');
         style.textContent = `
             .perspective-1000 { perspective: 1000px; }
@@ -3722,9 +3971,6 @@
             .backface-hidden { backface-visibility: hidden; }
         `;
         document.head.appendChild(style);
-
-        // Call initBookAnimations after DOM Load
-        // We can hook it into existing init animations or call it separately
         setTimeout(initBookAnimations, 500);
 
     </script>
