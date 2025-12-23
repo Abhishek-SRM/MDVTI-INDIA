@@ -388,7 +388,7 @@
                         </div>
                     </div>
                     <img src="img/assets/abstract-red-wavy-business-background.png"
-                        class="absolute bottom-0  left-0 w-full h-auto pointer-events-none z-[1]">
+                        class="absolute bottom-0 lg:-bottom-16 left-0 w-full h-auto pointer-events-none z-[1]">
                 </div>
         </section>
 
@@ -964,6 +964,49 @@
                 <!-- CTA Button -->
                 <div id="syllabusBtnWrapper" class="text-center mt-12">
                     <!-- Filled by JavaScript (kept consistent with existing CTA) -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+         DOWNLOAD CURRICULUM CALL-TO-ACTION
+         ======================================== -->
+        <section class="py-16 relative overflow-hidden bg-white">
+            <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 relative z-10">
+                <div
+                    class="bg-gradient-to-br from-[#8b2025] to-[#5a0300] rounded-[2.5rem] p-8 md:p-12 shadow-2xl relative overflow-hidden group">
+                    <!-- Background decorative elements -->
+                    <div
+                        class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl">
+                    </div>
+                    <div
+                        class="absolute bottom-0 left-0 w-64 h-64 bg-[#edcf9c]/10 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl">
+                    </div>
+
+                    <div class="flex flex-col lg:flex-row items-center justify-between gap-8 relative z-10">
+                        <div class="text-center lg:text-left">
+                            <h3 class="text-2xl md:text-4xl font-serif font-bold text-white mb-4 leading-tight">
+                                Want the Detailed <span class="text-[#edcf9c]">Syllabus & Brochure?</span>
+                            </h3>
+                            <p class="text-white/80 text-lg max-w-xl">
+                                Get the complete 1-year PGDYT course roadmap, module details, and certification info
+                                delivered to your device.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row items-center gap-4">
+                            <a href="#"
+                                class="group relative inline-flex items-center gap-4 px-10 py-5 bg-[#edcf9c] text-[#8b2025] rounded-2xl font-bold text-xl shadow-xl hover:shadow-[#edcf9c]/20 hover:-translate-y-1 transition-all duration-300 overflow-hidden">
+                                <div
+                                    class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                                </div>
+                                <span class="relative flex items-center gap-3">
+                                    <i class="bi bi-file-earmark-pdf-fill text-2xl animate-bounce"></i>
+                                    Download Syllabus
+                                </span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2453,7 +2496,7 @@
                 <div
                     class="inline-block bg-gradient-to-r from-green-50 to-blue-50 border-2 border-green-200 rounded-full px-6 py-3 shadow-lg">
                     <p class="text-sm font-semibold text-gray-800 flex items-center justify-center gap-2">
-                        <i class="bi bi-shield-check-fill text-green-600 text-lg"></i>
+                        <img src="img/assets/icons/secure-vector.png" class="w-16" alt="Secure Payment Gateway">
                         <span class="text-green-700 font-bold">Secure Payment Gateway</span>
                         <span class="text-gray-400">|</span>
                         <span class="text-blue-700 font-semibold">7-Day Money Back Guarantee</span>
@@ -2759,69 +2802,7 @@
             </div>
         </section>
 
-        <!-- Sticky CTA Button for Mobile -->
-        <div id="stickyMobileCTA"
-            class="fixed bottom-0 left-0 right-0 z-50 md:hidden transform translate-y-full transition-transform duration-300 shadow-2xl">
-            <a href="student-reg.html"
-                class="block bg-gradient-to-r from-[#8b2025] via-[#9d0500] to-[#8b2025] text-white px-6 py-5 font-bold text-lg text-center border-t-4 border-[#edcf9c] relative overflow-hidden group">
-                <!-- Animated background -->
-                <div
-                    class="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-active:translate-x-[200%] transition-transform duration-700">
-                </div>
 
-                <span class="relative z-10 flex items-center justify-center gap-3">
-                    <i class="bi bi-lightning-charge-fill text-[#edcf9c] text-xl animate-pulse"></i>
-                    <span>Yes! Lock My Seat Before Price Increases</span>
-                    <i class="bi bi-arrow-right-circle-fill text-[#edcf9c] text-xl"></i>
-                </span>
-            </a>
-        </div>
-
-        <!-- Sticky CTA Script -->
-        <script>
-            // Show sticky CTA on mobile when user scrolls past the main CTA
-            document.addEventListener('DOMContentLoaded', function () {
-                const stickyButton = document.getElementById('stickyMobileCTA');
-                const mainCTA = document.getElementById('mainCTAButton');
-
-                if (!stickyButton || !mainCTA) return;
-
-                let lastScroll = 0;
-                const showOffset = 300; // Show after scrolling 300px
-
-                function handleScroll() {
-                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                    const mainCTARect = mainCTA.getBoundingClientRect();
-                    const mainCTAVisible = mainCTARect.top < window.innerHeight && mainCTARect.bottom > 0;
-
-                    // Show sticky button if:
-                    // 1. Scrolled past threshold
-                    // 2. Main CTA is not visible on screen
-                    // 3. User is scrolling down
-                    if (currentScroll > showOffset && !mainCTAVisible && currentScroll > lastScroll) {
-                        stickyButton.style.transform = 'translateY(0)';
-                    } else if (mainCTAVisible || currentScroll < lastScroll) {
-                        // Hide when main CTA is visible or scrolling up
-                        stickyButton.style.transform = 'translateY(100%)';
-                    }
-
-                    lastScroll = currentScroll <= 0 ? 0 : currentScroll;
-                }
-
-                // Throttle scroll event for better performance
-                let throttleTimer;
-                window.addEventListener('scroll', function () {
-                    if (throttleTimer) return;
-                    throttleTimer = setTimeout(function () {
-                        handleScroll();
-                        throttleTimer = null;
-                    }, 100);
-                });
-
-                // Initial check
-                handleScroll();
-            });
-        </script>
 
     </main>
     <!-- End Main Content -->
@@ -2886,7 +2867,7 @@
 
     <!-- Floating CTA Cluster -->
     <div
-        class="hidden md:flex fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] items-center p-1 bg-white/90 backdrop-blur-md rounded-full shadow-2xl border border-gray-300 pointer-events-auto transform ">
+        class="flex fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] items-center p-1 bg-white/90 backdrop-blur-md rounded-full shadow-2xl border border-gray-300 pointer-events-auto transform w-[62%] max-w-[400px] md:w-auto">
         <!-- Secondary: Talk to Mentor -->
         <a href="https://wa.me/9118008919232?text=Hi!%20I%27m%20interested%20in%20the%20PGDYT%20Yoga%20Teacher%20Training%20course.%20Can%20you%20please%20share%20more%20details%3F"
             class="flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 hover:bg-gray-100/80 rounded-full transition-colors text-gray-700 font-medium text-xs md:text-sm group mr-1"

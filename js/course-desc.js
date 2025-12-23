@@ -1013,8 +1013,3 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render dynamic content
     renderAll();
 });
-
-// Missing function
-function initSocialProofToast() {
-    // Placeholder for social proof toast
-}
