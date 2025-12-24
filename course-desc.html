@@ -2494,258 +2494,385 @@
 
                     <div
                         class="flex overflow-x-auto snap-x snap-mandatory md:grid md:grid-cols-3 gap-6 pb-8 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
-                        <!-- Testimonial 1 -->
+                        <!-- Video Testimonial 1 -->
                         <div class="snap-center shrink-0 w-[85vw] md:w-auto h-full">
                             <div
-                                class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl h-full flex flex-col">
-                                <div
-                                    class="absolute top-0 right-0 w-24 h-24 bg-[#8b2025]/5 rounded-bl-[100px] -mr-4 -mt-4 transition-all group-hover:bg-[#8b2025]/10">
-                                </div>
-                                <div class="absolute top-4 right-4 text-4xl text-[#8b2025]/10 font-serif">"</div>
+                                class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+                                <!-- Video Thumbnail Area -->
+                                <div class="relative h-48 md:h-52 overflow-hidden bg-gray-900">
+                                    <img src="https://img.youtube.com/vi/W8u_D5AOkVw/hqdefault.jpg"
+                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        alt="Priya Sharma's Story">
+                                    <div
+                                        class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300">
+                                    </div>
 
-                                <div class="relative z-10 flex flex-col h-full">
-                                    <div class="flex items-center gap-4 mb-4">
+                                    <!-- Play Button Overlay -->
+                                    <button
+                                        class="absolute inset-0 flex items-center justify-center video-testimonial-btn"
+                                        data-video-src="https://www.youtube.com/embed/W8u_D5AOkVw"
+                                        data-video-title="Priya's Career Transformation">
                                         <div
-                                            class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-br from-[#8b2025] to-[#edcf9c]">
+                                            class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-white text-white group-hover:text-[#8b2025] shadow-lg">
+                                            <i class="bi bi-play-fill text-3xl ml-1"></i>
+                                        </div>
+                                    </button>
+
+                                    <!-- Watch Status -->
+                                    <div class="absolute bottom-3 left-3">
+                                        <span
+                                            class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase rounded border border-white/20">Video
+                                            Story</span>
+                                    </div>
+                                </div>
+
+                                <!-- Student Info -->
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-full border-2 border-[#edcf9c] p-0.5">
                                             <img src="https://randomuser.me/api/portraits/women/44.jpg"
-                                                alt="Priya Sharma"
-                                                class="w-full h-full rounded-full object-cover border-2 border-white">
+                                                class="w-full h-full rounded-full object-cover" alt="Priya Sharma">
                                         </div>
                                         <div>
-                                            <h4 class="font-bold text-gray-900">Priya Sharma</h4>
-                                            <p class="text-xs text-[#8b2025] font-medium">Yoga Therapist, Mumbai</p>
+                                            <h4 class="font-bold text-gray-900 text-sm">Priya Sharma</h4>
+                                            <p
+                                                class="text-[10px] text-[#8b2025] font-semibold uppercase tracking-wider">
+                                                Yoga Therapist, Mumbai</p>
                                         </div>
                                     </div>
-
-                                    <div class="flex gap-0.5 text-yellow-400 mb-4 text-sm">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-
-                                    <p class="text-gray-600 text-sm leading-relaxed italic mb-4 flex-grow">
+                                    <p class="text-gray-600 text-sm leading-relaxed italic line-clamp-3 mb-4">
                                         "I was stuck in a corporate job and suffering from chronic back pain. After
-                                        completing PGDYT, not only did I heal myself, but I also started my own yoga
-                                        therapy practice. Now I earn ₹80,000/month doing what I love!"
+                                        completing PGDYT, I started my own practice and now earn ₹80,000/month."
                                     </p>
-
-                                    <div
-                                        class="pt-4 border-t border-gray-100 flex items-center gap-2 text-xs text-gray-400 font-medium">
-                                        <i class="bi bi-patch-check-fill text-green-500"></i> Verified Student
+                                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                                        <div class="flex text-yellow-400 text-[10px]">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                        <div class="text-[10px] text-gray-400 font-medium flex items-center gap-1">
+                                            <i class="bi bi-patch-check-fill text-green-500"></i> Verified
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Testimonial 2 -->
+                        <!-- Video Testimonial 2 -->
                         <div class="snap-center shrink-0 w-[85vw] md:w-auto h-full">
                             <div
-                                class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl h-full flex flex-col">
-                                <div
-                                    class="absolute top-0 right-0 w-24 h-24 bg-[#8b2025]/5 rounded-bl-[100px] -mr-4 -mt-4 transition-all group-hover:bg-[#8b2025]/10">
-                                </div>
-                                <div class="absolute top-4 right-4 text-4xl text-[#8b2025]/10 font-serif">"</div>
+                                class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+                                <!-- Video Thumbnail Area -->
+                                <div class="relative h-48 md:h-52 overflow-hidden bg-gray-900">
+                                    <img src="https://img.youtube.com/vi/J-wP6o8x-H0/hqdefault.jpg"
+                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        alt="Rajesh Kumar's Story">
+                                    <div
+                                        class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300">
+                                    </div>
 
-                                <div class="relative z-10 flex flex-col h-full">
-                                    <div class="flex items-center gap-4 mb-4">
+                                    <!-- Play Button Overlay -->
+                                    <button
+                                        class="absolute inset-0 flex items-center justify-center video-testimonial-btn"
+                                        data-video-src="https://www.youtube.com/embed/J-wP6o8x-H0"
+                                        data-video-title="Rajesh's Wellness Journey">
                                         <div
-                                            class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-br from-[#8b2025] to-[#edcf9c]">
-                                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rajesh Kumar"
-                                                class="w-full h-full rounded-full object-cover border-2 border-white">
+                                            class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-white text-white group-hover:text-[#8b2025] shadow-lg">
+                                            <i class="bi bi-play-fill text-3xl ml-1"></i>
+                                        </div>
+                                    </button>
+
+                                    <!-- Watch Status -->
+                                    <div class="absolute bottom-3 left-3">
+                                        <span
+                                            class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase rounded border border-white/20">Video
+                                            Story</span>
+                                    </div>
+                                </div>
+
+                                <!-- Student Info -->
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-full border-2 border-[#edcf9c] p-0.5">
+                                            <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                                                class="w-full h-full rounded-full object-cover" alt="Rajesh Kumar">
                                         </div>
                                         <div>
-                                            <h4 class="font-bold text-gray-900">Rajesh Kumar</h4>
-                                            <p class="text-xs text-[#8b2025] font-medium">Wellness Coach, Delhi</p>
+                                            <h4 class="font-bold text-gray-900 text-sm">Rajesh Kumar</h4>
+                                            <p
+                                                class="text-[10px] text-[#8b2025] font-semibold uppercase tracking-wider">
+                                                Wellness Coach, Delhi</p>
                                         </div>
                                     </div>
-
-                                    <div class="flex gap-0.5 text-yellow-400 mb-4 text-sm">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-
-                                    <p class="text-gray-600 text-sm leading-relaxed italic mb-4 flex-grow">
-                                        "The best investment I've ever made! The curriculum is comprehensive, teachers
-                                        are amazing, and the placement support helped me land a job at a top wellness
-                                        center. My thyroid issues have also improved significantly."
+                                    <p class="text-gray-600 text-sm leading-relaxed italic line-clamp-3 mb-4">
+                                        "The best investment I've ever made! The curriculum is comprehensive and the
+                                        placement support helped me land a job at a top wellness center."
                                     </p>
-
-                                    <div
-                                        class="pt-4 border-t border-gray-100 flex items-center gap-2 text-xs text-gray-400 font-medium">
-                                        <i class="bi bi-patch-check-fill text-green-500"></i> Verified Student
+                                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                                        <div class="flex text-yellow-400 text-[10px]">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                        <div class="text-[10px] text-gray-400 font-medium flex items-center gap-1">
+                                            <i class="bi bi-patch-check-fill text-green-500"></i> Verified
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Testimonial 3 -->
+                        <!-- Video Testimonial 3 -->
                         <div class="snap-center shrink-0 w-[85vw] md:w-auto h-full">
                             <div
-                                class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl h-full flex flex-col">
-                                <div
-                                    class="absolute top-0 right-0 w-24 h-24 bg-[#8b2025]/5 rounded-bl-[100px] -mr-4 -mt-4 transition-all group-hover:bg-[#8b2025]/10">
-                                </div>
-                                <div class="absolute top-4 right-4 text-4xl text-[#8b2025]/10 font-serif">"</div>
+                                class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+                                <!-- Video Thumbnail Area -->
+                                <div class="relative h-48 md:h-52 overflow-hidden bg-gray-900">
+                                    <img src="https://img.youtube.com/vi/x_L7W0K0h08/hqdefault.jpg"
+                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        alt="Anita Verma's Story">
+                                    <div
+                                        class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300">
+                                    </div>
 
-                                <div class="relative z-10 flex flex-col h-full">
-                                    <div class="flex items-center gap-4 mb-4">
+                                    <!-- Play Button Overlay -->
+                                    <button
+                                        class="absolute inset-0 flex items-center justify-center video-testimonial-btn"
+                                        data-video-src="https://www.youtube.com/embed/x_L7W0K0h08"
+                                        data-video-title="Anita's Home Teaching Business">
                                         <div
-                                            class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-br from-[#8b2025] to-[#edcf9c]">
+                                            class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-white text-white group-hover:text-[#8b2025] shadow-lg">
+                                            <i class="bi bi-play-fill text-3xl ml-1"></i>
+                                        </div>
+                                    </button>
+
+                                    <!-- Watch Status -->
+                                    <div class="absolute bottom-3 left-3">
+                                        <span
+                                            class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase rounded border border-white/20">Video
+                                            Story</span>
+                                    </div>
+                                </div>
+
+                                <!-- Student Info -->
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-full border-2 border-[#edcf9c] p-0.5">
                                             <img src="https://randomuser.me/api/portraits/women/68.jpg"
-                                                alt="Anita Verma"
-                                                class="w-full h-full rounded-full object-cover border-2 border-white">
+                                                class="w-full h-full rounded-full object-cover" alt="Anita Verma">
                                         </div>
                                         <div>
-                                            <h4 class="font-bold text-gray-900">Anita Verma</h4>
-                                            <p class="text-xs text-[#8b2025] font-medium">Online Yoga Teacher, Bangalore
-                                            </p>
+                                            <h4 class="font-bold text-gray-900 text-sm">Anita Verma</h4>
+                                            <p
+                                                class="text-[10px] text-[#8b2025] font-semibold uppercase tracking-wider">
+                                                Online Yoga Teacher</p>
                                         </div>
                                     </div>
-
-                                    <div class="flex gap-0.5 text-yellow-400 mb-4 text-sm">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
+                                    <p class="text-gray-600 text-sm leading-relaxed italic line-clamp-3 mb-4">
+                                        "As a complete beginner, the step-by-step method built my confidence. Now I
+                                        teach 15 students online and work completely from home!"
+                                    </p>
+                                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                                        <div class="flex text-yellow-400 text-[10px]">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                        <div class="text-[10px] text-gray-400 font-medium flex items-center gap-1">
+                                            <i class="bi bi-patch-check-fill text-green-500"></i> Verified
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Video Testimonial 4 -->
+                        <div class="snap-center shrink-0 w-[85vw] md:w-auto h-full">
+                            <div
+                                class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+                                <!-- Video Thumbnail Area -->
+                                <div class="relative h-48 md:h-52 overflow-hidden bg-gray-900">
+                                    <img src="https://img.youtube.com/vi/_IsO_7pCskc/hqdefault.jpg"
+                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        alt="Vikram Singh's Story">
+                                    <div
+                                        class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300">
                                     </div>
 
-                                    <p class="text-gray-600 text-sm leading-relaxed italic mb-4 flex-grow">
-                                        "As a complete beginner, I was nervous about joining. But the step-by-step
-                                        teaching method and personal mentorship built my confidence. Now I teach 15
-                                        students online and work from home!"
-                                    </p>
+                                    <!-- Play Button Overlay -->
+                                    <button
+                                        class="absolute inset-0 flex items-center justify-center video-testimonial-btn"
+                                        data-video-src="https://www.youtube.com/embed/_IsO_7pCskc"
+                                        data-video-title="Vikram's Yoga Studio Journey">
+                                        <div
+                                            class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-white text-white group-hover:text-[#8b2025] shadow-lg">
+                                            <i class="bi bi-play-fill text-3xl ml-1"></i>
+                                        </div>
+                                    </button>
 
-                                    <div
-                                        class="pt-4 border-t border-gray-100 flex items-center gap-2 text-xs text-gray-400 font-medium">
-                                        <i class="bi bi-patch-check-fill text-green-500"></i> Verified Student
+                                    <!-- Watch Status -->
+                                    <div class="absolute bottom-3 left-3">
+                                        <span
+                                            class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase rounded border border-white/20">Video
+                                            Story</span>
+                                    </div>
+                                </div>
+
+                                <!-- Student Info -->
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-full border-2 border-[#edcf9c] p-0.5">
+                                            <img src="https://randomuser.me/api/portraits/men/46.jpg"
+                                                class="w-full h-full rounded-full object-cover" alt="Vikram Singh">
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-gray-900 text-sm">Vikram Singh</h4>
+                                            <p
+                                                class="text-[10px] text-[#8b2025] font-semibold uppercase tracking-wider">
+                                                Yoga Studio Owner, Lucknow</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600 text-sm leading-relaxed italic line-clamp-3 mb-4">
+                                        "The dual certification gave me credibility to open my own yoga therapy center.
+                                        Within 6 months, I had 50+ regular clients. Thank you YogKulam!"
+                                    </p>
+                                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                                        <div class="flex text-yellow-400 text-[10px]">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                        <div class="text-[10px] text-gray-400 font-medium flex items-center gap-1">
+                                            <i class="bi bi-patch-check-fill text-green-500"></i> Verified
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Testimonial 4 -->
+                        <!-- Video Testimonial 5 -->
                         <div class="snap-center shrink-0 w-[85vw] md:w-auto h-full">
                             <div
-                                class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl h-full flex flex-col">
-                                <div
-                                    class="absolute top-0 right-0 w-24 h-24 bg-[#8b2025]/5 rounded-bl-[100px] -mr-4 -mt-4 transition-all group-hover:bg-[#8b2025]/10">
-                                </div>
-                                <div class="absolute top-4 right-4 text-4xl text-[#8b2025]/10 font-serif">"</div>
-
-                                <div class="relative z-10 flex flex-col h-full">
-                                    <div class="flex items-center gap-4 mb-4">
-                                        <div
-                                            class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-br from-[#8b2025] to-[#edcf9c]">
-                                            <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Vikram Singh"
-                                                class="w-full h-full rounded-full object-cover border-2 border-white">
-                                        </div>
-                                        <div>
-                                            <h4 class="font-bold text-gray-900">Vikram Singh</h4>
-                                            <p class="text-xs text-[#8b2025] font-medium">Yoga Studio Owner, Lucknow</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="flex gap-0.5 text-yellow-400 mb-4 text-sm">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-
-                                    <p class="text-gray-600 text-sm leading-relaxed italic mb-4 flex-grow">
-                                        "The dual certification (ISO + AYUSH) gave me credibility to open my own yoga
-                                        therapy center. Within 6 months of completing the course, I had 50+ regular
-                                        clients. Thank you YogKulam!"
-                                    </p>
-
+                                class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+                                <!-- Video Thumbnail Area -->
+                                <div class="relative h-48 md:h-52 overflow-hidden bg-gray-900">
+                                    <img src="https://img.youtube.com/vi/R-W-P7VzV2I/hqdefault.jpg"
+                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        alt="Meera Patel's Story">
                                     <div
-                                        class="pt-4 border-t border-gray-100 flex items-center gap-2 text-xs text-gray-400 font-medium">
-                                        <i class="bi bi-patch-check-fill text-green-500"></i> Verified Student
+                                        class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300">
+                                    </div>
+
+                                    <!-- Play Button Overlay -->
+                                    <button
+                                        class="absolute inset-0 flex items-center justify-center video-testimonial-btn"
+                                        data-video-src="https://www.youtube.com/embed/R-W-P7VzV2I"
+                                        data-video-title="Meera's Corporate Yoga Career">
+                                        <div
+                                            class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-white text-white group-hover:text-[#8b2025] shadow-lg">
+                                            <i class="bi bi-play-fill text-3xl ml-1"></i>
+                                        </div>
+                                    </button>
+
+                                    <!-- Watch Status -->
+                                    <div class="absolute bottom-3 left-3">
+                                        <span
+                                            class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase rounded border border-white/20">Video
+                                            Story</span>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <!-- Testimonial 5 -->
-                        <div class="snap-center shrink-0 w-[85vw] md:w-auto h-full">
-                            <div
-                                class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl h-full flex flex-col">
-                                <div
-                                    class="absolute top-0 right-0 w-24 h-24 bg-[#8b2025]/5 rounded-bl-[100px] -mr-4 -mt-4 transition-all group-hover:bg-[#8b2025]/10">
-                                </div>
-                                <div class="absolute top-4 right-4 text-4xl text-[#8b2025]/10 font-serif">"</div>
-
-                                <div class="relative z-10 flex flex-col h-full">
-                                    <div class="flex items-center gap-4 mb-4">
-                                        <div
-                                            class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-br from-[#8b2025] to-[#edcf9c]">
+                                <!-- Student Info -->
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-full border-2 border-[#edcf9c] p-0.5">
                                             <img src="https://randomuser.me/api/portraits/women/12.jpg"
-                                                alt="Meera Patel"
-                                                class="w-full h-full rounded-full object-cover border-2 border-white">
+                                                class="w-full h-full rounded-full object-cover" alt="Meera Patel">
                                         </div>
                                         <div>
-                                            <h4 class="font-bold text-gray-900">Meera Patel</h4>
-                                            <p class="text-xs text-[#8b2025] font-medium">Corporate Yoga Instructor,
-                                                Pune</p>
+                                            <h4 class="font-bold text-gray-900 text-sm">Meera Patel</h4>
+                                            <p
+                                                class="text-[10px] text-[#8b2025] font-semibold uppercase tracking-wider">
+                                                Corporate Yoga Instructor</p>
                                         </div>
                                     </div>
-
-                                    <div class="flex gap-0.5 text-yellow-400 mb-4 text-sm">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-
-                                    <p class="text-gray-600 text-sm leading-relaxed italic mb-4 flex-grow">
-                                        "Life-changing experience! Not just the curriculum, but the community support
-                                        and lifetime access to masterclasses makes this program worth every penny. I'm
-                                        now teaching at two corporate offices."
+                                    <p class="text-gray-600 text-sm leading-relaxed italic line-clamp-3 mb-4">
+                                        "Life-changing experience! The community support and lifetime access to
+                                        masterclasses makes this program worth every penny. I'm now teaching at two
+                                        corporate offices."
                                     </p>
-
-                                    <div
-                                        class="pt-4 border-t border-gray-100 flex items-center gap-2 text-xs text-gray-400 font-medium">
-                                        <i class="bi bi-patch-check-fill text-green-500"></i> Verified Student
+                                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                                        <div class="flex text-yellow-400 text-[10px]">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                        <div class="text-[10px] text-gray-400 font-medium flex items-center gap-1">
+                                            <i class="bi bi-patch-check-fill text-green-500"></i> Verified
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Testimonial 6 -->
+                        <!-- Video Testimonial 6 -->
                         <div class="snap-center shrink-0 w-[85vw] md:w-auto h-full">
                             <div
-                                class="group bg-white rounded-2xl p-6 shadow-lg border border-gray-100 relative overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-xl h-full flex flex-col">
-                                <div
-                                    class="absolute top-0 right-0 w-24 h-24 bg-[#8b2025]/5 rounded-bl-[100px] -mr-4 -mt-4 transition-all group-hover:bg-[#8b2025]/10">
-                                </div>
-                                <div class="absolute top-4 right-4 text-4xl text-[#8b2025]/10 font-serif">"</div>
+                                class="group bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
+                                <!-- Video Thumbnail Area -->
+                                <div class="relative h-48 md:h-52 overflow-hidden bg-gray-900">
+                                    <img src="https://img.youtube.com/vi/W8u_D5AOkVw/hqdefault.jpg"
+                                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                        alt="Suresh Reddy's Story">
+                                    <div
+                                        class="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition-colors duration-300">
+                                    </div>
 
-                                <div class="relative z-10 flex flex-col h-full">
-                                    <div class="flex items-center gap-4 mb-4">
+                                    <!-- Play Button Overlay -->
+                                    <button
+                                        class="absolute inset-0 flex items-center justify-center video-testimonial-btn"
+                                        data-video-src="https://www.youtube.com/embed/W8u_D5AOkVw"
+                                        data-video-title="Suresh's Professional Growth">
                                         <div
-                                            class="w-14 h-14 rounded-full p-0.5 bg-gradient-to-br from-[#8b2025] to-[#edcf9c]">
-                                            <img src="https://randomuser.me/api/portraits/men/52.jpg" alt="Suresh Reddy"
-                                                class="w-full h-full rounded-full object-cover border-2 border-white">
+                                            class="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-white text-white group-hover:text-[#8b2025] shadow-lg">
+                                            <i class="bi bi-play-fill text-3xl ml-1"></i>
+                                        </div>
+                                    </button>
+
+                                    <!-- Watch Status -->
+                                    <div class="absolute bottom-3 left-3">
+                                        <span
+                                            class="px-2 py-1 bg-white/20 backdrop-blur-sm text-white text-[10px] font-bold uppercase rounded border border-white/20">Video
+                                            Story</span>
+                                    </div>
+                                </div>
+
+                                <!-- Student Info -->
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <div class="flex items-center gap-3 mb-4">
+                                        <div class="w-10 h-10 rounded-full border-2 border-[#edcf9c] p-0.5">
+                                            <img src="https://randomuser.me/api/portraits/men/52.jpg"
+                                                class="w-full h-full rounded-full object-cover" alt="Suresh Reddy">
                                         </div>
                                         <div>
-                                            <h4 class="font-bold text-gray-900">Suresh Reddy</h4>
-                                            <p class="text-xs text-[#8b2025] font-medium">Yoga Therapist, Hyderabad</p>
+                                            <h4 class="font-bold text-gray-900 text-sm">Suresh Reddy</h4>
+                                            <p
+                                                class="text-[10px] text-[#8b2025] font-semibold uppercase tracking-wider">
+                                                Yoga Therapist, Hyderabad</p>
                                         </div>
                                     </div>
-
-                                    <div class="flex gap-0.5 text-yellow-400 mb-4 text-sm">
-                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                                            class="bi bi-star-fill"></i>
-                                    </div>
-
-                                    <p class="text-gray-600 text-sm leading-relaxed italic mb-4 flex-grow">
-                                        "The dual certification (ISO + AYUSH) gave me credibility to open my own yoga
-                                        therapy center. Within 6 months of completing the course, I had 50+ regular
-                                        clients. Thank you YogKulam!"
+                                    <p class="text-gray-600 text-sm leading-relaxed italic line-clamp-3 mb-4">
+                                        "The dual certification gave me credibility to open my own center. Within 6
+                                        months, I had 50+ regular clients. The transformation has been incredible!"
                                     </p>
-
-                                    <div
-                                        class="pt-4 border-t border-gray-100 flex items-center gap-2 text-xs text-gray-400 font-medium">
-                                        <i class="bi bi-patch-check-fill text-green-500"></i> Verified Student
+                                    <div class="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
+                                        <div class="flex text-yellow-400 text-[10px]">
+                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                                                class="bi bi-star-fill"></i>
+                                        </div>
+                                        <div class="text-[10px] text-gray-400 font-medium flex items-center gap-1">
+                                            <i class="bi bi-patch-check-fill text-green-500"></i> Verified
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -4781,18 +4908,19 @@
                 }
             };
 
-            const initHeroVideoModal = () => {
-                const openBtn = document.getElementById('heroVideoOpen');
+            const initVideoModals = () => {
+                const heroOpenBtn = document.getElementById('heroVideoOpen');
+                const testimonialBtns = document.querySelectorAll('.video-testimonial-btn');
                 const modal = document.getElementById('heroVideoModal');
                 const closeBtn = document.getElementById('heroVideoClose');
                 const frame = document.getElementById('heroVideoFrame');
                 const title = document.getElementById('heroVideoTitle');
 
-                if (!openBtn || !modal || !closeBtn || !frame || !title) return;
+                if (!modal || !closeBtn || !frame || !title) return;
 
-                const open = () => {
-                    const src = openBtn.getAttribute('data-video-src') || '';
-                    const videoTitle = openBtn.getAttribute('data-video-title') || 'Video';
+                const open = (btn) => {
+                    const src = btn.getAttribute('data-video-src') || '';
+                    const videoTitle = btn.getAttribute('data-video-title') || 'Video';
 
                     title.textContent = videoTitle;
                     frame.setAttribute('title', videoTitle);
@@ -4809,10 +4937,16 @@
                     modal.setAttribute('aria-hidden', 'true');
                     frame.setAttribute('src', '');
                     document.body.classList.remove('overflow-hidden');
-                    openBtn.focus();
+                    // Return focus to the button that opened it if needed, 
+                    // though for hero video it might have moved.
                 };
 
-                openBtn.addEventListener('click', open);
+                if (heroOpenBtn) heroOpenBtn.addEventListener('click', () => open(heroOpenBtn));
+
+                testimonialBtns.forEach(btn => {
+                    btn.addEventListener('click', () => open(btn));
+                });
+
                 closeBtn.addEventListener('click', close);
 
                 // Close on backdrop click
@@ -4828,7 +4962,7 @@
                 });
             };
 
-            document.addEventListener('DOMContentLoaded', initHeroVideoModal);
+            document.addEventListener('DOMContentLoaded', initVideoModals);
         })();
     </script>
     <!-- Exit Intent Modal -->
