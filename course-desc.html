@@ -15,9 +15,9 @@
 
     <!-- Bootstrap Icons (keep) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
-
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lottie-web@5.12.2/build/player/lottie.min.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -30,6 +30,20 @@
                         primary: '#8b2025',
                         secondary: '#2e3d6f',
                         tertiary: '#edcf9c',
+                    },
+                    fontSize: {
+                        'xs': 'clamp(0.625rem, 0.25vw + 0.5625rem, 0.75rem)',
+                        'sm': 'clamp(0.75rem, 0.25vw + 0.6875rem, 0.875rem)',
+                        'base': 'clamp(0.875rem, 0.25vw + 0.8125rem, 0.9375rem)',
+                        'lg': 'clamp(0.9375rem, 0.5vw + 0.875rem, 1.0625rem)',
+                        'xl': 'clamp(1rem, 0.75vw + 0.9375rem, 1.1875rem)',
+                        '2xl': 'clamp(1.125rem, 1vw + 1rem, 1.375rem)',
+                        'h6': 'clamp(0.9375rem, 0.75vw + 0.375rem, 1.125rem)',
+                        'h5': 'clamp(1rem, 1vw + 0.375rem, 1.25rem)',
+                        'h4': 'clamp(1.125rem, 1.5vw + 0.5rem, 1.5rem)',
+                        'h3': 'clamp(1.25rem, 2vw + 0.5rem, 1.75rem)',
+                        'h2': 'clamp(1.5rem, 2.5vw + 0.625rem, 2rem)',
+                        'h1': 'clamp(1.75rem, 3vw + 0.75rem, 2.5rem)',
                     }
                 }
             }
@@ -210,14 +224,151 @@
             background: #000;
         }
 
-        .video-loading::after {
+        #pricing-carousel .owl-item {
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        #pricing-carousel .owl-item.active {
+            opacity: 1;
+        }
+
+        /* ================================
+           PREMIUM ANIMATION STYLES
+           ================================ */
+
+        /* Mask Reveal Base Classes */
+        .section-reveal-mask {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mask-reveal-content {
+            clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+        }
+
+        /* Hover Micro-Interactions */
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+        }
+
+        .hover-scale {
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            will-change: transform;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.02);
+        }
+
+        .hover-glow {
+            transition: box-shadow 0.4s ease;
+            will-change: box-shadow;
+        }
+
+        .hover-glow:hover {
+            box-shadow: 0 20px 40px rgba(139, 32, 37, 0.15);
+        }
+
+        /* Button Premium Hover */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: color 0.3s ease;
+            will-change: transform, box-shadow;
+        }
+
+        .btn-premium::before {
             content: '';
-            width: 40px;
-            height: 40px;
-            border: 3px solid rgba(255, 255, 255, 0.2);
-            border-top-color: #8b2025;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .btn-premium:hover::before {
+            opacity: 1;
+        }
+
+        /* Card Reveal Animations */
+        .card-reveal {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+        }
+
+        .card-reveal::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transform: translateX(-100%);
+        }
+
+        /* GPU Acceleration */
+        .gpu-accelerated {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+        }
+
+        /* Smooth Scrolling & Performance Optimizations */
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            backface-visibility: hidden;
+        }
+
+        /* Reduced Motion Respect */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* Button & Link Performance */
+        button,
+        a,
+        input {
+            will-change: auto;
+        }
+
+        button:hover,
+        a:hover,
+        input:focus {
+            will-change: transform, box-shadow;
+        }
+
+        /* Scrollbar Styling for Chrome */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #8b2025;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c93648;
         }
     </style>
     <!-- Navigation -->
@@ -267,12 +418,14 @@
             class="hero-section bg-[#fffdf892] md:pt-5 md:pb-16 sm:py-28 relative overflow-hidden flex justify-center items-center  min-h-[540px] md:min-h-[600px] ">
             <img src="img/assets/abstract-lines/Line 1.svg"
                 class="absolute top-0 left-0 w-[800px] h-auto opacity-20 pointer-events-none"
-                style="transform: rotate(-15deg) translate(-10%, -20%);" alt="" role="presentation" loading="eager">
+                style="transform: rotate(-15deg) translate(-10%, -20%);" data-parallax data-parallax-speed="0.25" alt=""
+                role="presentation" loading="eager">
 
             <!-- Line 5 - Top Right -->
             <img src="img/assets/abstract-lines/Line 5.svg"
                 class="absolute top-0 right-0 w-[700px] h-auto opacity-15 pointer-events-none"
-                style="transform: rotate(40deg) translate(15%, -1%);" alt="" role="presentation" loading="eager">
+                style="transform: rotate(40deg) translate(15%, -1%);" data-parallax data-parallax-speed="0.16" alt=""
+                role="presentation" loading="eager">
             <div class="max-w-[1140px] w-full lg:px-4 relative z-10">
                 <div
                     class="lg:border border-gray-200 md:rounded-3xl shadow-2xl py-20 px-4 sm:p-6 md:p-12 relative overflow-hidden bg-white bg-center bg-no-repeat">
@@ -296,17 +449,15 @@
                             class="inline-block px-2 sm:px-3 py-1 rounded-full font-semibold text-[10px] sm:text-sm mb-3 md:mb-4 border tracking-wide uppercase text-center bg-[#edcf9c] text-[#8b2025] border-[#d4b886]">
                             Post Graduate Diploma in Yoga Therapy In Lucknow
                         </span>
-                        <h1 class="text-gray-900 font-bold mb-3 md:mb-4 leading-tight tracking-tight"
-                            style="font-size: var(--text-h1);">
-                            <span class="hero-title block text-white" style="font-size: var(--text-h1);">Turn
+                        <h1 class="text-gray-900 font-bold mb-3 md:mb-4 leading-tight tracking-tight text-h1">
+                            <span class="hero-title block text-white">Turn
                                 Your Love for Yoga into a</span>
-                            <span class="hero-title block mt-1 md:mt-2 text-white font-semibold"
-                                style="font-size: var(--text-h1);">₹50,000–₹1
+                            <span class="hero-title block mt-1 md:mt-2 text-white font-semibold">₹50,000–₹1
                                 Lakh/Month Career</span>
                         </h1>
 
                         <div class="flex justify-center mb-6 md:mb-10">
-                            <button id="heroVideoOpen" type="button"
+                            <button id="heroVideoOpen" type="button" data-cursor="pointer"
                                 class="group relative inline-flex items-center justify-center md:w-20 md:h-20 rounded-lg transition-all overflow-hidden"
                                 data-video-src="https://www.youtube.com/embed/snPBv1-igjM"
                                 data-video-title="Course Introduction" aria-haspopup="dialog"
@@ -324,59 +475,49 @@
                             class="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 md:gap-4 w-full max-w-4xl mb-4 md:mb-10 text-left">
                             <div
                                 class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
-                                <div class="text-white uppercase tracking-wider mb-1"
-                                    style="font-size: var(--text-xs);">Duration
+                                <div class="text-white uppercase tracking-wider mb-1 text-xs">Duration
                                 </div>
-                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2"
-                                    style="font-size: var(--text-base);">
-                                    <i class="bi bi-clock text-white" style="font-size: var(--text-base);"></i> <span
-                                        style="font-size: var(--text-base);">1 Year</span>
+                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2 text-base">
+                                    <i class="bi bi-clock text-white"></i> <span>1 Year</span>
                                 </div>
                             </div>
                             <div
                                 class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
-                                <div class="text-white uppercase tracking-wider mb-1"
-                                    style="font-size: var(--text-xs);">Mode
+                                <div class="text-white uppercase tracking-wider mb-1 text-xs">Mode
                                 </div>
-                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2"
-                                    style="font-size: var(--text-base);">
-                                    <i class="bi bi-laptop text-white" style="font-size: var(--text-base);"></i> <span
-                                        style="font-size: var(--text-base);">Online / Hybrid</span>
+                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2 text-base">
+                                    <i class="bi bi-laptop text-white"></i> <span>Online / Hybrid</span>
                                 </div>
                             </div>
                             <div
                                 class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
-                                <div class="text-white uppercase tracking-wider mb-1"
-                                    style="font-size: var(--text-xs);">Language
+                                <div class="text-white uppercase tracking-wider mb-1 text-xs">Language
                                 </div>
-                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2"
-                                    style="font-size: var(--text-base);">
-                                    <i class="bi bi-translate text-white" style="font-size: var(--text-base);"></i>
-                                    <span style="font-size: var(--text-base);">Hindi / English</span>
+                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2 text-base">
+                                    <i class="bi bi-translate text-white"></i>
+                                    <span>Hindi / English</span>
                                 </div>
                             </div>
                             <div
                                 class="bg-white/30 backdrop-blur-sm p-2 sm:p-3 md:p-4 rounded-lg md:rounded-xl border border-gray-100/25 shadow-sm hover:shadow-md transition-all">
-                                <div class="text-white uppercase tracking-wider mb-1"
-                                    style="font-size: var(--text-xs);">
+                                <div class="text-white uppercase tracking-wider mb-1 text-xs">
                                     Affiliations
                                 </div>
-                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2"
-                                    style="font-size: var(--text-base);">
-                                    <i class="bi bi-patch-check text-white" style="font-size: var(--text-base);"></i>
-                                    <span style="font-size: var(--text-base);">ISO + Govt.</span>
+                                <div class="font-bold text-white flex items-center gap-1 sm:gap-2 text-base">
+                                    <i class="bi bi-patch-check text-white"></i>
+                                    <span>ISO + Govt.</span>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="flex flex-wrap justify-center items-center sm:gap-4 md:gap-6 font-medium text-white md:pb-1 bg-black/30 rounded-lg px-4 py-2"
-                            style="font-size: var(--text-sm);">
+                        <div
+                            class="flex flex-wrap justify-center items-center sm:gap-4 md:gap-6 font-medium text-white md:pb-1 bg-black/30 rounded-lg px-4 py-2 text-sm">
                             <div class="flex items-center gap-2">
                                 <i class="bi bi-shield-fill-check text-white"></i>
                                 <span>Trusted By 40,381+ Students</span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <div class="flex text-yellow-400" style="font-size: var(--text-xs);">
+                                <div class="flex text-yellow-400 text-xs">
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
@@ -388,7 +529,8 @@
                         </div>
                     </div>
                     <img src="img/assets/abstract-red-wavy-business-background.png"
-                        class="absolute bottom-0 lg:-bottom-16 left-0 w-full h-auto pointer-events-none z-[1]">
+                        class="absolute bottom-0 lg:-bottom-16 left-0 w-full h-auto pointer-events-none z-[1]"
+                        data-parallax data-parallax-speed="0.18">
                 </div>
         </section>
 
@@ -438,15 +580,15 @@
                 <!-- Section Header -->
                 <div class="text-center mb-10 max-w-3xl mx-auto">
                     <div class="relative inline-block mb-4">
-                        <h2 class="leading-tight font-serif font-bold text-gray-900 mt-3 relative z-10 transition-colors"
-                            style="font-size: var(--text-h2);">
+                        <h2
+                            class="leading-tight font-serif font-bold text-gray-900 mt-3 relative z-10 transition-colors text-h2">
                             Who Is This Course For?
                         </h2>
                         <img src="img/assets/handdrawn-underline/Underline_01.svg"
                             class="absolute bottom-[-50px] left-0 w-full h-auto -z-0 opacity-60"
                             style="transform: rotate(-1deg);">
                     </div>
-                    <p class="leading-relaxed font-serif text-gray-600 italic" style="font-size: var(--text-lg);">
+                    <p class="leading-relaxed font-serif text-gray-600 italic text-lg">
                         "I Feel Exactly Like This…"
                     </p>
                 </div>
@@ -463,10 +605,10 @@
                             </div>
                         </div>
                         <div class="absolute bottom-6 left-6 right-6">
-                            <h3 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h4);">Stuck in a 9-5
+                            <h3 class="font-bold text-gray-900 mb-2 text-h4">Stuck in a 9-5
                                 Job, Craving
                                 Meaningful Work?</h3>
-                            <p class="text-gray-700 leading-relaxed" style="font-size: var(--text-sm);">Transform your
+                            <p class="text-gray-700 leading-relaxed text-sm">Transform your
                                 daily grind into a life of
                                 purpose and holistic wellness.</p>
                         </div>
@@ -482,11 +624,11 @@
                                     class="w-8 h-8">
                             </div>
                             <div>
-                                <h3 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Dealing with
+                                <h3 class="font-bold text-gray-900 mb-2 text-h5">Dealing with
                                     Fatigue,
                                     Stress,
                                     Back Pain, High BP, or Thyroid Issues?</h3>
-                                <p class="text-gray-600 leading-relaxed" style="font-size: var(--text-sm);">Heal your
+                                <p class="text-gray-600 leading-relaxed text-sm">Heal your
                                     own body with Yoga Therapy
                                     while
                                     learning to guide others.</p>
@@ -502,10 +644,10 @@
                             <img src="img/assets/icons/manga_9852180.svg" alt="Stuck in 9-5 Job" class="w-8 h-8">
                         </div>
                         <div>
-                            <h3 class="font-bold text-white mb-2" style="font-size: var(--text-h5);">You Love Yoga but
+                            <h3 class="font-bold text-white mb-2 text-h5">You Love Yoga but
                                 Feel Shy About Teaching?
                             </h3>
-                            <p class="text-white/90 leading-relaxed" style="font-size: var(--text-sm);">Our step-by-step
+                            <p class="text-white/90 leading-relaxed text-sm">Our step-by-step
                                 method builds your voice
                                 and
                                 confidence from Day 1.</p>
@@ -520,11 +662,11 @@
                                 class="w-6 h-6">
                         </div>
                         <div>
-                            <h3 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Confused About
+                            <h3 class="font-bold text-gray-900 mb-2 text-h5">Confused About
                                 Certificates and
                                 Recognition?
                             </h3>
-                            <p class="text-gray-600 leading-relaxed" style="font-size: var(--text-sm);">Get valid, dual
+                            <p class="text-gray-600 leading-relaxed text-sm">Get valid, dual
                                 certification: Yoga
                                 Alliance +
                                 AYUSH (Govt of India).</p>
@@ -542,10 +684,10 @@
                                 <img src="img/assets/icons/money-bag_2108625.svg" alt="Earning Potential"
                                     class="w-6 h-6">
                             </div>
-                            <h3 class="font-bold text-gray-900 mb-2" style="font-size: var(--text-h5);">Dreaming of
+                            <h3 class="font-bold text-gray-900 mb-2 text-h5">Dreaming of
                                 Earning ₹50k–₹1
                                 Lakh/Month?</h3>
-                            <p class="text-gray-700 leading-relaxed" style="font-size: var(--text-base);">We teach you
+                            <p class="text-gray-700 leading-relaxed text-base">We teach you
                                 the business of yoga: online
                                 classes, therapy clients, and studio setup.</p>
                         </div>
@@ -564,11 +706,11 @@
                                 <img src="img/assets/icons/online_5517014.svg" alt="Work from Home" class="w-6 h-6">
                             </div>
                             <div>
-                                <h3 class="font-bold text-white mb-2" style="font-size: var(--text-h5);">Seeking a
+                                <h3 class="font-bold text-white mb-2 text-h5">Seeking a
                                     Flexible Work-from-Home
                                     Opportunity?
                                 </h3>
-                                <p class="text-white/90 leading-relaxed" style="font-size: var(--text-sm);">Master the
+                                <p class="text-white/90 leading-relaxed text-sm">Master the
                                     art of online teaching and
                                     build
                                     a global student base.</p>
@@ -588,13 +730,12 @@
                         </div>
 
                         <div class="relative z-10">
-                            <p class="font-serif font-bold text-white mb-4 leading-tight"
-                                style="font-size: var(--text-2xl);">
+                            <p class="font-serif font-bold text-white mb-4 leading-tight text-h3">
                                 If even <span
                                     class="bg-[#edcf9c] text-[#8b2025] px-2 py-0 rounded transform -skew-x-6 inline-block">ONE</span>
                                 line feels like YOU
                             </p>
-                            <p class="text-white/90 font-medium tracking-wide" style="font-size: var(--text-xl);">
+                            <p class="text-white/90 font-medium tracking-wide text-xl">
                                 → This PGDYT is calling your name
                             </p>
                         </div>
@@ -604,10 +745,10 @@
                 <!-- The Big Promise Section -->
                 <div class="max-w-6xl mx-auto mb-12 md:mb-24 px-4">
                     <div class="text-center mb-8 md:mb-12">
-                        <h3 class="font-serif font-bold text-gray-900 mb-4" style="font-size: var(--text-h2);">
+                        <h3 class="font-serif font-bold text-gray-900 mb-4 text-h2">
                             The Big Promise
                         </h3>
-                        <p class="text-gray-600 max-w-2xl mx-auto" style="font-size: var(--text-xl);">In just 12 months,
+                        <p class="text-gray-600 max-w-2xl mx-auto text-xl">In just 12 months,
                             we don't just teach you
                             yoga - we transform your entire career and life path.</p>
                     </div>
@@ -623,18 +764,18 @@
                                         class="bi bi-heart-pulse-fill text-[#8b2025] text-xl md:text-2xl group-hover:text-white transition-colors duration-300"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900 mb-1 md:mb-2" style="font-size: var(--text-h5);">
+                                    <h4 class="font-bold text-gray-900 mb-1 md:mb-2 text-h5">
                                         Heal
                                         Chronic Pain & Stress</h4>
-                                    <p class="text-gray-600 mb-2 md:mb-3" style="font-size: var(--text-base);">Master
+                                    <p class="text-gray-600 mb-2 md:mb-3 text-base">Master
                                         the art of
                                         healing yourself and others from
                                         lifestyle disorders.</p>
                                     <div class="bg-gray-50 rounded-lg p-2 md:p-3 border border-gray-100">
-                                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1"
-                                            style="font-size: var(--text-xs);">How
+                                        <span
+                                            class="font-bold text-gray-400 uppercase tracking-wider block mb-1 text-xs">How
                                             We Do It</span>
-                                        <p class="font-medium text-[#8b2025]" style="font-size: var(--text-sm);">40% of
+                                        <p class="font-medium text-[#8b2025] text-sm">40% of
                                             syllabus is pure <span class="bg-[#edcf9c]/30 px-1 rounded">Yoga
                                                 Therapy</span></p>
                                     </div>
@@ -652,19 +793,19 @@
                                         class="bi bi-person-video3 text-[#8b2025] text-xl md:text-2xl group-hover:text-white transition-colors duration-300"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900 mb-1 md:mb-2" style="font-size: var(--text-h5);">
+                                    <h4 class="font-bold text-gray-900 mb-1 md:mb-2 text-h5">
                                         Teach
                                         with Unshakable Confidence
                                     </h4>
-                                    <p class="text-gray-600 mb-2 md:mb-3" style="font-size: var(--text-base);">Stand in
+                                    <p class="text-gray-600 mb-2 md:mb-3 text-base">Stand in
                                         front of
                                         any class and deliver world-class
                                         sessions without hesitation.</p>
                                     <div class="bg-gray-50 rounded-lg p-2 md:p-3 border border-gray-100">
-                                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1"
-                                            style="font-size: var(--text-xs);">How
+                                        <span
+                                            class="font-bold text-gray-400 uppercase tracking-wider block mb-1 text-xs">How
                                             We Do It</span>
-                                        <p class="font-medium text-[#8b2025]" style="font-size: var(--text-sm);">
+                                        <p class="font-medium text-[#8b2025] text-sm">
                                             Step-by-step method + <span class="bg-[#edcf9c]/30 px-1 rounded">Lifetime
                                                 Masterclasses</span></p>
                                     </div>
@@ -682,17 +823,17 @@
                                         class="bi bi-currency-rupee text-[#8b2025] text-xl md:text-2xl group-hover:text-white transition-colors duration-300"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900 mb-1 md:mb-2" style="font-size: var(--text-h5);">
+                                    <h4 class="font-bold text-gray-900 mb-1 md:mb-2 text-h5">
                                         ₹50k–₹1
                                         Lakh/Month</h4>
-                                    <p class="text-gray-600 mb-2 md:mb-3" style="font-size: var(--text-base);">Build a
+                                    <p class="text-gray-600 mb-2 md:mb-3 text-base">Build a
                                         sustainable career teaching online, offline,
                                         or 1-on-1.</p>
                                     <div class="bg-gray-50 rounded-lg p-2 md:p-3 border border-gray-100">
-                                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1"
-                                            style="font-size: var(--text-xs);">How
+                                        <span
+                                            class="font-bold text-gray-400 uppercase tracking-wider block mb-1 text-xs">How
                                             We Do It</span>
-                                        <p class="font-medium text-[#8b2025]" style="font-size: var(--text-sm);">Career
+                                        <p class="font-medium text-[#8b2025] text-sm">Career
                                             Guidance + <span class="bg-[#edcf9c]/30 px-1 rounded">Lifetime Job
                                                 Support</span></p>
                                     </div>
@@ -710,29 +851,26 @@
                                         class="bi bi-award-fill text-[#8b2025] text-xl md:text-2xl group-hover:text-white transition-colors duration-300"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-bold text-gray-900 mb-1 md:mb-2" style="font-size: var(--text-h5);">
+                                    <h4 class="font-bold text-gray-900 mb-1 md:mb-2 text-h5">
                                         Get
                                         Govt-Recognized Certified</h4>
-                                    <p class="text-gray-600 mb-2 md:mb-3" style="font-size: var(--text-base);">Earn a
+                                    <p class="text-gray-600 mb-2 md:mb-3 text-base">Earn a
                                         diploma
                                         that is respected globally and
                                         recognized by the government.</p>
                                     <div class="bg-gray-50 rounded-lg p-2 md:p-3 border border-gray-100">
-                                        <span class="font-bold text-gray-400 uppercase tracking-wider block mb-1"
-                                            style="font-size: var(--text-xs);">How
+                                        <span
+                                            class="font-bold text-gray-400 uppercase tracking-wider block mb-1 text-xs">How
                                             We Do It</span>
                                         <div class="flex flex-wrap gap-2 mt-1">
                                             <span
-                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600"
-                                                style="font-size: var(--text-xs);">ISO
+                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600 text-xs">ISO
                                                 Certified</span>
                                             <span
-                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600"
-                                                style="font-size: var(--text-xs);">IYA
+                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600 text-xs">IYA
                                                 Member</span>
                                             <span
-                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600"
-                                                style="font-size: var(--text-xs);">Yoga
+                                                class="font-bold bg-white border border-gray-200 px-2 py-0.5 rounded text-gray-600 text-xs">Yoga
                                                 Alliance</span>
                                         </div>
                                     </div>
@@ -744,7 +882,7 @@
 
                 <!-- NEW SECTION: Why Yogkulam PGDYT is Different -->
                 <div class="text-center mb-12">
-                    <h3 class="font-serif font-bold text-gray-900 mt-2" style="font-size: var(--text-h2);">
+                    <h3 class="font-serif font-bold text-gray-900 mt-2 text-h2">
                         Why <span class="text-[#8b2025] relative inline-block">
                             400+ Students
                             <svg class="absolute w-full h-3 -bottom-1 left-0 text-[#edcf9c] -z-10" viewBox="0 0 100 10"
@@ -753,7 +891,7 @@
                             </svg>
                         </span> Chose Yogkulam
                     </h3>
-                    <p class="text-gray-600 mt-6 max-w-2xl mx-auto font-medium" style="font-size: var(--text-lg);">Don't
+                    <p class="text-gray-600 mt-6 max-w-2xl mx-auto font-medium text-lg">Don't
                         settle for less. Compare
                         the value before you decide.</p>
                 </div>
@@ -771,27 +909,25 @@
                             <table class="w-full min-w-[800px] border-collapse">
                                 <thead>
                                     <tr>
-                                        <th class="px-8 py-8 text-left text-gray-500 font-bold w-1/4 uppercase tracking-wider bg-gray-50/50 border-b border-gray-100"
-                                            style="font-size: var(--text-sm);">
+                                        <th
+                                            class="px-8 py-8 text-left text-gray-500 font-bold w-1/4 uppercase tracking-wider bg-gray-50/50 border-b border-gray-100 text-sm">
                                             Features
                                         </th>
-                                        <th class="px-8 py-8 text-center bg-[#8b2025] text-white font-bold w-1/3 relative overflow-hidden shadow-lg transform scale-y-105 origin-top z-10 rounded-b-xl"
-                                            style="font-size: var(--text-xl);">
+                                        <th
+                                            class="px-8 py-8 text-center bg-[#8b2025] text-white font-bold w-1/3 relative overflow-hidden shadow-lg transform scale-y-105 origin-top z-10 rounded-b-xl text-xl">
                                             <div class="absolute top-0 right-0 p-2 opacity-10">
-                                                <i class="bi bi-trophy-fill transform rotate-12"
-                                                    style="font-size: var(--text-h1);"></i>
+                                                <i class="bi bi-trophy-fill transform rotate-12 text-h1"></i>
                                             </div>
                                             <!-- Best Choice Badge -->
-                                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-[#edcf9c] text-[#8b2025] font-extrabold px-6 py-1.5 rounded-b-lg uppercase tracking-widest shadow-md z-10 border-x border-b border-[#d4b886]"
-                                                style="font-size: var(--text-xs);">
+                                            <div
+                                                class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-[#edcf9c] text-[#8b2025] font-extrabold px-6 py-1.5 rounded-b-lg uppercase tracking-widest shadow-md z-10 border-x border-b border-[#d4b886] text-xs">
                                                 Best Choice
                                             </div>
-                                            <span class="relative z-10 mt-4 block font-serif"
-                                                style="font-size: var(--text-2xl);">Yogkulam
+                                            <span class="relative z-10 mt-4 block font-serif text-2xl">Yogkulam
                                                 PGDYT</span>
                                         </th>
-                                        <th class="px-8 py-8 text-center text-gray-700 font-bold w-1/3 uppercase tracking-wider bg-gray-50 border-b border-gray-200"
-                                            style="font-size: var(--text-sm);">
+                                        <th
+                                            class="px-8 py-8 text-center text-gray-700 font-bold w-1/3 uppercase tracking-wider bg-gray-50 border-b border-gray-200 text-sm">
                                             Other Schools
                                         </th>
                                     </tr>
@@ -799,23 +935,21 @@
                                 <tbody class="divide-y divide-gray-100">
                                     <!-- Row 1: Certification -->
                                     <tr class="group hover:bg-gray-50 transition-colors">
-                                        <td class="px-8 py-6 font-bold text-gray-800 border-r border-gray-50"
-                                            style="font-size: var(--text-lg);">
+                                        <td class="px-8 py-6 font-bold text-gray-800 border-r border-gray-50 text-lg">
                                             Certification</td>
                                         <td
                                             class="px-8 py-6 text-center bg-[#fffafa] border-x-2 border-[#8b2025]/10 relative">
                                             <div class="absolute inset-y-0 left-0 w-1 bg-[#8b2025]/5"></div>
                                             <div class="absolute inset-y-0 right-0 w-1 bg-[#8b2025]/5"></div>
                                             <div class="flex flex-col items-center gap-2">
-                                                <div class="font-bold text-[#8b2025] flex items-center justify-center gap-2"
-                                                    style="font-size: var(--text-xl);">
+                                                <div
+                                                    class="font-bold text-[#8b2025] flex items-center justify-center gap-2 text-xl">
                                                     <img src="img/assets/check.png" alt="Duration Icon"
                                                         class="w-12 h-12">
                                                     Dual Certification
                                                 </div>
                                                 <span
-                                                    class="text-[#8b2025] font-bold bg-[#8b2025]/10 px-3 py-1 rounded-full border border-[#8b2025]/20"
-                                                    style="font-size: var(--text-xs);">Yoga
+                                                    class="text-[#8b2025] font-bold bg-[#8b2025]/10 px-3 py-1 rounded-full border border-[#8b2025]/20 text-xs">Yoga
                                                     Alliance + AYUSH</span>
                                             </div>
                                         </td>
@@ -828,8 +962,7 @@
                                     </tr>
                                     <!-- Row 2: Duration -->
                                     <tr class="group hover:bg-gray-50 transition-colors">
-                                        <td class="px-8 py-6 font-bold text-gray-800 border-r border-gray-50"
-                                            style="font-size: var(--text-lg);">
+                                        <td class="px-8 py-6 font-bold text-gray-800 border-r border-gray-50 text-lg">
                                             Duration</td>
                                         <td
                                             class="px-8 py-6 text-center bg-[#fffafa] border-x-2 border-[#8b2025]/10 relative">
@@ -923,7 +1056,7 @@
                     <!-- Mobile Comparison View -->
                     <div class="md:hidden space-y-4">
                         <div class="bg-[#8b2025] text-white p-4 rounded-t-2xl text-center font-serif">
-                            <h4 class="text-xl font-bold">Yogkulam PGDYT vs Others</h4>
+                            <h4 class="text-h4 font-bold">Yogkulam PGDYT vs Others</h4>
                         </div>
 
                         <!-- Feature 1 -->
@@ -1034,20 +1167,20 @@
         <!-- ========================================
          COMPACT TWO-COLUMN CURRICULUM SECTION
          ======================================== -->
-        <section id="curriculum" class="curriculum-section relative overflow-hidden py-8 lg:py-10">
+        <section id="curriculum" class="curriculum-section relative overflow-hidden py-8 lg:py-4">
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4">
                 <!-- Header -->
                 <div class="text-center mb-12 max-w-2xl mx-auto">
                     <div class="relative inline-block mb-4">
-                        <h2 class="leading-tight font-serif font-bold text-gray-900 mt-3 relative z-10 transition-colors"
-                            style="font-size: var(--text-h2);">
+                        <h2
+                            class="leading-tight font-serif font-bold text-gray-900 mt-3 relative z-10 transition-colors text-h2">
                             The Curriculum
                         </h2>
                         <img src="img/assets/handdrawn-underline/Underline_01.svg"
                             class="absolute bottom-[-30px] left-0 w-full h-auto -z-0 opacity-60"
                             style="transform: rotate(-1deg);">
                     </div>
-                    <p class="leading-relaxed text-gray-600" style="font-size: var(--text-base);">Master every facet of
+                    <p class="leading-relaxed text-gray-600 text-base">Master every facet of
                         yoga—from
                         philosophy to practice.
                         Click any module to view its content.</p>
@@ -1057,8 +1190,7 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
                     <!-- Left: Module List (Compact) -->
                     <div class="lg:col-span-6">
-                        <h3 class="font-serif font-bold text-gray-900 mb-3 hidden lg:block"
-                            style="font-size: var(--text-h5);">Modules</h3>
+                        <h3 class="font-serif font-bold text-gray-900 mb-3 hidden lg:block text-h5">Modules</h3>
                         <div id="curriculumList" class="space-y-3">
                             <!-- Generated by JavaScript -->
                         </div>
@@ -1086,6 +1218,218 @@
         </section>
 
         <!-- ========================================
+         COURSE CONTENT SECTION
+         ======================================== -->
+        <section id="course-content" class="relative overflow-hidden py-8 lg:py-4">
+            <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4">
+                <!-- Header -->
+                <div class="text-center mb-12 max-w-2xl mx-auto">
+                    <div class="relative inline-block mb-4">
+                        <h2
+                            class="leading-tight font-serif font-bold text-gray-900 mt-3 relative z-10 transition-colors text-h2">
+                            Course Content
+                        </h2>
+                        <img src="img/assets/handdrawn-underline/Underline_01.svg"
+                            class="absolute bottom-[-30px] left-0 w-full h-auto -z-0 opacity-60"
+                            style="transform: rotate(-1deg);">
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white/80 backdrop-blur-md rounded-2xl border border-white/70 ring-1 ring-black/5 shadow-xl shadow-black/5 overflow-hidden">
+                    <!-- Module 1 -->
+                    <div class="border-b border-gray-100 last:border-0">
+                        <button
+                            class="w-full flex items-center justify-between p-6 text-left hover:bg-white/50 transition-colors group"
+                            onclick="toggleCourseContent(this)">
+                            <div class="flex items-center gap-4">
+                                <span class="font-serif font-bold text-gray-900 text-lg">Intro To Course And
+                                    Histuday</span>
+                                <span class="text-xs bg-[#edcf9c]/20 text-[#8b2025] px-2 py-1 rounded font-medium">1hr
+                                    40min</span>
+                            </div>
+                            <span class="text-2xl text-gray-400 font-light group-hover:text-[#8b2025] transition-colors"
+                                data-icon>-</span>
+                        </button>
+                        <div class="block bg-white/40 pb-2">
+                            <!-- Lesson 1 -->
+                            <div
+                                class="flex items-center justify-between py-3 px-6 hover:bg-white/60 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="bi bi-play-circle text-gray-400 text-lg"></i>
+                                    <span class="text-sm text-gray-700 font-medium">Course Intro</span>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <span class="text-xs text-gray-500">30 Min</span>
+                                    <button
+                                        class="text-xs text-[#8b2025] border border-[#8b2025]/20 px-3 py-1 rounded-full flex items-center gap-1 hover:bg-[#8b2025]/5 transition-colors">
+                                        <i class="bi bi-eye"></i> Preview
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Lesson 2 -->
+                            <div
+                                class="flex items-center justify-between py-3 px-6 hover:bg-white/60 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="bi bi-play-circle text-gray-400 text-lg"></i>
+                                    <span class="text-sm text-gray-700 font-medium">Watch Befor Start</span>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <span class="text-xs text-gray-500">0.5 Min</span>
+                                    <button
+                                        class="text-xs text-[#8b2025] border border-[#8b2025]/20 px-3 py-1 rounded-full flex items-center gap-1 hover:bg-[#8b2025]/5 transition-colors">
+                                        <i class="bi bi-eye"></i> Preview
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Lesson 3 -->
+                            <div
+                                class="flex items-center justify-between py-3 px-6 hover:bg-white/60 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="bi bi-file-text text-gray-600 text-lg"></i>
+                                    <span class="text-sm text-gray-700 font-medium">Read Before Start</span>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <i class="bi bi-lock text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="border-b border-gray-100 last:border-0">
+                        <button
+                            class="w-full flex items-center justify-between p-6 text-left hover:bg-white/50 transition-colors group"
+                            onclick="toggleCourseContent(this)">
+                            <div class="flex items-center gap-4">
+                                <span class="font-serif font-bold text-gray-900 text-lg">Course Fundamentals</span>
+                                <span class="text-xs bg-[#edcf9c]/20 text-[#8b2025] px-2 py-1 rounded font-medium">1hr
+                                    40min</span>
+                            </div>
+                            <span class="text-2xl text-gray-400 font-light group-hover:text-[#8b2025] transition-colors"
+                                data-icon>+</span>
+                        </button>
+                        <div class="hidden bg-white/40 pb-2">
+                            <div
+                                class="flex items-center justify-between py-3 px-6 hover:bg-white/60 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="bi bi-play-circle text-gray-400 text-lg"></i>
+                                    <span class="text-sm text-gray-700 font-medium">Fundamental Concepts</span>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <span class="text-xs text-gray-500">45 Min</span>
+                                    <i class="bi bi-lock text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="border-b border-gray-100 last:border-0">
+                        <button
+                            class="w-full flex items-center justify-between p-6 text-left hover:bg-white/50 transition-colors group"
+                            onclick="toggleCourseContent(this)">
+                            <div class="flex items-center gap-4">
+                                <span class="font-serif font-bold text-gray-900 text-lg">You Can Develop Skill And
+                                    Setup</span>
+                                <span class="text-xs bg-[#edcf9c]/20 text-[#8b2025] px-2 py-1 rounded font-medium">2hr
+                                    35min</span>
+                            </div>
+                            <span class="text-2xl text-gray-400 font-light group-hover:text-[#8b2025] transition-colors"
+                                data-icon>+</span>
+                        </button>
+                        <div class="hidden bg-white/40 pb-2">
+                            <div
+                                class="flex items-center justify-between py-3 px-6 hover:bg-white/60 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="bi bi-play-circle text-gray-400 text-lg"></i>
+                                    <span class="text-sm text-gray-700 font-medium">Skill Development</span>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <span class="text-xs text-gray-500">1hr</span>
+                                    <i class="bi bi-lock text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="border-b border-gray-100 last:border-0">
+                        <button
+                            class="w-full flex items-center justify-between p-6 text-left hover:bg-white/50 transition-colors group"
+                            onclick="toggleCourseContent(this)">
+                            <div class="flex items-center gap-4">
+                                <span class="font-serif font-bold text-gray-900 text-lg">15 Things To Know About
+                                    Education?</span>
+                                <span
+                                    class="text-xs bg-[#edcf9c]/20 text-[#8b2025] px-2 py-1 rounded font-medium">40min</span>
+                            </div>
+                            <span class="text-2xl text-gray-400 font-light group-hover:text-[#8b2025] transition-colors"
+                                data-icon>+</span>
+                        </button>
+                        <div class="hidden bg-white/40 pb-2">
+                            <div
+                                class="flex items-center justify-between py-3 px-6 hover:bg-white/60 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="bi bi-file-text text-gray-600 text-lg"></i>
+                                    <span class="text-sm text-gray-700 font-medium">Education Insights</span>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <span class="text-xs text-gray-500">40 Min</span>
+                                    <i class="bi bi-lock text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 5 -->
+                    <div class="border-b border-gray-100 last:border-0">
+                        <button
+                            class="w-full flex items-center justify-between p-6 text-left hover:bg-white/50 transition-colors group"
+                            onclick="toggleCourseContent(this)">
+                            <div class="flex items-center gap-4">
+                                <span class="font-serif font-bold text-gray-900 text-lg">Course Description</span>
+                                <span class="text-xs bg-[#edcf9c]/20 text-[#8b2025] px-2 py-1 rounded font-medium">1hr
+                                    20min</span>
+                            </div>
+                            <span class="text-2xl text-gray-400 font-light group-hover:text-[#8b2025] transition-colors"
+                                data-icon>+</span>
+                        </button>
+                        <div class="hidden bg-white/40 pb-2">
+                            <div
+                                class="flex items-center justify-between py-3 px-6 hover:bg-white/60 transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <i class="bi bi-file-text text-gray-600 text-lg"></i>
+                                    <span class="text-sm text-gray-700 font-medium">Full Description</span>
+                                </div>
+                                <div class="flex items-center gap-6">
+                                    <span class="text-xs text-gray-500">10 Min</span>
+                                    <i class="bi bi-lock text-gray-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function toggleCourseContent(button) {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('[data-icon]');
+
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.textContent = '-';
+                } else {
+                    content.classList.add('hidden');
+                    icon.textContent = '+';
+                }
+            }
+        </script>
+
+        <!-- ========================================
          DOWNLOAD CURRICULUM CALL-TO-ACTION
          ======================================== -->
         <section class="py-10 md:py-16 relative overflow-hidden bg-white">
@@ -1102,10 +1446,10 @@
 
                     <div class="flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-8 relative z-10">
                         <div class="text-center lg:text-left">
-                            <h3 class="text-xl md:text-4xl font-serif font-bold text-white mb-2 md:mb-4 leading-tight">
+                            <h3 class="text-h3 font-serif font-bold text-white mb-2 md:mb-4 leading-tight">
                                 Want the Detailed <span class="text-[#edcf9c]">Syllabus & Brochure?</span>
                             </h3>
-                            <p class="text-white/80 text-sm md:text-lg max-w-xl">
+                            <p class="text-white/80 text-lg max-w-xl">
                                 Get the complete 1-year PGDYT course roadmap, module details, and certification info
                                 delivered to your device.
                             </p>
@@ -1143,8 +1487,8 @@
             </div>
 
             <div class="max-w-[1140px] mx-auto px-3 lg:px-4 relative z-10 text-center">
-                <h2 class="leading-tight font-serif font-bold text-gray-900 mt-2 relative z-10 transition-colors"
-                    style="font-size: var(--text-h2);">
+                <h2
+                    class="leading-tight font-serif font-bold text-gray-900 mt-2 relative z-10 transition-colors text-h2">
                     Dive into the world <br class="md:hidden">
                     <span class="text-gray-900 font-bold inline-flex items-center gap-3 relative">
                         of Career Opportunities!
@@ -1153,7 +1497,7 @@
                 <img src="img/assets/handdrawn-underline/Underline_07.svg"
                     class="absolute bottom-20 md:bottom-24 left-1/2 -translate-x-1/2 md:left-[248px] md:translate-x-0 w-40 md:w-52 h-auto -z-0 opacity-60"
                     style="transform: rotate(-1deg);">
-                <p class="max-w-2xl mx-auto text-gray-500 mb-8 md:mb-10 font-medium px-4 text-body-lg md:text-body-xl">
+                <p class="max-w-2xl mx-auto text-gray-500 mb-8 md:mb-10 font-medium px-4 text-lg md:text-xl">
                     PGDYT prepares you for teaching, therapy, entrepreneurship, and digital careers in yoga & wellness.
                 </p>
 
@@ -1194,7 +1538,7 @@
                                     </div>
                                     <div class="h-full flex flex-col justify-between relative z-10 text-white">
                                         <div class="border-b border-white/20 pb-4">
-                                            <h3 class="text-3xl font-serif font-bold leading-none mb-1">Teaching</h3>
+                                            <h3 class="text-h3 font-serif font-bold leading-none mb-1">Teaching</h3>
                                             <p class="text-[10px] font-bold opacity-80 uppercase tracking-[0.2em]">&
                                                 Training</p>
                                         </div>
@@ -1215,38 +1559,28 @@
                                 <div class="text-left space-y-4">
                                     <h4 class="font-bold text-gray-900 border-b border-gray-100 pb-2">Career Paths</h4>
                                     <ul class="space-y-2">
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Professional Yoga Instructor</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Corporate Trainer</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Online Yoga Teacher (Global Reach)</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Yoga Teacher in Schools & Colleges</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Government Certified Yoga Trainer (AYUSH / YCB)</span>
                                         </li>
                                     </ul>
-                                    <p class="text-gray-400 italic mt-4" style="font-size: var(--text-xs);">"Inspire
+                                    <p class="text-gray-400 italic mt-4 text-xs">"Inspire
                                         others with your knowledge."
                                     </p>
                                 </div>
@@ -1273,11 +1607,10 @@
 
                                     <div class="h-full flex flex-col justify-between relative z-10 text-gray-800">
                                         <div class="border-b border-gray-100 pb-4">
-                                            <h3 class="font-serif font-bold leading-none mb-1 text-gray-900"
-                                                style="font-size: var(--text-h3);">
+                                            <h3 class="font-serif font-bold leading-none mb-1 text-gray-900 text-h3">
                                                 Therapy</h3>
-                                            <p class="font-bold text-[#8b2025] uppercase tracking-[0.2em]"
-                                                style="font-size: var(--text-xs);">& Healing</p>
+                                            <p class="font-bold text-[#8b2025] uppercase tracking-[0.2em] text-xs">&
+                                                Healing</p>
                                         </div>
                                         <div class="mt-auto flex justify-end">
                                             <i class="bi bi-heart-pulse-fill text-6xl text-gray-200"></i>
@@ -1291,26 +1624,20 @@
                                 <div class="text-left space-y-4">
                                     <h4 class="font-bold text-gray-900 border-b border-gray-200 pb-2">Healing Paths</h4>
                                     <ul class="space-y-2">
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Yoga Therapist</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Private Yoga Coach (1-to-1 Sessions)</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Yoga Sports Coach (State / National / International)</span>
                                         </li>
                                     </ul>
-                                    <p class="text-gray-400 italic mt-4" style="font-size: var(--text-xs);">"Heal the
+                                    <p class="text-gray-400 italic mt-4 text-xs">"Heal the
                                         world, one breath at a time."
                                     </p>
                                 </div>
@@ -1337,10 +1664,9 @@
 
                                     <div class="h-full flex flex-col justify-between relative z-10 text-[#5c3a18]">
                                         <div class="border-b border-[#5c3a18]/10 pb-4">
-                                            <h3 class="font-serif font-bold leading-none mb-1"
-                                                style="font-size: var(--text-h3);">Business</h3>
-                                            <p class="font-bold opacity-70 uppercase tracking-[0.2em]"
-                                                style="font-size: var(--text-xs);">& Leadership</p>
+                                            <h3 class="font-serif font-bold leading-none mb-1 text-h3">Business</h3>
+                                            <p class="font-bold opacity-70 uppercase tracking-[0.2em] text-xs">&
+                                                Leadership</p>
                                         </div>
                                         <div class="mt-auto flex justify-end">
                                             <i class="bi bi-briefcase-fill text-6xl opacity-30"></i>
@@ -1355,26 +1681,20 @@
                                     <h4 class="font-bold text-gray-900 border-b border-gray-100 pb-2">Business Roles
                                     </h4>
                                     <ul class="space-y-2">
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Yoga Studio Owner / Wellness Entrepreneur</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Retreat & Workshop Leader</span>
                                         </li>
-                                        <li class="flex items-start gap-2 text-gray-600"
-                                            style="font-size: var(--text-sm);">
-                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1"
-                                                style="font-size: var(--text-xs);"></i>
+                                        <li class="flex items-start gap-2 text-gray-600 text-sm">
+                                            <i class="bi bi-check-circle-fill text-[#8b2025] mt-1 text-xs"></i>
                                             <span>Yoga Products / Wellness Brand Owner</span>
                                         </li>
                                     </ul>
-                                    <p class="text-gray-400 italic mt-4" style="font-size: var(--text-xs);">"Lead the
+                                    <p class="text-gray-400 italic mt-4 text-xs">"Lead the
                                         wellness revolution."</p>
                                 </div>
                             </div>
@@ -1399,7 +1719,7 @@
 
                                     <div class="h-full flex flex-col justify-between relative z-10 text-gray-100">
                                         <div class="border-b border-gray-700 pb-4">
-                                            <h3 class="text-3xl font-serif font-bold leading-none mb-1">Digital</h3>
+                                            <h3 class="text-h3 font-serif font-bold leading-none mb-1">Digital</h3>
                                             <p class="text-[10px] font-bold opacity-60 uppercase tracking-[0.2em]">&
                                                 Creative</p>
                                         </div>
@@ -1502,8 +1822,7 @@
                             The Visionary Behind Yogkulam
                         </div>
 
-                        <h2 class="font-serif font-bold text-gray-900 mb-6 leading-tight"
-                            style="font-size: var(--text-h2);">
+                        <h2 class="font-serif font-bold text-gray-900 mb-6 leading-tight text-h2">
                             Empowering Lives Through <span class="text-[#8b2025]">Authentic Yoga</span>
                         </h2>
 
@@ -1570,7 +1889,7 @@
             <div class="max-w-[1140px] w-full mx-auto px-3 lg:px-4 relative z-10">
                 <div class="text-center mb-10 md:mb-12">
                     <div class="relative inline-block">
-                        <h2 class=" font-serif font-bold text-gray-900">Meet The Team</h2>
+                        <h2 class=" font-serif font-bold text-gray-900 text-h2">Meet The Team</h2>
                         <img src="img/assets/handdrawn-underline/Underline_01.svg"
                             class="absolute bottom-[-42px] left-0 w-full h-auto -z-0 opacity-60"
                             style="transform: rotate(-1deg);">
@@ -1603,7 +1922,7 @@
                                     <span
                                         class="px-3 py-1 bg-[#2e6fba] text-white text-[10px] font-bold uppercase tracking-wider rounded mb-2 inline-block">Lead
                                         Instructor</span>
-                                    <h3 class="text-3xl font-serif font-bold text-white">Manish Singh</h3>
+                                    <h3 class="text-h3 font-serif font-bold text-white">Manish Singh</h3>
                                 </div>
                             </div>
 
@@ -1615,7 +1934,7 @@
                                         <span class="text-[#2e6fba] font-bold uppercase tracking-widest text-xs">Lead
                                             Instructor</span>
                                     </div>
-                                    <h3 class="text-4xl lg:text-5xl font-serif font-bold text-[#8b2025]">Manish Singh
+                                    <h3 class="text-h2 font-serif font-bold text-[#8b2025]">Manish Singh
                                     </h3>
                                 </div>
 
@@ -1661,7 +1980,7 @@
                     <div>
                         <div class="flex items-end justify-between mb-8 px-2">
                             <div>
-                                <h3 class="font-serif font-bold text-2xl md:text-3xl text-gray-900">Guest Experts &
+                                <h3 class="font-serif font-bold text-h3 text-gray-900">Guest Experts &
                                     Mentors</h3>
                                 <p class="text-gray-500 text-sm mt-2">Learn from industry leaders in branding, growth,
                                     and strategy.</p>
@@ -1791,7 +2110,7 @@
 
             <div class="max-w-[1140px] w-full mx-auto px-4 relative z-10">
                 <div class="text-center mb-10 md:mb-16">
-                    <h2 class="font-serif font-bold text-gray-900 mb-4" style="font-size: var(--text-h2);">
+                    <h2 class="font-serif font-bold text-gray-900 mb-4 text-h2">
                         Valid Worldwide. Recognized by <span class="text-[#8b2025]">Govt. of India.</span>
                     </h2>
                     <div class="w-20 h-1 bg-[#8b2025] mx-auto rounded-full opacity-20"></div>
@@ -1862,7 +2181,7 @@
         <!-- ========================================
          WHAT YOU GET - FREE BONUSES SECTION
          ======================================== -->
-        <section class="py-12 md:py-20 relative overflow-hidden bg-[#1a0505]">
+        <section class="py-12 md:py-20 relative overflow-hidden bg-[#1a0505b5]">
             <!-- Background layers (local assets) -->
             <img src="img/assets/264418072_65155120-9f08-4dc4-a7aa-c8777314842f.svg"
                 class="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none" alt="">
@@ -1875,7 +2194,7 @@
                         <i class="bi bi-lightning-charge-fill"></i>
                         LIMITED TIME OFFER
                     </div>
-                    <h2 class="font-serif font-bold text-white mt-4 mb-3" style="font-size: var(--text-h2);">
+                    <h2 class="font-serif font-bold text-white mt-4 mb-3 text-h2">
                         Wait! There’s More…
                     </h2>
                     <p class="text-white/80 max-w-3xl mx-auto leading-relaxed text-sm md:text-base">
@@ -1894,9 +2213,10 @@
                             </div>
                             <div class="flex items-start gap-4">
                                 <div
-                                    class="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center">
-                                    <img src="img/assets/icons/money-bag_2108625.svg" class="w-8 h-8" alt=""
-                                        onerror="this.style.display='none'">
+                                    class="w-14 h-14 rounded-2xl bg-white/10 border border-white/10 flex items-center justify-center overflow-hidden">
+                                    <dotlottie-player src="img/assets/lottie/free-kit.json" background="transparent"
+                                        speed="1" style="width: 45px; height: 45px;" hover class="lottie-play-on-enter">
+                                    </dotlottie-player>
                                 </div>
                                 <div class="flex-1">
                                     <p class="text-white/70 text-xs md:text-sm font-bold uppercase tracking-widest">
@@ -1911,14 +2231,24 @@
                             <div class="mt-6 grid grid-cols-2 gap-3">
                                 <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
                                     <div class="flex items-center gap-2 text-white font-bold text-sm">
-                                        <i class="bi bi-shield-check text-[#edcf9c]"></i>
+                                        <div class="w-6 h-6 flex-shrink-0">
+                                            <dotlottie-player src="img/assets/lottie/free-kit.json"
+                                                background="transparent" speed="1" style="width: 100%; height: 100%;"
+                                                hover class="lottie-play-on-enter">
+                                            </dotlottie-player>
+                                        </div>
                                         7-Day Guarantee
                                     </div>
                                     <p class="text-white/60 text-xs mt-1">Risk-free enrollment</p>
                                 </div>
                                 <div class="bg-white/5 border border-white/10 rounded-2xl p-4">
                                     <div class="flex items-center gap-2 text-white font-bold text-sm">
-                                        <i class="bi bi-credit-card-2-front text-[#edcf9c]"></i>
+                                        <div class="w-6 h-6 flex-shrink-0">
+                                            <dotlottie-player src="img/assets/lottie/0-percent_11679435.json"
+                                                background="transparent" speed="1" style="width: 100%; height: 100%;"
+                                                hover class="lottie-play-on-enter">
+                                            </dotlottie-player>
+                                        </div>
                                         0% EMI
                                     </div>
                                     <p class="text-white/60 text-xs mt-1">Easy payment options</p>
@@ -1933,10 +2263,6 @@
                                 </a>
                                 <p class="text-white/50 text-xs mt-3">Limited time offer • 7-Day Money-Back Guarantee
                                 </p>
-                                <!-- Bottom-anchored promo image -->
-                                <img src="img/assets/icons/sale-promotion.png" alt="Limited Time Offer"
-                                    class="absolute bottom-0 left-1/2 -translate-x-1/2 h-1/2 drop-shadow-lg"
-                                    onerror="this.onerror=null;this.src='img/assets/sticker.png'">
                             </div>
                         </div>
 
@@ -1959,8 +2285,11 @@
                                     class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-all group">
                                     <div class="flex items-start gap-4">
                                         <div
-                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                                            <i class="bi bi-camera-video-fill"></i>
+                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+                                            <dotlottie-player src="img/assets/lottie/conference-call_17675758.json"
+                                                background="transparent" speed="1" style="width: 35px; height: 35px;"
+                                                hover class="lottie-play-on-enter">
+                                            </dotlottie-player>
                                         </div>
                                         <div class="flex-1">
                                             <h4 class="text-base font-extrabold text-white mb-1">Daily 2–3 Live Classes
@@ -1975,8 +2304,11 @@
                                     class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-all group">
                                     <div class="flex items-start gap-4">
                                         <div
-                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                                            <i class="bi bi-gift-fill"></i>
+                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+                                            <dotlottie-player src="img/assets/lottie/free-kit.json"
+                                                background="transparent" speed="1" style="width: 35px; height: 35px;"
+                                                hover class="lottie-play-on-enter">
+                                            </dotlottie-player>
                                         </div>
                                         <div class="flex-1">
                                             <h4 class="text-base font-extrabold text-white mb-1">Free Student Kit</h4>
@@ -1991,8 +2323,11 @@
                                     class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-all group">
                                     <div class="flex items-start gap-4">
                                         <div
-                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                                            <i class="bi bi-book-fill"></i>
+                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+                                            <dotlottie-player src="img/assets/lottie/geeta.json"
+                                                background="transparent" speed="1" style="width: 35px; height: 35px;"
+                                                hover class="lottie-play-on-enter">
+                                            </dotlottie-player>
                                         </div>
                                         <div class="flex-1">
                                             <h4 class="text-base font-extrabold text-white mb-1">Sunday Gita Class</h4>
@@ -2006,8 +2341,11 @@
                                     class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-all group">
                                     <div class="flex items-start gap-4">
                                         <div
-                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                                            <i class="bi bi-whatsapp"></i>
+                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+                                            <dotlottie-player src="img/assets/lottie/whatsapp.json"
+                                                background="transparent" speed="1" style="width: 35px; height: 35px;"
+                                                hover class="lottie-play-on-enter">
+                                            </dotlottie-player>
                                         </div>
                                         <div class="flex-1">
                                             <h4 class="text-base font-extrabold text-white mb-1">Lifetime WhatsApp Group
@@ -2022,8 +2360,11 @@
                                     class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-all group">
                                     <div class="flex items-start gap-4">
                                         <div
-                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                                            <i class="bi bi-building-fill"></i>
+                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+                                            <dotlottie-player src="img/assets/lottie/studio.json"
+                                                background="transparent" speed="1" style="width: 35px; height: 35px;"
+                                                hover class="lottie-play-on-enter">
+                                            </dotlottie-player>
                                         </div>
                                         <div class="flex-1">
                                             <h4 class="text-base font-extrabold text-white mb-1">Full Yoga Studio Setup
@@ -2038,8 +2379,11 @@
                                     class="bg-white/5 border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-all group">
                                     <div class="flex items-start gap-4">
                                         <div
-                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
-                                            <i class="bi bi-shield-check-fill"></i>
+                                            class="w-12 h-12 rounded-xl bg-[#edcf9c] flex items-center justify-center text-[#8b2025] text-2xl flex-shrink-0 group-hover:scale-110 transition-transform overflow-hidden">
+                                            <dotlottie-player src="img/assets/lottie/0-percent_11679435.json"
+                                                background="transparent" speed="1" style="width: 35px; height: 35px;"
+                                                hover class="lottie-play-on-enter">
+                                            </dotlottie-player>
                                         </div>
                                         <div class="flex-1">
                                             <h4 class="text-base font-extrabold text-white mb-1">0% EMI Available</h4>
@@ -2076,12 +2420,12 @@
                 <!-- Section Header -->
                 <div class="text-center mb-16">
                     <div class="relative inline-block">
-                        <h2 class=" font-serif font-bold text-gray-900 mb-1 relative z-10 testimonial-heading">
+                        <h2 class=" font-serif font-bold text-gray-900 mb-1 relative z-10 testimonial-heading text-h2">
                             Testimonials & Success Stories
                         </h2>
                     </div>
 
-                    <p class="text-base sm:text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto mt-8">
+                    <p class="text-lg leading-relaxed text-gray-600 max-w-3xl mx-auto mt-8">
                         "Over <span class="font-bold text-[#8b2025]">40,000+ students</span> have transformed their
                         lives
                         with YogKulam — here are a few of them."
@@ -2419,7 +2763,7 @@
                 <div class="text-center mb-8">
 
                     <div class="relative inline-block mt-2">
-                        <h2 class=" font-semibold text-gray-900 relative z-10">Frequently Asked
+                        <h2 class=" font-semibold text-gray-900 relative z-10 text-h2">Frequently Asked
                             <em>Questions</em>
                         </h2>
                     </div>
@@ -2451,38 +2795,33 @@
                         class="inline-block bg-[#8b2025]/10 text-[#8b2025] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
                         <i class="bi bi-shield-check mr-1"></i> Simple & Transparent
                     </span>
-                    <h2 class="font-serif font-bold text-gray-900 mb-4">Choose Your Learning Path</h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto">No hidden fees. No surprises. Pick the plan that fits
+                    <h2 class="font-serif font-bold text-gray-900 mb-4 text-h2">Choose Your Learning Path</h2>
+                    <p class="text-gray-500 max-w-2xl mx-auto text-base">No hidden fees. No surprises. Pick the plan
+                        that fits
                         your goals.</p>
                 </div>
             </div>
 
-            <!-- Pricing Grid (Replacing Owl Carousel) -->
-            <div class="max-w-[1140px] w-full mx-auto px-2 lg:px-4 relative">
-                <!-- Scroll Hint -->
-                <div class="absolute -top-8 right-4 text-gray-400 text-sm animate-pulse flex items-center gap-1 z-20">
-                    <span>Swipe</span> <i class="bi bi-arrow-right"></i>
-                </div>
-
-                <div class="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-8 -mx-4 px-4 scrollbar-hide wow slideInRight"
-                    data-wow-offset="120" data-wow-duration="0.9s" data-wow-delay="0.04s">
+            <!-- Pricing Grid (Using Owl Carousel) -->
+            <div class="max-w-[1140px] w-full mx-auto px-2 lg:px-4 relative ">
+                <div id="pricing-carousel" class="owl-carousel owl-theme">
 
                     <!-- Plan 1: Online -->
-                    <div class="snap-center shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[calc(33.333%-14px)]">
-                        <div class="pricing-card wow fadeInUp bg-white rounded-3xl p-6 lg:p-8 border border-gray-200 hover:border-[#8b2025] shadow-lg relative group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col"
-                            data-wow-offset="100" data-wow-duration="0.7s" data-wow-delay="0s">
+                    <div class="item h-full pb-4">
+                        <div
+                            class="pricing-card bg-white rounded-3xl p-6 lg:p-8 border border-gray-200 hover:border-[#8b2025] shadow-lg relative group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
                             <div
                                 class="absolute top-0 right-0 bg-[#edcf9c] text-[#8b2025] text-xs font-bold px-4 py-1.5 rounded-bl-xl rounded-tr-3xl">
                                 POPULAR
                             </div>
 
                             <div class="mb-6">
-                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-1">PGDYT (Online)</h3>
+                                <h3 class="text-h3 font-bold text-gray-900 mb-1">PGDYT (Online)</h3>
                                 <p class="text-gray-500 text-sm">Perfect for working professionals.</p>
                             </div>
 
                             <div class="flex items-baseline gap-2 mb-6">
-                                <span class="text-3xl lg:text-4xl font-bold text-[#8b2025]">₹25,000</span>
+                                <span class="text-h2 font-bold text-[#8b2025]">₹25,000</span>
                                 <span class="text-gray-400 line-through text-sm">₹35,000</span>
                             </div>
 
@@ -2513,8 +2852,8 @@
                     </div>
 
                     <!-- Plan 2: Hybrid (Featured) -->
-                    <div class="snap-center shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[calc(33.333%-14px)]">
-                        <div class="pricing-card wow fadeInUp bg-gradient-to-br from-[#8b2025] to-[#5a0300] rounded-3xl p-6 lg:p-8 text-white shadow-2xl relative overflow-hidden transition-all duration-300 hover:-translate-y-2 h-full flex flex-col ring-4 ring-[#edcf9c]/50"
+                    <div class="item h-full pb-4">
+                        <div class="pricing-card wow fadeInUp bg-gradient-to-br from-[#8b2025] to-[#5a0300] rounded-3xl p-6 lg:p-8 text-white shadow-2xl relative overflow-hidden transition-all duration-300 hover: h-full flex flex-col ring-4 ring-[#edcf9c]/50"
                             data-wow-offset="100" data-wow-duration="0.75s" data-wow-delay="0.12s">
                             <!-- Decorative Pattern -->
                             <div class="absolute inset-0 opacity-10"
@@ -2528,29 +2867,29 @@
                             </div>
 
                             <div class="relative z-10 mb-6">
-                                <h3 class="text-xl lg:text-2xl font-bold mb-1">PGDYT (Hybrid)</h3>
-                                <p class="text-white/70 text-sm">Online + 15 Days Offline Training.</p>
+                                <h3 class="text-h3 text-gray-700 font-bold mb-1">PGDYT (Hybrid)</h3>
+                                <p class="text-gray-700/70 text-sm">Online + 15 Days Offline Training.</p>
                             </div>
 
                             <div class="relative z-10 flex items-baseline gap-2 mb-6">
-                                <span class="text-3xl lg:text-4xl font-bold text-[#edcf9c]">₹35,000</span>
+                                <span class="text-h2 font-bold text-[#edcf9c]">₹35,000</span>
                                 <span class="text-white/40 line-through text-sm">₹50,000</span>
                             </div>
 
                             <ul class="relative z-10 space-y-3 mb-8 flex-grow">
-                                <li class="flex items-start gap-2.5 text-white/90 text-sm">
+                                <li class="flex items-start gap-2.5 text-gray-700  text-sm">
                                     <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5 shrink-0"></i>
                                     <span>Everything in Online Plan</span>
                                 </li>
-                                <li class="flex items-start gap-2.5 text-white/90 text-sm">
+                                <li class="flex items-start gap-2.5 text-gray-700  text-sm">
                                     <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5 shrink-0"></i>
                                     <span>15 Days Practical Ashram Stay</span>
                                 </li>
-                                <li class="flex items-start gap-2.5 text-white/90 text-sm">
+                                <li class="flex items-start gap-2.5 text-gray-700 text-sm">
                                     <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5 shrink-0"></i>
                                     <span>Personal Hands-on Corrections</span>
                                 </li>
-                                <li class="flex items-start gap-2.5 text-white/90 text-sm">
+                                <li class="flex items-start gap-2.5 text-gray-700  text-sm">
                                     <i class="bi bi-check-circle-fill text-[#edcf9c] mt-0.5 shrink-0"></i>
                                     <span>Printed Hardcopy Books</span>
                                 </li>
@@ -2564,21 +2903,21 @@
                     </div>
 
                     <!-- Plan 3: International -->
-                    <div class="snap-center shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[calc(33.333%-14px)]">
-                        <div class="pricing-card wow fadeInUp bg-white rounded-3xl p-6 lg:p-8 border border-gray-200 hover:border-[#8b2025] shadow-lg relative group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col"
-                            data-wow-offset="100" data-wow-duration="0.75s" data-wow-delay="0.24s">
+                    <div class="item h-full pb-4">
+                        <div
+                            class="pricing-card bg-white rounded-3xl p-6 lg:p-8 border border-gray-200 hover:border-[#8b2025] shadow-lg relative group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
                             <div
                                 class="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl rounded-tr-3xl flex items-center gap-1">
                                 <i class="bi bi-globe2 text-xs"></i> GLOBAL
                             </div>
 
                             <div class="mb-6">
-                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-1">International</h3>
+                                <h3 class="text-h3 font-bold text-gray-900 mb-1">International</h3>
                                 <p class="text-gray-500 text-sm">For students outside India.</p>
                             </div>
 
                             <div class="flex items-baseline gap-2 mb-6">
-                                <span class="text-3xl lg:text-4xl font-bold text-gray-900">$850</span>
+                                <span class="text-h2 font-bold text-gray-900">$850</span>
                                 <span class="text-gray-400 line-through text-sm">$1,200</span>
                             </div>
 
@@ -2609,21 +2948,21 @@
                     </div>
 
                     <!-- Plan 4: Studio Owner -->
-                    <div class="snap-center shrink-0 w-[85vw] sm:w-[65vw] md:w-[45vw] lg:w-[calc(33.333%-14px)]">
-                        <div class="pricing-card wow fadeInUp bg-gradient-to-br from-[#fdf8f6] to-[#fff5f0] rounded-3xl p-6 lg:p-8 border border-[#edcf9c]/50 hover:border-[#8b2025] shadow-lg relative group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col"
-                            data-wow-offset="100" data-wow-duration="0.8s" data-wow-delay="0.36s">
+                    <div class="item h-full pb-4">
+                        <div
+                            class="pricing-card bg-gradient-to-br from-[#fdf8f6] to-[#fff5f0] rounded-3xl p-6 lg:p-8 border border-[#edcf9c]/50 hover:border-[#8b2025] shadow-lg relative group transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl h-full flex flex-col">
                             <div
                                 class="absolute top-0 right-0 bg-gray-900 text-white text-xs font-bold px-4 py-1.5 rounded-bl-xl rounded-tr-3xl flex items-center gap-1">
                                 <i class="bi bi-building text-xs"></i> BUSINESS
                             </div>
 
                             <div class="mb-6">
-                                <h3 class="text-xl lg:text-2xl font-bold text-gray-900 mb-1">Studio Owner</h3>
+                                <h3 class="text-h3 font-bold text-gray-900 mb-1">Studio Owner</h3>
                                 <p class="text-gray-500 text-sm">PGDYT + Franchise License.</p>
                             </div>
 
                             <div class="flex items-baseline gap-2 mb-6">
-                                <span class="text-3xl lg:text-4xl font-bold text-[#8b2025]">₹1.5L</span>
+                                <span class="text-h2 font-bold text-[#8b2025]">₹1.5L</span>
                                 <span class="text-gray-400 line-through text-sm">₹2.5 Lakh</span>
                             </div>
 
@@ -3104,29 +3443,9 @@
             right: -25px;
         }
 
-        #pricing-carousel .owl-nav button:hover,
-        #testimonials-carousel .owl-nav button:hover {
-            background: #8b2025;
-            color: #fff;
-            transform: translateY(-50%) scale(1.05);
-        }
 
-        #pricing-carousel .owl-dots .owl-dot span,
-        #testimonials-carousel .owl-dots .owl-dot span {
-            width: 10px;
-            height: 10px;
-            background: #d1d5db;
-            display: block;
-            border-radius: 50%;
-            transition: all .3s ease;
-        }
 
-        #pricing-carousel .owl-dots .owl-dot.active span,
-        #testimonials-carousel .owl-dots .owl-dot.active span {
-            background: #8b2025;
-            width: 30px;
-            border-radius: 5px;
-        }
+
 
         @media (max-width:768px) {
 
@@ -3740,139 +4059,210 @@
         function initAnimations() {
             gsap.registerPlugin(ScrollTrigger);
 
-            // 1. Hero Animations (Split Text)
-            // ------------------------------------
+            // ═══════════════════════════════════════════════════════════
+            // 1. HERO SECTION - PREMIUM MASK REVEAL + ORCHESTRATED TIMELINE
+            // ═══════════════════════════════════════════════════════════
             const heroTitle = new SplitType('.hero-title', { types: 'chars' });
-            const heroTimeline = gsap.timeline();
+            const heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+            // Mask reveal background
+            gsap.set('.hero-section', { position: 'relative' });
 
             heroTimeline
+                // Hero background fade
+                .from('.hero-section .absolute.inset-0', {
+                    opacity: 0,
+                    duration: 0.6,
+                    ease: "sine.out"
+                }, 0)
+                // Character reveal with stagger
                 .from(heroTitle.chars, {
-                    duration: 0.8, // Increased slightly from 0.3 for better visibility on large text
+                    duration: 0.8,
                     ease: "circ.out",
-                    yPercent: 100, // Increased to 100 for full reveal
-                    autoAlpha: 0,
-                    stagger: 0.02
-                })
+                    yPercent: 120,
+                    opacity: 0,
+                    stagger: { amount: 0.4, from: "start" }
+                }, 0.2)
+                // Subtitle fade
                 .from('.hero-section p', {
-                    y: 30, opacity: 0, duration: 0.8, ease: "power3.out"
-                }, "-=0.4")
-                .from('.hero-section .gap-6 > div', { // Stats
-                    y: 20, opacity: 0, stagger: 0.1, duration: 0.6
+                    y: 30,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "power3.out"
+                }, "-=0.5")
+                // Stats stagger
+                .from('.hero-section .gap-6 > div', {
+                    y: 20,
+                    opacity: 0,
+                    stagger: 0.12,
+                    duration: 0.6
                 }, "-=0.6")
+                // Buttons stagger
+                .from('.hero-section a', {
+                    y: 20,
+                    opacity: 0,
+                    stagger: 0.1,
+                    duration: 0.6
+                }, "-=0.5");
 
-                .from('.hero-section a', { // Buttons
-                    y: 20, opacity: 0, stagger: 0.1, duration: 0.6
-                }, "-=0.6");
+            // ═══════════════════════════════════════════════════════════
+            // 2. BENTO GRID - STAGGERED CLIP-PATH REVEALS
+            // ═══════════════════════════════════════════════════════════
+            const bentoCards = document.querySelectorAll(".bento-card-wrapper");
+            bentoCards.forEach((card) => {
+                gsap.set(card, { clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" });
 
-            // 2. Bento Grid Stagger
-            // ------------------------------------
+                ScrollTrigger.create({
+                    trigger: card,
+                    start: "top 85%",
+                    onEnter: () => {
+                        gsap.to(card, {
+                            clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                            duration: 0.8,
+                            ease: "power3.out",
+                            opacity: 1
+                        });
+                    },
+                    once: true
+                });
+            });
+
             ScrollTrigger.batch(".bento-card-wrapper", {
                 start: "top 85%",
                 onEnter: batch => gsap.to(batch, {
-                    autoAlpha: 1, y: 0, stagger: 0.15, duration: 0.8, overwrite: true
+                    y: 0,
+                    opacity: 1,
+                    stagger: 0.12,
+                    duration: 0.6,
+                    overwrite: false
                 })
             });
 
+            // ═══════════════════════════════════════════════════════════
+            // 3. HOVER MICRO-INTERACTIONS - CTA BUTTONS
+            // ═══════════════════════════════════════════════════════════
+            document.querySelectorAll('.hero-section a[href*="student-reg"], .hero-section a[href*="enrol"]').forEach(btn => {
+                btn.classList.add('btn-premium', 'gpu-accelerated');
 
+                btn.addEventListener('mouseenter', () => {
+                    gsap.to(btn, {
+                        scale: 1.04,
+                        duration: 0.3,
+                        ease: "back.out(1.2)",
+                        overwrite: 'auto'
+                    });
+                });
 
-            // 4. Section Headings Reveal ("Text Reveal")
-            // ------------------------------------
+                btn.addEventListener('mouseleave', () => {
+                    gsap.to(btn, {
+                        scale: 1,
+                        duration: 0.2,
+                        ease: "sine.out"
+                    });
+                });
+            });
+
+            // ═══════════════════════════════════════════════════════════
+            // 4. SECTION HEADINGS REVEAL - MASK-BASED STAGGERED TEXT
+            // ═══════════════════════════════════════════════════════════
             const revealHeadings = document.querySelectorAll('section:not(.hero-section) h2');
             revealHeadings.forEach(h2 => {
-                // Avoid double-splitting if already done (though init runs once)
                 if (h2.classList.contains('split-init')) return;
                 h2.classList.add('split-init');
 
                 const split = new SplitType(h2, { types: 'lines, words' });
 
+                // Wrap words in overflow-hidden divs for clip-path effect
+                split.words.forEach(word => {
+                    const wrapper = document.createElement('span');
+                    wrapper.style.display = 'inline-block';
+                    wrapper.style.overflow = 'hidden';
+                    wrapper.style.verticalAlign = 'bottom';
+                    word.parentNode.insertBefore(wrapper, word);
+                    wrapper.appendChild(word);
+                });
+
                 gsap.from(split.words, {
-                    duration: 1,
+                    duration: 0.8,
                     y: 40,
                     opacity: 0,
-                    rotation: 5,
-                    stagger: 0.05,
                     ease: "power3.out",
+                    stagger: 0.05,
                     scrollTrigger: {
                         trigger: h2,
+                        start: "top 80%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+
+            // ═══════════════════════════════════════════════════════════
+            // 5. DESCRIPTION PARAGRAPHS - FADE + SLIDE REVEAL
+            // ═══════════════════════════════════════════════════════════
+            const revealParagraphs = document.querySelectorAll('section p.text-lg, section p.text-xl');
+            revealParagraphs.forEach(p => {
+                gsap.from(p, {
+                    duration: 1,
+                    y: 20,
+                    opacity: 0,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: p,
                         start: "top 85%",
                         toggleActions: "play none none reverse"
                     }
                 });
             });
 
-            // 5. Section Descriptions Reveal
-            // ------------------------------------
-            const revealParagraphs = document.querySelectorAll('section p.text-lg, section p.text-xl');
-            revealParagraphs.forEach(p => {
-                gsap.from(p, {
-                    duration: 1.2,
-                    y: 30,
-                    opacity: 0,
-                    ease: "power2.out",
-                    scrollTrigger: {
-                        trigger: p,
-                        start: "top 90%",
-                        toggleActions: "play none none reverse"
-                    }
-                });
-            });
-
-            // 6. Owl Carousel Initialization (Removed - using CSS Grid/Snap Scroll)
-            // ------------------------------------
-            /*
+            // ═══════════════════════════════════════════════════════════
+            // 6. PRICING CAROUSEL + BUTTON HOVERS
+            // ═══════════════════════════════════════════════════════════
             $('#pricing-carousel').owlCarousel({
-                loop: false,
+                loop: true, // Changed to true to prevent snapping back issues
                 margin: 20,
                 nav: true,
                 dots: true,
-                responsive: {
-                    0: {
-                        items: 1.2,
-                        margin: 12
-                    },
-                    600: {
-                        items: 2
-                    },
-                    1000: {
-                        items: 3
-                    }
-                }
-            });
-            */
-
-            // 7. Testimonials Carousel Initialization (Removed)
-            // ------------------------------------
-            /*
-            $('#testimonials-carousel').owlCarousel({
-                loop: true,
-                margin: 20,
-                nav: true,
-                dots: true,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true,
+                autoplay: false,
+                smartSpeed: 600,
                 navText: [
                     '<i class="bi bi-chevron-left text-2xl"></i>',
                     '<i class="bi bi-chevron-right text-2xl"></i>'
                 ],
                 responsive: {
                     0: {
-                        items: 1
+                        items: 1,
+                        stagePadding: 40, // Peek effect
+                        margin: 15,
+                        nav: false
                     },
-                    768: {
-                        items: 2
+                    600: {
+                        items: 2,
+                        nav: true,
+                        stagePadding: 0
                     },
-                    1024: {
-                        items: 3
+                    1000: {
+                        items: 3,
+                        nav: true,
+                        stagePadding: 0
                     }
                 }
             });
-            */
 
-            // 8. Testimonials Section Animations
-            // ------------------------------------
 
-            // Animate Section Heading
+
+            // ═══════════════════════════════════════════════════════════
+            // 8. CARD REVEAL - STAGGERED WITH CLIP-PATH
+            // ═══════════════════════════════════════════════════════════
+            const revealCards = document.querySelectorAll('[class*="card"], [class*="testimonial"], [class*="benefit"]');
+            revealCards.forEach(card => {
+                if (!card.classList.contains('card-reveal')) {
+                    card.classList.add('card-reveal', 'gpu-accelerated');
+                }
+            });
+
+            // ═══════════════════════════════════════════════════════════
+            // 9. TESTIMONIALS SECTION ANIMATIONS
+            // ═══════════════════════════════════════════════════════════
             gsap.from('.testimonial-heading', {
                 duration: 1,
                 y: 50,
@@ -3880,77 +4270,73 @@
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: '.testimonial-heading',
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
+                    start: "top 80%"
                 }
             });
 
-            // Animate Rating Card with Scale Effect
+
+            // Rating Card - Scale Reveal
             gsap.from('.rating-card', {
-                duration: 1.2,
+                duration: 1,
                 scale: 0.9,
                 opacity: 0,
                 y: 30,
                 ease: "back.out(1.2)",
                 scrollTrigger: {
                     trigger: '.rating-card',
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
+                    start: "top 75%"
                 }
             });
 
-            // Animate Rating Stats Individually
+            // Rating Stats - Staggered Entrance
             gsap.from('.rating-card .grid > div', {
-                duration: 0.8,
-                y: 30,
+                duration: 0.7,
+                y: 20,
                 opacity: 0,
-                stagger: 0.2,
+                stagger: 0.15,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: '.rating-card',
-                    start: "top 75%",
-                    toggleActions: "play none none reverse"
+                    start: "top 70%"
                 },
-                delay: 0.3
+                delay: 0.2
             });
 
-            // Animate Video Testimonial Section
+            // Video Testimonial Section - Slide + Fade
             gsap.from('.video-testimonial-heading', {
-                duration: 1,
-                x: -50,
+                duration: 0.9,
+                x: -40,
                 opacity: 0,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: '.video-testimonial-heading',
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
+                    start: "top 80%"
                 }
             });
 
             gsap.from('.video-container', {
-                duration: 1.2,
-                scale: 0.95,
+                duration: 1.1,
+                scale: 0.93,
                 opacity: 0,
-                y: 40,
+                y: 30,
                 ease: "power3.out",
                 scrollTrigger: {
                     trigger: '.video-container',
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
+                    start: "top 75%"
                 }
             });
 
-            // Animate Social Proof Banner
+            // Social Proof Banner - Entrance
             gsap.from('.social-proof-banner', {
-                duration: 1,
-                y: 50,
+                duration: 0.9,
+                y: 40,
                 opacity: 0,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: '.social-proof-banner',
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
+                    start: "top 80%"
                 }
+
             });
 
             // Counter Animation for Stats
@@ -3961,38 +4347,82 @@
                 snap: { textContent: 1 },
                 scrollTrigger: {
                     trigger: '.social-proof-banner',
-                    start: "top 80%",
-                    toggleActions: "play none none reverse"
+                    start: "top 80%"
                 },
-                stagger: 0.3
+                stagger: 0.25
             });
 
-            // Testimonial Cards Stagger Animation (Removed)
-            /*
-            ScrollTrigger.batch('.testimonials-carousel-wrapper .item', {
-                start: "top 85%",
-                onEnter: batch => gsap.to(batch, {
-                    opacity: 1,
-                    y: 0,
-                    stagger: 0.15,
-                    duration: 0.8,
-                    ease: "power2.out",
-                    overwrite: true
-                })
-            });
-            */
-
-            // Parallax effect for decorative elements
+            // ═══════════════════════════════════════════════════════════
+            // 10. PARALLAX DECORATIVE ELEMENTS
+            // ═══════════════════════════════════════════════════════════
             gsap.to('#testimonials img[src*="abstract"]', {
-                y: 100,
+                y: 80,
                 ease: "none",
                 scrollTrigger: {
                     trigger: '#testimonials',
                     start: "top bottom",
                     end: "bottom top",
-                    scrub: 1
+                    scrub: 0.5
                 }
             });
+
+            // ═══════════════════════════════════════════════════════════
+            // 11. CURRICULUM TABS - HOVER + CLICK ANIMATIONS
+            // ═══════════════════════════════════════════════════════════
+            document.querySelectorAll('.curriculum-tab').forEach(tab => {
+                tab.classList.add('gpu-accelerated');
+
+                tab.addEventListener('mouseenter', () => {
+                    gsap.to(tab, {
+                        y: -4,
+                        boxShadow: '0 12px 24px rgba(139, 32, 37, 0.12)',
+                        duration: 0.3,
+                        ease: "power2.out",
+                        overwrite: 'auto'
+                    });
+                });
+
+                tab.addEventListener('mouseleave', () => {
+                    gsap.to(tab, {
+                        y: 0,
+                        boxShadow: '0 1px 3px rgba(0, 0, 0, 0.1)',
+                        duration: 0.25
+                    });
+                });
+            });
+
+            // ═══════════════════════════════════════════════════════════
+            // 12. FLOATING CTA BUTTON - ENTRANCE + PULSE
+            // ═══════════════════════════════════════════════════════════
+            const floatingCTA = document.querySelector('.fixed.bottom-6');
+            if (floatingCTA) {
+                gsap.from(floatingCTA, {
+                    y: 100,
+                    opacity: 0,
+                    duration: 0.8,
+                    ease: "back.out(1.2)",
+                    delay: 0.5
+                });
+
+                // Subtle pulse animation on links
+                floatingCTA.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('mouseenter', () => {
+                        gsap.to(link, {
+                            scale: 1.05,
+                            duration: 0.25,
+                            ease: "back.out(1.2)",
+                            overwrite: 'auto'
+                        });
+                    });
+
+                    link.addEventListener('mouseleave', () => {
+                        gsap.to(link, {
+                            scale: 1,
+                            duration: 0.2
+                        });
+                    });
+                });
+            }
         }
 
         // ====================================
@@ -4000,12 +4430,12 @@
         // ====================================
         document.addEventListener('DOMContentLoaded', () => {
             renderAll();
-            // Small delay to ensure DOM is drawn before GSAP calculates positions
             setTimeout(initAnimations, 100);
         });
 
-        // 9. Interactive Book Animation (Career Section)
-        // ------------------------------------
+        // ═══════════════════════════════════════════════════════════
+        // 13. INTERACTIVE BOOK ANIMATIONS (Career Section)
+        // ═══════════════════════════════════════════════════════════
         function initBookAnimations() {
             const books = document.querySelectorAll('.interactive-book');
             if (!books.length) return;
@@ -4017,7 +4447,6 @@
 
                 if (!wrapper || !cover || !inside) return;
 
-                // Set initial 3D properties
                 gsap.set(wrapper, { transformStyle: "preserve-3d", perspective: 1000 });
                 gsap.set(cover, { transformOrigin: "left center", transformStyle: "preserve-3d", zIndex: 20 });
                 gsap.set(inside, { transformStyle: "preserve-3d", zIndex: 10 });
@@ -4063,16 +4492,276 @@
             });
         }
 
-        const style = document.createElement('style');
-        style.textContent = `
-            .perspective-1000 { perspective: 1000px; }
-            .transform-style-3d { transform-style: preserve-3d; }
-            .backface-hidden { backface-visibility: hidden; }
-            .interactive-book { position: relative; z-index: 1; }
-        `;
-        document.head.appendChild(style);
-        setTimeout(initBookAnimations, 500);
+        // ═══════════════════════════════════════════════════════════
+        // 14. ADVANCED SCROLL-BASED STORYTELLING
+        // ═══════════════════════════════════════════════════════════
+        function initAdvancedScrollAnimations() {
+            // Progressive Image Reveals on Sections
+            const careerCards = document.querySelectorAll('[class*="career"], [class*="opportunity"]');
+            careerCards.forEach(card => {
+                const img = card.querySelector('img');
+                if (!img) return;
 
+                gsap.from(img, {
+                    scale: 1.1,
+                    opacity: 0,
+                    duration: 0.9,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 75%"
+                    }
+                });
+            });
+
+            // Section Background Reveal with Gradient Scrub
+            const pricingSection = document.querySelector('#pricing-section');
+            if (pricingSection) {
+                gsap.from(pricingSection, {
+                    backgroundPosition: "0% 100%",
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: pricingSection,
+                        start: "top center",
+                        end: "bottom center",
+                        scrub: 1,
+                        markers: false
+                    }
+                });
+            }
+
+            // Team Section - Staggered Card Entrance
+            const teamCards = document.querySelectorAll('[class*="team-member"], [class*="instructor"]');
+            if (teamCards.length) {
+                ScrollTrigger.batch(teamCards, {
+                    start: "top 80%",
+                    onEnter: batch => gsap.to(batch, {
+                        opacity: 1,
+                        y: 0,
+                        stagger: 0.2,
+                        duration: 0.7,
+                        ease: "power2.out"
+                    })
+                });
+
+                // Set initial state
+                gsap.set(teamCards, { opacity: 0, y: 40 });
+            }
+
+            // Certification Logos - Fade & Zoom
+            const certLogos = document.querySelectorAll('[class*="certification"], [class*="badge"]');
+            certLogos.forEach(logo => {
+                gsap.from(logo, {
+                    scale: 0.85,
+                    opacity: 0,
+                    duration: 0.7,
+                    ease: "back.out(1.2)",
+                    stagger: 0.1,
+                    scrollTrigger: {
+                        trigger: logo.closest('section'),
+                        start: "top 70%"
+                    }
+                });
+            });
+
+            // Bonus Features Section - Sequential Reveals
+            const bonusItems = document.querySelectorAll('[class*="bonus"], [class*="feature-item"]');
+            if (bonusItems.length) {
+                bonusItems.forEach((item, index) => {
+                    gsap.from(item, {
+                        x: index % 2 === 0 ? -40 : 40,
+                        opacity: 0,
+                        duration: 0.8,
+                        ease: "power3.out",
+                        scrollTrigger: {
+                            trigger: item,
+                            start: "top 80%"
+                        },
+                        delay: index * 0.15
+                    });
+                });
+            }
+        }
+
+        // Initialize Advanced Scroll Animations
+        setTimeout(() => {
+            initAdvancedScrollAnimations();
+            initBookAnimations();
+        }, 200);
+
+
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <!-- ADVANCED INTERACTIVE HOVER & MAGNETIC ANIMATIONS -->
+    <!-- ═══════════════════════════════════════════════════════════ -->
+    <script>
+        // Premium Magnetic Button Interaction
+        function initMagneticButtons() {
+            const magneticBtns = document.querySelectorAll(
+                'a[href*="student-reg"], a[href*="enrol"], a[href*="whatsapp"], .btn-premium'
+            );
+
+            magneticBtns.forEach(btn => {
+                let magneticX = 0;
+                let magneticY = 0;
+
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const centerX = rect.left + rect.width / 2;
+                    const centerY = rect.top + rect.height / 2;
+
+                    magneticX = (e.clientX - centerX) * 0.2;
+                    magneticY = (e.clientY - centerY) * 0.2;
+
+                    gsap.to(btn, {
+                        x: magneticX,
+                        y: magneticY,
+                        duration: 0.4,
+                        ease: "power2.out",
+                        overwrite: 'auto'
+                    });
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    gsap.to(btn, {
+                        x: 0,
+                        y: 0,
+                        duration: 0.3,
+                        ease: "sine.out"
+                    });
+                });
+            });
+        }
+
+        // Premium Link Hover Underline Animation
+        function initPremiumLinkHovers() {
+            const navLinks = document.querySelectorAll('nav a, footer a');
+            navLinks.forEach(link => {
+                link.style.position = 'relative';
+
+                // Create underline element
+                const underline = document.createElement('span');
+                underline.style.cssText = `
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background: linear-gradient(90deg, #8b2025, #edcf9c);
+                    transition: width 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+                `;
+                link.appendChild(underline);
+
+                link.addEventListener('mouseenter', () => {
+                    gsap.to(underline, {
+                        width: '100%',
+                        duration: 0.4,
+                        ease: "power3.out"
+                    });
+                });
+
+                link.addEventListener('mouseleave', () => {
+                    gsap.to(underline, {
+                        width: 0,
+                        duration: 0.3,
+                        ease: "sine.out"
+                    });
+                });
+            });
+        }
+
+        // Testimonial Card Hover - Lift + Shadow
+        function initTestimonialCardHovers() {
+            const testimonialCards = document.querySelectorAll(
+                '[class*="testimonial-card"], [class*="review-card"]'
+            );
+
+            testimonialCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    gsap.to(card, {
+                        y: -8,
+                        boxShadow: '0 24px 48px rgba(139, 32, 37, 0.15)',
+                        duration: 0.4,
+                        ease: "power2.out",
+                        overwrite: 'auto'
+                    });
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    gsap.to(card, {
+                        y: 0,
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.08)',
+                        duration: 0.3
+                    });
+                });
+            });
+        }
+
+        // FAQItem Accordion Enhancement - Smooth Height Animation
+        function initAccordionAnimations() {
+            const accordions = document.querySelectorAll('[class*="accordion"]');
+            accordions.forEach(accordion => {
+                const header = accordion.querySelector('[role="button"], button');
+                if (!header) return;
+
+                header.addEventListener('click', () => {
+                    const body = accordion.querySelector('[class*="body"], [class*="content"]');
+                    if (!body) return;
+
+                    const isOpen = body.style.gridTemplateRows === '1fr';
+
+                    if (!isOpen) {
+                        gsap.to(body, {
+                            opacity: 1,
+                            duration: 0.3,
+                            ease: "power2.out"
+                        });
+                    } else {
+                        gsap.to(body, {
+                            opacity: 0,
+                            duration: 0.2,
+                            ease: "power2.in"
+                        });
+                    }
+                });
+            });
+        }
+
+        // Input Field Focus Animation
+        function initFormAnimations() {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+            inputs.forEach(input => {
+                input.addEventListener('focus', () => {
+                    gsap.to(input, {
+                        boxShadow: '0 0 0 3px rgba(139, 32, 37, 0.1)',
+                        borderColor: '#8b2025',
+                        duration: 0.3,
+                        ease: "sine.out",
+                        overwrite: 'auto'
+                    });
+                });
+
+                input.addEventListener('blur', () => {
+                    gsap.to(input, {
+                        boxShadow: '0 0 0 0px rgba(139, 32, 37, 0)',
+                        borderColor: 'initial',
+                        duration: 0.2
+                    });
+                });
+            });
+        }
+
+        // Initialize all interactive animations
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                initMagneticButtons();
+                initPremiumLinkHovers();
+                initTestimonialCardHovers();
+                initAccordionAnimations();
+                initFormAnimations();
+            }, 150);
+        });
     </script>
 
     <script>
@@ -4470,6 +5159,25 @@
             initMobileNav();
             initLazyLoading();
             initKeyboardNav();
+
+            // Lottie play on enter logic
+            const lottieObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const player = entry.target;
+                        // Play the animation
+                        if (player.play) {
+                            player.play();
+                            // Unobserve after first play if you only want it to play once on enter
+                            lottieObserver.unobserve(player);
+                        }
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            document.querySelectorAll('.lottie-play-on-enter').forEach(player => {
+                lottieObserver.observe(player);
+            });
 
             // Only show social proof if user hasn't opted for reduced motion
             if (!reducedMotion) {

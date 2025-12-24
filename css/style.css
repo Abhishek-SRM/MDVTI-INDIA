@@ -98,6 +98,65 @@ section {
     z-index: 99;
 }
 
+/* ===============================
+   Custom Cursor & Parallax Helpers
+   =============================== */
+@media (hover: none) {
+    .custom-cursor {
+        display: none;
+    }
+}
+
+.custom-cursor {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 99999;
+}
+
+.custom-cursor .cursor-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: background .18s ease, transform .12s ease;
+    mix-blend-mode: normal;
+}
+
+.custom-cursor .cursor-outline {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 2px solid rgba(139, 32, 37, 0.85);
+    transform: translate(-50%, -50%);
+    transition: transform .12s ease, width .12s ease, height .12s ease, border-color .12s ease;
+    background: transparent;
+}
+
+.custom-cursor.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.cursor-hover .custom-cursor .cursor-dot {
+    transform: translate(-50%, -50%) scale(0.85);
+    background: var(--tertiary);
+}
+
+body.cursor-hover .custom-cursor .cursor-outline {
+    transform: translate(-50%, -50%) scale(1.75);
+    border-color: var(--tertiary);
+}
+
+/* Parallax helper — accelerate transform for decoration */
+[data-parallax] {
+    will-change: transform;
+    transition: transform .12s linear;
+}
+
 
 /*** Spinner ***/
 #spinner {
@@ -605,6 +664,7 @@ section {
     background: #980000;
     transform: translate3d(0px, -50%, 0px) scale(0.7);
 }
+
 .owl-carousel .owl-dots {
     display: inline-block;
     width: 100%;
@@ -1736,7 +1796,7 @@ ol *::after {
 }
 
 .social-media-section .card {
-    background-color: #ffffff ;
+    background-color: #ffffff;
     margin: 10px;
     width: 320px;
     height: 221px;
@@ -1753,8 +1813,9 @@ ol *::after {
 }
 
 .social-media-section .card:hover {
-    background-color: #ffdb9c83 ;
+    background-color: #ffdb9c83;
 }
+
 .social-media-section .circle {
     border-radius: 50%;
     background: #fff;
@@ -1765,6 +1826,7 @@ ol *::after {
     z-index: 1;
     transition: all 0.3s ease-out;
 }
+
 .social-media-section .circle img {
     width: 100px;
     height: 100px;
@@ -1780,7 +1842,8 @@ ol *::after {
     border: 1px dotted rgb(33, 33, 33);
     box-shadow: 2px 2px 15px 2px rgba(0, 0, 0, 0.114);
     border-radius: 3px;
-    transition: color .5s ease, transform .5s ease, box-shadow .5s ease; /* Combined transitions */
+    transition: color .5s ease, transform .5s ease, box-shadow .5s ease;
+    /* Combined transitions */
     background-color: #ffffff;
 }
 
@@ -1792,7 +1855,8 @@ ol *::after {
 .ag-courses_item .ag-courses-item_bg,
 .ag-courses-item_link:hover .ag-courses-item_bg {
     background-color: #8B2025;
-    transition: transform .5s ease; /* Ensure smooth scaling */
+    transition: transform .5s ease;
+    /* Ensure smooth scaling */
 }
 
 /* Link and its hover states */
@@ -1807,12 +1871,14 @@ ol *::after {
 .ag-courses-item_link:hover,
 .ag-courses-item_link:hover .ag-courses-item_title,
 .ag-courses-item_link:hover .ag-courses-item_date-box {
-    color: #ffffff; /* Unified hover color changes */
+    color: #ffffff;
+    /* Unified hover color changes */
     text-decoration: none;
 }
 
 .ag-courses-item_link:hover .ag-courses-item_bg {
-    transform: scale(10); /* Dramatic scaling effect on hover */
+    transform: scale(10);
+    /* Dramatic scaling effect on hover */
 }
 
 /* Title and Date box styles */
@@ -1821,8 +1887,10 @@ ol *::after {
     overflow: hidden;
     z-index: 2;
     position: relative;
-    color: #262626; /* Default text color */
-    transition: color .5s ease; /* Smooth color transition */
+    color: #262626;
+    /* Default text color */
+    transition: color .5s ease;
+    /* Smooth color transition */
 }
 
 .ag-courses-item_title {

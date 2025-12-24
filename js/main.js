@@ -211,13 +211,13 @@ $(document).ready(function () {
 
   $('.affiliations-carousel').owlCarousel({
     loop: true,
-      center: true,
-      items: 5,
-      margin: 10,
-      autoplayHoverPause: true,
-      dots:true,
-      autoplayTimeout: 8500,
-      smartSpeed: 450,
+    center: true,
+    items: 5,
+    margin: 10,
+    autoplayHoverPause: true,
+    dots: true,
+    autoplayTimeout: 8500,
+    smartSpeed: 450,
     responsive: {
       0: {
         items: 2
@@ -233,57 +233,125 @@ $(document).ready(function () {
       }
     }
   })
-  
+
 });
 
 
-jQuery(document).ready(function($) {
+jQuery(document).ready(function ($) {
   "use strict";
   //  TESTIMONIALS CAROUSEL HOOK
   $('#customers-testimonials').owlCarousel({
-      loop: true,
-      center: true,
-      items: 3,
-      margin: 0,
-      autoplayHoverPause: true,
-      dots:true,
-      autoplayTimeout: 8500,
-      smartSpeed: 450,
-      responsive: {
-        0: {
-          items: 1
-        },
-        768: {
-          items: 2
-        },
-        1170: {
-          items: 3
-        }
+    loop: true,
+    center: true,
+    items: 3,
+    margin: 0,
+    autoplayHoverPause: true,
+    dots: true,
+    autoplayTimeout: 8500,
+    smartSpeed: 450,
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2
+      },
+      1170: {
+        items: 3
       }
+    }
   });
-  
+
 });
 
-$(document).ready(function() {
-  $('.read-more-btn').each(function() {
-      var $btn = $(this); 
-      var $text = $btn.prev('.testimonial-text');
-      var fullText = $text.text(); 
-      var shortText = fullText.substr(0, 400) + '...'; 
-      
-      $text.data('full-text', fullText).text(shortText);
+$(document).ready(function () {
+  $('.read-more-btn').each(function () {
+    var $btn = $(this);
+    var $text = $btn.prev('.testimonial-text');
+    var fullText = $text.text();
+    var shortText = fullText.substr(0, 400) + '...';
 
-      $btn.on('click', function() {
-      
-          if ($btn.data('isExpanded')) {
-              $text.text(shortText);
-              $btn.text('Read More').data('isExpanded', false);
-          } else {
-              // Expand the text
-              $text.text($text.data('full-text'));
-              $btn.text('Read Less').data('isExpanded', true);
-          }
+    $text.data('full-text', fullText).text(shortText);
+
+    $btn.on('click', function () {
+
+      if ($btn.data('isExpanded')) {
+        $text.text(shortText);
+        $btn.text('Read More').data('isExpanded', false);
+      } else {
+        // Expand the text
+        $text.text($text.data('full-text'));
+        $btn.text('Read Less').data('isExpanded', true);
+      }
+    });
+  });
+});
+
+// Custom cursor (smooth follow) and lightweight mouse parallax for decorative elements
+(function () {
+  // Abort on touch devices
+  if ('ontouchstart' in window || window.matchMedia('(hover: none)').matches) return;
+
+  // Create cursor markup
+  const cursorWrap = document.createElement('div');
+  cursorWrap.className = 'custom-cursor hidden';
+  cursorWrap.innerHTML = '<div class="cursor-outline" id="cursorOutline"></div><div class="cursor-dot" id="cursorDot"></div>';
+  document.body.appendChild(cursorWrap);
+
+  const dot = document.getElementById('cursorDot');
+  const outline = document.getElementById('cursorOutline');
+
+  let mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+  let pos = { x: mouse.x, y: mouse.y };
+  const ease = 0.16;
+
+  window.addEventListener('mousemove', function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    // instant dot (snappy)
+    dot.style.transform = `translate(${mouse.x}px, ${mouse.y}px)`;
+    cursorWrap.classList.remove('hidden');
+  });
+
+  function render() {
+    pos.x += (mouse.x - pos.x) * ease;
+    pos.y += (mouse.y - pos.y) * ease;
+    outline.style.transform = `translate(${pos.x}px, ${pos.y}px)`;
+    requestAnimationFrame(render);
+  }
+  requestAnimationFrame(render);
+
+  // Hover states: add `cursor-hover` class to body when hovering interactive elements
+  document.querySelectorAll('a, button, input, textarea, .btn, [data-cursor="pointer"]').forEach(function (el) {
+    el.addEventListener('mouseenter', function () { document.body.classList.add('cursor-hover'); });
+    el.addEventListener('mouseleave', function () { document.body.classList.remove('cursor-hover'); });
+  });
+
+  document.addEventListener('mouseleave', function () { cursorWrap.classList.add('hidden'); });
+  document.addEventListener('mouseenter', function () { cursorWrap.classList.remove('hidden'); });
+
+  // Mouse parallax for decorative elements with data-parallax attribute
+  const parallaxEls = document.querySelectorAll('[data-parallax]');
+  if (parallaxEls.length) {
+    const lerp = (a, b, n) => (1 - n) * a + n * b;
+    let mouseX = 0, mouseY = 0, rx = 0, ry = 0;
+    window.addEventListener('mousemove', function (e) {
+      mouseX = (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2);
+      mouseY = (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2);
+    });
+
+    function updateParallax() {
+      rx = lerp(rx, mouseX, 0.09);
+      ry = lerp(ry, mouseY, 0.09);
+      parallaxEls.forEach(function (el) {
+        const speed = parseFloat(el.dataset.parallaxSpeed) || parseFloat(el.dataset.speed) || 0.12;
+        const x = -rx * 100 * speed;
+        const y = -ry * 40 * speed;
+        el.style.transform = `translate3d(${x}px, ${y}px, 0)`;
       });
-  });
-});
+      requestAnimationFrame(updateParallax);
+    }
+    requestAnimationFrame(updateParallax);
+  }
+})();
 

@@ -381,7 +381,7 @@ function renderCurriculumCards() {
                         <div class="flex items-center gap-2 mb-1">
                             <span class="px-2.5 py-1 rounded-full bg-[#edcf9c]/35 text-[10px] font-bold uppercase tracking-wider text-[#8b2025] border border-[#d4b886]/60">${escapeHtml(c.badge || 'Module')}</span>
                         </div>
-                        <h3 class="text-2xl lg:text-3xl font-serif font-bold text-gray-900 leading-tight">${escapeHtml(c.title)}</h3>
+                        <h3 class="text-h3 font-serif font-bold text-gray-900 leading-tight">${escapeHtml(c.title)}</h3>
                     </div>
                 </div>
 
@@ -401,16 +401,13 @@ function renderCurriculumCards() {
         const isMobile = window.innerWidth < 1024;
 
         if (detailMobile && isMobile) {
-            // Check if clicking the same tab again - toggle close
             if (mobileOpenIndex === activeIndex) {
-                // Close it with animation
                 const gridWrapper = detailMobile.querySelector('.grid');
                 if (gridWrapper) {
                     gridWrapper.style.gridTemplateRows = '0fr';
                     gridWrapper.style.opacity = '0';
                 }
 
-                // Update chevron back to right
                 const activeTab = tabs[activeIndex];
                 const chevron = activeTab?.querySelector('.bi-chevron-right, .bi-chevron-down');
                 if (chevron) {
@@ -418,7 +415,6 @@ function renderCurriculumCards() {
                     chevron.classList.add('bi-chevron-right');
                 }
 
-                // Clear mobile open index after animation
                 setTimeout(() => {
                     mobileOpenIndex = null;
                     detailMobile.innerHTML = '';
@@ -427,10 +423,8 @@ function renderCurriculumCards() {
                 return;
             }
 
-            // Update mobile open index
             mobileOpenIndex = activeIndex;
 
-            // Create detail content wrapper with grid for smooth animation
             detailMobile.innerHTML = `
                 <div class="grid transition-all duration-300 ease-out" style="grid-template-rows: 0fr; opacity: 0;">
                     <div class="overflow-hidden">
@@ -441,14 +435,12 @@ function renderCurriculumCards() {
                 </div>
             `;
 
-            // Move mobile detail below the active tab
             const activeTab = tabs[activeIndex];
             if (activeTab && activeTab.parentNode) {
                 detailMobile.remove();
                 activeTab.insertAdjacentElement('afterend', detailMobile);
             }
 
-            // Update all chevrons
             tabs.forEach((tab, idx) => {
                 const chevron = tab.querySelector('.bi-chevron-right, .bi-chevron-down');
                 if (chevron) {
@@ -462,7 +454,6 @@ function renderCurriculumCards() {
                 }
             });
 
-            // Trigger animation after DOM update
             setTimeout(() => {
                 const gridWrapper = detailMobile.querySelector('.grid');
                 if (gridWrapper) {
@@ -492,13 +483,11 @@ function renderCurriculumCards() {
             }, 150);
         }
 
-        // GSAP Animation for Detail Content (desktop)
         gsap.fromTo(detail.querySelector('.detail-content'),
             { opacity: 0, y: 20, filter: 'blur(10px)' },
             { opacity: 1, y: 0, filter: 'blur(0px)', duration: 0.5, ease: "power2.out" }
         );
 
-        // Stagger list items in detail view (desktop)
         gsap.to(detail.querySelectorAll('.detail-item-anim'), {
             opacity: 1,
             y: 0,
@@ -509,7 +498,6 @@ function renderCurriculumCards() {
         });
     };
 
-    // Create list items
     cards.forEach((c, i) => {
         const btn = document.createElement('button');
         btn.type = 'button';
@@ -565,8 +553,6 @@ function renderCurriculumCards() {
     // Initial Render
     renderDetail(0);
 
-    // GSAP Animation for List Items Entrance
-    // We use a small timeout to ensure the DOM is fully painted and calculated
     setTimeout(() => {
         ScrollTrigger.batch(tabs, {
             onEnter: batch => gsap.fromTo(batch,
@@ -574,11 +560,10 @@ function renderCurriculumCards() {
                 { opacity: 1, y: 0, duration: 0.4, stagger: 0.1, ease: "power2.out", overwrite: true }
             ),
             start: "top 90%",
-            once: true // Only animate once to avoid issues
+            once: true
         });
     }, 100);
 
-    // Animate Detail Card Entrance
     gsap.fromTo(detail,
         { opacity: 0, x: 20 },
         {
@@ -613,7 +598,6 @@ function renderFAQs() {
     const container = document.getElementById('faqContainer');
     if (!container) return;
 
-    // Split FAQs into two columns
     const mid = Math.ceil(pageData.faqs.length / 2);
     const leftFAQs = pageData.faqs.slice(0, mid);
     const rightFAQs = pageData.faqs.slice(mid);
@@ -650,7 +634,6 @@ function renderFAQs() {
         </div>
     `;
 
-    // Add toggle functionality
     container.querySelectorAll('.faq-toggle').forEach((toggle, index) => {
         toggle.addEventListener('click', () => {
             const content = toggle.parentElement.querySelector('.faq-content');
@@ -658,13 +641,11 @@ function renderFAQs() {
             const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
 
             if (isExpanded) {
-                // Close
                 content.style.maxHeight = '0px';
                 content.style.opacity = '0';
                 icon.style.transform = 'rotate(0deg)';
                 toggle.setAttribute('aria-expanded', 'false');
             } else {
-                // Open
                 content.style.maxHeight = content.scrollHeight + 'px';
                 content.style.opacity = '1';
                 icon.style.transform = 'rotate(180deg)';
@@ -673,7 +654,6 @@ function renderFAQs() {
         });
     });
 
-    // GSAP Animation for FAQ Items
     setTimeout(() => {
         ScrollTrigger.batch(container.querySelectorAll('.faq-item'), {
             onEnter: batch => gsap.fromTo(batch,
@@ -686,11 +666,7 @@ function renderFAQs() {
     }, 100);
 }
 
-function renderTestimonial() {
-    // Placeholder for testimonial rendering if needed
-}
 
-// Hero Video Modal
 (() => {
     const initHeroVideoModal = () => {
         const openBtn = document.getElementById('heroVideoOpen');
@@ -744,7 +720,6 @@ function renderTestimonial() {
 
 // Exit Intent Modal
 document.addEventListener('DOMContentLoaded', () => {
-    // Basic Exit Intent Implementation
     const modal = document.getElementById('exitIntentModal');
     const content = document.getElementById('exitModalContent');
     const closeBtn = document.getElementById('closeExitModal');
@@ -752,19 +727,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!modal || !content) return;
 
-    // Optional: Check local storage to ensure we don't annoy the user
-    // We'll leave it commented out for testing purposes so you can see it work
-    // if (localStorage.getItem('mdvti_exit_popup_shown')) return;
-
     let hasShown = false;
 
     const showModal = () => {
         if (hasShown) return;
         hasShown = true;
-        // localStorage.setItem('mdvti_exit_popup_shown', 'true');
 
         modal.classList.remove('hidden');
-        // Small delay to allow display:block to apply before transition
         setTimeout(() => {
             content.classList.remove('scale-95', 'opacity-0');
             content.classList.add('scale-100', 'opacity-100');
@@ -776,17 +745,15 @@ document.addEventListener('DOMContentLoaded', () => {
         content.classList.add('scale-95', 'opacity-0');
         setTimeout(() => {
             modal.classList.add('hidden');
-        }, 300); // Match transition duration
+        }, 300);
     };
 
-    // Trigger on mouse leave to top (Desktop)
     document.addEventListener('mouseleave', (e) => {
         if (e.clientY < 10) {
             showModal();
         }
     });
 
-    // Mobile trigger: Show modal after user scrolls to 40% of page or after 45 seconds
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
     if (isMobile) {
         let scrollTriggered = false;
@@ -803,7 +770,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.addEventListener('scroll', handleScroll, { passive: true });
 
-        // Fallback: Show modal after 45 seconds on mobile if user hasn't scrolled enough
         setTimeout(() => {
             if (!scrollTriggered && !hasShown) {
                 scrollTriggered = true;
@@ -898,118 +864,13 @@ function initMobileNav() {
     });
 }
 
-// ====================================
-// COPY TO CLIPBOARD FUNCTION
-// ====================================
-function copyToClipboard(text, buttonEl) {
-    navigator.clipboard.writeText(text).then(() => {
-        const feedback = buttonEl.querySelector('.copy-feedback');
-        if (feedback) {
-            feedback.classList.add('show');
-            setTimeout(() => feedback.classList.remove('show'), 2000);
-        }
-
-        // Update button text temporarily
-        const codeSpan = buttonEl.querySelector('#couponCode');
-        if (codeSpan) {
-            const original = codeSpan.textContent;
-            codeSpan.textContent = 'Copied!';
-            setTimeout(() => codeSpan.textContent = original, 1500);
-        }
-    }).catch(err => {
-        console.error('Failed to copy:', err);
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = text;
-        document.body.appendChild(textArea);
-        textArea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textArea);
-    });
-}
-
-// ====================================
-// PREFERS REDUCED MOTION CHECK
-// ====================================
-function checkReducedMotion() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (prefersReducedMotion) {
-        // Disable GSAP animations
-        if (typeof gsap !== 'undefined') {
-            gsap.globalTimeline.pause();
-        }
-        // Disable WOW.js
-        document.querySelectorAll('.wow').forEach(el => {
-            el.classList.remove('wow');
-            el.style.visibility = 'visible';
-            el.style.opacity = '1';
-        });
-    }
-    return prefersReducedMotion;
-}
-
-// ====================================
-// LAZY LOAD IMAGES
-// ====================================
-function initLazyLoading() {
-    // Add loading="lazy" to images below the fold
-    const images = document.querySelectorAll('img:not([loading])');
-    const heroSection = document.querySelector('.hero-section');
-    const heroBottom = heroSection ? heroSection.getBoundingClientRect().bottom : 600;
-
-    images.forEach(img => {
-        const rect = img.getBoundingClientRect();
-        if (rect.top > heroBottom) {
-            img.setAttribute('loading', 'lazy');
-        }
-    });
-}
-
-// ====================================
-// KEYBOARD NAVIGATION IMPROVEMENTS
-// ====================================
-function initKeyboardNav() {
-    // Add keyboard support to curriculum tabs
-    const curriculumTabs = document.querySelectorAll('.curriculum-tab');
-    curriculumTabs.forEach((tab, index) => {
-        tab.setAttribute('tabindex', '0');
-        tab.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                tab.click();
-            }
-            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
-                e.preventDefault();
-                const next = curriculumTabs[index + 1] || curriculumTabs[0];
-                next.focus();
-            }
-            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
-                e.preventDefault();
-                const prev = curriculumTabs[index - 1] || curriculumTabs[curriculumTabs.length - 1];
-                prev.focus();
-            }
-        });
-    });
-}
 
 // ====================================
 // INIT ALL UX ENHANCEMENTS
 // ====================================
 document.addEventListener('DOMContentLoaded', () => {
-    const reducedMotion = checkReducedMotion();
-
     initScrollProgress();
     initBackToTop();
     initMobileNav();
-    initLazyLoading();
-    initKeyboardNav();
-
-    // Only show social proof if user hasn't opted for reduced motion
-    if (!reducedMotion) {
-        initSocialProofToast();
-    }
-
-    // Render dynamic content
     renderAll();
 });
