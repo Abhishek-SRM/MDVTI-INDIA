@@ -1,1557 +1,316 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <title>MDVTI INDIA</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta content="" name="keywords" />
-    <meta content="" name="description" />
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap"
-        rel="stylesheet" />
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fffaf2">
+    <meta name="description" content="Explore Yogkulam's yoga teacher training and yoga therapy programmes. Learn authentic yoga, build teaching skills and find your next path with MDVTI India.">
+    <title>Yogkulam — Learn Authentic Yoga. Build a Meaningful Career.</title>
+    <link rel="icon" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/coursecard.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/home-theme.css" rel="stylesheet">
 </head>
-<style>
-    .footer .btn.btn-link::before {
-        position: relative;
-        content: "";
-        font-weight: 900;
-        margin-right: 10px;
-    }
-
-    .feature h5 {
-        font-weight: 400;
-        font-size: 18px;
-    }
-
-
-
-    .visitor {
-        border: 3px dotted rgba(255, 255, 255, 0.733);
-        padding: 0 10px;
-    }
-
-
-
-    form {
-        font-weight: 300;
-    }
-
-    .stroke {
-        color: transparent;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: rgb(139 32 37);
-        text-shadow: 3px -4px 0px #8b2025;
-    }
-
-    /* Remove default list styles */
-    ul,
-    ol {
-        list-style: none;
-        padding: 0;
-        margin: 1px 0;
-    }
-
-
-
-    .border-container {
-        display: inline-block;
-        position: relative;
-        width: 10%;
-        animation: rotate 5s linear infinite;
-    }
-
-    .border-container::before,
-    .border-container::after {
-        content: "";
-        position: absolute;
-        top: -5px;
-        left: -5px;
-        right: -5px;
-        bottom: -5px;
-        border: 12px solid transparent;
-        border-image: linear-gradient(to right, red, blue) 1;
-        border-radius: 50%;
-        animation: curly 2s linear infinite;
-    }
-
-    .border-container::after {
-        animation-delay: 1s;
-    }
-
-    @keyframes rotate {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    @keyframes curly {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    /* Styling for list items */
-    li {
-        position: relative;
-        padding-left: 16px;
-        margin-bottom: 12px;
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    /* Styling for the list item text */
-    li span {
-        color: #333333;
-        font-weight: bold;
-    }
-
-    .navbar-brand img {
-        width: 100px;
-    }
-
-    .form-floating>.form-control,
-    .form-floating>.form-select {
-        height: calc(2.26rem + 2px);
-        padding: 1rem 0.75rem;
-    }
-
-    .form-floating>label {
-        padding: 0.61rem 0.5rem;
-    }
-
-    /* form {
-        height: max-content;
-    } */
-    #mdvti-heading {
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        font-size: 4vw;
-    }
-
-    @media (max-width: 574px) {
-        #mdvti-heading {
-            font-size: 8vw !important;
-        }
-
-        #mdvti-form>form {
-            transform: translateZ(0) scale(0.83);
-        }
-
-        #yogkulam-franchise>div>div>div.col-lg-8>div>img {
-            padding: 0 23px;
-            transform: translateZ(0) scale(1.089);
-            bottom: -20px;
-            position: relative;
-        }
-    }
-
-    .card:hover {
-        cursor: pointer;
-    }
-
-    .CYP-image {
-        border-radius: 130px 0 130px 0;
-    }
-</style>
-
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem" role="status"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
+
+    <div id="smooth-wrapper">
+    <div id="smooth-content">
+    <div class="topline"><div class="site-shell topline-inner">
+        <span>Yoga teacher training with purpose</span>
+        <div class="topline-links"><a href="mailto:info@mdvtiindia.org"><i class="bi bi-envelope"></i> info@mdvtiindia.org</a><a href="tel:18008919232"><i class="bi bi-telephone"></i> 1800-891-9232</a></div>
+    </div></div>
+    <div class="site-header-spacer" aria-hidden="true"></div>
+
+    <main id="main">
+        <section class="hero-section">
+            <div class="site-shell hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span></span> Authentic yoga. Meaningful work. A life with purpose.</p>
+                    <h1>Become a yoga teacher<br>and <em>therapist.</em></h1>
+                    <p class="hero-lede">Most institutes teach yoga. Yogkulam builds yoga professionals with purpose—with a structured path from personal practice to teaching, therapy and service.</p>
+                    <div class="hero-actions"><a class="button button-primary" href="#pathways">Explore your learning path <i class="bi bi-arrow-right"></i></a><a class="text-link" href="tel:18008919232">Talk to admissions <i class="bi bi-arrow-up-right"></i></a></div>
+                    <div class="hero-note"><span class="note-icon"><i class="bi bi-heart-pulse"></i></span><span><strong>Beginner-friendly, purpose-led learning</strong><small>No prior teaching experience required. Find the course that fits your goal.</small></span></div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-photo"><img src="img/gallery/2.jpg" alt="Yogkulam learners celebrating their course completion" fetchpriority="high"></div>
+                    <div class="photo-caption"><span class="caption-rule"></span><span>Learn authentically.<br>Live with purpose.</span></div>
+                    <div class="hero-stamp" aria-hidden="true"><span>LEARN</span><i class="bi bi-flower3"></i><span>TEACH • SERVE</span></div>
+                </div>
+            </div>
+            <div class="hero-bottom site-shell"><span>Since 2012</span><i></i><span>40,000+ learners trained</span><i></i><span>Online & in-person learning</span><a href="#recognition" aria-label="Explore recognitions"><i class="bi bi-arrow-down"></i></a></div>
+        </section>
+
+        <section class="recognition-section" id="recognition"><div class="site-shell recognition-inner">
+            <p class="eyebrow"><span></span> Recognition & learning support</p>
+            <div class="recognition-copy"><h2>Learn with a recognised<br><em>pathway.</em></h2><p>Explore certification and exam-support options with our admissions team. Recognition and eligibility depend on the programme you choose.</p></div>
+            <div class="recognition-logos" aria-label="Bodies referenced in programme recognition and exam support"><span>Yoga Certification<br>Board <b>YCB</b></span><span>Indian Yoga<br>Association <b>IYA</b></span><span>Yoga Alliance<br><b>USA</b></span><span>Quality Systems<br><b>ISO 9001:2015</b></span></div>
+        </div></section>
+
+        <section class="audience-section section-pad" id="who-its-for"><div class="site-shell">
+            <div class="section-heading" data-aos="fade-up"><div><p class="eyebrow"><span></span> Is Yogkulam right for you?</p><h2>Many reasons to begin.<br><em>One practice to grow into.</em></h2></div><p>You don’t need to be flexible, young or experienced. Bring curiosity, sincerity and a willingness to learn.</p></div>
+            <div class="audience-grid">
+                <article class="audience-item" data-aos="fade-up"><span class="audience-icon"><i class="bi bi-flower2"></i></span><span class="audience-no">01</span><h3>New to yoga</h3><p>Start with the foundations and build an authentic practice.</p></article>
+                <article class="audience-item" data-aos="fade-up" data-aos-delay="60"><span class="audience-icon"><i class="bi bi-briefcase"></i></span><span class="audience-no">02</span><h3>Working professionals</h3><p>Make space for wellbeing, meaningful work and a new direction.</p></article>
+                <article class="audience-item" data-aos="fade-up" data-aos-delay="120"><span class="audience-icon"><i class="bi bi-house-heart"></i></span><span class="audience-no">03</span><h3>Homemakers</h3><p>Grow confidence, knowledge and options for a future career.</p></article>
+                <article class="audience-item" data-aos="fade-up"><span class="audience-icon"><i class="bi bi-person-hearts"></i></span><span class="audience-no">04</span><h3>Healers & therapists</h3><p>Add a structured yoga perspective to your work with people.</p></article>
+                <article class="audience-item" data-aos="fade-up" data-aos-delay="60"><span class="audience-icon"><i class="bi bi-person-arms-up"></i></span><span class="audience-no">05</span><h3>Fitness enthusiasts</h3><p>Go beyond exercise and explore yoga in greater depth.</p></article>
+                <article class="audience-item" data-aos="fade-up" data-aos-delay="120"><span class="audience-icon"><i class="bi bi-sun"></i></span><span class="audience-no">06</span><h3>Seekers at every age</h3><p>Build a steadier routine, mobility and a more mindful life.</p></article>
+            </div>
+            <p class="reassurance"><i class="bi bi-check-circle"></i> No prior yoga or teaching experience required. Programme eligibility varies—ask us what fits.</p>
+        </div></section>
+
+        <section class="difference-section section-pad" id="approach"><div class="site-shell difference-grid">
+            <div class="difference-intro" data-aos="fade-up"><p class="eyebrow"><span></span> Why Yogkulam</p><h2>Training with<br><em>depth and direction.</em></h2><p>Yoga asks for more than memorising postures. Our learning connects practice, therapeutic understanding and the skills to teach responsibly.</p><a class="text-link" href="about-mdvti.html">About MDVTI India <i class="bi bi-arrow-up-right"></i></a></div>
+            <div class="difference-list">
+                <article data-aos="fade-up"><span>01</span><div><h3>Therapeutic perspective</h3><p>Explore how yoga can support wellbeing alongside its wider philosophical roots.</p></div><i class="bi bi-heart-pulse"></i></article>
+                <article data-aos="fade-up" data-aos-delay="70"><span>02</span><div><h3>Practice you can explain</h3><p>Connect asana, breath, anatomy and philosophy—not just the shape of a pose.</p></div><i class="bi bi-journal-bookmark"></i></article>
+                <article data-aos="fade-up" data-aos-delay="140"><span>03</span><div><h3>Learn to teach thoughtfully</h3><p>Build class sequencing, communication and a professional teaching approach.</p></div><i class="bi bi-person-video3"></i></article>
+                <article data-aos="fade-up" data-aos-delay="210"><span>04</span><div><h3>Support beyond the syllabus</h3><p>Find guidance on career choices, teaching practice and setting up a yoga studio.</p></div><i class="bi bi-compass"></i></article>
+            </div>
+        </div></section>
+
+        <section class="included-section section-pad"><div class="site-shell">
+            <div class="section-heading" data-aos="fade-up"><div><p class="eyebrow"><span></span> What you will learn & receive</p><h2>A clear path. <em>Ongoing support.</em></h2></div><p>No vague promises. Explore the learning, resources and support offered across Yogkulam programmes.</p></div>
+            <div class="included-grid">
+                <article class="included-card" data-aos="fade-up"><span class="included-icon"><i class="bi bi-play-circle"></i></span><h3>Learn & practise</h3><ul><li>Guided yoga practice sessions</li><li>Structured live and recorded theory classes</li><li>Progressive training (course dependent)</li><li>200+ hours of systematic training (programme dependent)</li><li>Recording access, as specified by the course</li></ul></article>
+                <article class="included-card" data-aos="fade-up" data-aos-delay="80"><span class="included-icon"><i class="bi bi-journal-text"></i></span><h3>Materials & guidance</h3><ul><li>Detailed study notes and learning resources</li><li>Student kit and practice tools (course dependent)</li><li>Doubt-clearing and academic support</li><li>Special guidance sessions</li><li>Continued learner community support</li></ul></article>
+                <article class="included-card" data-aos="fade-up" data-aos-delay="160"><span class="included-icon"><i class="bi bi-award"></i></span><h3>Certification & career</h3><ul><li>Programme-specific certification pathway</li><li>Yoga Certification Board exam support</li><li>Teaching methodology and communication</li><li>Career guidance and studio setup learning</li><li>Support details vary by programme</li></ul></article>
+            </div>
+            <p class="fineprint">Course features, hours, certification and support depend on the programme. Review the individual course page for details.</p>
+        </div></section>
+
+        <section class="curriculum-section section-pad" id="curriculum"><div class="site-shell curriculum-grid">
+            <div class="curriculum-intro" data-aos="fade-up"><p class="eyebrow eyebrow-light"><span></span> Yoga is more than asana</p><h2>Study the whole<br><em>tradition.</em></h2><p>Build your understanding across yogic thought, body systems, daily practice and the responsibilities of teaching.</p><a class="button button-outline" href="course-desc.html">Read the PGDYT syllabus <i class="bi bi-arrow-right"></i></a></div>
+            <div class="curriculum-topics">
+                <article><span>01</span><p><b>Philosophy & yogic lifestyle</b><small>Classical texts, ethics and daily practice</small></p><i class="bi bi-book"></i></article>
+                <article><span>02</span><p><b>Anatomy & physiology</b><small>Body systems, alignment and injury prevention</small></p><i class="bi bi-person"></i></article>
+                <article><span>03</span><p><b>Asana, pranayama & kriya</b><small>Postures, breath, mudra, bandha and shatkarma</small></p><i class="bi bi-wind"></i></article>
+                <article><span>04</span><p><b>Meditation & mental wellbeing</b><small>Focus, stress management and mind-body awareness</small></p><i class="bi bi-cloud-sun"></i></article>
+                <article><span>05</span><p><b>Yoga therapy & naturopathy</b><small>Therapeutic foundations and holistic perspectives</small></p><i class="bi bi-heart-pulse"></i></article>
+                <article><span>06</span><p><b>Teaching methodology</b><small>Sequencing, communication and professional ethics</small></p><i class="bi bi-easel"></i></article>
+            </div>
+        </div></section>
+
+        <section class="pathways-section section-pad" id="pathways"><div class="site-shell">
+            <div class="section-heading" data-aos="fade-up"><div><p class="eyebrow"><span></span> Choose your learning path</p><h2>Where would you like<br><em>yoga to take you?</em></h2></div><p>Whether you want to learn, teach, explore therapy or deepen your own practice, start with the programme that matches your goal.</p></div>
+            <div class="pathway-grid">
+                <article class="pathway-card pathway-primary" data-aos="fade-up"><span class="pathway-number">01 / THERAPEUTIC PRACTICE</span><i class="bi bi-flower2" aria-hidden="true"></i><p>Post Graduate Diploma</p><h3>Yoga Therapy<br><small>PGDYT</small></h3><div class="pathway-tags"><span>1 year</span><span>500 hours</span><span>Online / hybrid</span></div><a href="course-desc.html">View programme <i class="bi bi-arrow-right"></i></a></article>
+                <article class="pathway-card pathway-blue" data-aos="fade-up" data-aos-delay="80"><span class="pathway-number">02 / TEACHER TRAINING</span><i class="bi bi-sun" aria-hidden="true"></i><p>Diploma</p><h3>Yoga Teacher<br><small>Training</small></h3><div class="pathway-tags"><span>Practice</span><span>Pranayama</span><span>Teaching skills</span></div><a href="course-desc-copy.html">View programme <i class="bi bi-arrow-right"></i></a></article>
+                <article class="pathway-card pathway-neutral" data-aos="fade-up" data-aos-delay="160"><span class="pathway-number">03 / CONTINUING LEARNING</span><i class="bi bi-compass" aria-hidden="true"></i><p>Specialist modules</p><h3>Explore a focused<br><small>area of practice</small></h3><div class="pathway-tags"><span>Face yoga</span><span>Prenatal yoga</span><span>Therapy modules</span></div><a href="tel:18008919232">Ask about options <i class="bi bi-arrow-up-right"></i></a></article>
+            </div>
+            <p class="fineprint">The 1-year, 500-hour duration shown is for the PGDYT. Contact admissions for current availability, eligibility and details of other programmes.</p>
+        </div></section>
+
+        <section class="career-section section-pad"><div class="site-shell career-grid">
+            <div data-aos="fade-up"><p class="eyebrow"><span></span> Career pathways in yoga</p><h2>Put your learning<br>to <em>meaningful work.</em></h2><p>PGDYT can prepare learners to explore teaching, therapeutic practice, entrepreneurship and digital work in yoga and wellness.</p><p class="career-caveat">Career and income outcomes depend on your effort, experience, consistency and local opportunities. No particular income or job placement is guaranteed.</p></div>
+            <div class="career-list"><article><i class="bi bi-easel2"></i><div><h3>Teaching & training</h3><p>Yoga instructor · Corporate trainer · Online teacher · School and college teaching</p></div></article><article><i class="bi bi-heart-pulse"></i><div><h3>Therapy & coaching</h3><p>Yoga therapy · Personal coaching · Sports yoga · Wellness facilitation</p></div></article><article><i class="bi bi-shop-window"></i><div><h3>Entrepreneurship</h3><p>Yoga studio · Retreats and workshops · Wellness business</p></div></article><article><i class="bi bi-camera-reels"></i><div><h3>Digital & creative work</h3><p>Online classes · Yoga content · Writing and education</p></div></article></div>
+        </div></section>
+
+        <section class="community-section section-pad"><div class="site-shell community-grid">
+            <div class="community-photo" data-aos="fade-up"><img src="img/gallery/3.jpg" alt="Yogkulam students and teachers at a training celebration" loading="lazy"><span>Learning is stronger in community.</span></div>
+            <div data-aos="fade-up" data-aos-delay="100"><p class="eyebrow"><span></span> Learners, teachers, community</p><h2>Real people.<br><em>Shared practice.</em></h2><p>Yogkulam brings learners together around study, practice and a common respect for yoga. Every learner arrives with a different story; the work begins with showing up.</p><a class="text-link" href="teachers.html">Meet the teaching team <i class="bi bi-arrow-up-right"></i></a></div>
+        </div></section>
+
+        <section class="learning-section section-pad"><div class="site-shell">
+            <div class="section-heading" data-aos="fade-up"><div><p class="eyebrow"><span></span> Teaching & learning approach</p><h2>Simple. Structured.<br><em>Supportive.</em></h2></div><p>Your learning follows a practical sequence—from understanding, to personal practice, to preparing for your next step.</p></div>
+            <div class="learning-steps"><article data-aos="fade-up"><span>01</span><i class="bi bi-journal-richtext"></i><h3>Learn</h3><p>Join guided practice and build your theoretical foundation.</p></article><article data-aos="fade-up" data-aos-delay="60"><span>02</span><i class="bi bi-person-arms-up"></i><h3>Practise</h3><p>Develop your own routine, with support and opportunities to refine.</p></article><article data-aos="fade-up" data-aos-delay="120"><span>03</span><i class="bi bi-patch-check"></i><h3>Get certified</h3><p>Understand your programme’s assessment and certification steps.</p></article><article data-aos="fade-up" data-aos-delay="180"><span>04</span><i class="bi bi-signpost-split"></i><h3>Choose your path</h3><p>Explore teaching, therapy, further study or service in your community.</p></article></div>
+        </div></section>
+
+        <section class="founder-section section-pad" id="founder"><div class="site-shell founder-grid">
+            <div class="founder-photo" data-aos="fade-up"><img src="img/assets/founder.jpg" alt="Maneesh Pratap Singh, founder of Yogkulam" loading="lazy"><span>Founder, Yogkulam</span></div>
+            <div class="founder-copy" data-aos="fade-up" data-aos-delay="100"><p class="eyebrow"><span></span> A message from our founder</p><h2>“Yoga is a practice of<br><em>service and awakening.”</em></h2><p class="founder-quote">“I started Yogkulam to help people build a meaningful life and career through yoga. Now it’s your turn.”</p><p>Maneesh Pratap Singh founded Yogkulam around the belief that yoga education should connect learning with service, personal growth and a purposeful livelihood.</p><p class="founder-name"><strong>Maneesh Pratap Singh</strong><small>Founder, Yogkulam · Yoga educator</small></p></div>
+        </div></section>
+
+        <section class="ethics-section section-pad"><div class="site-shell ethics-grid">
+            <div data-aos="fade-up"><p class="eyebrow"><span></span> Our academic & ethical standards</p><h2>Depth over<br><em>shortcuts.</em></h2><p>We believe yoga education deserves honesty, care and commitment beyond a certificate.</p></div>
+            <div class="ethics-points"><p><i class="bi bi-check2"></i> Learning that values depth, not quick certificates</p><p><i class="bi bi-check2"></i> Career guidance without overnight-income promises</p><p><i class="bi bi-check2"></i> Yogic ethics as part of professional practice</p><p><i class="bi bi-check2"></i> Continued learner support after enrolment</p><div class="seva-note"><i class="bi bi-hands"></i><span><strong>Practice in service of others</strong><small>Yogkulam shares that 20% of annual income supports seva initiatives and that more than 1,500 people have received free training.</small></span></div></div>
+        </div></section>
+
+        <section class="faq-section section-pad" id="questions"><div class="site-shell faq-grid">
+            <div data-aos="fade-up"><p class="eyebrow"><span></span> Frequently asked questions</p><h2>Before you<br><em>begin.</em></h2><p>Not sure which programme is right? Talk with admissions about your goals and eligibility.</p><a class="text-link" href="tel:18008919232">Call 1800-891-9232 <i class="bi bi-arrow-up-right"></i></a></div>
+            <div class="faq-list" data-aos="fade-up" data-aos-delay="100">
+                <details><summary>Can beginners join?</summary><p>Yes. Yogkulam programmes are designed for learners at different levels. There is no prior yoga or teaching experience requirement; programme eligibility may vary.</p></details>
+                <details><summary>Is online yoga teacher training available?</summary><p>Online and in-person options are available for some programmes. The PGDYT is listed as online / hybrid. Contact admissions for the current format.</p></details>
+                <details><summary>Do you help with Yoga Certification Board exams?</summary><p>Yogkulam provides YCB exam support. Ask admissions which support and certification route applies to your chosen course.</p></details>
+                <details><summary>What language are classes and notes in?</summary><p>Classes are conducted in Hindi, with notes provided in English. Confirm the language options for your selected programme before enrolling.</p></details>
+                <details><summary>Will I receive support after the course?</summary><p>Ongoing guidance is part of the learning support described by Yogkulam. Ask about the specific support included in the programme you are considering.</p></details>
+            </div>
+        </div></section>
+
+        <section class="final-cta"><div class="site-shell final-cta-inner" data-aos="fade-up"><div><p class="eyebrow eyebrow-light"><span></span> Begin with a conversation</p><h2>Find the yoga path<br>that feels <em>right for you.</em></h2><p>Talk to our team about course eligibility, formats and what to expect.</p></div><div class="final-actions"><a class="button button-light" href="#pathways">Explore programmes <i class="bi bi-arrow-up-right"></i></a><a class="final-phone" href="tel:18008919232"><i class="bi bi-telephone"></i> 1800-891-9232</a></div></div></section>
+    </main>
+
+    <footer class="site-footer"><div class="site-shell footer-main">
+        <div class="footer-brand"><a class="brand brand-inverse" href="index.html"><span class="brand-mark"><i class="bi bi-flower1"></i></span><span class="brand-copy"><strong>Yogkulam</strong><small>by MDVTI India</small></span></a><p>Learn authentically.<br>Live with purpose.</p></div>
+        <div class="footer-column"><h2>Explore</h2><a href="#pathways">Programmes</a><a href="#who-its-for">Who it's for</a><a href="#curriculum">Curriculum</a><a href="about-mdvti.html">About MDVTI India</a></div>
+        <div class="footer-column"><h2>For learners</h2><a href="student-reg.html">Student registration</a><a href="studentlogin.html">Student login</a><a href="teachers.html">Teaching team</a><a href="franchise.html">Franchise opportunities</a></div>
+        <div class="footer-column footer-contact"><h2>Contact</h2><a href="tel:18008919232">1800-891-9232</a><a href="mailto:info@mdvtiindia.org">info@mdvtiindia.org</a><p>4/769 Vikas Nagar<br>Lucknow, Uttar Pradesh 226022</p></div>
+    </div><div class="site-shell footer-bottom"><span>© <span id="year"></span> MDVTI India</span><span>Rooted in yoga. Ready for the world.</span><a href="#main">Back to top ↑</a></div></footer>
     </div>
-    <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-none d-lg-flex">
-            <div class="col-lg-7 px-5 text-start">
-                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
-                    <small>info@mdvtiindia.org</small>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center py-3">
-                    <small class="fa fa-phone-alt text-primary me-2"></small>
-                    <small>1800-891-9232</small>
-                </div>
-            </div>
-            <div class="col-lg-5 d-inline-flex align-items-center justify-content-end">
-                <div class="dropdown btn btn-sm btn-primary shadow" style="margin-right: 10px">
-                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Login</a>
-                    <div class="dropdown-menu fade-up m-0">
-                        <a href="studentlogin.html" class="dropdown-item">Student Login</a>
-                        <a href="franchise_login.html   " class="dropdown-item">Franchise Login</a>
-                    </div>
-                </div>
-                <div class="dropdown btn btn-sm btn-primary shadow" style="margin-right: 10px">
-                    <a href="#" class="dropdown-toggle p-3 text-white" data-bs-toggle="dropdown">Register</a>
-                    <div class="dropdown-menu fade-up m-0">
-                        <a href="student-reg.html" class="dropdown-item">Student Registration</a>
-                        <a href="registerfranchise.html" class="dropdown-item">Franchise Registration</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
+    <header class="site-header" id="siteHeader">
+        <nav class="site-shell navbar navbar-expand-lg" aria-label="Main navigation">
+            <a class="brand" href="index.html" aria-label="Yogkulam home"><span class="brand-mark" aria-hidden="true"><i class="bi bi-flower1"></i></span><span class="brand-copy"><strong>Yogkulam</strong><small>by MDVTI India</small></span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="mainNav"><div class="navbar-nav ms-auto align-items-lg-center">
+                <a class="nav-link" href="course-desc.html" aria-label="Post Graduate Diploma in Yoga Therapy">PGDYT</a>
+                <a class="nav-link" href="course-desc-copy.html">Teacher Training</a>
+                <div class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Learn</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#curriculum">Curriculum</a><a class="dropdown-item" href="#who-its-for">Who it's for</a><a class="dropdown-item" href="teachers.html">Teaching team</a><a class="dropdown-item" href="blog.html">Yoga journal</a></div></div>
+                <div class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">About</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#approach">Our approach</a><a class="dropdown-item" href="#founder">Our founder</a><a class="dropdown-item" href="about-mdvti.html">About MDVTI India</a></div></div>
+                <div class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Partners</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="franchise.html">Franchise opportunities</a><a class="dropdown-item" href="franchise_login.html">Franchise login</a></div></div>
+                <div class="nav-item dropdown"><button class="nav-link dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Student portal</button><div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="studentlogin.html">Student login</a><a class="dropdown-item" href="student-reg.html">Create an account</a></div></div>
+                <a class="nav-cta" href="#pathways">All courses <i class="bi bi-arrow-up-right"></i></a>
+            </div></div>
+        </nav>
+    </header>
 
+    <dialog class="help-dialog" id="helpDialog" aria-labelledby="helpDialogTitle">
+        <button class="dialog-close" type="button" aria-label="Close dialog" id="closeHelpDialog"><i class="bi bi-x-lg"></i></button>
+        <p class="eyebrow"><span></span> Your next step</p>
+        <h2 id="helpDialogTitle">Still deciding?</h2>
+        <p>Talk with our admissions team about your goals, course eligibility and current programme details.</p>
+        <a class="button button-primary" href="tel:18008919232">Talk to admissions <i class="bi bi-telephone"></i></a>
+        <a class="dialog-secondary" href="#pathways" id="dialogProgrammes">Compare programmes</a>
+    </dialog>
 
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 blurry-nav">
-        <a href="index.html" class="navbar-brand d-flex align-items-center px-2 px-lg-4">
-            <h2 class="m-0 text-primary">
-                <img src="img/yogkulam_logo.png" width="128px" />
-            </h2>
-        </a>
-        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
-                    <div class="dropdown-menu fade-up m-0">
-                        <a href="about-mdvti.html" class="dropdown-item">MDVTI INDIA</a>
-                        <a href="quote.html" class="dropdown-item">Management Message</a>
-                        <a href="team.html" class="dropdown-item">Meet the team</a>
-                        <a href="testimonial.html" class="dropdown-item">Gallery</a>
-                    </div>
-                </div>
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Yoga Teacher Training
-                    </a>
-                    <div class="dropdown-menu fade-up m-0">
-                        <a href="course-desc.html" class="dropdown-item">Post Graduate Diploma in Yoga Therapy</a>
-                        <a href="course-desc-copy.html" class="dropdown-item">Diploma in Yoga Teacher Training</a>
-                        <a href="#" class="dropdown-item">Certificate in Yoga Therapy</a>
-                        <a href="#" class="dropdown-item">Certificate in Yogasana & Pranayam</a>
-                        <a href="#" class="dropdown-item">Foundation Course in Yoga</a>
-                    </div>
-                </div>
-                <a href="franchise.html" class="nav-item nav-link">Franchisee</a>
-                <a href="blog.html" class="nav-item nav-link">Blog</a>
-                <a href="teachers.html" class="nav-item nav-link active">Teachers</a>
-                <a href="contact.html" class="nav-item nav-link">Contact us </a>
-            </div>
-            <a href="" class="btn btn-sm btn-primary py-2 px-lg- d-none d-lg-block mx-2 shadow rounded">Shop<i
-                    class="fa fa-shopping-cart ms-3"></i></a>
-        </div>
-    </nav>
-
-    <section class="container-hero d-flex align-items-center text-white py-lg-5">
-        <div class="container-lg pt-lg-2 pb-4">
-            <div class="row align-items-center">
-                <div class="col-md-6 order-1 ">
-                    <span class="rounded-pill bg-warning px-3 py-1 d-none d-lg-inline-block  text-dark">
-                        Welcome to Yogkulam
-                    </span>
-                    <h1 class="font-weight-bold my-4 display-4 text-white">
-                        Transform your Yoga Passion into Profession
-                    </h1>
-                    <strong>
-                        <p class="subheading">Transforming lives through the essence of Yoga</p>
-                    </strong>
-                    <div class="program-offers p-3">
-                        <ul class="program-list text-xs-center">
-                            <li><span class="list-icon list-icon-yellow"></span> Experienced and dedicated instructors
-                            </li>
-                            <li><span class="list-icon list-icon-yellow"></span> Practical teaching opportunities</li>
-                            <li><span class="list-icon list-icon-yellow"></span> Guidance on yoga philosophy and its
-                                application</li>
-                            <li><span class="list-icon list-icon-yellow"></span> Business and marketing insights for
-                                yoga professionals
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="text-center text-lg-start">
-                        <a href="#" class="btn btn-primary mt-4">
-                            Start your Yogkulam Journey
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-md-6 order-lg-1 d-none d-lg-block " data-aos="zoom-in">
-                    <div class="section-img">
-                        <div class="d-flex justify-content-center">
-                            <img src="img/poster-1 3.png" width="490px" id="movingImage" class="img-fluid"
-                                alt="Yoga Teacher Training Image">
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col-md-6 d-lg-none order-0 d-flex justify-content-center ">
-                    <img src="img/poster-1 3.png" id="movingImage" class="img-fluid" alt="Yoga Teacher Training Image">
-                </div>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="bg-white">
-        <div class="container-lg abt-ygklm ">
-            <div class="d-flex justify-content-center">
-                <img src="./img/lotus_2982182.png" class="img-fluid section-separator mt-4" alt="">
-            </div>
-            <div class="text-center">
-                <h1 class="text-dark my-4">About <span class="text-primary">YTT</span> at Yogkulam
-                </h1>
-            </div>
-            <div class="d-flex justify-content-center">
-                <div class="section-line m-0"></div>
-            </div>
-            <div class="row d-flex align-items-center pt-3 p-sm-3 abt-ygklm-content">
-                <div class="col-md-7">
-                    <ul>
-                        <li data-aos="fade-down" data-aos-delay="200">
-                            <span class="list-icon list-icon-red"></span>
-                            MDVTI INDIA is a premier institution for Yoga Teacher Training, honing adept instructors for
-                            over 9 years. Our meticulously crafted flagship course offers an immersive experience in
-                            Yogic
-                            practices, including in-depth studies in Asanas, Pranayama, and teaching methodologies. The
-                            curriculum covers Anatomy, Psychology, Meditation, Naturotherapy, and Yogic Philosophy,
-                            fostering a holistic understanding of Yoga's transformative power on physical, mental,
-                            emotional, and spiritual levels. Graduates emerge as proficient instructors equipped to
-                            begin
-                            their careers in the world of Yoga.
-                        </li>
-                        <li data-aos="fade-down" data-aos-delay="200">
-                            <span class="list-icon list-icon-red"></span>
-                            MDVTI INDIA is a premier institution for Yoga Teacher Training, honing adept instructors for
-                            over 9 years. Our meticulously crafted flagship course offers an immersive experience in
-                            Yogic
-                            practices, including in-depth studies in Asanas, Pranayama, and teaching methodologies. The
-                            curriculum covers Anatomy, Psychology, Meditation, Naturotherapy, and Yogic Philosophy,
-                            fostering a holistic understanding of Yoga's transformative power on physical, mental,
-                            emotional, and spiritual levels. Graduates emerge as proficient instructors equipped to
-                            begin
-                            their careers in the world of Yoga.
-                    </ul>
-
-                </div>
-                <div class="col-md-5">
-                    <img src="img/gallery/2.jpg" class="img-fluid" alt="">
-                </div>
-            </div>
-            <div class="py-5">
-                <div class="row g-2">
-                    <div class="col-md-3 col-lg-3 col-sm-12 ">
-                        <div class="card border-0" data-aos-delay="300">
-                            <div class="card-body">
-                                <img src="img/icons/yoga-icon1.png" class="img-fluid mb-2" width="80px" alt="">
-                                <h5 class="card-title mt-3">Expert Faculty</h5>
-                                <p class="card-text">Experienced & Certified Yoga Masters</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 col-lg-3 col-sm-12 ">
-                        <div class="card border-0 " data-aos-delay="400">
-                            <div class="card-body">
-                                <img src="img/icons/stress-management.png" class="img-fluid mb-2" width="80px" alt="">
-                                <h5 class="card-title mt-3">Advanced Teaching</h5>
-                                <p class="card-text">Explore innovative learning techniques.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 col-lg-3 col-sm-6  ">
-                        <div class="card border-0" data-aos-delay="500">
-                            <div class="card-body">
-                                <img src="img/icons/yoga.png" class="img-fluid mb-2" width="80px" alt="">
-                                <h5 class="card-title mt-3">Student-led Learning</h5>
-                                <p class="card-text">Meditation,
-                                    Naturotherapy Yogic</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-lg-3 col-sm-6 ">
-                        <div class="card border-0" data-aos-delay="600">
-                            <div class="card-body">
-                                <img src="img/icons/yoga-instructor.png" class="img-fluid mb-2" width="80px" alt="">
-                                <h6 class="card-title mt-3">Personalized Guidance</h6>
-                                <p class="card-text">Receive individual attention.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About End -->
-
-    <!-- Demo classes -->
-
-    <section class="aplit-gt-area py-2">
-        <div class="container-fluid p-lg-5">
-            <div class="aplit-gt-wrapper shadow" style="
-            background-image: url(img/bg.png);
-            background-size: contain;
-            background-repeat: repeat;
-          ">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <div class="aplit-gt-left">
-                            <span class="subtitle">Yogkulam</span>
-                            <div class="aplit-headline">
-                                <h4 class="text-white mt-3">Join us to Start your Yogkulam Jaurney with our exceptional
-                                    Yoga
-                                    Teacher Training Course, setting the benchmark for transformative experience in
-                                    your yogic path.</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="aplit-gt-right">
-                            <a href="#" class="bg-white px-5 py-3 shadow">Join Now</a>
-                        </div>
-                    </div>
-                    <div class="col"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--Courses Start-->
-    <section class="bg-body">
-        <div class="container py-lg-5">
-            <div class="d-flex justify-content-center">
-                <img src="./img/icons/book.png" class="img-fluid section-separator mt-4" alt="">
-            </div>
-            <div class="text-center">
-                <h1 class="text-dark">Our Curriculum Offerings</h1>
-            </div>
-            <p class="text-center">Our flagship program, the Yoga Teacher Training Course, serves
-                as a
-                comprehensive
-                immersion into the world of yoga instruction. This course is meticulously structured to provide a
-                profound
-                understanding of various aspects of yoga, including Yogic Kriyas, Asanas, Pranayama, and Teaching
-                Methodologies.</p>
-            <div class="section-divider">
-                <img src="img/divider.png" class="img-fluid" alt="">
-            </div>
-
-            <div class="mt-4">
-                <div class="col-md-12">
-                    <div class="row owl-carousel course-carousel">
-                        <div class="box_grid">
-                            <figure>
-                                <a href="#0" class="wish_bt"></a>
-                                <a href="course-detail.html"><img
-                                        src="https://images.pexels.com/photos/6698513/pexels-photo-6698513.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                        class="img-fluid" alt=""></a>
-                                <div class="preview"><span>Preview course</span></div>
-                            </figure>
-                            <div class="wrapper">
-                                <small>Category</small>
-                                <h3>Post Graduation in Yoga Therapy</h3>
-                                <p>Advanced your knowledge in therapeutic applications of yoga, fostering a holistic
-                                    approach.</p>
-                                <strong>Eligibility</strong> : 12th Pass
-
-                            </div>
-                            <ul>
-                                <li><i class="icon_clock_alt"></i> 2 weeks</li>
-                                <li><a href="course-detail.html">Enroll now</a></li>
-                            </ul>
-                        </div>
-                        <div class="box_grid">
-                            <figure>
-                                <a href="#0" class="wish_bt"></a>
-                                <a href="course-detail.html"><img
-                                        src="https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                        class="img-fluid" alt=""></a>
-                                <div class="preview"><span>Preview course</span></div>
-                            </figure>
-                            <div class="wrapper">
-                                <small>Category</small>
-                                <h3>Post Graduation in Yoga Therapy</h3>
-                                <p>Advanced your knowledge in therapeutic applications of yoga, fostering a holistic
-                                    approach.</p>
-                                <strong>Eligibility</strong> : 12th Pass
-
-                            </div>
-                            <ul>
-                                <li><i class="icon_clock_alt"></i> 2 weeks</li>
-                                <li><a href="course-detail.html">Enroll now</a></li>
-                            </ul>
-                        </div>
-                        <div class="box_grid">
-                            <figure>
-                                <a href="#0" class="wish_bt"></a>
-                                <a href="course-detail.html"><img
-                                        src="https://images.pexels.com/photos/3822906/pexels-photo-3822906.jpeg?auto=compress&cs=tinysrgb&w=600"
-                                        class="img-fluid" alt=""></a>
-                                <div class="preview"><span>Preview course</span></div>
-                            </figure>
-                            <div class="wrapper">
-                                <small>Category</small>
-                                <h3>Post Graduation in Yoga Therapy</h3>
-                                <p>Advanced your knowledge in therapeutic applications of yoga, fostering a holistic
-                                    approach.</p>
-                                <strong>Eligibility</strong> : 12th Pass
-
-                            </div>
-                            <ul>
-                                <li><i class="icon_clock_alt"></i> 2 weeks</li>
-                                <li><a href="course-detail.html">Enroll now</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-    <!--Courses End-->
-    <!--Banner Enroll now-->
-    <section class="aplit-gt-area pt-lg-5">
-        <div class="container">
-            <div class="aplit-gt-wrapper shadow" style="
-            background-image: url(img/bg.png);
-            background-size: contain;
-            background-repeat: repeat;
-          ">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <div class="aplit-gt-left">
-                            <span class="subtitle">Yogkulam</span>
-                            <div class="aplit-headline">
-                                <h4 class="text-white mt-3">Embark on a Transformational Journey: Join Our Yoga Course
-                                    and Unleash Your
-                                    Potential as a Certified Yoga Teacher.</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="aplit-gt-right">
-                            <a href="#" class="bg-white px-5 py-3 shadow">Enroll Now</a>
-                        </div>
-                    </div>
-                    <div class="col"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End Enroll now Banner-->
-    <!-- Feature Start -->
-    <section class="why-yogkulm pt-lg-5">
-        <div class="container">
-            <div class="d-flex justify-content-center">
-                <img src="./img/icons/why-ytt-icon.png" class="img-fluid section-separator mb-3" alt="">
-            </div>
-            <div class="text-center">
-                <h1 class="text-dark">Why Choose MDVTI-INDIA</h1>
-            </div>
-
-            <p class="text-center">Our flagship program, the Yoga Teacher
-                Training Course, serves as a comprehensive
-                immersion into the world of yoga instruction. This course is meticulously structured to provide a
-                profound
-                understanding of various aspects of yoga, including Yogic Kriyas, Asanas, Pranayama, and Teaching
-                Methodologies.</p>
-            <div class="section-divider">
-                <img src="img/divider.png" class="img-fluid" alt="">
-            </div>
-
-            <!-- Four Points to Choose MDVTI-INDIA -->
-            <div class="row mt-5">
-                <!-- Point 1 -->
-                <div class="col-md-6 d-flex align-items-stretch mb-4">
-                    <div class="card p-lg-4 p-3 ">
-                        <div class="row d-flex align-items-center ">
-                            <div class="col-lg-3">
-                                <img src="./img/icons/yoga-svgrepo-com.svg" width="140px" class="px-3"
-                                    alt="State-of-the-Art Facilities Image">
-                            </div>
-                            <div class="col-lg-9">
-                                <h5 class="card-title">Experienced Instructors</h5>
-                                <p class="card-text">Learn from highly experienced and certified yoga instructors who
-                                    bring
-                                    a wealth of knowledge and practical insights to the training. Benefit from
-                                    personalized
-                                    guidance and mentorship throughout</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Point 2 -->
-                <div class="col-md-6 d-flex align-items-stretch mb-4">
-                    <div class="card p-lg-4 p-3">
-                        <div class="row d-flex align-items-center ">
-                            <div class="col-lg-3">
-                                <img src="./img/icons/yoga-svgrepo-com (1).svg" width="140px" class="px-3"
-                                    alt="State-of-the-Art Facilities Image">
-                            </div>
-                            <div class="col-lg-9">
-                                <h5 class="card-title">Comprehensive Curriculum</h5>
-                                <p class="card-text">Our program covers a comprehensive curriculum that goes beyond the
-                                    basics. Explore advanced aspects of yoga, anatomy, philosophy, and more. Gain a deep
-                                    understanding of how to integrate these elements into your teaching practice.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-                <!-- Point 3 -->
-                <div class="col-md-6 d-flex align-items-stretch mb-4">
-                    <div class="card p-lg-4 p-3">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-lg-3">
-                                <img src="./img/icons/yoga-svgrepo-com (2).svg" width="140px" class="px-3"
-                                    alt="State-of-the-Art Facilities Image">
-                            </div>
-                            <div class="col-lg-9">
-                                <h5 class="card-title">State-of-the-Art Facilities</h5>
-                                <p class="card-text">Access modern and well-equipped facilities designed to enhance
-                                    your
-                                    learning experience. Our classrooms, practice spaces, and amenities are tailored
-                                    to
-                                    create a conducive environment for personal and collective growth.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Point 4 -->
-                <div class="col-md-6 d-flex align-items-stretch mb-4">
-                    <div class="card p-lg-4 p-3">
-                        <div class="row d-flex align-items-center">
-                            <div class="col-lg-3">
-                                <img src="./img/icons/yoga-svgrepo-com (3).svg" width="140px" class="px-3"
-                                    alt="State-of-the-Art Facilities Image">
-                            </div>
-                            <div class="col-lg-9">
-                                <h5 class="card-title">Flexible Schedule</h5>
-                                <p class="card-text">Choose from flexible schedules to fit your lifestyle and
-                                    commitments.
-                                    Whether you prefer intensive courses or part-time options, we provide flexibility to
-                                    accommodate diverse needs. Customize your learning journey.
-                                    goals.</p>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <!-- End Four Points -->
-
-        </div>
-    </section>
-
-
-    <section class="bg-white py-lg-3 ">
-        <div class="container">
-            <div class="feature my-5 pt-4">
-                <div class="text-center">
-                    <h2 class="">Features Offered By MDVTI India </h2>
-                    <p class="container" data-aos-delay="200">
-                        Discover an extensive array of features at MDVTI India, meticulously curated to enhance your
-                        learning experience. From state-of-the-art facilities to expert-led sessions, personalized
-                        mentorship, and an immersive curriculum, our institution offers a holistic platform tailored to
-                        nurture your growth as a proficient and confident yoga practitioner.
-                    </p>
-                    <div class="section-divider">
-                        <img src="img/divider.png" class="img-fluid" alt="">
-                    </div>
-                </div>
-                <div class="row g-0 mx-lg-0">
-                    <div class="feature-text py-5 wow fadeIn">
-                        <div class="ps-lg-0">
-                            <div class="row g-4 px-4">
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-video" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            Recorded Lectures
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Access insightful recorded lectures providing
-                                            flexibility and convenience for
-                                            learning at your own pace, ensuring you never miss a lesson.
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-book" aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            Detailed Study Material for Holistic Learning
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Dive into comprehensive study materials designed
-                                            to nurture a holistic understanding, covering theoretical and practical
-                                            aspects of yoga.
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-id-badge " aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            Free Student Kit (ID card, Books, Tshirt)
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Receive a free student kit comprising an ID card,
-                                            books, and a t-shirt to enhance your learning experience.
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-pen " aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            FShort notes & E-books
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Access insightful recorded lectures providing
-                                            flexibility and convenience for
-                                            learning at your own pace, ensuring you never miss a lesson.
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-book-reader " aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            Student Care Portal
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Supplement your learning with concise yet
-                                            comprehensive notes and e-books for quick reference and deeper
-                                            understanding.
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-user-check " aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            Virtual Classroom
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Experience the benefits of a classroom from the
-                                            comfort of your home with our virtual classroom sessions.
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-drafting-compass " aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            Live Doubt sessions
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Engage in live doubt-clearing sessions where
-                                            instructors address queries, providing immediate clarification and enhancing
-                                            learning effectiveness.</div>
-                                    </a>
-                                </div>
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-brain " aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            Affordable Fee
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Benefit from an affordable fee structure designed to
-                                            make quality yoga education accessible to all, without compromising on
-                                            excellence.</div>
-                                    </a>
-                                </div>
-                                <div class="ag-courses_item align-items-stretch d-flex m-2">
-                                    <a href="#" class="ag-courses-item_link">
-                                        <div class="ag-courses-item_bg"></div>
-                                        <div class="card-icon-full">
-                                            <i class="fa fa-video " aria-hidden="true"></i>
-                                        </div>
-                                        <div class="ag-courses-item_title">
-                                            Short notes & E-Learning
-                                        </div>
-                                        <hr>
-                                        <div class="ag-courses-item_date-box">
-                                            Supplement your learning with concise yet
-                                            comprehensive notes and e-books for quick reference of yoga principles.
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="social-media-section position-relative bg-white pb-5">
-        <div class="container">
-            <h2 class="text-center  pt-4">Our Social Media Presence
-            </h2>
-            <p class="section-subheading pt-3 text-center">Stay updated with our latest news, events, and insights!
-                Follow us on our social media accounts to get regular updates and be a part of our vibrant
-                community.
-            </p>
-            <div class="section-divider">
-                <img src="img/divider.png" class="img-fluid" alt="">
-            </div>
-            <div class="row pt-3">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center ">
-                    <div class="card">
-                        <div class="circle">
-                            <img src="img/icons/facebook.png" class="img-fluid" alt="" srcset="">
-                        </div>
-                        <h5 class="pt-3">Followers : 2000</h5>
-                    </div>
-
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="circle">
-                            <img src="img/icons/instagram.png" class="img-fluid" alt="" srcset="">
-                        </div>
-
-                        <h5 class="pt-3">Followers : 2000</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 d-flex justify-content-center">
-                    <div class="card">
-                        <div class="overlay"></div>
-                        <div class="circle">
-                            <img src="img/icons/whatsapp.png" class="img-fluid" alt="" srcset="">
-                        </div>
-                        <h5 class="pt-4">Followers : 2000</h5>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- TESTIMONIALS -->
-
-    </section>
-    <section class="testimonials mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-12">
-                    <h1 class="text-dark mt-5">Student Feedback and Review</h1>
-                    <!-- section divider -->
-                    <div class="section-line "></div>
-
-
-                    <p class="py-3">Get to know the vibrant tapestry of experiences that students encounter
-                        on
-                        their educational odyssey
-                        at <b>MDVTI India</b>. It's a voyage marked by academic rigor, personal growth, and a
-                        diverse array of opportunities.
-                    </p>
-                </div>
-                <div class="col-lg-8 col-md-12 bg-white py-4 rounded-4 shadow-sm">
-                    <div id="customers-testimonials" class="owl-carousel">
-                        <!--TESTIMONIAL 1 -->
-                        <div class="item">
-                            <div class="shadow-effect">
-                                <img class="img-circle bg-primary p-2 shadow" src="img/testimonial-1.jpg" alt="">
-                                <p><span class="testimonial-text">Dramatically maintain clicks-and-mortar solutions
-                                        without functional solutions. Completely synergize resource taxing
-                                        relationships via premier niche markets. Professionally cultivate.</span>
-                                    <a class="read-more-btn">Read More</a>
-                                </p>
-                            </div>
-                            <div class="testimonial-name">EMILIANO AQUILANI</div>
-                        </div>
-                        <div class="item">
-                            <div class="shadow-effect">
-                                <img class="img-circle bg-primary p-2 shadow" src="img/testimonial-2.jpg" alt="">
-                                <p><span class="testimonial-text">Dramatically maintain clicks-and-mortar solutions
-                                        without functional solutions. Completely synergize resource taxing
-                                        relationships via premier niche markets. Professionally cultivate.</span>
-                                    <a class="read-more-btn">Read More</a>
-                                </p>
-                            </div>
-                            <div class="testimonial-name">EMILIANO AQUILANI</div>
-                        </div>
-                        <div class="item">
-                            <div class="shadow-effect">
-                                <img class="img-circle bg-primary p-2 shadow" src="img/testimonial-3.jpg" alt="">
-                                <p><span class="testimonial-text">Dramatically maintain clicks-and-mortar solutions
-                                        without functional solutions. Completely synergize resource taxing
-                                        relationships via premier niche markets. Professionally cultivate.</span>
-                                    <a class="read-more-btn">Read More</a>
-                                </p>
-                            </div>
-                            <div class="testimonial-name">EMILIANO AQUILANI</div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="yogi container py-5 ">
-        <h1 class="pb-2 text-center">Yogi: Your Companion in the World of Yoga</h1>
-        <p class=" text-center">Yogi's gentle wisdom and deep-rooted understanding of yoga
-            principles make learning a
-            joyous and
-            insightful
-            experience. Whether you're a newcomer seeking a foundation in yoga or an enthusiast eager to explore
-            further, Yogi's presence illuminates the path to holistic well-being.
-        </p>
-        <div class="section-divider">
-            <img src="img/divider.png" class="img-fluid" alt="">
-        </div>
-        <div class="row">
-            <div class="col-lg-4 col-md-12 d-flex align-items-center justify-content-center">
-                <div class="position-relative">
-                    <img src="img/yogi.jpg" class="img-fluid rounded-3 shadow" alt="yogi">
-                    <div class="mandala-container">
-                        <!-- <img src="img/mandala.png" class="yogi-mandala" alt=""> -->
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <p>
-                <ol class="pt-3">
-                    <li>
-                        <span class="list-icon"></span>
-                        <strong>Enlightened Wisdom:</strong> Yogi embodies ancient wisdom, imparting age-old yogic
-                        teachings in a relatable and accessible manner.
-                    </li>
-                    <li>
-                        <span class="list-icon"></span>
-                        <strong>Nurturing Mentorship:</strong> A compassionate mentor, Yogi guides practitioners of
-                        all
-                        levels, nurturing growth and understanding at every step.
-                    </li>
-                    <li>
-                        <span class="list-icon"></span>
-                        <strong>Holistic Expertise:</strong> Beyond postures, Yogi delves into the holistic essence
-                        of
-                        yoga, emphasizing mindfulness, breathwork, and spiritual exploration.
-                    </li>
-                    <li>
-                        <span class="list-icon"></span>
-                        <strong>Interactive Engagement:</strong> Yogi's interactive sessions foster engagement,
-                        offering
-                        demonstrations, storytelling, and personalized guidance for an immersive learning
-                        experience.
-                    </li>
-                    <li>
-                        <span class="list-icon"></span>
-                        <strong>Compassionate Guidance:</strong> Yogi provides compassionate guidance, creating a
-                        supportive environment for personal transformation and self-discovery.
-                    </li>
-                    <li>
-                        <span class="list-icon"></span>
-                        <strong>Balancing Tradition and Modernity:</strong> Yogi skillfully blends traditional yogic
-                        principles with modern insights, creating a well-rounded and adaptable practice.
-                    </li>
-                    <li>
-                        <span class="list-icon"></span>
-                        <strong>Nature Connection:</strong> Yogi encourages a deep connection with nature,
-                        incorporating outdoor practices and eco-conscious teachings for overall well-being.
-                    </li>
-                </ol>
-
-                <!-- button -->
-                <a href="#" class="btn btn-primary">Know More About Yogi</a>
-            </div>
-        </div>
-    </div>
-    <!-- Feature End -->
-    <section class="mentors bg-white py-4">
-        <div class="container">
-            <h1 class=" px-3 text-center">Meet Our Accomplished Mentors</h1>
-            <div class="row d-flex justify-content-center">
-                <div class="col-md-10">
-                    <div class="section-line my-3" style="width: 100%;"></div>
-                    <p class="text-center">These esteemed experts form the core of our faculty, embodying a wealth of
-                        wisdom, experience, and dedication. Their guidance and mentorship pave the way for our students
-                        to
-                        delve deeper into the vast realms of yoga, encouraging personal growth, and fostering a profound
-                        connection with this ancient discipline.</p>
-                </div>
-                <div class="section-divider">
-                    <img src="img/divider.png" class="img-fluid" alt="">
-                </div>
-            </div>
-            <div class="row pt-lg-5">
-                <div class="col-md-12">
-                    <div class="mb-3 border-0">
-                        <div class="row g-0 d-flex align-items-center ">
-                            <div class="col-md-4 p-3">
-                                <img src="/img/mentor/mentor1.png" class="card-img-top img-fluid mentor-img"
-                                    alt="Dr. Ankit Sharma">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h2 class="card-title">Dr. Ankit Sharma</h2>
-                                    <div class="section-line"></div>
-
-                                    <p class="card-text pt-4">Dr. Ankit Sharma, a seasoned yogi and accomplished author,
-                                        brings
-                                        over two decades of experience in yoga therapy and holistic wellness. His
-                                        profound
-                                        understanding of ancient yoga principles coupled with modern scientific insights
-                                        has
-                                        earned her recognition as a leading authority in the field. Dr. Sharma has
-                                        dedicated
-                                        his career to helping individuals achieve balance and harmony in their lives
-                                        through
-                                        the practice of yoga.</p>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="experience-section">
-                                                <h3>Experience</h3>
-                                                <ul class="experience-list">
-                                                    <li><i class="fas fa-certificate"></i> Over 20 years of experience
-                                                        in
-                                                        yoga
-                                                        therapy</li>
-                                                    <li><i class="fas fa-chalkboard-teacher"></i> Conducted workshops
-                                                        and
-                                                        retreats
-                                                        globally</li>
-                                                    <li><i class="fas fa-graduation-cap"></i> Ph.D. in Yoga Therapy</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="achievements-section">
-                                                <h3>Achievements</h3>
-                                                <ul class="achievements-list">
-                                                    <li><i class="fas fa-trophy"></i> Recognized as a leading authority
-                                                        in
-                                                        yoga</li>
-                                                    <li><i class="fas fa-book"></i> Author of multiple bestselling books
-                                                        on
-                                                        wellness
-                                                    </li>
-                                                    <li><i class="fas fa-globe"></i> International speaker at yoga
-                                                        conferences</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="mb-3 border-0">
-                        <div class="row g-0 d-flex align-items-center ">
-
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h2 class="card-title">Dr. Ankit Sharma</h2>
-                                    <div class="section-line"></div>
-
-                                    <p class="card-text pt-4">Dr. Ankit Sharma, a seasoned yogi and accomplished author,
-                                        brings
-                                        over two decades of experience in yoga therapy and holistic wellness. His
-                                        profound
-                                        understanding of ancient yoga principles coupled with modern scientific insights
-                                        has
-                                        earned her recognition as a leading authority in the field. Dr. Sharma has
-                                        dedicated
-                                        his career to helping individuals achieve balance and harmony in their lives
-                                        through
-                                        the practice of yoga.</p>
-
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="experience-section">
-                                                <h3>Experience</h3>
-                                                <ul class="experience-list">
-                                                    <li><i class="fas fa-certificate"></i> Over 20 years of experience
-                                                        in
-                                                        yoga
-                                                        therapy</li>
-                                                    <li><i class="fas fa-chalkboard-teacher"></i> Conducted workshops
-                                                        and
-                                                        retreats
-                                                        globally</li>
-                                                    <li><i class="fas fa-graduation-cap"></i> Ph.D. in Yoga Therapy</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="achievements-section">
-                                                <h3>Achievements</h3>
-                                                <ul class="achievements-list">
-                                                    <li><i class="fas fa-trophy"></i> Recognized as a leading authority
-                                                        in
-                                                        yoga</li>
-                                                    <li><i class="fas fa-book"></i> Author of multiple bestselling books
-                                                        on
-                                                        wellness
-                                                    </li>
-                                                    <li><i class="fas fa-globe"></i> International speaker at yoga
-                                                        conferences</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="col-md-4 p-3">
-                                <img src="/img/mentor/mentor3.png" class="card-img-top img-fluid mentor-img"
-                                    alt="Dr. Ankit Sharma">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-5">
-        <div class="container">
-            <div class="row ">
-                <div class="col-lg-4 col-md-12">
-                    <h1 class=" text-dark">Our Academy's Top Achiever</h1>
-                    <div class="section-line"></div>
-                    <p class="pt-4">
-                        Our academy proudly presents our top achiever, an individual whose remarkable accomplishments,
-                        dedication to learning, and unwavering determination have made them a standout performer in
-                        their
-                        academic journey. Their relentless pursuit of excellence and commitment to knowledge has not
-                        only
-                        set a benchmark but has also inspired others within our academic community.
-                    </p>
-                    <p>
-                        We celebrate their exceptional achievements, applauding the countless hours of hard work,
-                        persistence, and passion they have poured into their studies.
-                    </p>
-                </div>
-                <div class="col-lg-8 col-md-12">
-                    <div class="achievers-carousel owl-carousel toppers">
-                        <figure class="image-block">
-                            <img src="https://img.freepik.com/premium-photo/face-young-handsome-indian-man_251136-20685.jpg?size=626&ext=jpg&ga=GA1.1.2014651491.1634121077&semt=ais"
-                                alt="" />
-                            <figcaption>
-                                <h3 class="text-white">
-                                    <!-- person icon -->
-                                    Sumit Tripathi
-                                    <br>
-                                    <span>91%</span>
-                                </h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas.
-                                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                                    eu
-                                    libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                                    eleifend
-                                    leo.</p>
-                            </figcaption>
-                        </figure>
-                        <figure class="image-block">
-                            <img src="https://img.freepik.com/free-photo/young-adult-enjoying-virtual-date_23-2149328221.jpg?size=626&ext=jpg&ga=GA1.1.2014651491.1634121077&semt=ais"
-                                alt="" />
-                            <figcaption>
-                                <h3 class="text-white">
-                                    <!-- person icon -->
-                                    Brajesh Kumar Singh
-                                    <br>
-                                    <span>91%</span>
-                                </h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas.
-                                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                                    eu
-                                    libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                                    eleifend
-                                    leo.</p>
-                            </figcaption>
-                        </figure>
-                        <figure class="image-block">
-                            <img src="https://img.freepik.com/free-photo/close-up-shot-friendly-looking-elegant-young-african-american-female-with-straight-dark-straight-hair-having-happy-joyful-look-posing_344912-1016.jpg?size=626&ext=jpg&ga=GA1.1.2014651491.1634121077&semt=ais"
-                                alt="" />
-                            <figcaption>
-                                <h3 class="text-white">
-                                    <!-- person icon -->
-                                    Amina Bansal
-                                    <br>
-                                    <span>93.4%</span>
-                                </h3>
-                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                    egestas.
-                                    Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec
-                                    eu
-                                    libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat
-                                    eleifend
-                                    leo.</p>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="container pb-4">
-        <div class="row">
-            <h1 class="text-center ">FAQ</h1>
-            <h5 class="py-1 text-center ">Some Doubts You May Have Before Joining Our Yoga Teacher Training Course</h5>
-            <div class="section-divider">
-                <img src="img/divider.png" class="img-fluid pb-3" alt="">
-            </div>
-            <div class="col-md-12">
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne"> <button class="accordion-button" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="true"
-                                aria-controls="collapseOne">
-                                Can I enroll in two courses at the same time?
-                            </button>
-                        </h2>
-                        <div id="collapsefour" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                No, students cannot enroll in two courses at the same time.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo"> <button class="accordion-button collapsed"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
-                                aria-expanded="false" aria-controls="collapseTwo">
-                                Are there any prerequisites for enrolling in a YTT program?
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                None except, students must have required qualifications to enroll in a YTT program.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree"> <button class="accordion-button collapsed"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix2"
-                                aria-expanded="false" aria-controls="collapseThree">
-                                What equipment do I need for my home practice?
-                            </button>
-                        </h2>
-                        <div id="collapseSix2" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                You don't need to buy a lot of stuff to start doing yoga at your home. Two necessary
-                                things
-                                when practicing yoga are the right clothing and a yoga mat.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree"> <button class="accordion-button collapsed"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix3"
-                                aria-expanded="false" aria-controls="collapseThree">
-                                Can I eat before my yoga class?
-                            </button>
-                        </h2>
-                        <div id="collapseSix3" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                Though yoga exercises are best done on an empty stomach, you can eat something light an
-                                hour
-                                or two before doing a yoga class. This will keep your energy levels up. You can eat
-                                snacks
-                                that are easy to digest and that will help you stay loose while you practice.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree"> <button class="accordion-button collapsed"
-                                type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix4"
-                                aria-expanded="false" aria-controls="collapseThree">
-                                Does YOGKULAM provide offline classes?
-                            </button>
-                        </h2>
-                        <div id="collapseSix4" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                YOGKULAM offers offline yoga classes at its centers located in 17 states. Students can
-                                locate their nearest center to access these classes.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <section class="bg-white">
-        <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="container">
-                <h1 class="text-center ">Our Affiliations</h1>
-                <h5 class="text-center">We are proud to be affiliated with the following esteemed organizations</h5>
-                <div class="section-divider">
-                    <img src="img/divider.png" class="img-fluid pb-3" alt="">
-                </div>
-                <div class="owl-carousel affiliations-carousel">
-                    <div class="bg-primary">
-                        <img class="img-fluid p-2 mx-auto" src="img/gov_logo/2.jpg"
-                            style="width: 250px; height: auto" />
-                        <p class="p-2 bg-primary">
-                            <a class="text-light  " href="#" target="_blank">National
-                                Institute
-                                for Entrepreneurship
-                                and Small Business Development</a>
-                        </p>
-                    </div>
-                    <div class="bg-primary ">
-                        <img class="img-fluid p-2" src="img/gov_logo/3.jpg" style="width: 250px; height: auto" />
-                        <p class="p-2 bg-primary">
-                            <a class="text-light  " href="#" target="_blank">National
-                                Institute
-                                for Entrepreneurship and Small Business Development</a>
-                        </p>
-                    </div>
-                    <div class="bg-primary">
-                        <img class="img-fluid p-2 " src="img/gov_logo/4.jpg" style="width: 250px; height: auto" />
-                        <p class="p-2 bg-primary ">
-                            <a class="text-light  " href="#" target="_blank">National
-                                Institute
-                                for Entrepreneurship and Small Business Development</a>
-                        </p>
-                    </div>
-                    <div class="bg-primary">
-                        <img class="img-fluid p-2 " src="img/gov_logo/5.jpg" style="width: 250px; height: auto" />
-                        <p class="p-2 bg-primary ">
-                            <a class="text-light  " href="#" target="_blank">National
-                                Institute
-                                for Entrepreneurship and Small Business Development</a>
-                        </p>
-                    </div>
-                    <div class="bg-primary">
-                        <img class="img-fluid p-2 " src="img/gov_logo/6.jpg" style="width: 250px; height: auto" />
-                        <p class="p-2 bg-primary ">
-                            <a class="text-light  " href="#" target="_blank">National
-                                Institute
-                                for Entrepreneurship and Small Business Development</a>
-                        </p>
-                    </div>
-                    <div class="bg-primary">
-                        <img class="img-fluid p-2 " src="img/gov_logo/7.jpg" style="width: 250px; height: auto" />
-                        <p class="p-2 bg-primary ">
-                            <a class="text-light  " href="#" target="_blank">National
-                                Institute
-                                for Entrepreneurship and Small Business Development</a>
-                        </p>
-                    </div>
-                    <div class="bg-primary">
-                        <img class="img-fluid p-2" src="img/gov_logo/8.jpg" style="width: 250px; height: auto" />
-                        <p class="p-2 bg-primary ">
-                            <a class="text-light  " href="#" target="_blank">National
-                                Institute
-                                for Entrepreneurship and Small Business Development</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="yogkulam-glimpses py-4">
-        <h1 class="text-center">Glimpses of Yogkulam</h3>
-            <div class="section-divider">
-                <img src="img/divider.png" class="img-fluid" alt="">
-            </div>
-            <div class="container galllery">
-                <img src="img/gallery/1.jpg" />
-                <img src="img/gallery/2.jpg" />
-                <img src="img/gallery/3.jpg" />
-                <img src="img/gallery/4.jpg" />
-                <img src="img/gallery/5.jpg" />
-            </div>
-    </section>
-    <section class="quick-links container py-4">
-        <h1 class="text-center">Explore our useful links</h3>
-            <p class="text-center">Check out our quick links below to navigate to different sections:</p>
-            <div class="section-divider">
-                <img src="img/divider.png" class="img-fluid" alt="">
-            </div>
-            <div class="d-flex justify-content-center">
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <!-- add more quick links -->
-                </ul>
-            </div>
-    </section>
-    <!-- Footer Start -->
-    <div class="container-fluid text-light footer mt-5 pt-5 wow fadeIn footer" data-wow-delay="0.1s"
-        style="background-image: url(img/bg.png); background-size: auto">
-        <div class="container py-3">
-            <div class="row g-1">
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2">
-                        <i class="fa fa-map-marker-alt me-3"></i>4/769 Vikas Nagar,
-                        Lucknow (U.P.)-226022
-                    </p>
-                    <p class="mb-2">
-                        <i class="fa fa-phone-alt me-3"></i>For Admission Enquiry :
-                        1800-891-9232
-                    </p>
-                    <p class="mb-2">
-                        <i class="fa fa-phone-alt me-3"></i>For Franchise Enquiry :
-                        1800-891-9232
-                    </p>
-                    <p class="mb-2">
-                        <i class="fa fa-phone-alt me-3"></i>For Any Other Enquiry :
-                        +91-9628865047
-                    </p>
-                    <p class="mb-2">
-                        <i class="fa fa-envelope me-3"></i>info@mdvtiindia.org
-                    </p>
-                    <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href="https://twitter.com/mdvtiindia"><i
-                                class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/mdvtiindia"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" href="https://www.instagram.com/mdvtiindia/"><i
-                                class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h4 class="text-light mb-4">Important Links</h4>
-                    <a class="btn btn-link" href="">Latest Events </a>
-                    <a class="btn btn-link" href="">Current Vacancies </a>
-                    <a class="btn btn-link" href="">Authorized Study Center</a>
-                    <a class="btn btn-link" href="">Blacklisted Centers</a>
-                    <a class="btn btn-link" href="">Selected students in Government and Private Jobs</a>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h4 class="text-light mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">Refund Policy</a>
-                    <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Support</a>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <div class="mx-auto text-center">
-                        <img src="img/footer-logo.png" width="100px" />
-                        <div class="mt-4 visitor">
-                            <h3 class="mt-2 text-white">Total visitors</h3>
-                            <h4 class="mt-2 text-white">987678</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <a href="#" class="text-white bg-primary px-5 py-3">Pay now</a>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright mt-1">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">MDVTI India</a>, All
-                        Right Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/anime.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
     <script>
-        AOS.init();
+        (() => {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (window.AOS && !reduceMotion) {
+                document.documentElement.classList.add('aos-enabled');
+                AOS.init({ once: true, duration: 650, easing: 'ease-out-cubic', offset: 70 });
+            }
+            const header = document.getElementById('siteHeader');
+            const progress = document.getElementById('readingProgress');
+            let smoother = null;
+            let scrollFrame = 0;
+            const topbar = document.querySelector('.topline');
+            const updateScroll = activeSmoother => {
+                const activeScroll = activeSmoother || smoother;
+                const range = document.documentElement.scrollHeight - window.innerHeight;
+                const amount = activeScroll ? activeScroll.progress : (range > 0 ? window.scrollY / range : 0);
+                const scrollY = activeScroll ? amount * range : window.scrollY;
+                header.style.top = `${Math.max(0, topbar.offsetHeight - scrollY)}px`;
+                header.classList.toggle('is-scrolled', scrollY > 12);
+                progress.style.transform = `scaleX(${Math.max(0, Math.min(1, amount))})`;
+            };
+            if (window.gsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+            if (window.gsap && window.ScrollTrigger && window.ScrollSmoother && !reduceMotion) {
+                gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+                smoother = ScrollSmoother.create({
+                    wrapper: '#smooth-wrapper',
+                    content: '#smooth-content',
+                    smooth: 0.55,
+                    smoothTouch: 0,
+                    effects: false,
+                    normalizeScroll: false,
+                    ignoreMobileResize: true,
+                    onUpdate: () => updateScroll()
+                });
+            }
+            if (window.gsap && !reduceMotion) {
+                const heroIntro = gsap.timeline({ defaults: { ease: 'power3.out' } });
+                heroIntro
+                    .from('.hero-copy .eyebrow', { y: 14, autoAlpha: 0, duration: .55 })
+                    .from('.hero-copy h1', { y: 24, autoAlpha: 0, duration: .7 }, '-=.28')
+                    .from('.hero-lede', { y: 16, autoAlpha: 0, duration: .6 }, '-=.34')
+                    .from('.hero-actions > *', { y: 12, autoAlpha: 0, duration: .48, stagger: .08 }, '-=.28')
+                    .from('.hero-note', { y: 12, autoAlpha: 0, duration: .5 }, '-=.2')
+                    .from('.hero-visual', { x: 28, autoAlpha: 0, duration: .9 }, '-=1.05')
+                    .from('.hero-bottom > *', { y: 8, autoAlpha: 0, duration: .45, stagger: .06 }, '-=.38');
 
-        $(window).scroll(function () {
-            if ($(document).scrollTop() > 2000 && $("#exampleModal").attr("displayed") === "false") {
-                $('#exampleModal').modal('show');
-                $("#exampleModal").attr("displayed", "true");
+                const heroVisual = document.querySelector('.hero-visual');
+                const heroImage = document.querySelector('.hero-photo img');
+                gsap.to('.hero-stamp', { y: -7, rotation: -8, duration: 3.2, ease: 'sine.inOut', repeat: -1, yoyo: true });
+                gsap.to('.hero-stamp i', { rotation: 18, duration: 8, ease: 'sine.inOut', repeat: -1, yoyo: true });
+                gsap.to('.hero-bottom > a i', { y: 3, duration: 1.1, ease: 'sine.inOut', repeat: -1, yoyo: true });
+
+                if (heroImage && window.ScrollTrigger) {
+                    gsap.to(heroImage, {
+                        yPercent: 4,
+                        ease: 'none',
+                        scrollTrigger: { trigger: '.hero-section', start: 'top top', end: 'bottom top', scrub: .65 }
+                    });
+                }
+
+                if (heroVisual && heroImage && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+                    const moveX = gsap.quickTo(heroImage, 'x', { duration: .45, ease: 'power3.out' });
+                    const moveY = gsap.quickTo(heroImage, 'y', { duration: .45, ease: 'power3.out' });
+                    const zoom = gsap.quickTo(heroImage, 'scale', { duration: .55, ease: 'power3.out' });
+                    heroVisual.addEventListener('pointermove', event => {
+                        const bounds = heroVisual.getBoundingClientRect();
+                        const x = (event.clientX - bounds.left) / bounds.width - .5;
+                        const y = (event.clientY - bounds.top) / bounds.height - .5;
+                        moveX(x * 9);
+                        moveY(y * 7);
+                        zoom(1.035);
+                    });
+                    heroVisual.addEventListener('pointerleave', () => {
+                        moveX(0);
+                        moveY(0);
+                        zoom(1);
+                    });
+
+                    gsap.utils.toArray('.pathway-card').forEach(card => {
+                        gsap.set(card, { transformPerspective: 1000, transformOrigin: 'center' });
+                        const rotateX = gsap.quickTo(card, 'rotationX', { duration: .4, ease: 'power3.out' });
+                        const rotateY = gsap.quickTo(card, 'rotationY', { duration: .4, ease: 'power3.out' });
+                        const lift = gsap.quickTo(card, 'y', { duration: .4, ease: 'power3.out' });
+                        card.addEventListener('pointerenter', () => lift(-4));
+                        card.addEventListener('pointermove', event => {
+                            const bounds = card.getBoundingClientRect();
+                            const x = (event.clientX - bounds.left) / bounds.width - .5;
+                            const y = (event.clientY - bounds.top) / bounds.height - .5;
+                            rotateX(y * -3.5);
+                            rotateY(x * 4.5);
+                        });
+                        card.addEventListener('pointerleave', () => {
+                            rotateX(0);
+                            rotateY(0);
+                            lift(0);
+                        });
+                    });
+                }
             }
-        });
-        // if window width is less than 600px, show alert
-        $(window).resize(function () {
-            if ($(window).width() < 1240) {
-                $('#mdvti-form').width() = "100%";
-            }
-        });
+            window.addEventListener('scroll', () => {
+                if (smoother || scrollFrame) return;
+                scrollFrame = window.requestAnimationFrame(() => {
+                    scrollFrame = 0;
+                    updateScroll();
+                });
+            }, { passive: true });
+            updateScroll(smoother);
+            document.getElementById('year').textContent = new Date().getFullYear();
+            document.querySelectorAll('#mainNav a[href^="#"]').forEach(link => link.addEventListener('click', () => {
+                const nav = document.getElementById('mainNav');
+                if (nav.classList.contains('show')) bootstrap.Collapse.getOrCreateInstance(nav).hide();
+            }));
+            const helpDialog = document.getElementById('helpDialog');
+            const closeHelpDialog = () => helpDialog.close();
+            document.getElementById('closeHelpDialog').addEventListener('click', closeHelpDialog);
+            document.getElementById('dialogProgrammes').addEventListener('click', closeHelpDialog);
+            document.addEventListener('pointerout', event => {
+                if (event.clientY > 0 || !event.relatedTarget || window.innerWidth < 768 || window.scrollY < 500) return;
+                if (sessionStorage.getItem('yogkulam-help-seen')) return;
+                sessionStorage.setItem('yogkulam-help-seen', '1');
+                helpDialog.showModal();
+            });
+            helpDialog.addEventListener('click', event => {
+                if (event.target === helpDialog) closeHelpDialog();
+            });
+        })();
     </script>
 </body>
-
 </html>
