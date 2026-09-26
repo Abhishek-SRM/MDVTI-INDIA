@@ -620,9 +620,12 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 .pathway-clay .pathway-number,
 .pathway-primary > p,
 .pathway-clay > p,
+.pathway-primary h3,
+.pathway-clay h3,
 .pathway-primary h3 small,
 .pathway-clay h3 small,
 .pathway-primary .pathway-tags span,
 .pathway-clay .pathway-tags span { color: #fffaf4; }
+.final-cta h2 { color: #fffaf4; }
 .pathway-primary .pathway-tags span,
 .pathway-clay .pathway-tags span { border-color: rgba(255,250,244,.58); }
