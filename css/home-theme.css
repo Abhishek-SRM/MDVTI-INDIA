@@ -438,6 +438,29 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 @media (prefers-reduced-motion: reduce) { .help-dialog[open] { animation: none; } }
 @media (max-width: 767.98px) { .help-dialog { padding: 30px 23px; } }
 
+/* Carry the course page's hand-drawn, asset-led language onto the homepage. */
+.hero-section { isolation: isolate; }
+.hero-section::before, .hero-section::after { position: absolute; z-index: -1; width: min(42vw, 520px); aspect-ratio: 1; background: url('../img/assets/abstract-lines/Line 1.svg') center / contain no-repeat; opacity: .1; pointer-events: none; content: ''; }
+.hero-section::before { top: -24%; left: -11%; transform: rotate(-17deg); }
+.hero-section::after { right: -12%; bottom: -35%; transform: rotate(19deg); }
+.hero-photo-note { position: absolute; right: 18px; bottom: 18px; display: flex; align-items: center; gap: 12px; max-width: 235px; padding: 11px 15px; color: var(--wine); background: rgba(255,250,242,.94); box-shadow: 0 8px 24px rgba(36,24,18,.14); font-family: var(--serif); font-size: 14px; line-height: 1.25; }
+.hero-photo-note b { color: #b58b4e; font-size: 23px; font-weight: 500; }
+.hero-stamp { z-index: 2; top: 7%; left: -5%; width: 82px; height: 82px; padding: 9px; background: var(--paper); box-shadow: 0 9px 24px rgba(48,29,21,.12); }
+.hero-stamp img { width: 30px; height: 30px; object-fit: contain; }
+.hero-stamp small { color: var(--wine); font-size: 6px; font-weight: 600; line-height: 1.25; letter-spacing: .12em; }
+.hero-doodle { position: absolute; z-index: 1; right: -29px; bottom: 90px; width: 72px; height: 72px; object-fit: contain; transform: rotate(9deg); }
+.note-icon img, .audience-icon img { width: 23px; height: 23px; object-fit: contain; }
+.audience-icon img { width: 25px; height: 25px; }
+.curriculum-topics article > img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) saturate(100%) invert(84%) sepia(17%) saturate(675%) hue-rotate(343deg) brightness(101%) contrast(88%); transition: transform .25s; }
+.curriculum-topics article:hover > img { transform: rotate(-10deg) scale(1.08); }
+.section-heading h2 em, .difference-intro h2 em, .career-grid h2 em, .community-grid h2 em, .founder-copy h2 em, .ethics-grid h2 em { position: relative; }
+.section-heading h2 em::after, .difference-intro h2 em::after, .career-grid h2 em::after, .community-grid h2 em::after, .founder-copy h2 em::after, .ethics-grid h2 em::after { position: absolute; right: 0; bottom: -9px; left: 0; height: 14px; background: url('../img/assets/handdrawn-underline/Underline_01.svg') center / 100% 100% no-repeat; opacity: .68; content: ''; pointer-events: none; }
+@media (max-width: 767.98px) {
+    .hero-stamp { top: 5%; left: -3%; width: 70px; height: 70px; }
+    .hero-doodle { right: -13px; bottom: 75px; width: 55px; height: 55px; }
+    .hero-photo-note { right: 11px; bottom: 11px; max-width: 205px; font-size: 12px; }
+}
+
 /* Bring the homepage surfaces in line with the course page's rich card language. */
 .hero-section { overflow: clip; background: radial-gradient(ellipse at 12% 8%, rgba(237,207,156,.28), transparent 33%), linear-gradient(180deg,#fffaf2 0%,#f7f1e9 100%); }
 .site-header { background: rgba(255,250,242,.88); backdrop-filter: blur(14px); }
@@ -629,3 +652,15 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 .final-cta h2 { color: #fffaf4; }
 .pathway-primary .pathway-tags span,
 .pathway-clay .pathway-tags span { border-color: rgba(255,250,244,.58); }
+
+/* Final homepage accents after responsive/theme overrides. */
+.hero-stamp { top: 8%; left: 4%; width: 82px; height: 82px; border-radius: 50%; }
+.hero-stamp small { display: block; color: var(--wine); font-size: 6px; line-height: 1.25; letter-spacing: .12em; }
+.hero-photo-note { z-index: 4; right: 24px; bottom: 26px; }
+.hero-doodle { z-index: 4; right: 4%; bottom: 18%; }
+.curriculum-topics article > img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) saturate(100%) invert(84%) sepia(17%) saturate(675%) hue-rotate(343deg) brightness(101%) contrast(88%); }
+@media (max-width: 767.98px) {
+    .hero-stamp { top: 8%; left: 6%; width: 68px; height: 68px; }
+    .hero-photo-note { right: 12px; bottom: 14px; max-width: 205px; font-size: 12px; }
+    .hero-doodle { right: 1%; bottom: 13%; width: 55px; height: 55px; }
+}
