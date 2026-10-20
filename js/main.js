@@ -11,9 +11,8 @@
   };
   spinner();
 
-  $(window).on('DOMContentLoaded', function () {
-    $('#exampleModalCenter').modal('show');
-  });
+  // Modals stay closed until something on the page asks for them; an
+  // auto-opening dialog hid the article the visitor came to read.
 
   // Initiate the wowjs
   new WOW().init();

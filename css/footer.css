@@ -1,0 +1,304 @@
+/* ==========================================================================
+   Yogkulam shared footer
+   One footer for every page: brand + tagline, three link groups, contact, and
+   a single back-to-top control.
+
+   Self-contained on purpose — its own tokens, scoped to .yk-footer, so it can
+   load on the Tailwind-built course page as well as the Bootstrap pages.
+   ========================================================================== */
+
+.yk-footer {
+    --yk-f-wine: #8b2025;
+    --yk-f-gold: #edcf9c;
+    --yk-f-gold-deep: #c79a55;
+    --yk-f-surface: #251f24;
+    --yk-f-cream: #fffaf2;
+    --yk-f-shell: 1200px;
+    --yk-f-serif: 'El Messiri', Georgia, serif;
+    --yk-f-sans: 'Poppins', Arial, sans-serif;
+
+    position: relative;
+    margin-top: clamp(48px, 6vw, 88px);
+    color: rgba(255, 250, 242, .74);
+    background: var(--yk-f-surface);
+    font-family: var(--yk-f-sans);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.yk-footer *,
+.yk-footer *::before,
+.yk-footer *::after {
+    box-sizing: border-box;
+}
+
+.yk-fshell {
+    width: 100%;
+    max-width: var(--yk-f-shell);
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+.yk-footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.15fr;
+    gap: 48px;
+    padding-block: 60px 44px;
+}
+
+/* ---------- Brand ---------------------------------------------------------- */
+
+.yk-footer-lockup {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--yk-f-cream);
+    text-decoration: none;
+}
+
+.yk-footer-lockup img {
+    display: block;
+    width: auto;
+    height: 42px;
+    padding: 5px 8px;
+    border-radius: 10px;
+    background: var(--yk-f-cream);
+}
+
+.yk-footer-lockup span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.yk-footer-lockup strong {
+    font-family: var(--yk-f-serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--yk-f-cream);
+}
+
+.yk-footer-lockup small {
+    margin-top: 3px;
+    color: rgba(255, 250, 242, .6);
+    font-size: 10.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.yk-footer-brand > p {
+    max-width: 30ch;
+    margin: 18px 0 0;
+    color: rgba(255, 250, 242, .72);
+    font-family: var(--yk-f-serif);
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.yk-footer-brand > .yk-footer-note {
+    margin-top: 10px;
+    color: rgba(255, 250, 242, .55);
+    font-family: var(--yk-f-sans);
+    font-size: 13px;
+    line-height: 1.65;
+}
+
+/* ---------- Link columns --------------------------------------------------- */
+
+.yk-footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.yk-footer-col h2 {
+    margin: 0 0 12px;
+    padding: 0;
+    color: var(--yk-f-gold);
+    font-family: var(--yk-f-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.yk-footer-col a,
+.yk-footer-col p {
+    margin: 0;
+    color: rgba(255, 250, 242, .74);
+    font-size: 13.5px;
+    line-height: 1.55;
+    text-decoration: none;
+}
+
+.yk-footer-col a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    transition: color .18s ease;
+}
+
+.yk-footer-col a:hover,
+.yk-footer-col a:focus-visible {
+    color: var(--yk-f-gold);
+}
+
+.yk-footer-contact p {
+    padding-top: 8px;
+    color: rgba(255, 250, 242, .6);
+}
+
+.yk-footer-cta {
+    margin-top: 14px;
+    padding: 0 18px;
+    min-height: 42px !important;
+    border: 1px solid rgba(237, 207, 156, .5);
+    border-radius: 999px;
+    color: var(--yk-f-cream) !important;
+    font-weight: 500;
+}
+
+.yk-footer-cta:hover,
+.yk-footer-cta:focus-visible {
+    border-color: var(--yk-f-gold);
+    background: rgba(237, 207, 156, .14);
+    color: var(--yk-f-gold) !important;
+}
+
+/* ---------- Base bar ------------------------------------------------------- */
+
+.yk-footer-base {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    min-height: 62px;
+    padding-block: 18px;
+    border-top: 1px solid rgba(255, 250, 242, .12);
+    color: rgba(255, 250, 242, .55);
+    font-size: 12.5px;
+}
+
+.yk-footer-tagline {
+    font-family: var(--yk-f-serif);
+    font-size: 14px;
+    color: rgba(255, 250, 242, .62);
+}
+
+.yk-to-top-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 44px;
+    color: var(--yk-f-gold);
+    font-size: 12.5px;
+    letter-spacing: .04em;
+    text-decoration: none;
+}
+
+.yk-to-top-link:hover,
+.yk-to-top-link:focus-visible {
+    color: var(--yk-f-cream);
+}
+
+/* ---------- Floating back to top ------------------------------------------- */
+
+.yk-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 800;
+    display: grid;
+    width: 48px;
+    height: 48px;
+    place-items: center;
+    border: 1px solid var(--yk-f-gold-deep);
+    border-radius: 999px;
+    color: var(--yk-f-gold);
+    background: var(--yk-f-wine);
+    box-shadow: 0 10px 24px rgba(40, 10, 12, .3);
+    font-size: 16px;
+    text-decoration: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+
+.yk-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+}
+
+.yk-to-top:hover,
+.yk-to-top:focus-visible {
+    color: var(--yk-f-cream);
+    background: var(--yk-f-wine);
+}
+
+.yk-footer :focus-visible,
+.yk-to-top:focus-visible {
+    outline: 2px solid var(--yk-f-gold);
+    outline-offset: 3px;
+}
+
+/* ---------- Responsive ----------------------------------------------------- */
+
+@media (max-width: 1024px) {
+    .yk-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .yk-footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 640px) {
+    .yk-footer {
+        font-size: 14px;
+    }
+
+    .yk-footer-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-block: 44px 32px;
+    }
+
+    .yk-footer-brand > p {
+        max-width: 34ch;
+    }
+
+    .yk-footer-col a {
+        min-height: 44px;
+    }
+
+    .yk-footer-base {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        min-height: 0;
+        padding-block: 18px 26px;
+    }
+
+    .yk-footer-base .yk-footer-tagline {
+        order: 3;
+    }
+
+    .yk-to-top {
+        right: 14px;
+        bottom: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .yk-to-top {
+        transition: none;
+    }
+}
