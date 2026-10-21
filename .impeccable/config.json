@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "italic-serif-display",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-10-20T09:44:56.044Z",
+        "reason": "Agent assessment: the existing Yogkulam critique identifies the wine and gold serif display system as the brand signature; the institute’s editorial yoga register intentionally uses it."
+      }
+    ]
+  }
+}

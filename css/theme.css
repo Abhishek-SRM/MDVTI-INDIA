@@ -1,0 +1,601 @@
+/* ==========================================================================
+   Yogkulam shared theme
+   Extracted from the course page's visual language so every surface reads as
+   one institution: wine + gold on cream, El Messiri display type, rounded
+   cards with soft shadows, gold pill badges, dotted wine bands.
+
+   Load order: after bootstrap.min.css and any page-specific stylesheet.
+   ========================================================================== */
+
+:root {
+    --wine: #8b2025;
+    --wine-dark: #5c171b;
+    --wine-mid: #71343a;
+    --wine-ink: #3f0f12;
+    --gold: #edcf9c;
+    --gold-deep: #b8863b;
+    --gold-text: #5c3a18;
+    --paper: #fffaf2;
+    --cream: #f5eee3;
+    --cream-soft: #fdf6ea;
+    --ink: #28262a;
+    --muted: #5f5a57;
+    --line: #eadfd0;
+    --line-strong: #dcc9ad;
+    --serif: 'El Messiri', Georgia, serif;
+    --sans: 'Poppins', 'DM Sans', Arial, sans-serif;
+    --shell: 1200px;
+
+    --r-sm: 10px;
+    --r-md: 16px;
+    --r-lg: 24px;
+    --r-xl: 32px;
+    --shadow-card: 0 10px 30px rgba(74, 31, 30, .07), 0 2px 8px rgba(74, 31, 30, .04);
+    --shadow-lift: 0 20px 45px rgba(74, 31, 30, .14), 0 4px 12px rgba(74, 31, 30, .06);
+    --shadow-glass: 0 8px 24px rgba(30, 12, 12, .18);
+}
+
+/* ---------- Base ---------------------------------------------------------- */
+
+body {
+    color: var(--ink);
+    background: var(--paper);
+    font-family: var(--sans);
+    font-size: 15px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+.hero-title,
+.display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
+    font-family: var(--serif);
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -.02em;
+    line-height: 1.12;
+}
+
+h1 { font-size: clamp(2rem, 3vw + 1rem, 2.75rem); }
+h2 { font-size: clamp(1.6rem, 2.4vw + .9rem, 2.1rem); }
+h3 { font-size: clamp(1.35rem, 1.8vw + .8rem, 1.7rem); }
+h4 { font-size: clamp(1.15rem, 1.2vw + .8rem, 1.35rem); }
+h5 { font-size: 1.1rem; }
+h6 { font-size: 1rem; }
+
+img,
+svg {
+    max-width: 100%;
+}
+
+/* Bootstrap rows carry negative gutters. Where a row sits directly inside a
+   section (no .container to cancel it), those gutters push past the viewport.
+   Clamp the known offender and keep a clip as a general guard. */
+.our-presence > .row { margin-inline: 0; }
+
+p {
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.75;
+    text-align: left;
+}
+.lead, p.lead { font-size: 17px; line-height: 1.7; color: var(--muted); }
+a { color: var(--wine); text-decoration: none; }
+a:hover { color: var(--wine-dark); }
+
+::selection { color: var(--ink); background: rgba(237, 207, 156, .55); }
+
+:focus-visible {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 3px;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--wine); border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: var(--wine-dark); }
+
+/* ---------- Shared components --------------------------------------------- */
+
+/* Gold pill badge — the course page's signature label. */
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 7px 16px;
+    border: 1px solid #e0c795;
+    border-radius: 999px;
+    color: var(--gold-text);
+    background: linear-gradient(120deg, #f7e4bf, var(--gold));
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .1em;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+.eyebrow > span { display: none; }
+.eyebrow-light {
+    color: #fff8e8;
+    border-color: rgba(237, 207, 156, .45);
+    background: rgba(237, 207, 156, .18);
+}
+
+/* Buttons — wine pills with a soft lift, matching the enrol CTA. */
+.button,
+.btn {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 24px;
+    border: 1px solid var(--wine);
+    border-radius: 999px;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+}
+
+.button-primary,
+.btn-primary,
+.btn.btn-primary {
+    color: #fffaf4;
+    border-color: var(--wine);
+    background: linear-gradient(140deg, var(--wine) 0%, #6d171b 100%);
+    box-shadow: 0 10px 24px rgba(101, 26, 31, .22);
+}
+.button-primary:hover,
+.btn-primary:hover,
+.btn.btn-primary:hover,
+.btn.btn-primary:focus {
+    color: #fffaf4;
+    border-color: var(--wine-dark);
+    background: linear-gradient(140deg, #7d1d22 0%, var(--wine-dark) 100%);
+    box-shadow: 0 14px 30px rgba(101, 26, 31, .28);
+    transform: translateY(-2px);
+}
+
+.button-light,
+.btn-light {
+    color: var(--wine);
+    border-color: transparent;
+    background: #fffaf4;
+    box-shadow: var(--shadow-card);
+}
+.button-light:hover,
+.btn-light:hover { color: var(--wine-dark); background: #fff; transform: translateY(-2px); }
+
+.button-outline,
+.btn-outline-primary,
+.btn-outline-light {
+    color: var(--wine);
+    border-color: var(--line-strong);
+    background: transparent;
+}
+.button-outline:hover,
+.btn-outline-primary:hover,
+.btn-outline-light:hover {
+    color: var(--wine-dark);
+    border-color: var(--wine);
+    background: rgba(139, 32, 37, .06);
+}
+
+.btn-link { color: var(--wine); border: 0; background: none; box-shadow: none; }
+
+/* Outline buttons sitting on wine surfaces need light ink. */
+.curriculum-section .button-outline,
+.career-section .button-outline,
+.final-cta .button-outline {
+    color: #fffaf4;
+    border-color: rgba(255, 250, 244, .5);
+    background: transparent;
+}
+.curriculum-section .button-outline:hover,
+.career-section .button-outline:hover,
+.final-cta .button-outline:hover {
+    color: var(--wine);
+    border-color: #fffaf4;
+    background: #fffaf4;
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 0;
+    border-bottom: 1px solid var(--gold);
+    color: var(--wine);
+    font-size: 13px;
+    font-weight: 600;
+}
+.text-link:hover { color: var(--wine-dark); border-color: var(--wine); }
+
+/* ---------- Bootstrap reskin (legacy pages) ------------------------------- */
+
+.bg-light { background-color: var(--cream) !important; }
+.bg-white { background-color: #fffdf9 !important; }
+.text-primary { color: var(--wine) !important; }
+.bg-primary { background-color: var(--wine) !important; }
+.border { border-color: var(--line) !important; }
+.text-muted { color: var(--muted) !important; }
+.text-success { color: #146c43 !important; }
+.shadow { box-shadow: var(--shadow-card) !important; }
+.shadow-sm { box-shadow: 0 4px 14px rgba(74, 31, 30, .06) !important; }
+.shadow-lg { box-shadow: var(--shadow-lift) !important; }
+.rounded, .rounded-3 { border-radius: var(--r-md) !important; }
+
+.card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    background: #fffdf9;
+    box-shadow: var(--shadow-card);
+}
+.card-title { font-family: var(--serif); }
+
+.alert { border: 1px solid var(--line-strong); border-radius: var(--r-md); background: var(--cream-soft); color: var(--ink); }
+.badge { border-radius: 999px; font-weight: 600; letter-spacing: .04em; }
+.table > :not(caption) > * > * { border-color: var(--line); }
+hr { border-color: var(--line); opacity: 1; }
+blockquote { margin: 0; padding-left: 18px; border-left: 2px solid var(--gold); color: var(--wine-dark); font-family: var(--serif); }
+
+/* Forms */
+.form-control,
+.form-select,
+textarea.form-control {
+    min-height: 50px;
+    padding: 12px 16px;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--r-md);
+    color: var(--ink);
+    background: #fffdf9;
+    font-family: var(--sans);
+    font-size: 14px;
+    box-shadow: none;
+}
+.form-control::placeholder { color: #776f68; opacity: 1; }
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--wine);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(139, 32, 37, .12);
+}
+.form-floating > label { color: var(--muted); font-size: 13px; }
+.form-check-input:checked { border-color: var(--wine); background-color: var(--wine); }
+.form-check-input:focus { border-color: var(--wine); box-shadow: 0 0 0 4px rgba(139, 32, 37, .12); }
+.form-label { color: var(--ink); font-size: 13px; font-weight: 600; }
+.right-form { border-color: var(--line) !important; background: #fffdf9 !important; }
+
+/* Legacy top bars and navs use oversized Bootstrap padding utilities.
+   Keep those controls compact so they read as pills, not blocks. */
+.bg-light > .row .btn { min-height: 0; padding: 0 !important; box-shadow: none; }
+.bg-light > .row .btn > .dropdown-toggle {
+    display: block;
+    padding: 14px 18px !important;
+    color: #fffaf4 !important;
+    font-size: 13px;
+}
+
+/* The legacy template faked large CTAs with spacing utilities, which produced
+   buttons up to 114px tall. Cap them so every CTA matches the course page's
+   48–52px pill. */
+.btn.py-4, .btn.py-5 { padding-top: 14px !important; padding-bottom: 14px !important; }
+.btn.py-4.px-5, .btn.py-5.px-5 { padding-left: 32px !important; padding-right: 32px !important; }
+.btn.px-lg-5 { padding-left: 24px !important; padding-right: 24px !important; }
+
+/* A few CTAs are built from utilities instead of .btn, so they fall outside the
+   pill rules above and render as sharp rectangles. Round them to match. */
+.bg-white.px-5.py-3,
+.bg-primary.px-5.py-3,
+.text-white.bg-primary.px-5.py-3 {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    border-radius: 999px;
+}
+.view-btn,
+.teacher-list-view-btn,
+.teacher-list-pagination button { border-radius: 999px; }
+.teacher-list-pagination button { min-width: 48px; min-height: 48px; }
+
+/* Footer link stacks sit on their own lines, so give each one a real
+   touch height instead of a 27px line box. */
+.footer a:not(.btn):not(.btn-link) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+}
+
+/* Legacy sidebars and link lists */
+.sidebar-section a,
+.sidebar-category-link { min-height: 44px; }
+
+/* Legacy footer */
+.footer {
+    color: rgba(255, 250, 244, .78);
+    background-color: #251f24;
+    background-image: none !important;
+    border-top: 1px solid rgba(255, 250, 244, .1);
+}
+.footer h4, .footer h5 { color: #fffaf4; font-size: 15px; letter-spacing: .02em; }
+.footer a { color: rgba(255, 250, 244, .72); font-size: 13px; }
+.footer a:hover { color: var(--gold); }
+.footer .btn.btn-primary { box-shadow: none; }
+.footer p { color: rgba(255, 250, 244, .7); font-size: 13px; }
+
+/* Legacy breadcrumb banner */
+.mdvti-breadcurmb-section {
+    position: relative;
+    margin: clamp(16px, 2vw, 28px) auto;
+    border-radius: var(--r-xl);
+    padding: clamp(48px, 7vw, 88px) 0 clamp(38px, 5vw, 64px);
+    color: #fffaf4;
+    background:
+        radial-gradient(circle at 82% 18%, rgba(237, 207, 156, .2), transparent 45%),
+        linear-gradient(140deg, #7d1d22 0%, var(--wine-dark) 100%);
+}
+.mdvti-breadcurmb-section .breadcurmb-title h1,
+.mdvti-breadcurmb-section .breadcurmb-title h2 { color: #fffaf4; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+.mdvti-breadcurmb-section .mdvti-page-breadcurmb { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin: 14px 0 0; padding: 0; list-style: none; }
+.mdvti-breadcurmb-section .mdvti-page-breadcurmb li { color: rgba(255, 250, 244, .75); font-size: 12px; }
+.mdvti-breadcurmb-section .mdvti-page-breadcurmb li + li::before { margin-right: 8px; color: rgba(255, 250, 244, .45); content: '/'; }
+.mdvti-breadcurmb-section .mdvti-page-breadcurmb a { color: var(--gold); }
+
+/* Legacy small cards used across about/franchise pages */
+.state-name {
+    border: 1px solid var(--line) !important;
+    border-radius: var(--r-md);
+    background: #fffdf9 !important;
+    box-shadow: var(--shadow-card) !important;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+.state-name:hover { transform: translateY(-2px); box-shadow: var(--shadow-lift) !important; }
+.state-name h6 { margin: 0; font-family: var(--sans); font-size: 13px; font-weight: 500; }
+
+.section-title { font-family: var(--serif); }
+.section-title::after {
+    display: block;
+    width: 64px;
+    height: 10px;
+    margin: 14px auto 0;
+    background: url('../img/assets/handdrawn-underline/Underline_01.svg') center / 100% 100% no-repeat;
+    opacity: .6;
+    content: '';
+}
+
+/* Legacy headings that use Bootstrap display classes keep the serif voice */
+.display-4, .display-5, .display-6 { font-family: var(--serif); color: var(--ink); }
+
+/* Teacher directory — retire the traffic-light badge palette */
+.teacher-badge,
+.teacher-badge.online,
+.teacher-badge.home,
+.teacher-badge.studio,
+.teacher-badge.corp {
+    color: var(--wine);
+    border: 1px solid var(--line-strong);
+    background: var(--cream-soft);
+}
+.teacher-list-cert {
+    color: var(--gold-text);
+    border: 1px solid #e0c795;
+    background: rgba(237, 207, 156, .32);
+    box-shadow: none;
+}
+.teacher-list-rating, .rating-stars { color: var(--gold-deep); }
+.teacher-list-price { color: var(--wine); }
+.teacher-list-item, .teacher-card {
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+}
+
+/* ---------- Page band ------------------------------------------------------ */
+
+/* Every interior page opens on the same band: eyebrow, one h1, one lede.
+   Pages that used to drop straight into a grid or a form get one too, so the
+   title reads at the same size and position everywhere. */
+.page-band {
+    padding: 44px 0 34px;
+    border-bottom: 1px solid var(--line);
+}
+
+.page-band-inner {
+    max-width: none;
+    margin-inline: 0;
+    padding-inline: 0;
+}
+
+.page-band h1 {
+    margin: 0;
+    color: var(--ink);
+}
+
+.page-band p {
+    max-width: 62ch;
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+@media (max-width: 767.98px) {
+    .page-band { padding: 30px 0 24px; }
+}
+
+/* Auth cards carry the page's h1 without shouting: it keeps the size the
+   heading had as an h3, so the form stays the focus. */
+.auth-title {
+    font-size: clamp(1.35rem, 1.8vw + .8rem, 1.7rem);
+}
+
+/* ---------- Aside card ----------------------------------------------------- */
+
+/* The quiet admissions prompt used beside or after long-form content. */
+.aside-card {
+    padding: 26px 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    background: linear-gradient(150deg, #fffdf9 0%, var(--cream) 100%);
+    box-shadow: var(--shadow-card);
+}
+
+.aside-card-kicker {
+    margin: 0 0 10px;
+    color: var(--wine);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.aside-card-title {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    line-height: 1.2;
+}
+
+.aside-card-copy {
+    margin: 10px 0 18px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.aside-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 18px;
+}
+
+.aside-card-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 22px;
+    border-radius: 999px;
+    color: #fffaf4;
+    background: var(--wine);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.aside-card-cta:hover,
+.aside-card-cta:focus-visible {
+    color: #fff;
+    background: var(--wine-dark);
+}
+
+.aside-card-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    border-bottom: 1px solid rgba(139, 32, 37, .3);
+    color: var(--wine);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.aside-card-link:hover,
+.aside-card-link:focus-visible {
+    color: var(--wine-dark);
+    border-bottom-color: var(--wine-dark);
+}
+
+.aside-card--closing {
+    margin: 8px 0 52px;
+}
+
+.aside-card + .aside-card {
+    margin-top: 18px;
+}
+
+/* ---------- Homepage alignment -------------------------------------------- */
+
+/* Card surfaces replace hairline lists so the homepage reads like the course page. */
+.audience-item,
+.included-card,
+.learning-steps article,
+.difference-list article,
+.faq-list details {
+    border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+}
+.audience-item:hover,
+.included-card:hover,
+.learning-steps article:hover {
+    border-color: var(--line-strong);
+    box-shadow: var(--shadow-lift);
+}
+.audience-item { padding: 24px; }
+.included-card { padding: 26px 24px 24px; }
+.learning-steps { display: grid; gap: 14px; border: 0; }
+.learning-steps article { min-height: 0; padding: 22px; }
+.learning-steps article + article { border-left: 1px solid var(--line); }
+.difference-list { display: grid; gap: 12px; border: 0; }
+.difference-list article { padding: 18px 20px; }
+.audience-grid { gap: 14px; border: 0; }
+.included-grid { gap: 14px; border: 0; }
+.included-card + .included-card { border-left: 1px solid var(--line); }
+.faq-list { display: grid; gap: 10px; border: 0; }
+.faq-list details { padding: 2px 18px; }
+.faq-list summary { padding: 16px 0; }
+.faq-list details p { margin: 0 0 16px; }
+
+/* Hero card treatment */
+.hero-photo-note { border: 1px solid var(--line); border-radius: var(--r-md); }
+.hero-stamp { border: 1px solid var(--line); }
+
+/* Wine sections gain the dotted course-page texture */
+.career-section,
+.final-cta,
+.curriculum-section {
+    background-image:
+        radial-gradient(rgba(255, 250, 244, .07) 1px, transparent 1px),
+        linear-gradient(140deg, #7d1d22 0%, var(--wine-dark) 100%);
+    background-size: 18px 18px, cover;
+}
+
+/* Keep the homepage CTA hierarchy on the course page's wine pill language */
+.hero-actions .button { min-height: 52px; padding-inline: 26px; }
+.hero-copy .button-primary,
+.hero-copy .button-primary:hover {
+    border: 1px solid var(--wine);
+    border-radius: 999px;
+    color: #fffaf4;
+    background: linear-gradient(140deg, var(--wine) 0%, #6d171b 100%);
+    box-shadow: 0 12px 26px rgba(101, 26, 31, .24);
+}
+.hero-copy .button-primary:hover {
+    border-color: var(--wine-dark);
+    background: linear-gradient(140deg, #7d1d22 0%, var(--wine-dark) 100%);
+}
+
+/* Stat strip in the hero already reads as a card row; align its type */
+.hero-bottom { border-top-color: var(--line); }
+
+@media (max-width: 767.98px) {
+    /* Decorative vector art that hangs off the right edge and forces a
+       horizontal scrollbar on phones. */
+    .pr3-get-vector-img { display: none; }
+    .pr3-get-right img { max-width: 100%; height: auto; }
+    /* Evenly-spread rows of padded labels overflow a 390px screen. */
+    .d-flex.justify-content-around { flex-wrap: wrap; }
+    .learning-steps { grid-template-columns: 1fr; }
+    .learning-steps article + article { border-left: 0; border-top: 1px solid var(--line); }
+    .included-card + .included-card { border-left: 0; border-top: 1px solid var(--line); }
+}
