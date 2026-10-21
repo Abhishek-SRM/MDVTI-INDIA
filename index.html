@@ -13,11 +13,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/home-theme.css" rel="stylesheet">
+    <link href="css/home-variants.css" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
 </head>
-<body>
+<body data-home-story="pathway-atlas">
     <a class="skip-link" href="#main">Skip to content</a>
 <!-- YK-NAV:START — shared header, source: partials/site-header.html -->
 <div class="yk-header" id="ykHeader">
@@ -110,6 +111,7 @@
                     <li class="yk-item"><a class="yk-link" href="teachers.html">Teachers</a></li>
                     <li class="yk-item"><a class="yk-link" href="franchise.html">Franchise</a></li>
                     <li class="yk-item"><a class="yk-link" href="blog.html">Blog</a></li>
+                    <li class="yk-item"><a class="yk-link" href="homepage-variants.html">Variants</a></li>
                 </ul>
                 <a class="yk-cta" href="course-desc.html">All programmes</a>
                 <button class="yk-burger" type="button" aria-expanded="false" aria-controls="ykDrawer" aria-label="Open menu">
@@ -150,6 +152,7 @@
         <a class="yk-drawer-link" href="teachers.html">Teachers</a>
         <a class="yk-drawer-link" href="franchise.html">Franchise</a>
         <a class="yk-drawer-link" href="blog.html">Blog</a>
+        <a class="yk-drawer-link" href="homepage-variants.html">Compare homepages</a>
         <div class="yk-drawer-actions">
             <a class="yk-drawer-cta" href="course-desc.html">All programmes</a>
             <a class="yk-drawer-ghost" href="studentlogin.html">Student login</a>
@@ -488,10 +491,12 @@
             if (footerYear) footerYear.textContent = String(new Date().getFullYear());
             const helpDialog = document.getElementById('helpDialog');
             const closeHelpDialog = () => helpDialog.close();
-            document.getElementById('closeHelpDialog').addEventListener('click', closeHelpDialog);
-            document.getElementById('dialogProgrammes').addEventListener('click', closeHelpDialog);
+            if (helpDialog) {
+                document.getElementById('closeHelpDialog').addEventListener('click', closeHelpDialog);
+                document.getElementById('dialogProgrammes').addEventListener('click', closeHelpDialog);
+            }
             document.addEventListener('pointerout', event => {
-                if (event.clientY > 0 || !event.relatedTarget || window.innerWidth < 768 || window.scrollY < 500) return;
+                if (!helpDialog || event.clientY > 0 || !event.relatedTarget || window.innerWidth < 768 || window.scrollY < 500) return;
                 if (sessionStorage.getItem('yogkulam-help-seen')) return;
                 sessionStorage.setItem('yogkulam-help-seen', '1');
                 helpDialog.showModal();
@@ -502,6 +507,7 @@
         })();
     </script>
     <script src="js/site-nav.js" defer></script>
+    <script src="js/home-variants.js" defer></script>
 
 <a class="yk-to-top" href="#top" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
 

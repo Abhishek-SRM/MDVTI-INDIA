@@ -1,0 +1,1322 @@
+/* ==========================================================================
+   Yogkulam homepage variants
+   Three storytelling directions built on the established wine / gold / paper
+   identity. This file owns the variant chooser and the story layer injected
+   by js/home-variants.js. It loads after the page theme.
+   ========================================================================== */
+
+:root {
+    --hv-wine: #8b2025;
+    --hv-deep: #5c171b;
+    --hv-wine-mid: #71343a;
+    --hv-gold: #edcf9c;
+    --hv-gold-deep: #b8863b;
+    --hv-paper: #fffaf2;
+    --hv-cream: #f5eee3;
+    --hv-ink: #28262a;
+    --hv-muted: #5f5a57;
+    --hv-line: #e7dbc9;
+    --hv-serif: 'El Messiri', Georgia, serif;
+    --hv-sans: 'Poppins', Arial, sans-serif;
+    --hv-shell: 1200px;
+}
+
+/* ---------- Preview ribbon on the variant pages --------------------------- */
+
+.variant-ribbon {
+    position: relative;
+    z-index: 45;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px clamp(16px, 4vw, 40px);
+    border-bottom: 1px solid rgba(237, 207, 156, .22);
+    background: var(--hv-deep);
+    color: rgba(255, 250, 242, .78);
+    font: 500 11.5px/1.5 var(--hv-sans);
+}
+
+.variant-ribbon-label {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    gap: 10px;
+}
+
+.variant-ribbon-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: var(--hv-gold);
+    box-shadow: 0 0 0 4px rgba(237, 207, 156, .16);
+}
+
+.variant-ribbon strong {
+    color: #fffaf2;
+    font-weight: 600;
+}
+
+.variant-ribbon nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.variant-ribbon a {
+    display: inline-flex;
+    min-height: 30px;
+    align-items: center;
+    padding: 4px 11px;
+    border: 1px solid rgba(237, 207, 156, .3);
+    border-radius: 999px;
+    color: rgba(255, 250, 242, .88);
+    font-size: 11px;
+    text-decoration: none;
+    transition: color .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.variant-ribbon a:hover,
+.variant-ribbon a:focus-visible {
+    border-color: var(--hv-gold);
+    color: var(--hv-gold);
+    background: rgba(237, 207, 156, .08);
+}
+
+.variant-ribbon a.is-current {
+    border-color: var(--hv-gold);
+    background: var(--hv-gold);
+    color: #3b1d10;
+    font-weight: 600;
+}
+
+@media (max-width: 760px) {
+    .variant-ribbon {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding-block: 12px;
+    }
+}
+
+@media (min-width: 992px) {
+    html:has(body[data-home-story]) { scroll-padding-top: 132px; }
+}
+
+/* ---------- Shared story sections ---------------------------------------- */
+
+.story {
+    position: relative;
+    padding-block: clamp(62px, 8vw, 108px);
+    overflow: clip;
+}
+
+/* Matches .site-shell in the page theme so injected sections line up with the
+   sections they sit between. */
+.story-shell {
+    width: min(var(--hv-shell), calc(100% - 56px));
+    margin-inline: auto;
+}
+
+.story h2 {
+    margin: 0 0 16px;
+    font-family: var(--hv-serif);
+    font-size: clamp(36px, 4.4vw, 56px);
+    font-weight: 500;
+    letter-spacing: -.035em;
+    line-height: 1.04;
+}
+
+.story h2 em {
+    color: var(--hv-wine);
+    font-style: normal;
+}
+
+.story-lede {
+    max-width: 58ch;
+    margin: 0;
+    color: var(--hv-muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.story-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--hv-gold-deep);
+    color: var(--hv-wine);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .18s ease, border-color .18s ease;
+}
+
+.story-link:hover,
+.story-link:focus-visible {
+    border-color: var(--hv-wine);
+    color: var(--hv-deep);
+}
+
+.story-foot {
+    margin: 26px 0 0;
+    color: #7c7570;
+    font-size: 10.5px;
+    line-height: 1.7;
+}
+
+/* ---------- Variant A · route atlas -------------------------------------- */
+
+.story-atlas {
+    background:
+        radial-gradient(ellipse at 88% 6%, rgba(237, 207, 156, .3), transparent 42%),
+        var(--hv-paper);
+    border-bottom: 1px solid var(--hv-line);
+}
+
+.atlas-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 48px;
+}
+
+.atlas-head .story-lede {
+    max-width: 34ch;
+    padding-bottom: 4px;
+}
+
+.atlas-map {
+    --atlas-gap: clamp(22px, 3.4vw, 52px);
+    position: relative;
+    margin-top: clamp(44px, 5vw, 68px);
+}
+
+/* The line runs from the centre of the first stop to the centre of the last,
+   so the three circles read as one route rather than scattered markers. */
+.atlas-route {
+    position: absolute;
+    top: 27px;
+    right: calc((100% - 2 * var(--atlas-gap)) / 3 - 16px);
+    left: 16px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--hv-wine), var(--hv-gold-deep));
+    transform-origin: left center;
+}
+
+.atlas-stops {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--atlas-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.atlas-stop {
+    position: relative;
+    padding-top: 70px;
+}
+
+.atlas-stop::before {
+    position: absolute;
+    top: 12px;
+    left: 0;
+    display: grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border: 2px solid var(--hv-wine);
+    border-radius: 50%;
+    background: var(--hv-paper);
+    color: var(--hv-wine);
+    font-family: var(--hv-serif);
+    font-size: 14px;
+    content: attr(data-stop);
+}
+
+.atlas-stop:nth-child(2)::before { border-color: var(--hv-wine-mid); }
+.atlas-stop:nth-child(3)::before { border-color: var(--hv-gold-deep); color: var(--hv-gold-deep); }
+
+.atlas-stop h3 {
+    margin: 0 0 8px;
+    font-family: var(--hv-serif);
+    font-size: clamp(22px, 2.2vw, 29px);
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.atlas-stop p {
+    margin: 0 0 14px;
+    color: var(--hv-muted);
+    font-size: 12.5px;
+    line-height: 1.8;
+}
+
+.atlas-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.atlas-meta span {
+    padding: 4px 8px;
+    border: 1px solid #d9c6a8;
+    color: #5d4a32;
+    font-size: 9.5px;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.atlas-stop .story-link {
+    font-size: 11.5px;
+}
+
+/* ---------- Variant B · chronicle timeline -------------------------------- */
+
+.story-chronicle {
+    background: var(--hv-cream);
+    border-block: 1px solid var(--hv-line);
+}
+
+.chronicle-head {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: end;
+    gap: clamp(28px, 5vw, 76px);
+    margin-bottom: clamp(40px, 5vw, 62px);
+}
+
+.chronicle-head .story-lede {
+    max-width: 40ch;
+    padding-bottom: 4px;
+}
+
+.chronicle-facts {
+    display: flex;
+    grid-column: 1 / -1;
+    flex-wrap: wrap;
+    gap: 12px 38px;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #d9c9b1;
+}
+
+.chronicle-facts span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    color: #6b625b;
+    font-size: 10.5px;
+    line-height: 1.5;
+}
+
+.chronicle-facts b {
+    color: var(--hv-wine);
+    font-family: var(--hv-serif);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.chronicle-track {
+    position: relative;
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0 0 0 clamp(26px, 5vw, 74px);
+    list-style: none;
+}
+
+/* The thread runs through the centre of the entry dots: both are measured
+   from the track's padding edge, so one offset serves every breakpoint. */
+.chronicle-thread {
+    position: absolute;
+    top: 8px;
+    bottom: 26px;
+    left: -1px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--hv-wine), rgba(237, 207, 156, .1));
+    transform-origin: top center;
+}
+
+.chronicle-entry {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(18px, 4vw, 60px);
+    padding: 0 0 clamp(34px, 4.5vw, 52px);
+}
+
+.chronicle-entry::before {
+    position: absolute;
+    top: 6px;
+    left: calc(clamp(26px, 5vw, 74px) * -1);
+    width: 11px;
+    height: 11px;
+    border: 2px solid var(--hv-wine);
+    border-radius: 50%;
+    background: var(--hv-cream);
+    content: '';
+    transform: translateX(-50%);
+}
+
+.chronicle-entry:last-child { padding-bottom: 0; }
+
+.chronicle-when {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--hv-gold-deep);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.chronicle-entry h3 {
+    margin: 0 0 8px;
+    font-family: var(--hv-serif);
+    font-size: clamp(23px, 2.5vw, 33px);
+    font-weight: 600;
+    line-height: 1.12;
+}
+
+.chronicle-entry p {
+    margin: 0;
+    color: var(--hv-muted);
+    font-size: 12.5px;
+    line-height: 1.85;
+}
+
+.chronicle-entry .chronicle-note {
+    margin: 17px 0 0;
+    padding-left: 16px;
+    border-left: 1px solid var(--hv-gold-deep);
+    color: #6b625c;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* ---------- Variant C · open syllabus ------------------------------------ */
+
+/* Variant C takes the place of the dark curriculum band, so it keeps that
+   register and lets the cream syllabus sheet carry the light. */
+.story-syllabus {
+    color: #fffaf2;
+    background:
+        radial-gradient(ellipse at 88% 8%, rgba(237, 207, 156, .22), transparent 40%),
+        linear-gradient(135deg, #5c171b 0%, #6e2429 46%, #2f191d 100%);
+    border-bottom: 1px solid rgba(237, 207, 156, .18);
+}
+
+.story-syllabus h2 { color: #fffaf2; }
+.story-syllabus h2 em { color: var(--hv-gold); }
+.story-syllabus .story-lede { color: rgba(255, 250, 242, .76); }
+.story-syllabus .story-foot { color: rgba(255, 250, 242, .6); }
+.story-syllabus .story-link {
+    border-color: rgba(237, 207, 156, .5);
+    color: var(--hv-gold);
+}
+.story-syllabus .story-link:hover,
+.story-syllabus .story-link:focus-visible {
+    border-color: var(--hv-gold);
+    color: #fffaf2;
+}
+.story-syllabus .syllabus-sheet { box-shadow: 0 28px 56px rgba(12, 6, 4, .38); }
+
+.syllabus-grid {
+    display: grid;
+    grid-template-columns: .78fr 1.22fr;
+    align-items: start;
+    gap: clamp(32px, 5vw, 82px);
+}
+
+.syllabus-intro .story-link { margin-top: 22px; }
+
+.syllabus-sheet {
+    border: 1px solid #dcc9ad;
+    background: #fffdf8;
+    box-shadow: 0 22px 48px rgba(66, 38, 24, .1);
+}
+
+.syllabus-sheet-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 22px;
+    border-bottom: 1px solid #dcc9ad;
+    color: var(--hv-wine);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.syllabus-sheet-head b {
+    font-family: var(--hv-serif);
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -.01em;
+    text-transform: none;
+}
+
+.syllabus-row {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) 22px;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 22px;
+    border: 0;
+    border-bottom: 1px solid rgba(220, 201, 173, .62);
+    background: transparent;
+    color: var(--hv-ink);
+    font-family: var(--hv-sans);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s ease, padding-left .2s ease;
+}
+
+.syllabus-row:last-child { border-bottom: 0; }
+
+.syllabus-row:hover,
+.syllabus-row:focus-visible {
+    padding-left: 26px;
+    background: rgba(237, 207, 156, .22);
+}
+
+.syllabus-row:focus-visible {
+    outline: 2px solid var(--hv-gold-deep);
+    outline-offset: -2px;
+}
+
+.syllabus-no {
+    color: var(--hv-gold-deep);
+    font-family: var(--hv-serif);
+    font-size: 13px;
+}
+
+.syllabus-label {
+    display: grid;
+    gap: 2px;
+}
+
+.syllabus-label b {
+    font-family: var(--hv-serif);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.syllabus-label small {
+    color: var(--hv-muted);
+    font-size: 10.5px;
+    line-height: 1.5;
+}
+
+.syllabus-row i {
+    color: var(--hv-wine);
+    font-size: 12px;
+    transition: transform .2s ease;
+}
+
+.syllabus-row[aria-expanded="true"] {
+    background: rgba(237, 207, 156, .3);
+}
+
+.syllabus-row[aria-expanded="true"] i { transform: rotate(90deg); }
+
+/* ---------- Variant-specific hero treatments ------------------------------ */
+
+/* The page flow itself is set on the DOM by js/home-variants.js, so keyboard
+   and screen-reader order always matches what is on screen. */
+body[data-home-story="first-year-chronicle"] .learning-section { display: none; }
+
+/* A · the route map gives the headline a little more room, so "Become a yoga
+   teacher" holds one line and the promise lands as two. */
+@media (min-width: 1024px) {
+    body[data-home-story="pathway-atlas"] .hero-grid {
+        grid-template-columns: 1.12fr .88fr;
+    }
+
+    body[data-home-story="pathway-atlas"] .hero-copy h1 {
+        font-size: clamp(44px, 4.6vw, 66px);
+    }
+}
+
+/* B · dark editorial hero */
+body[data-home-story="first-year-chronicle"] .hero-section {
+    background:
+        radial-gradient(ellipse at 78% 12%, rgba(237, 207, 156, .22), transparent 46%),
+        linear-gradient(118deg, #4b1317 0%, #5c171b 58%, #3a2324 100%);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-section::before,
+body[data-home-story="first-year-chronicle"] .hero-section::after {
+    opacity: .18;
+    filter: invert(1);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-copy .eyebrow,
+body[data-home-story="first-year-chronicle"] .hero-copy h1,
+body[data-home-story="first-year-chronicle"] .hero-lede {
+    color: #fffaf2;
+}
+
+body[data-home-story="first-year-chronicle"] .hero-copy .eyebrow {
+    border-color: rgba(237, 207, 156, .42);
+    background: rgba(237, 207, 156, .1);
+    color: var(--hv-gold);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-copy h1 em {
+    color: var(--hv-gold);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-lede {
+    color: rgba(255, 250, 242, .78);
+}
+
+body[data-home-story="first-year-chronicle"] .button-primary {
+    background: var(--hv-gold);
+    color: #40191a;
+    box-shadow: 0 10px 24px rgba(15, 6, 6, .28);
+}
+
+body[data-home-story="first-year-chronicle"] .button-primary:hover {
+    background: #f6dfb6;
+    color: #32110f;
+}
+
+body[data-home-story="first-year-chronicle"] .text-link {
+    border-color: rgba(237, 207, 156, .5);
+    color: var(--hv-gold);
+}
+
+body[data-home-story="first-year-chronicle"] .text-link:hover {
+    border-color: var(--hv-gold);
+    color: #fffaf2;
+}
+
+body[data-home-story="first-year-chronicle"] .hero-note {
+    border-top-color: rgba(255, 250, 242, .22);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-canva-card { display: none; }
+
+body[data-home-story="first-year-chronicle"] .hero-note strong { color: #fffaf2; }
+body[data-home-story="first-year-chronicle"] .hero-note small { color: rgba(255, 250, 242, .62); }
+
+body[data-home-story="first-year-chronicle"] .note-icon {
+    border-color: rgba(237, 207, 156, .4);
+    background: transparent;
+}
+
+body[data-home-story="first-year-chronicle"] .note-icon img {
+    opacity: .82;
+    filter: brightness(0) invert(1);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-photo {
+    border: 1px solid rgba(237, 207, 156, .35);
+    border-radius: 6px;
+    clip-path: none;
+}
+
+body[data-home-story="first-year-chronicle"] .hero-stamp,
+body[data-home-story="first-year-chronicle"] .hero-doodle,
+body[data-home-story="first-year-chronicle"] .hero-visual::before {
+    display: none;
+}
+
+body[data-home-story="first-year-chronicle"] .hero-bottom {
+    border-top-color: rgba(255, 250, 242, .22);
+    color: rgba(255, 250, 242, .66);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-bottom a {
+    border-color: rgba(255, 250, 242, .34);
+    color: var(--hv-gold);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-bottom a:hover {
+    background: rgba(237, 207, 156, .14);
+}
+
+body[data-home-story="first-year-chronicle"] .hero-canva-card figcaption {
+    background: rgba(28, 12, 12, .82);
+}
+
+body[data-home-story="first-year-chronicle"] .reading-progress span { background: var(--hv-gold); }
+
+/* C · a study-sheet hero */
+body[data-home-story="open-syllabus"] .hero-section {
+    background:
+        radial-gradient(ellipse at 12% 4%, rgba(237, 207, 156, .34), transparent 40%),
+        linear-gradient(180deg, #fffdf8 0%, #f6ecdd 100%);
+}
+
+@media (min-width: 768px) {
+    body[data-home-story="open-syllabus"] .hero-grid {
+        grid-template-columns: 1.02fr .98fr;
+        gap: clamp(32px, 5vw, 72px);
+    }
+}
+
+body[data-home-story="open-syllabus"] .hero-photo {
+    border-radius: 6px;
+    clip-path: none;
+}
+
+body[data-home-story="open-syllabus"] .hero-visual {
+    padding: 0 0 28px;
+    max-width: 520px;
+}
+
+body[data-home-story="open-syllabus"] .hero-stamp { display: none; }
+
+/* The syllabus card replaces the Canva inset on this direction, so the hero
+   carries one supporting element rather than two competing ones. */
+body[data-home-story="open-syllabus"] .hero-canva-card { display: none; }
+
+/* The visual is a flex row in the page theme; C stacks the card and the photo. */
+@media (max-width: 767.98px) {
+    body[data-home-story="open-syllabus"] .hero-visual {
+        display: block;
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* Mini syllabus card injected into the C hero */
+.hero-syllabus-mini {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 3;
+    width: min(268px, 78%);
+    border: 1px solid #d7c2a4;
+    background: #fffdf8;
+    box-shadow: 0 18px 36px rgba(58, 33, 21, .18);
+}
+
+.hero-syllabus-mini > span {
+    display: block;
+    padding: 9px 14px;
+    border-bottom: 1px solid #e2d2ba;
+    color: var(--hv-wine);
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+.hero-syllabus-mini ul {
+    margin: 0;
+    padding: 8px 14px 10px;
+    list-style: none;
+}
+
+.hero-syllabus-mini li {
+    display: flex;
+    gap: 9px;
+    padding-block: 5px;
+    color: #4b4541;
+    font-size: 10.5px;
+    line-height: 1.45;
+}
+
+.hero-syllabus-mini li b {
+    color: var(--hv-gold-deep);
+    font-family: var(--hv-serif);
+    font-weight: 600;
+}
+
+body[data-home-story="open-syllabus"] .hero-doodle { display: none; }
+
+/* ---------- Chooser page -------------------------------------------------- */
+
+.skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2000;
+    padding: 10px 16px;
+    border-radius: 4px;
+    background: #fff;
+    color: var(--hv-wine);
+    font-size: 13px;
+    transform: translateY(-160%);
+    transition: transform .18s ease;
+}
+
+.skip-link:focus {
+    transform: none;
+}
+
+body.variant-index {
+    background: var(--hv-paper);
+    color: var(--hv-ink);
+    font-family: var(--hv-sans);
+}
+
+.variant-main { display: block; }
+
+.variant-shell {
+    width: min(var(--hv-shell), calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.variant-intro {
+    position: relative;
+    padding-block: clamp(54px, 7vw, 96px) clamp(38px, 4vw, 56px);
+    overflow: clip;
+    background:
+        radial-gradient(ellipse at 82% 0%, rgba(237, 207, 156, .38), transparent 46%),
+        linear-gradient(180deg, #fffdf8, #f7efe3);
+    border-bottom: 1px solid var(--hv-line);
+}
+
+.variant-intro::after {
+    position: absolute;
+    top: -18%;
+    right: -8%;
+    width: min(38vw, 420px);
+    aspect-ratio: 1;
+    background: url('../img/assets/abstract-lines/Line 1.svg') center / contain no-repeat;
+    opacity: .12;
+    content: '';
+    pointer-events: none;
+}
+
+.variant-intro h1 {
+    max-width: 22ch;
+    margin: 0 0 20px;
+    font-family: var(--hv-serif);
+    font-size: clamp(44px, 6.4vw, 82px);
+    font-weight: 500;
+    letter-spacing: -.04em;
+    line-height: .98;
+}
+
+.variant-intro h1 em {
+    color: var(--hv-wine);
+    font-style: normal;
+}
+
+.variant-intro > .variant-shell > p:not(.variant-eyebrow) {
+    max-width: 58ch;
+    margin: 0;
+    color: var(--hv-muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.variant-intro-line {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 34px;
+    padding-top: 18px;
+    border-top: 1px solid var(--hv-line);
+    color: #7c7570;
+    font-size: 9.5px;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+.variant-intro-line i {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--hv-gold-deep);
+}
+
+.variant-stories {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 26px);
+    padding-block: clamp(40px, 5vw, 68px) clamp(30px, 4vw, 52px);
+}
+
+.variant-story {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--hv-line);
+    background: #fffdf9;
+    transition: border-color .24s ease, box-shadow .24s ease, transform .24s ease;
+    cursor: pointer;
+}
+
+.variant-story:hover,
+.variant-story:focus-within {
+    border-color: #d9c2a1;
+    box-shadow: 0 22px 46px rgba(55, 30, 18, .11);
+    transform: translateY(-3px);
+}
+
+.variant-story:focus-visible {
+    outline: 2px solid var(--hv-wine);
+    outline-offset: 2px;
+}
+
+.variant-story.is-selected {
+    border-color: var(--hv-wine);
+    box-shadow: 0 24px 52px rgba(74, 24, 26, .16);
+}
+
+.variant-story-head {
+    padding: 22px 22px 18px;
+    border-bottom: 1px solid var(--hv-line);
+}
+
+.variant-story-head > span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--hv-gold-deep);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .16em;
+}
+
+.variant-story.is-selected .variant-story-head > span { color: var(--hv-wine); }
+
+.variant-story-head h2 {
+    margin: 0 0 7px;
+    font-family: var(--hv-serif);
+    font-size: clamp(23px, 2vw, 29px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+}
+
+.variant-story-head p {
+    margin: 0;
+    color: var(--hv-muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+/* Preview mock-ups inside each card */
+.variant-preview {
+    position: relative;
+    flex: 1;
+    min-height: 236px;
+    padding: 14px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--hv-line);
+    background: var(--hv-paper);
+    font-size: 8px;
+}
+
+.preview-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-bottom: 9px;
+    border-bottom: 1px solid #e8dcc9;
+    color: #6b625b;
+    font-size: 7.5px;
+}
+
+.preview-header b {
+    color: var(--hv-wine);
+    font-family: var(--hv-serif);
+    font-size: 11px;
+    letter-spacing: -.01em;
+}
+
+.preview-atlas-main,
+.preview-chronicle-main,
+.preview-syllabus-layout {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 10px;
+    padding-block: 14px 12px;
+}
+
+.preview-atlas-main strong,
+.preview-chronicle-main strong,
+.preview-syllabus-layout strong {
+    display: block;
+    margin-bottom: 7px;
+    font-family: var(--hv-serif);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -.02em;
+    line-height: 1.1;
+}
+
+.preview-atlas-main em,
+.preview-chronicle-main em,
+.preview-syllabus-layout em {
+    color: var(--hv-wine);
+    font-style: normal;
+}
+
+.preview-atlas-main small,
+.preview-chronicle-main small,
+.preview-syllabus-layout small {
+    display: block;
+    color: #6f6761;
+    font-size: 7.5px;
+    line-height: 1.6;
+}
+
+.preview-photo {
+    min-height: 96px;
+    border-radius: 54px 54px 4px 4px;
+    background-position: center;
+    background-size: cover;
+}
+
+.preview-photo-home {
+    background-image: url('../img/assets/2149320120.jpg');
+    background-position: 50% 32%;
+}
+
+.preview-photo-class {
+    background-image: url('../img/gallery/3.jpg');
+    border-radius: 4px;
+}
+
+.preview-route-title {
+    margin: 10px 0 8px;
+    color: var(--hv-wine);
+    font-family: var(--hv-serif);
+    font-size: 9.5px;
+}
+
+.preview-route {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    padding-top: 9px;
+    border-top: 2px solid var(--hv-gold);
+}
+
+.preview-route span {
+    position: relative;
+    padding-top: 9px;
+    color: #514a45;
+    font-size: 7px;
+    line-height: 1.4;
+}
+
+.preview-route span::before {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border: 1.5px solid var(--hv-wine);
+    border-radius: 50%;
+    background: var(--hv-paper);
+    content: '';
+}
+
+.preview-chronicle-main a,
+.preview-syllabus-layout a {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--hv-wine);
+    font-size: 7.5px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.preview-timeline {
+    display: grid;
+    gap: 4px;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid #e8dcc9;
+    color: #6b625b;
+    font-size: 7px;
+    letter-spacing: .08em;
+}
+
+.preview-syllabus-layout {
+    grid-template-columns: .95fr 1.05fr;
+}
+
+.preview-syllabus-layout ul {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #e0cfb6;
+    background: #fffdf8;
+    list-style: none;
+}
+
+.preview-syllabus-layout li {
+    padding: 6px 8px;
+    border-bottom: 1px solid #ece0cd;
+    color: #4f4843;
+    font-size: 7px;
+    line-height: 1.4;
+}
+
+.preview-syllabus-layout li:last-child { border-bottom: 0; }
+
+.preview-syllabus-layout li::before {
+    margin-right: 5px;
+    color: var(--hv-gold-deep);
+    content: '—';
+}
+
+.variant-story-foot {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px 22px;
+}
+
+.variant-story-foot p {
+    margin: 0;
+    color: var(--hv-muted);
+    font-size: 11.5px;
+    line-height: 1.75;
+}
+
+.variant-open {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 10px;
+    padding: 11px 16px;
+    border: 1px solid var(--hv-wine);
+    color: var(--hv-wine);
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+.variant-open i { transition: transform .2s ease; }
+
+.variant-open:hover,
+.variant-open:focus-visible {
+    background: var(--hv-wine);
+    color: #fffaf2;
+}
+
+.variant-open:hover i { transform: translateX(3px); }
+
+.variant-story.is-selected .variant-open {
+    background: var(--hv-wine);
+    color: #fffaf2;
+}
+
+.variant-compare {
+    margin-bottom: clamp(50px, 6vw, 80px);
+    color: #fffaf2;
+    background:
+        radial-gradient(ellipse at 84% 20%, rgba(237, 207, 156, .2), transparent 46%),
+        linear-gradient(112deg, #8b2025 0%, #5c171b 64%, #3b2026 100%);
+}
+
+.variant-compare .variant-shell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 34px;
+    padding-block: clamp(32px, 4vw, 52px);
+}
+
+.variant-compare h2 {
+    margin: 0 0 8px;
+    color: #fffaf2;
+    font-family: var(--hv-serif);
+    font-size: clamp(27px, 3.2vw, 40px);
+    font-weight: 500;
+    letter-spacing: -.03em;
+    line-height: 1.08;
+}
+
+.variant-compare p {
+    max-width: 56ch;
+    margin: 0;
+    color: rgba(255, 250, 242, .72);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.variant-cta {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border: 1px solid rgba(237, 207, 156, .6);
+    color: var(--hv-gold);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+.variant-cta:hover,
+.variant-cta:focus-visible {
+    background: var(--hv-gold);
+    color: #3b1d10;
+}
+
+/* Canva artboard strip */
+.variant-canva {
+    padding-block: clamp(34px, 4vw, 54px);
+    border-top: 1px solid var(--hv-line);
+    border-bottom: 1px solid var(--hv-line);
+    background: var(--hv-cream);
+}
+
+.variant-canva .variant-shell {
+    display: grid;
+    gap: clamp(20px, 3vw, 34px);
+}
+
+.variant-canva-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px 40px;
+}
+
+.variant-canva-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 24px);
+}
+
+.variant-canva h2 {
+    margin: 0 0 10px;
+    font-family: var(--hv-serif);
+    font-size: clamp(24px, 2.6vw, 34px);
+    font-weight: 600;
+    letter-spacing: -.025em;
+    line-height: 1.1;
+}
+
+.variant-canva p {
+    max-width: 46ch;
+    margin: 0;
+    color: var(--hv-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.variant-canva-figure {
+    margin: 0;
+    border: 1px solid #d7c2a4;
+    background: #fffdf8;
+    box-shadow: 0 16px 34px rgba(58, 33, 21, .1);
+}
+
+.variant-canva-figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    /* Artboards with a portrait source are shown matted rather than padded
+       with the export's own white margin. */
+    background: #f4e9da;
+}
+
+.variant-canva-figure figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 14px;
+    border-top: 1px solid #e2d2ba;
+    color: #6b625b;
+    font-size: 10px;
+}
+
+.variant-canva-figure figcaption b {
+    color: var(--hv-wine);
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+/* ---------- Responsive ---------------------------------------------------- */
+
+@media (max-width: 991.98px) {
+    .story-shell { width: min(var(--hv-shell), calc(100% - 40px)); }
+    .variant-stories { grid-template-columns: 1fr; }
+    .variant-preview { min-height: 208px; }
+    .atlas-head,
+    .chronicle-head { display: block; }
+    .atlas-head .story-lede,
+    .chronicle-head .story-lede { max-width: 52ch; margin-top: 14px; }
+    .syllabus-grid { grid-template-columns: 1fr; }
+    .variant-canva-strip { grid-template-columns: 1fr; }
+    .variant-compare .variant-shell {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .story-shell { width: calc(100% - 36px); }
+    .variant-shell { width: min(100% - 32px, var(--hv-shell)); }
+    .atlas-map { margin-top: 34px; }
+    .atlas-route {
+        top: 48px;
+        right: auto;
+        bottom: 40px;
+        left: 15px;
+        width: 2px;
+        height: auto;
+        background: linear-gradient(180deg, var(--hv-wine), var(--hv-gold-deep));
+    }
+    .atlas-stops { grid-template-columns: 1fr; gap: 0; }
+    .atlas-stop { padding: 36px 0 30px 46px; }
+    .atlas-stop::before { top: 32px; left: 0; }
+    .chronicle-entry { grid-template-columns: 1fr; gap: 10px; }
+    .chronicle-entry .chronicle-note { border-left-color: var(--hv-gold); }
+    .syllabus-row { padding-inline: 16px; }
+    .syllabus-sheet-head { padding-inline: 16px; }
+    .syllabus-label b { font-size: 15.5px; }
+    .hero-syllabus-mini {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: 14px;
+    }
+    body[data-home-story="open-syllabus"] .hero-visual { padding-bottom: 0; }
+}
+
+@media (max-width: 480px) {
+    .story-shell { width: calc(100% - 30px); }
+    .variant-intro h1 { font-size: 42px; }
+    .variant-story-head,
+    .variant-story-foot { padding-inline: 16px; }
+    .preview-atlas-main,
+    .preview-chronicle-main,
+    .preview-syllabus-layout { grid-template-columns: 1fr; }
+    .preview-photo { min-height: 84px; }
+}
+
+/* ---------- Reduced motion ------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+    .atlas-route,
+    .chronicle-thread { transform: none !important; }
+    .variant-story,
+    .variant-open,
+    .syllabus-row,
+    .variant-ribbon a,
+    .variant-cta { transition: none; }
+}
