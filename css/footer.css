@@ -51,6 +51,7 @@
 
 .yk-footer-lockup {
     display: inline-flex;
+    min-height: 44px;
     align-items: center;
     gap: 12px;
     color: var(--yk-f-cream);
@@ -257,6 +258,16 @@
 
     .yk-footer-brand {
         grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .yk-footer-col a {
+        min-height: 44px;
+    }
+
+    .yk-footer-cta {
+        min-height: 46px !important;
     }
 }
 

@@ -3,121 +3,31 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MDVTI INDIA</title>
+    <title>Teaching team — the faculty at Yogkulam | MDVTI India</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="description"
+        content="Meet the Yogkulam teaching team: practising yoga teachers and therapists working across asana, yoga therapy, meditation and philosophy.">
 
-    <!-- Favicon -->
-    <link href="img/logo1.png" rel="icon" type="image/png">
+    <link href="img/favicon.svg" rel="icon" type="image/svg+xml">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/teacher-style.css" rel="stylesheet">
-    <style>
-        /* Additional styles for teachers page */
-        @media (max-width: 991.98px) {
-            .teachers-fixed-topbar {
-                display: none;
-            }
-
-            .teachers-fixed-topbar.show {
-                display: block;
-            }
-
-            .teachers-toggle-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                background: #f8f9fa;
-                border: none;
-                padding: 12px 0;
-                font-size: 1.1rem;
-                font-weight: 600;
-                color: #333;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-                cursor: pointer;
-                margin-bottom: 0;
-                position: relative;
-            }
-
-            .teacher-list-item {
-                display: block !important;
-            }
-
-            .teacher-list-details {
-                width: 100%;
-            }
-
-            .teacher-list-actions .teacher-thumb {
-                display: none !important;
-            }
-
-            .teacher-mobile-img {
-                display: block !important;
-                margin: 10px auto 10px auto;
-                max-width: 120px;
-                border-radius: 8px;
-            }
-        }
-
-        @media (min-width: 992px) {
-            .teachers-toggle-btn {
-                display: none;
-            }
-
-            .teachers-fixed-topbar {
-                display: block !important;
-            }
-
-            .teacher-mobile-img {
-                display: none !important;
-            }
-
-            .teacher-list-item {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-            }
-
-            .teacher-list-actions {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                min-width: 140px;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
+    <link href="css/teachers.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="tch-page" id="top">
+    <a class="tch-skip" href="#main">Skip to content</a>
+
 <!-- YK-NAV:START — shared header, source: partials/site-header.html -->
-<div class="yk-header" id="ykHeader">
+<div class="yk-header" id="ykHeader" role="banner">
     <div class="yk-topbar">
         <div class="yk-shell yk-topbar-inner">
             <div class="yk-topbar-contact">
@@ -207,6 +117,7 @@
                     <li class="yk-item"><a class="yk-link" href="teachers.html">Teachers</a></li>
                     <li class="yk-item"><a class="yk-link" href="franchise.html">Franchise</a></li>
                     <li class="yk-item"><a class="yk-link" href="blog.html">Blog</a></li>
+                    <li class="yk-item"><a class="yk-link" href="homepage-variants.html">Variants</a></li>
                 </ul>
                 <a class="yk-cta" href="course-desc.html">All programmes</a>
                 <button class="yk-burger" type="button" aria-expanded="false" aria-controls="ykDrawer" aria-label="Open menu">
@@ -247,6 +158,7 @@
         <a class="yk-drawer-link" href="teachers.html">Teachers</a>
         <a class="yk-drawer-link" href="franchise.html">Franchise</a>
         <a class="yk-drawer-link" href="blog.html">Blog</a>
+        <a class="yk-drawer-link" href="homepage-variants.html">Compare homepages</a>
         <div class="yk-drawer-actions">
             <a class="yk-drawer-cta" href="course-desc.html">All programmes</a>
             <a class="yk-drawer-ghost" href="studentlogin.html">Student login</a>
@@ -256,488 +168,124 @@
     </div>
 </div>
 <!-- YK-NAV:END -->
-
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem" role="status"></div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    
-    <!-- Topbar End -->
-
-    
-    <!-- Navbar End -->
-
-    <!-- Page band -->
-    <section class="page-band">
-        <div class="page-band-inner">
-            <p class="eyebrow">Faculty</p>
-            <h1>Our teaching team</h1>
-            <p>Every programme is led by practising teachers and therapists, working across asana, yoga therapy, meditation and philosophy.</p>
-        </div>
-    </section>
-
-    <!-- Teachers Start -->
-    <section class="teachers-section ">
-        <!-- Toggle button for mobile -->
-        <button class="teachers-toggle-btn" id="teachersToggleBtn">
-            <i class="fas fa-filter"></i>&nbsp; Show Filters & Search
-        </button>
-        <div class="teachers-fixed-topbar" id="teachersFixedTopbar">
-            <div class="mb-3 d-flex justify-content-center">
-                <input type="text" id="teacher-search" class="form-control w-50"
-                    placeholder="Search Teacher by Name...">
-            </div>
-            <div class="teacher-filter-bar">
-                <button class="filter-btn active" data-filter="all">All Teachers</button>
-                <button class="filter-btn" data-filter="asana">Asana Experts</button>
-                <button class="filter-btn" data-filter="therapy">Yoga Therapy</button>
-                <button class="filter-btn" data-filter="meditation">Meditation</button>
-                <button class="filter-btn" data-filter="philosophy">Philosophy</button>
-            </div>
-
-        </div>
-        <div class="container">
-            <div class="teachers-main-container mt-3">
-                <aside class="teachers-sidebar">
-                    <div class="sidebar-section">
-                        <h5>Useful Links</h5>
-                        <ul class="sidebar-links">
-                            <li><a href="about-mdvti.html"><i class="fas fa-info-circle"></i> About MDVTI</a></li>
-                            <li><a href="course-desc.html"><i class="fas fa-book"></i> Courses</a></li>
-                            <li><a href="franchise.html"><i class="fas fa-store"></i> Franchisee</a></li>
-                            <li><a href="blog.html"><i class="fas fa-blog"></i> Blog</a></li>
-                            <li><a href="mailto:info@mdvtiindia.org"><i class="fas fa-envelope"></i> Contact Us</a></li>
-                        </ul>
+    <main id="main">
+        <section class="tch-hero" aria-labelledby="facultyTitle">
+            <div class="tch-shell tch-hero-grid">
+                <div>
+                    <h1 id="facultyTitle">The people who <em>teach here.</em></h1>
+                    <p class="tch-lede">Every programme is led by practising teachers and therapists, working
+                        across asana, yoga therapy, meditation and philosophy.</p>
+                    <div class="tch-hero-actions">
+                        <a class="tch-button" href="tel:18008919232">Talk to admissions</a>
+                        <a class="tch-text-link" href="course-desc.html">See the programmes
+                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                                <path d="M1 5h11M8.4 1.4 12 5l-3.6 3.6" stroke="currentColor" stroke-width="1.3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
                     </div>
-                    <div class="sidebar-section">
-                        <h5>Teacher Categories</h5>
-                        <ul class="sidebar-categories">
-                            <li><a href="#" class="sidebar-category-link" data-filter="asana"><i
-                                        class="fas fa-dumbbell"></i> Asana</a></li>
-                            <li><a href="#" class="sidebar-category-link" data-filter="therapy"><i
-                                        class="fas fa-heartbeat"></i> Therapy</a></li>
-                            <li><a href="#" class="sidebar-category-link" data-filter="meditation"><i
-                                        class="fas fa-brain"></i> Meditation</a></li>
-                            <li><a href="#" class="sidebar-category-link" data-filter="philosophy"><i
-                                        class="fas fa-book-open"></i> Philosophy</a></li>
-                        </ul>
-                    </div>
-                    <div class="sidebar-section">
-                        <h5>Quick Actions</h5>
-                        <ul class="sidebar-actions">
-                            <li><a href="student-reg.html"><i class="fas fa-user-plus"></i> Register as Student</a></li>
-                            <li><a href="registerfranchise.html"><i class="fas fa-user-tie"></i> Register Franchise</a>
-                            </li>
-                            <li><a href="mailto:info@mdvtiindia.org?subject=Faculty%20application"><i class="fas fa-chalkboard-teacher"></i> Apply as Teacher</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="sidebar-section">
-                        <h5>Featured Teacher</h5>
-                        <div class="sidebar-featured-teacher" id="sidebarFeaturedTeacher">
-                            <!-- JS will fill this -->
-                        </div>
-                    </div>
-                </aside>
-                <div class="teachers-content">
-                    <div class="teacher-list teacher-list-scrollable" id="teacherList"></div>
-                    <div class="teacher-list-pagination" id="teacherPagination"></div>
+                    <p class="tch-hero-note">
+                        <span>Six teachers</span>
+                        <span>Four disciplines</span>
+                        <span>Lucknow, Delhi, Rishikesh, Mumbai and Bangalore</span>
+                    </p>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!-- Teachers End -->
 
-    <!-- Join Our Team Banner -->
-    <section class="aplit-gt-area py-4">
-        <div class="container">
-            <div class="aplit-gt-wrapper shadow"
-                style="background-image: url(img/bg.png); background-size: contain; background-repeat: repeat;">
-                <div class="row align-items-center">
-                    <div class="col-lg-8">
-                        <div class="aplit-gt-left">
-                            <span class="subtitle">Join Our Team</span>
-                            <div class="aplit-headline">
-                                <h4 class="text-white mt-3">Passionate about yoga and teaching? Join our faculty team
-                                    and share your expertise with eager learners.</h4>
-                            </div>
-                        </div>
+                <ul class="tch-roll" aria-label="Faculty at a glance">
+                    <li><b>Dr. Ankit Sharma</b><span>Hatha yoga</span></li>
+                    <li><b>Dr. Priya Verma</b><span>Meditation</span></li>
+                    <li><b>Rajesh Kumar</b><span>Asana</span></li>
+                    <li><b>Dr. Sanjay Gupta</b><span>Philosophy</span></li>
+                    <li><b>Meera Patel</b><span>Yoga therapy</span></li>
+                    <li><b>Aditya Singh</b><span>Asana</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="tch-band" aria-labelledby="rosterTitle">
+            <h2 class="visually-hidden" id="rosterTitle">The faculty</h2>
+
+            <div class="tch-filterbar">
+                <div class="tch-shell tch-filterbar-inner">
+                    <div class="tch-chips" role="group" aria-label="Filter the faculty by discipline">
+                        <button class="tch-chip" type="button" data-discipline="all" aria-pressed="true">All teachers</button>
+                        <button class="tch-chip" type="button" data-discipline="asana" aria-pressed="false">Asana</button>
+                        <button class="tch-chip" type="button" data-discipline="therapy" aria-pressed="false">Yoga therapy</button>
+                        <button class="tch-chip" type="button" data-discipline="meditation" aria-pressed="false">Meditation</button>
+                        <button class="tch-chip" type="button" data-discipline="philosophy" aria-pressed="false">Philosophy</button>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="aplit-gt-right">
-                            <a href="mailto:info@mdvtiindia.org?subject=Faculty%20application" class="bg-white px-5 py-3 shadow">Apply Now</a>
-                        </div>
+
+                    <div class="tch-search">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                            <circle cx="7" cy="7" r="4.6" stroke="currentColor" stroke-width="1.4" />
+                            <path d="M10.4 10.4 14 14" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                        </svg>
+                        <label class="visually-hidden" for="teacherSearch">Search the faculty by name, city or language</label>
+                        <input id="teacherSearch" type="search" placeholder="Search name, city or language"
+                            autocomplete="off">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Join Our Team Banner End -->
 
+            <div class="tch-shell">
+                <p class="tch-status" id="teacherCount" role="status" aria-live="polite">Showing all 6 teachers</p>
+                <div class="tch-roster" id="teacherRoster"></div>
 
-    <!-- Back to Top -->
+                <div class="tch-empty" id="teacherEmpty" hidden>
+                    <h2>No one matches that yet.</h2>
+                    <p>Try a name, a city or a language — or clear the filters to see all six teachers.</p>
+                    <button type="button" id="teacherReset">Clear filters</button>
+                </div>
+            </div>
+        </section>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <section class="tch-admissions" aria-labelledby="admissionsTitle">
+            <div class="tch-shell tch-admissions-inner">
+                <div>
+                    <h2 id="admissionsTitle">Not sure who you would <em>learn from?</em></h2>
+                    <p>Tell admissions what you want from yoga — practice, therapy or teaching — and we will point you
+                        to the programme and the faculty who lead it.</p>
+                </div>
+                <div class="tch-admissions-actions">
+                    <a class="tch-button tch-button-light" href="tel:18008919232">Call 1800-891-9232</a>
+                    <a class="tch-admissions-phone" href="mailto:info@mdvtiindia.org">info@mdvtiindia.org</a>
+                </div>
+            </div>
+        </section>
 
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/anime.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init();
-
-        const teacherData = [
-            {
-                name: "Dr. Ankit Sharma",
-                img: "img/mentor/mentor1.png",
-                specialization: "Hatha Yoga Expert",
-                experience: "22 years experience",
-                students: "Trained 5000+ students",
-                city: "Lucknow",
-                languages: ["English", "Hindi"],
-                tagline: "Empowering holistic wellness through yoga and Ayurveda.",
-                available: { online: true, home: true, studio: true, corp: true },
-                rating: 4.8,
-                reviews: 120,
-                certification: "RYT 500 Certified",
-                price: "₹1200/hour",
-                profile: "teacher-profile.html?name=Dr.%20Ankit%20Sharma"
-            },
-            {
-                name: "Dr. Priya Verma",
-                img: "img/mentor/mentor3.png",
-                specialization: "Meditation Teacher",
-                experience: "15 years experience",
-                students: "Trained 2000+ students",
-                city: "Delhi",
-                languages: ["English", "Hindi", "Sanskrit"],
-                tagline: "Guiding minds to peace through meditation and breathwork.",
-                available: { online: true, home: false, studio: true, corp: true },
-                rating: 4.7,
-                reviews: 98,
-                certification: "Certified Yoga Therapist",
-                price: "₹1000/hour",
-                profile: "teacher-profile.html?name=Dr.%20Priya%20Verma"
-            },
-            {
-                name: "Rajesh Kumar",
-                img: "https://images.pexels.com/photos/8436462/pexels-photo-8436462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                specialization: "Asana Specialist",
-                experience: "10 years experience",
-                students: "Trained 1200+ students",
-                city: "Rishikesh",
-                languages: ["English", "Hindi"],
-                tagline: "Precision and progress in every asana.",
-                available: { online: true, home: false, studio: true, corp: false },
-                rating: 4.5,
-                reviews: 80,
-                certification: "RYT 200 Certified",
-                price: "₹800/hour",
-                profile: "teacher-profile.html?name=Rajesh%20Kumar"
-            },
-            {
-                name: "Dr. Sanjay Gupta",
-                img: "https://images.pexels.com/photos/8436576/pexels-photo-8436576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                specialization: "Yoga Philosophy Professor",
-                experience: "18 years experience",
-                students: "Trained 3000+ students",
-                city: "Online Only",
-                languages: ["English", "Hindi", "Sanskrit"],
-                tagline: "Making ancient wisdom accessible for modern yogis.",
-                available: { online: true, home: false, studio: false, corp: true },
-                rating: 4.9,
-                reviews: 150,
-                certification: "Ph.D. in Eastern Philosophy",
-                price: "₹1500/hour",
-                profile: "teacher-profile.html?name=Dr.%20Sanjay%20Gupta"
-            },
-            {
-                name: "Meera Patel",
-                img: "https://images.pexels.com/photos/8612967/pexels-photo-8612967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                specialization: "Yoga Therapist",
-                experience: "12 years experience",
-                students: "Trained 900+ students",
-                city: "Bangalore",
-                languages: ["English", "Hindi"],
-                tagline: "Healing bodies and minds through therapeutic yoga.",
-                available: { online: true, home: true, studio: false, corp: false },
-                rating: 4.6,
-                reviews: 60,
-                certification: "Certified Yoga Therapist",
-                price: "₹900/hour",
-                profile: "teacher-profile.html?name=Meera%20Patel"
-            },
-            {
-                name: "Aditya Singh",
-                img: "https://images.pexels.com/photos/4056535/pexels-photo-4056535.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-                specialization: "Advanced Asana Instructor",
-                experience: "8 years experience",
-                students: "Trained 700+ students",
-                city: "Mumbai",
-                languages: ["English", "Hindi"],
-                tagline: "Dynamic flows and strength for every level.",
-                available: { online: true, home: true, studio: true, corp: false },
-                rating: 4.4,
-                reviews: 45,
-                certification: "Power Yoga Certification",
-                price: "₹1100/hour",
-                profile: "teacher-profile.html?name=Aditya%20Singh"
-            }
-        ];
-
-        const TEACHERS_PER_PAGE = 3;
-        let currentPage = 1;
-        let filteredTeachers = teacherData;
-
-        function renderTeacherList(page = 1) {
-            const start = (page - 1) * TEACHERS_PER_PAGE;
-            const end = start + TEACHERS_PER_PAGE;
-            const teachers = filteredTeachers.slice(start, end);
-
-            const teacherList = document.getElementById('teacherList');
-            teacherList.innerHTML = teachers.map(t => `
-                <div class="teacher-list-item">
-                    <div class="teacher-list-details">
-                        <div class="teacher-list-header">
-                            <span class="teacher-list-name">${t.name}</span>
-                            <!-- Mobile image after name -->
-                            <img src="${t.img}" class="teacher-mobile-img" alt="${t.name}">
-                            <span class="teacher-list-specialization">${t.specialization}</span>
-                            ${t.certification ? `<span class="teacher-list-cert"><i class="fas fa-certificate"></i> ${t.certification}</span>` : ''}
-                        </div>
-                        <div class="teacher-list-meta">
-                            <span><i class="fas fa-map-marker-alt"></i> ${t.city}</span>
-                            &nbsp;|&nbsp;
-                            <span><i class="fas fa-user-graduate"></i> ${t.experience}</span>
-                            &nbsp;|&nbsp;
-                            <span><i class="fas fa-users"></i> ${t.students}</span>
-                        </div>
-                        <div class="teacher-list-meta">
-                            <span><i class="fas fa-language"></i> ${t.languages.join(', ')}</span>
-                        </div>
-                        <div class="teacher-list-tagline">${t.tagline}</div>
-                        <div class="teacher-list-badges" aria-label="Teacher availability">
-                            ${Object.entries(t.available).map(([type, isAvailable]) =>
-                isAvailable ? `
-                                    <span class="teacher-badge ${type}" 
-                                          data-availability="${type}"
-                                          title="Available for ${type.charAt(0).toUpperCase() + type.slice(1)} sessions">
-                                        <i class="fas ${type === 'online' ? 'fa-globe' :
-                        type === 'home' ? 'fa-home' :
-                            type === 'studio' ? 'fa-university' : 'fa-briefcase'
-                    }"></i>
-                                        <span class="badge-text">${type.charAt(0).toUpperCase() + type.slice(1)}</span>
-                                    </span>` : ''
-            ).join('')}
-                        </div>
-                        <div>
-                            <span class="teacher-list-rating">${'★'.repeat(Math.round(t.rating))}${'☆'.repeat(5 - Math.round(t.rating))}</span>
-                            <span>(${t.rating.toFixed(1)} / 5, ${t.reviews} reviews)</span>
-                        </div>
-                        <div class="teacher-list-price">${t.price ? `<i class="fas fa-rupee-sign"></i> ${t.price}` : ''}</div>
-                    </div>
-                    <div class="teacher-list-actions">
-                        <img src="${t.img}" class="teacher-thumb" alt="${t.name}">
-                        <a href="${t.profile}" class="teacher-list-view-btn">View Profile</a>
+        <section class="tch-invite" aria-labelledby="inviteTitle">
+            <div class="tch-shell tch-invite-inner">
+                <div>
+                    <h2 id="inviteTitle">Teaching is a practice <em>of its own.</em></h2>
+                    <p>Passionate about yoga and teaching? We are always listening for teachers and therapists who
+                        want to share their expertise with learners across India.</p>
+                    <p>Write to us with your training, the disciplines you teach and the languages you work in.</p>
+                    <div class="tch-invite-actions">
+                        <a class="tch-button"
+                            href="mailto:info@mdvtiindia.org?subject=Faculty%20application">Apply to teach</a>
+                        <a class="tch-text-link" href="about-mdvti.html">About the institute
+                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                                <path d="M1 5h11M8.4 1.4 12 5l-3.6 3.6" stroke="currentColor" stroke-width="1.3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
-            `).join('');
-
-            renderPagination();
-            animateTeacherCards();
-        }
-
-        function renderPagination() {
-            const totalPages = Math.ceil(filteredTeachers.length / TEACHERS_PER_PAGE);
-            const pagination = document.getElementById('teacherPagination');
-            if (totalPages <= 1) {
-                pagination.innerHTML = '';
-                return;
-            }
-            let html = '';
-            for (let i = 1; i <= totalPages; i++) {
-                html += `<button class="${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">${i}</button>`;
-            }
-            pagination.innerHTML = html;
-        }
-
-        window.goToPage = function (page) {
-            currentPage = page;
-            renderTeacherList(currentPage);
-            window.scrollTo({ top: document.getElementById('teacherList').offsetTop - 80, behavior: 'smooth' });
-        };
-
-        function applyFilters() {
-            const activeFilter = $('.filter-btn.active').data('filter');
-            const searchVal = $('#teacher-search').val().toLowerCase();
-            filteredTeachers = teacherData.filter(t => {
-                // Filter by category
-                let matchCategory = true;
-                if (activeFilter && activeFilter !== 'all') {
-                    if (activeFilter === 'asana') {
-                        matchCategory = t.specialization.toLowerCase().includes('asana');
-                    } else if (activeFilter === 'therapy') {
-                        matchCategory = t.specialization.toLowerCase().includes('therapy');
-                    } else if (activeFilter === 'meditation') {
-                        matchCategory = t.specialization.toLowerCase().includes('meditation');
-                    } else if (activeFilter === 'philosophy') {
-                        matchCategory = t.specialization.toLowerCase().includes('philosophy');
-                    }
-                }
-                let matchSearch = t.name.toLowerCase().includes(searchVal);
-                return matchCategory && matchSearch;
-            });
-            currentPage = 1;
-            renderTeacherList(currentPage);
-        }
-
-        $(document).ready(function () {
-            $('.filter-btn').click(function () {
-                $('.filter-btn').removeClass('active');
-                $(this).addClass('active');
-                applyFilters();
-            });
-            $('#teacher-search').on('input', function () {
-                applyFilters();
-            });
-            renderTeacherList(currentPage);
-        });
-
-        function animateTeacherCards() {
-            const cards = document.querySelectorAll('.teacher-list-item');
-            cards.forEach((card, idx) => {
-                card.style.opacity = 0;
-                card.style.transform = 'translateY(30px)';
-                setTimeout(() => {
-                    card.style.transition = 'opacity 0.7s cubic-bezier(.23,1.02,.32,1), transform 0.7s cubic-bezier(.23,1.02,.32,1)';
-                    card.style.opacity = 1;
-                    card.style.transform = 'translateY(0)';
-                }, 80 * idx + 100);
-            });
-        }
-
-        function sortTeachers(sortBy) {
-            if (sortBy === "rating") {
-                filteredTeachers.sort((a, b) => b.rating - a.rating);
-            } else if (sortBy === "experience") {
-                filteredTeachers.sort((a, b) => {
-                    const getYears = t => parseInt(t.experience);
-                    return getYears(b) - getYears(a);
-                });
-            } else if (sortBy === "students") {
-                filteredTeachers.sort((a, b) => {
-                    const getNum = t => parseInt((t.students.match(/\d+/) || [0])[0]);
-                    return getNum(b) - getNum(a);
-                });
-            } else if (sortBy === "price-low") {
-                filteredTeachers.sort((a, b) => {
-                    const getPrice = t => parseInt((t.price || "").replace(/[^\d]/g, "")) || 0;
-                    return getPrice(a) - getPrice(b);
-                });
-            } else if (sortBy === "price-high") {
-                filteredTeachers.sort((a, b) => {
-                    const getPrice = t => parseInt((t.price || "").replace(/[^\d]/g, "")) || 0;
-                    return getPrice(b) - getPrice(a);
-                });
-            } else {
-                filteredTeachers = teacherData.slice().filter(t => filteredTeachers.includes(t));
-            }
-        }
-
-        function applyFilters() {
-            const activeFilter = $('.filter-btn.active').data('filter');
-            const searchVal = $('#teacher-search').val().toLowerCase();
-            filteredTeachers = teacherData.filter(t => {
-                let matchCategory = true;
-                if (activeFilter && activeFilter !== 'all') {
-                    if (activeFilter === 'asana') {
-                        matchCategory = t.specialization.toLowerCase().includes('asana');
-                    } else if (activeFilter === 'therapy') {
-                        matchCategory = t.specialization.toLowerCase().includes('therapy');
-                    } else if (activeFilter === 'meditation') {
-                        matchCategory = t.specialization.toLowerCase().includes('meditation');
-                    } else if (activeFilter === 'philosophy') {
-                        matchCategory = t.specialization.toLowerCase().includes('philosophy');
-                    }
-                }
-                let matchSearch = t.name.toLowerCase().includes(searchVal);
-                return matchCategory && matchSearch;
-            });
-            sortTeachers($('#sort-select').val());
-            currentPage = 1;
-            renderTeacherList(currentPage);
-        }
-
-        $(document).on('click', '.sidebar-category-link', function (e) {
-            e.preventDefault();
-            const filter = $(this).data('filter');
-            $('.filter-btn').removeClass('active');
-            $(`.filter-btn[data-filter="${filter}"]`).addClass('active');
-            applyFilters();
-            $('html,body').animate({ scrollTop: $('.teachers-section').offset().top - 60 }, 400);
-        });
-
-        $('#sort-select').on('change', function () {
-            applyFilters();
-        });
-
-        function renderFeaturedTeacher() {
-            const featured = teacherData.reduce((prev, curr) => (curr.rating > prev.rating ? curr : prev), teacherData[0]);
-            $('#sidebarFeaturedTeacher').html(`
-                <img src="${featured.img}" alt="${featured.name}">
-                <div class="name">${featured.name}</div>
-                <div class="spec">${featured.specialization}</div>
-                <div class="tagline">${featured.tagline}</div>
-                <a href="${featured.profile}" class="view-btn">View Profile</a>
-            `);
-        }
-
-        $(document).ready(function () {
-            renderFeaturedTeacher();
-        });
-
-        $(function () {
-            var $topbar = $('#teachersFixedTopbar');
-            var $btn = $('#teachersToggleBtn');
-            var shown = false;
-            function updateBtnText() {
-                $btn.html(`<i class="fas fa-filter"></i>&nbsp; ${shown ? 'Hide Filters & Search' : 'Show Filters & Search'}`);
-            }
-            $btn.on('click', function () {
-                shown = !shown;
-                $topbar.toggleClass('show', shown);
-                updateBtnText();
-            });
-            $(window).on('resize', function () {
-                if (window.innerWidth >= 992) {
-                    $topbar.removeClass('show');
-                    shown = false;
-                    updateBtnText();
-                }
-            });
-            updateBtnText();
-        });
-    </script>
-    <script src="js/site-nav.js" defer></script>
+                <figure class="tch-invite-figure">
+                    <img src="img/gallery/1.jpg" alt="Teachers and students gathered at a Yogkulam celebration"
+                        width="700" height="500" loading="lazy" decoding="async">
+                    <figcaption>From the Yogkulam gallery, Lucknow</figcaption>
+                </figure>
+            </div>
+        </section>
+    </main>
 
 <!-- YK-FOOTER:START — shared footer, source: partials/site-footer.html -->
 <footer class="yk-footer">
     <div class="yk-fshell">
         <div class="yk-footer-grid">
             <div class="yk-footer-brand">
-                <a class="yk-footer-lockup" href="index.html" aria-label="Yogkulam home">
+                <a class="yk-footer-lockup" href="index.html" aria-label="Yogkulam by MDVTI India, home">
                     <img src="img/yogkulam_logo.png" alt="" width="73" height="46">
                     <span>
                         <strong>Yogkulam</strong>
@@ -785,8 +333,10 @@
     </div>
 </footer>
 <!-- YK-FOOTER:END -->
-<a class="yk-to-top" href="#top" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
+    <a class="yk-to-top" href="#top" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
 
+    <script src="js/teachers.js" defer></script>
+    <script src="js/site-nav.js" defer></script>
 </body>
 
 </html>
