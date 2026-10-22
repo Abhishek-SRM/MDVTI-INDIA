@@ -7,6 +7,8 @@
 
     var drawer = document.getElementById('ykDrawer');
     var burger = header.querySelector('.yk-burger');
+    var reduceQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var drawerTimeline = null;
     var desktopQuery = window.matchMedia('(min-width: 992px)');
     var megas = Array.prototype.slice.call(header.querySelectorAll('.yk-item--mega'));
     var hoverTimer = null;
@@ -108,6 +110,26 @@
 
     /* ---------- mobile drawer ---------- */
 
+    if (drawer) {
+        drawer.setAttribute('role', 'dialog');
+        drawer.setAttribute('aria-modal', 'true');
+        if (!drawer.hasAttribute('aria-label')) drawer.setAttribute('aria-label', 'Site menu');
+    }
+
+    /* GSAP is only present on the homepage pages, so every transition here
+       falls back to simply showing the final state. */
+    function canAnimate() {
+        return !!window.gsap && !reduceQuery.matches;
+    }
+
+    function drawerFocusables() {
+        if (!drawer) return [];
+        return Array.prototype.filter.call(
+            drawer.querySelectorAll('a[href], button:not([disabled])'),
+            function (el) { return el.offsetParent !== null; }
+        );
+    }
+
     function openDrawer() {
         if (!drawer) return;
         lastFocused = document.activeElement;
@@ -116,17 +138,50 @@
         if (burger) burger.setAttribute('aria-expanded', 'true');
         var close = drawer.querySelector('.yk-drawer-close');
         if (close) close.focus();
+
+        if (!canAnimate()) return;
+        if (drawerTimeline) drawerTimeline.kill();
+        drawerTimeline = gsap.timeline();
+        /* Opacity only: `autoAlpha` toggles visibility, which blurs the close
+           button we have just focused. */
+        drawerTimeline.fromTo(drawer, { opacity: 0 }, { opacity: 1, duration: .18, ease: 'power1.out' });
+        var parts = drawer.querySelectorAll('.yk-drawer-head, .yk-drawer-body > *');
+        if (parts.length) {
+            drawerTimeline.fromTo(parts, { y: 12, opacity: 0 }, {
+                y: 0, opacity: 1, duration: .3, stagger: .035, ease: 'power2.out',
+                clearProps: 'transform', overwrite: 'auto'
+            }, '<.02');
+        }
     }
 
     function closeDrawer(restoreFocus) {
         if (!drawer || drawer.hidden) return;
-        drawer.hidden = true;
-        document.body.classList.remove('yk-nav-open');
-        if (burger) burger.setAttribute('aria-expanded', 'false');
-        if (restoreFocus) {
-            var target = (lastFocused && lastFocused !== document.body) ? lastFocused : burger;
-            if (target && typeof target.focus === 'function') target.focus();
+
+        function finish() {
+            drawer.hidden = true;
+            document.body.classList.remove('yk-nav-open');
+            if (burger) burger.setAttribute('aria-expanded', 'false');
+            if (window.gsap) {
+                gsap.set(drawer, { clearProps: 'opacity,visibility' });
+                gsap.set(drawer.querySelectorAll('.yk-drawer-head, .yk-drawer-body > *'), {
+                    clearProps: 'opacity,visibility,transform'
+                });
+            }
+            if (restoreFocus) {
+                var target = (lastFocused && lastFocused !== document.body) ? lastFocused : burger;
+                if (target && typeof target.focus === 'function') target.focus();
+            }
         }
+
+        if (!canAnimate()) {
+            finish();
+            return;
+        }
+        if (drawerTimeline) drawerTimeline.kill();
+        /* Release the scroll lock straight away so the page does not jump
+           when the panel finishes fading out. */
+        document.body.classList.remove('yk-nav-open');
+        drawerTimeline = gsap.to(drawer, { autoAlpha: 0, duration: .16, ease: 'power1.in', onComplete: finish });
     }
 
     if (burger) {
@@ -148,7 +203,35 @@
                 var panel = document.getElementById(button.getAttribute('aria-controls'));
                 var open = button.getAttribute('aria-expanded') === 'true';
                 button.setAttribute('aria-expanded', open ? 'false' : 'true');
-                if (panel) panel.hidden = open;
+                if (!panel) return;
+
+                if (!canAnimate()) {
+                    panel.hidden = open;
+                    return;
+                }
+
+                gsap.killTweensOf(panel);
+                panel.style.overflow = 'hidden';
+                if (open) {
+                    gsap.to(panel, {
+                        height: 0, autoAlpha: 0, duration: .2, ease: 'power2.in',
+                        onComplete: function () {
+                            panel.hidden = true;
+                            panel.style.overflow = '';
+                            gsap.set(panel, { clearProps: 'height,opacity,visibility' });
+                        }
+                    });
+                } else {
+                    panel.hidden = false;
+                    var height = panel.scrollHeight;
+                    gsap.fromTo(panel, { height: 0, autoAlpha: 0 }, {
+                        height: height, autoAlpha: 1, duration: .26, ease: 'power2.out',
+                        onComplete: function () {
+                            panel.style.overflow = '';
+                            gsap.set(panel, { clearProps: 'height,opacity,visibility' });
+                        }
+                    });
+                }
             });
         });
 
@@ -161,6 +244,27 @@
     /* ---------- keyboard ---------- */
 
     document.addEventListener('keydown', function (event) {
+        /* Keep keyboard focus inside the open drawer. */
+        if (event.key === 'Tab' && drawer && !drawer.hidden) {
+            var focusables = drawerFocusables();
+            if (!focusables.length) return;
+            var first = focusables[0];
+            var last = focusables[focusables.length - 1];
+            if (!drawer.contains(document.activeElement)) {
+                event.preventDefault();
+                first.focus();
+                return;
+            }
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+            return;
+        }
+
         if (event.key !== 'Escape') return;
 
         if (drawer && !drawer.hidden) {

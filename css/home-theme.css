@@ -22,7 +22,6 @@ button { font: inherit; }
 .site-shell { width: min(var(--shell), calc(100% - 56px)); margin-inline: auto; }
 .skip-link { position: fixed; top: 10px; left: 10px; z-index: 2000; padding: 10px 16px; transform: translateY(-150%); background: white; color: var(--wine); border-radius: 4px; }
 .skip-link:focus { transform: none; }
-html:not(.aos-enabled) [data-aos] { opacity: 1 !important; transform: none !important; }
 .reading-progress { position: fixed; z-index: 1100; inset: 0 0 auto; height: 3px; pointer-events: none; }
 .reading-progress span { display: block; width: 100%; height: 100%; background: var(--gold); transform: scaleX(0); transform-origin: left center; will-change: transform; }
 .topline { min-height: 36px; color: rgba(255,255,255,.82); background: var(--wine-dark); font-size: 11px; letter-spacing: .035em; }
@@ -63,11 +62,14 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
 h1 em, h2 em { color: var(--wine); font-weight: 500; }
 .hero-lede { max-width: 520px; margin-bottom: 26px; color: #625d59; font-size: 15px; line-height: 1.85; }
 .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 23px; }
-.button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 16px; padding: 12px 18px; font-size: 11px; font-weight: 500; transition: color .22s, background .22s, transform .22s, box-shadow .22s; }
-.button i, .text-link i { transition: transform .22s; }
+/* Transform is owned by GSAP on these controls; a CSS transform transition
+   would re-target the inline value on every frame and freeze the element
+   part-way through its entrance. Colour, surface and shadow stay in CSS. */
+.button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 16px; padding: 12px 18px; font-size: 11px; font-weight: 500; transition: color .22s, background .22s, box-shadow .22s; }
+.button i, .text-link i { transition: color .22s; }
 .button:hover i, .text-link:hover i { transform: translateX(4px); }
 .button-primary { color: #fff; background: var(--wine); box-shadow: 0 7px 16px rgba(101,26,31,.14); }
-.button-primary:hover { color: white; background: var(--wine-dark); box-shadow: 0 10px 20px rgba(101,26,31,.2); transform: translateY(-2px); }
+.button-primary:hover { color: white; background: var(--wine-dark); box-shadow: 0 10px 20px rgba(101,26,31,.2); }
 .text-link { display: inline-flex; align-items: center; gap: 10px; padding-block: 4px; border-bottom: 1px solid var(--gold); color: var(--wine); font-size: 11px; font-weight: 600; transition: color .2s, border-color .2s; }
 .text-link:hover { color: var(--wine-dark); border-color: var(--wine); }
 .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 40px; padding-top: 17px; border-top: 1px solid var(--line); }
@@ -90,8 +92,8 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 .hero-photo img { object-position: 50% 36%; }
 .hero-bottom { display: flex; min-height: 56px; align-items: center; gap: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
 .hero-bottom > i { width: 3px; height: 3px; border-radius: 50%; background: var(--gold); }
-.hero-bottom a { display: grid; width: 28px; height: 28px; margin-left: auto; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--wine); transition: background .2s, transform .2s; }
-.hero-bottom a:hover { background: var(--cream); transform: translateY(2px); }
+.hero-bottom a { display: grid; width: 32px; height: 32px; margin-left: auto; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--wine); transition: background .2s; }
+.hero-bottom a:hover { background: var(--cream); }
 
 .section-pad { padding-block: clamp(72px,9vw,120px); }
 .intro-section { background: #f5eee3; }
@@ -147,9 +149,9 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 .curriculum-intro h2 em { color: var(--gold); }
 .curriculum-intro > p:not(.eyebrow) { color: rgba(255,255,255,.68); }
 .button-outline { margin-top: 11px; border: 1px solid rgba(255,255,255,.48); color: white; }
-.button-outline:hover { color: var(--wine-mid); background: white; transform: translateY(-2px); }
+.button-outline:hover { color: var(--wine-mid); background: white; }
 .button-light { position: relative; z-index: 1; flex: 0 0 auto; color: var(--wine); background: var(--paper); }
-.button-light:hover { color: var(--wine-dark); background: white; transform: translateY(-2px); }
+.button-light:hover { color: var(--wine-dark); background: white; }
 
 .faq-section { background: var(--paper); }
 .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(42px,9vw,130px); }
@@ -241,7 +243,7 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .hero-photo img { will-change: auto; }
-    .hero-bottom a:hover, .audience-item:hover .audience-icon, .included-card:hover .included-icon, .curriculum-topics article:hover > i, .learning-steps article:hover > i, .hero-visual:hover .practice-inset, .pathway-card:hover > i { transform: none !important; }
+    .audience-item:hover .audience-icon, .included-card:hover .included-icon, .curriculum-topics article:hover > i, .learning-steps article:hover > i, .hero-visual:hover .practice-inset, .pathway-card:hover > i { transform: none !important; }
 }
 
 /* Content architecture from the homepage brief */
@@ -453,8 +455,24 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 .audience-icon img { width: 25px; height: 25px; }
 .curriculum-topics article > img { width: 22px; height: 22px; object-fit: contain; filter: brightness(0) saturate(100%) invert(84%) sepia(17%) saturate(675%) hue-rotate(343deg) brightness(101%) contrast(88%); transition: transform .25s; }
 .curriculum-topics article:hover > img { transform: rotate(-10deg) scale(1.08); }
-.section-heading h2 em, .difference-intro h2 em, .career-grid h2 em, .community-grid h2 em, .founder-copy h2 em, .ethics-grid h2 em { position: relative; }
-.section-heading h2 em::after, .difference-intro h2 em::after, .career-grid h2 em::after, .community-grid h2 em::after, .founder-copy h2 em::after, .ethics-grid h2 em::after { position: absolute; right: 0; bottom: -9px; left: 0; height: 14px; background: url('../img/assets/handdrawn-underline/Underline_01.svg') center / 100% 100% no-repeat; opacity: .68; content: ''; pointer-events: none; }
+/* The hand-drawn SVG underline only occupied a corner of its viewBox and
+   rendered as a stray mark beside wrapped headings. A real text underline
+   follows every line and stays legible. */
+.section-heading h2 em,
+.difference-intro h2 em,
+.career-grid h2 em,
+.community-grid h2 em,
+.founder-copy h2 em,
+.ethics-grid h2 em {
+    text-decoration: underline;
+    text-decoration-color: rgba(184, 134, 59, .5);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 8px;
+}
+
+.career-grid h2 em {
+    text-decoration-color: rgba(237, 207, 156, .55);
+}
 @media (max-width: 767.98px) {
     .hero-stamp { top: 5%; left: -3%; width: 70px; height: 70px; }
     .hero-doodle { right: -13px; bottom: 75px; width: 55px; height: 55px; }
@@ -662,8 +680,10 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 .hero-canva-card {
     position: absolute;
     z-index: 5;
-    top: 14%;
-    right: -34px;
+    top: 13%;
+    /* The hero visual bleeds to the viewport edge on tablets, so the card
+       sits inside the artwork instead of hanging off-screen. */
+    right: 20px;
     width: 112px;
     margin: 0;
     padding: 7px 7px 9px;
@@ -692,8 +712,8 @@ h1 em, h2 em { color: var(--wine); font-weight: 500; }
 
 @media (max-width: 767.98px) {
     .hero-canva-card {
-        top: 10%;
-        right: -10px;
+        top: 9%;
+        right: 14px;
         width: 96px;
         padding: 6px 6px 8px;
     }
@@ -1630,14 +1650,6 @@ body {
     }
 }
 
-html.gsap-motion-ready [data-aos="fade-up"] {
-    opacity: 0;
-}
-
-html.gsap-motion-ready [data-aos="fade-up"].gsap-revealed {
-    opacity: 1;
-}
-
 .yk-burger {
     min-width: 46px;
     min-height: 46px;
@@ -1667,5 +1679,192 @@ html.gsap-motion-ready [data-aos="fade-up"].gsap-revealed {
         animation-iteration-count: 1 !important;
         scroll-behavior: auto !important;
         transition-duration: .01ms !important;
+    }
+}
+
+/* ==========================================================================
+   Mobile-first refinements
+   The phone is the default reading surface: calmer type, full-size tap
+   targets, anchors that clear the sticky header, and one primary action
+   that stays within thumb reach.
+   ========================================================================== */
+
+/* Anchor targets land below the sticky header rather than under it. The
+   shared nav publishes its real height as --yk-header-h. */
+html { scroll-padding-top: calc(var(--yk-header-h, 68px) + 18px); }
+
+.skip-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+}
+
+.hero-bottom a { width: 44px; height: 44px; }
+
+@media (hover: none) {
+    /* Hover is a bonus, never the only way to read the page. */
+    .hero-photo img { will-change: auto; }
+}
+
+@media (max-width: 1024px) {
+    /* Text links get a full-size target on touch screens. */
+    .text-link,
+    .story-link {
+        min-height: 44px;
+        padding-block: 10px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-copy {
+        padding: 24px 0 6px;
+    }
+
+    .hero-copy .eyebrow {
+        min-height: 0;
+        align-items: flex-start;
+        gap: 9px;
+        padding: 9px 13px;
+        border-radius: 16px;
+        font-size: 10.5px;
+        line-height: 1.5;
+        letter-spacing: .055em;
+    }
+
+    .hero-copy .eyebrow > span {
+        flex: 0 0 6px;
+        margin-top: 6px;
+    }
+
+    .hero-note {
+        align-items: flex-start;
+        gap: 11px;
+        margin-top: 24px;
+    }
+
+    .note-icon {
+        width: 40px;
+        height: 40px;
+        flex-basis: 40px;
+    }
+
+    .hero-note strong { font-size: 13px; }
+
+    .hero-note small {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .hero-bottom {
+        min-height: 58px;
+        font-size: 11px;
+        letter-spacing: .06em;
+    }
+
+    .hero-bottom a {
+        flex: 0 0 44px;
+    }
+
+    .audience-no {
+        font-size: 9.5px;
+        letter-spacing: .05em;
+    }
+
+    .faq-list summary {
+        padding-block: 18px;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .faq-list details p {
+        margin-right: 18px;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .fineprint { font-size: 12px; }
+
+    .hero-photo-note { max-width: 188px; }
+}
+
+@media (max-width: 390px) {
+    .hero-copy .eyebrow {
+        font-size: 10px;
+        letter-spacing: .04em;
+    }
+}
+
+/* On a 320px screen the primary label no longer fits on one line inside a
+   pill that hugs its text, so the control claims the full column width and
+   keeps the arrow on the far edge. */
+@media (max-width: 359.98px) {
+    .hero-actions { width: 100%; }
+    /* theme.css ships a 26px inline padding for this control, so the
+       override has to out-specify it rather than rely on load order. */
+    .hero-copy .hero-actions .button { width: 100%; justify-content: space-between; padding-inline: 18px; }
+    .hero-actions .text-link { align-self: flex-start; }
+}
+
+/* ---------- Sticky quick actions (phones only) ---------------------------- */
+
+.yk-actionbar { display: none; }
+
+@media (max-width: 767.98px) {
+    .yk-actionbar {
+        position: fixed;
+        z-index: 940;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 9px 14px calc(9px + env(safe-area-inset-bottom, 0px));
+        border-top: 1px solid rgba(139, 32, 37, .12);
+        background: rgba(255, 250, 242, .96);
+        box-shadow: 0 -12px 30px rgba(48, 29, 21, .1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transform: translateY(110%);
+        visibility: hidden;
+        transition: transform .28s ease, visibility .28s;
+    }
+
+    .yk-actionbar.is-visible {
+        transform: none;
+        visibility: visible;
+    }
+
+    .yk-actionbar-btn {
+        display: inline-flex;
+        min-height: 48px;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border-radius: 13px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: .01em;
+    }
+
+    .yk-actionbar-call {
+        color: #fffaf2;
+        background: linear-gradient(135deg, #9b3034, #65191e);
+        box-shadow: 0 8px 20px rgba(101, 26, 31, .22);
+    }
+
+    .yk-actionbar-call i { font-size: 15px; }
+
+    .yk-actionbar-ghost {
+        flex: 0 0 auto;
+        padding-inline: 18px;
+        border: 1px solid var(--line);
+        color: var(--wine);
+        background: #fffdf9;
+    }
+
+    body.has-actionbar .yk-to-top {
+        bottom: calc(76px + env(safe-area-inset-bottom, 0px));
     }
 }

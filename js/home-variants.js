@@ -158,7 +158,6 @@
     ];
 
     var story = document.body.getAttribute('data-home-story');
-    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ---------- Chooser page ------------------------------------------------ */
 
@@ -294,75 +293,9 @@
         }
     }
 
-    /* ---------- Motion ------------------------------------------------------ */
-
-    if (reduceMotion || !window.gsap || !window.ScrollTrigger) return;
-    gsap.registerPlugin(ScrollTrigger);
-
-    if (story === 'pathway-atlas') {
-        var atlas = document.querySelector('[data-story-atlas]');
-        if (!atlas) return;
-        var route = atlas.querySelector('.atlas-route');
-        if (route) {
-            var horizontal = window.matchMedia('(min-width: 768px)').matches;
-            gsap.fromTo(route, horizontal ? { scaleX: 0 } : { scaleY: 0 }, {
-                scaleX: 1,
-                scaleY: 1,
-                transformOrigin: horizontal ? 'left center' : 'top center',
-                ease: 'none',
-                scrollTrigger: { trigger: atlas.querySelector('.atlas-map'), start: 'top 82%', end: 'top 46%', scrub: .6 }
-            });
-        }
-        gsap.from(atlas.querySelectorAll('.atlas-stop'), {
-            y: 26,
-            autoAlpha: 0,
-            duration: .7,
-            stagger: .14,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: atlas.querySelector('.atlas-map'), start: 'top 80%', once: true }
-        });
-    }
-
-    if (story === 'first-year-chronicle') {
-        var chronicle = document.querySelector('[data-story-timeline]');
-        if (!chronicle) return;
-        var thread = chronicle.querySelector('.chronicle-thread');
-        if (thread) {
-            gsap.fromTo(thread, { scaleY: 0 }, {
-                scaleY: 1,
-                transformOrigin: 'top center',
-                ease: 'none',
-                scrollTrigger: { trigger: chronicle.querySelector('.chronicle-track'), start: 'top 78%', end: 'bottom 58%', scrub: .55 }
-            });
-        }
-        gsap.utils.toArray(chronicle.querySelectorAll('.chronicle-entry')).forEach(function (entry, index) {
-            gsap.from(entry, {
-                x: index % 2 ? 30 : -30,
-                autoAlpha: 0,
-                duration: .7,
-                ease: 'power3.out',
-                scrollTrigger: { trigger: entry, start: 'top 84%', once: true }
-            });
-        });
-    }
-
-    if (story === 'open-syllabus') {
-        var syllabus = document.querySelector('[data-story-syllabus]');
-        if (!syllabus) return;
-        gsap.from(syllabus.querySelectorAll('.syllabus-row'), {
-            x: function (index) { return index % 2 ? 26 : -26; },
-            autoAlpha: 0,
-            duration: .55,
-            stagger: .07,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: syllabus.querySelector('.syllabus-sheet'), start: 'top 84%', once: true }
-        });
-        gsap.from(syllabus.querySelector('.syllabus-intro'), {
-            y: 22,
-            autoAlpha: 0,
-            duration: .7,
-            ease: 'power3.out',
-            scrollTrigger: { trigger: syllabus, start: 'top 78%', once: true }
-        });
+    /* The story section and the new section order are in place now. Tell
+       ScrollTrigger to measure them before js/home-motion.js animates. */
+    if (window.ScrollTrigger) {
+        window.requestAnimationFrame(function () { window.ScrollTrigger.refresh(); });
     }
 })();
