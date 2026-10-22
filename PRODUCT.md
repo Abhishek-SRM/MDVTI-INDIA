@@ -36,6 +36,7 @@ Yogkulam trains yoga professionals rather than running yoga classes: one structu
 - Forms: only `student_reg.html` posts to a live endpoint (`https://mdvtiindia.org/addonlineadmission`); every other registration and login form has an empty action. The redesigned homepage's "Create an account" and "Student login" links point at the legacy unwired pages rather than `student_reg.html`. Whether the forms should be wired is undecided.
 - Programme page displays fee figures inside a countdown offer: PGDYT Online at ₹25,000, stated to rise to ₹35,000 when the timer ends, plus a bonus bundle valued at ₹58,000, a 7-day money-back guarantee and "only 24 seats remain this batch" scarcity copy. Whether these figures and tactics are current or approved is undecided.
 - Recognition is programme-dependent; the site must say so and must not imply every programme carries every recognition.
+- Franchise: `franchise.html` was redesigned in October 2026 around the three rooms a centre runs (hall, therapy room, front desk), with the sixteen partner supports mapped onto them, a written-terms section and a real FAQ; every enquiry action points at the live application form `franchise_reg.html`. `franchise-new.html` is a retired alternate, and `franchise_login.html` / `registerfranchise.html` remain legacy. A 1080×1350 franchise poster is generated from `posters/yogkulam-franchise-poster.html`.
 - Undecided: current pricing, batch dates, exact certification per programme, and whether the older franchise/login pages will be redesigned.
 
 ## Brand Commitments
