@@ -1,0 +1,669 @@
+/* ==========================================================================
+   The Yoga Journal — essays from the teaching team
+   One surface inside the Yogkulam world: a printed register. Wine rule and
+   nameplate at the top, a reading column measured for long-form, a marginal
+   contents rail ruled off by a hairline, and photographs only where the
+   institute actually has one. No cards, no shadows on paper.
+   Loads after theme.css / nav.css / footer.css.
+   ========================================================================== */
+
+.jnl-page {
+    background: var(--paper);
+}
+
+.jnl-shell {
+    width: min(var(--shell), calc(100% - 56px));
+    margin-inline: auto;
+}
+
+.jnl-skip {
+    position: fixed;
+    z-index: 2000;
+    top: 10px;
+    left: 10px;
+    padding: 10px 16px;
+    border-radius: 4px;
+    color: var(--wine);
+    background: #fff;
+    transform: translateY(-160%);
+}
+.jnl-skip:focus { transform: none; }
+
+/* Reading progress: the shared gold hairline, riding under the header. */
+.reading-progress {
+    position: fixed;
+    z-index: 1100;
+    inset: 0 0 auto;
+    height: 3px;
+    pointer-events: none;
+}
+.reading-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--gold-deep);
+    transform: scaleX(0);
+    transform-origin: left center;
+    will-change: transform;
+}
+
+/* ---------- Nameplate ------------------------------------------------------ */
+
+.jnl-masthead {
+    position: relative;
+    padding: 34px 0 30px;
+    border-top: 2px solid var(--wine-ink);
+}
+
+.jnl-masthead::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--gold-deep);
+    content: "";
+    transform-origin: left center;
+    animation: jnl-rule-draw 1.1s cubic-bezier(.19, 1, .22, 1) both;
+}
+
+.jnl-nameplate {
+    display: grid;
+    grid-template-columns: 1fr .78fr;
+    align-items: end;
+    gap: 18px clamp(28px, 4vw, 64px);
+}
+
+.jnl-title {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(32px, 3.6vw, 46px);
+    font-weight: 500;
+    line-height: .98;
+    letter-spacing: -.035em;
+    color: var(--ink);
+}
+.jnl-title em {
+    color: var(--wine);
+    font-style: normal;
+}
+
+.jnl-standfirst {
+    margin: 0;
+    max-width: 44ch;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.jnl-imprint {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+
+/* ---------- Reading layout ------------------------------------------------- */
+
+.jnl-feature {
+    padding: clamp(30px, 4vw, 52px) 0 clamp(46px, 5vw, 72px);
+}
+
+.jnl-read-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    grid-template-areas: "art rail";
+    align-items: start;
+    gap: 0 clamp(34px, 4.4vw, 68px);
+}
+
+.jnl-art {
+    grid-area: art;
+    min-width: 0;
+}
+
+.jnl-title-lg {
+    max-width: 22ch;
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(32px, 4.4vw, 56px);
+    font-weight: 500;
+    line-height: .99;
+    letter-spacing: -.038em;
+    color: var(--ink);
+    text-wrap: balance;
+}
+
+.jnl-byline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin: 18px 0 0;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+.jnl-byline span + span::before {
+    margin-right: 12px;
+    color: var(--line-strong);
+    content: "·";
+}
+.jnl-byline b {
+    color: var(--wine);
+    font-weight: 600;
+}
+
+/* Photograph plate: the eight-corner cut inside a paper matte. */
+.jnl-plate {
+    margin: 30px 0 0;
+    padding: 8px 8px 0;
+    border: 1px solid var(--line-strong);
+    background: #fffdf9;
+}
+.jnl-plate-frame {
+    overflow: hidden;
+    clip-path: polygon(0 0, 89% 0, 100% 12%, 100% 88%, 90% 100%, 12% 100%, 0 89%, 0 12%);
+}
+.jnl-plate img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 7 / 5;
+    object-fit: cover;
+    object-position: center 26%;
+    filter: saturate(.94);
+    animation: jnl-plate-open .95s cubic-bezier(.19, 1, .22, 1) both;
+}
+.jnl-plate figcaption {
+    padding: 9px 2px 10px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .02em;
+    line-height: 1.6;
+}
+
+/* ---------- Prose ---------------------------------------------------------- */
+
+/* One measure rules the whole reading column, so the film, the quote and the
+   folio all break on the same edge as the text. */
+.jnl-prose {
+    max-width: 66ch;
+    margin-top: 30px;
+    font-size: 17px;
+    line-height: 1.78;
+    letter-spacing: .002em;
+}
+
+.jnl-prose p {
+    max-width: none;
+    margin: 0 0 1.15em;
+    color: var(--ink);
+    font-size: inherit;
+    line-height: inherit;
+    letter-spacing: inherit;
+}
+
+.jnl-prose > p:first-of-type::first-letter {
+    float: left;
+    margin: .04em .1em -.02em 0;
+    color: var(--wine);
+    font-family: var(--serif);
+    font-size: 3.55em;
+    font-weight: 500;
+    line-height: .78;
+}
+
+.jnl-prose h2 {
+    max-width: 30ch;
+    margin: 2.3em 0 .7em;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(21px, 2.1vw, 27px);
+    font-weight: 500;
+    line-height: 1.16;
+    letter-spacing: -.02em;
+}
+
+.jnl-prose h2:first-child { margin-top: 0; }
+
+.jnl-prose a {
+    color: var(--wine);
+    text-decoration: underline;
+    text-decoration-color: var(--gold);
+    text-decoration-thickness: 1px;
+    text-underline-offset: .22em;
+}
+.jnl-prose a:hover {
+    color: var(--wine-dark);
+    text-decoration-color: var(--wine);
+}
+
+.jnl-prose strong { font-weight: 600; }
+
+/* Pull quote: no colour bar, the rules do the work. */
+.jnl-pull {
+    max-width: none;
+    margin: 38px 0 40px;
+    padding: 26px 0 0;
+    border-top: 1px solid var(--line-strong);
+}
+.jnl-pull p {
+    max-width: 44ch;
+    margin: 0;
+    color: var(--wine-dark);
+    font-family: var(--serif);
+    font-size: clamp(21px, 2.2vw, 28px);
+    font-weight: 500;
+    line-height: 1.34;
+    letter-spacing: -.02em;
+}
+.jnl-pull::after {
+    display: block;
+    width: 96px;
+    height: 1px;
+    margin-top: 24px;
+    background: var(--wine);
+    content: "";
+}
+
+/* Quoted passage on the article page */
+.jnl-prose blockquote {
+    max-width: 36ch;
+    margin: 34px 0;
+    padding: 24px 0 0;
+    border: 0;
+    border-top: 1px solid var(--line-strong);
+    color: var(--wine-dark);
+    font-family: var(--serif);
+    font-size: clamp(19px, 1.9vw, 24px);
+    font-weight: 500;
+    line-height: 1.42;
+    letter-spacing: -.015em;
+}
+.jnl-prose blockquote p {
+    max-width: none;
+    margin: 0;
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.jnl-prose blockquote cite {
+    display: block;
+    margin-top: 16px;
+    color: var(--muted);
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-style: normal;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+/* Companion film, matted like the plate */
+.jnl-film {
+    max-width: none;
+    margin: 36px 0 34px;
+}
+.jnl-film-frame {
+    padding: 8px;
+    border: 1px solid var(--line-strong);
+    background: #fffdf9;
+}
+.jnl-film-frame iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+.jnl-film figcaption {
+    margin-top: 9px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .02em;
+}
+
+/* End mark and the printed foot of the piece */
+.jnl-end {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: none;
+    margin: 40px 0 0;
+}
+.jnl-end svg { flex: 0 0 auto; color: var(--gold-deep); }
+.jnl-end::after {
+    flex: 1;
+    height: 1px;
+    background: var(--line);
+    content: "";
+}
+
+.jnl-folio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 20px;
+    max-width: none;
+    margin-top: 22px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line-strong);
+    color: var(--muted);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: .11em;
+    line-height: 1.6;
+    text-transform: uppercase;
+}
+.jnl-folio a {
+    color: var(--wine);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-decoration: underline;
+    text-decoration-color: rgba(184, 134, 59, .6);
+    text-decoration-thickness: 1px;
+    text-underline-offset: .28em;
+    text-transform: none;
+}
+.jnl-folio a:hover {
+    color: var(--wine-dark);
+    text-decoration-color: var(--wine);
+}
+
+/* ---------- Marginal contents rail ---------------------------------------- */
+
+.jnl-rail {
+    grid-area: rail;
+    position: sticky;
+    top: calc(var(--yk-header-h, 69px) + 26px);
+    padding-left: 26px;
+    border-left: 1px solid var(--line);
+}
+
+.jnl-rail-block + .jnl-rail-block {
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+}
+
+.jnl-rail-title {
+    margin: 0 0 12px;
+    color: var(--wine);
+    font-family: var(--sans);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.jnl-index {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.jnl-index li + li { border-top: 1px solid var(--line); }
+
+.jnl-index a {
+    display: block;
+    margin-left: -28px;
+    padding: 13px 0 13px 26px;
+    border-left: 2px solid transparent;
+    color: var(--ink);
+}
+.jnl-index a:hover,
+.jnl-index a:focus-visible { border-left-color: var(--line-strong); }
+.jnl-index a[aria-current="page"] { border-left-color: var(--wine); }
+
+.jnl-index strong {
+    display: block;
+    color: inherit;
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.26;
+    letter-spacing: -.012em;
+}
+.jnl-index a:hover strong { color: var(--wine); }
+
+.jnl-index a > span {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: .02em;
+    line-height: 1.5;
+}
+.jnl-index .jnl-now { color: var(--wine); }
+
+.jnl-rail-name {
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.28;
+    letter-spacing: -.012em;
+}
+
+.jnl-rail-note {
+    margin: 7px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.65;
+}
+
+.jnl-rail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--gold);
+    color: var(--wine);
+    font-size: 12px;
+    font-weight: 600;
+}
+.jnl-rail-link:hover { border-color: var(--wine); color: var(--wine-dark); }
+.jnl-rail-link svg { transition: transform .25s ease; }
+.jnl-rail-link:hover svg { transform: translateX(3px); }
+
+.jnl-rail-phone {
+    display: block;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 11.5px;
+    letter-spacing: .02em;
+}
+.jnl-rail-phone:hover { color: var(--wine); }
+
+/* ---------- Article chrome ------------------------------------------------- */
+
+.jnl-crumb-row {
+    padding: 22px 0 0;
+}
+
+.jnl-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--gold);
+    color: var(--wine);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+.jnl-back:hover { border-color: var(--wine); color: var(--wine-dark); }
+.jnl-back svg { transition: transform .25s ease; }
+.jnl-back:hover svg { transform: translateX(-3px); }
+
+.jnl-article {
+    padding: 30px 0 clamp(46px, 5vw, 72px);
+}
+.jnl-article .jnl-title-lg {
+    max-width: 26ch;
+    font-size: clamp(34px, 5vw, 62px);
+}
+
+/* ---------- Closing band --------------------------------------------------- */
+
+.jnl-close {
+    border-top: 1px solid var(--line-strong);
+    background: var(--cream);
+}
+
+.jnl-close-inner {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: end;
+    gap: 26px clamp(32px, 5vw, 72px);
+    padding-block: clamp(48px, 5.4vw, 76px);
+}
+
+.jnl-close h2 {
+    max-width: 20ch;
+    margin: 0;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: clamp(27px, 3.3vw, 42px);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -.03em;
+}
+.jnl-close h2 em { color: var(--wine); font-style: normal; }
+
+.jnl-close p {
+    max-width: 46ch;
+    margin: 14px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.85;
+}
+
+.jnl-close-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 24px;
+}
+
+.jnl-button {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border: 1px solid var(--wine);
+    border-radius: 999px;
+    color: #fffaf2;
+    background: var(--wine);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    box-shadow: 0 10px 24px rgba(101, 26, 31, .2);
+    transition: background .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.jnl-button:hover,
+.jnl-button:focus-visible {
+    color: #fffaf2;
+    background: var(--wine-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(101, 26, 31, .26);
+}
+
+.jnl-close-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--line-strong);
+    color: var(--wine);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+.jnl-close-link:hover { border-color: var(--wine); color: var(--wine-dark); }
+
+/* ---------- Motion --------------------------------------------------------- */
+
+@keyframes jnl-plate-open {
+    from { clip-path: inset(0 0 100% 0); }
+    to { clip-path: inset(0); }
+}
+
+@keyframes jnl-rule-draw {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+
+/* ---------- Responsive ----------------------------------------------------- */
+
+@media (max-width: 1079px) {
+    .jnl-read-grid {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "art"
+            "rail";
+        gap: 34px;
+    }
+    .jnl-rail {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 22px 32px;
+        padding: 0 0 24px;
+        border-left: 0;
+        border-bottom: 1px solid var(--line-strong);
+    }
+    .jnl-rail-block + .jnl-rail-block {
+        margin-top: 0;
+        padding-top: 0;
+        border-top: 0;
+    }
+    .jnl-index a { margin-left: 0; padding-left: 14px; }
+    .jnl-rail-title { margin-bottom: 10px; }
+}
+
+@media (max-width: 899px) {
+    .jnl-nameplate { grid-template-columns: 1fr; align-items: start; gap: 14px; }
+    .jnl-standfirst { max-width: 56ch; }
+}
+
+@media (max-width: 767px) {
+    .jnl-shell { width: calc(100% - 36px); }
+    .jnl-masthead { padding: 22px 0 22px; }
+    .jnl-title { font-size: clamp(28px, 7.6vw, 34px); }
+    .jnl-feature { padding-top: 26px; }
+    .jnl-title-lg { font-size: clamp(30px, 9.4vw, 40px); }
+    .jnl-rail { grid-template-columns: 1fr; gap: 20px; }
+    .jnl-prose { font-size: 16.5px; line-height: 1.76; }
+    .jnl-plate { margin-top: 24px; }
+    .jnl-plate img { aspect-ratio: 4 / 3; }
+    .jnl-close-inner { grid-template-columns: 1fr; align-items: start; }
+    .jnl-close-actions { margin-top: 4px; }
+    .jnl-article { padding-top: 22px; }
+    .jnl-crumb-row { padding-top: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .jnl-page *,
+    .jnl-page *::before,
+    .jnl-page *::after {
+        transition-duration: .001ms !important;
+        animation-duration: .001ms !important;
+        animation-delay: 0ms !important;
+    }
+    .jnl-plate img { clip-path: none; animation: none; }
+    .jnl-masthead::after { animation: none; transform: none; }
+}

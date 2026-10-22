@@ -3,118 +3,32 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MDVTI INDIA</title>
+    <title>The Yoga Journal — essays from our teachers | MDVTI India</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta name="description"
+        content="The Yoga Journal: writing from the Yogkulam teaching team on practice, therapy and the philosophy behind both.">
 
-    <!-- Favicon -->
-    <link href="img/logo1.png" rel="icon" type="image/png">
+    <link href="img/favicon.svg" rel="icon" type="image/svg+xml">
 
-    <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;1,300&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap"
         rel="stylesheet">
 
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="css/theme.css" rel="stylesheet">
     <link href="css/nav.css" rel="stylesheet">
     <link href="css/footer.css" rel="stylesheet">
+    <link href="css/blog.css" rel="stylesheet">
 </head>
-<style>
 
-    /* The reading column starts on the same vertical line as the header
-       wordmark and the footer, instead of 28px inside it. */
-    .wrapper {
-        width: 100%;
-        max-width: var(--shell);
-        margin-inline: auto;
-        padding-inline: 20px;
-    }
+<body class="jnl-page" id="top">
+    <a class="jnl-skip" href="#main">Skip to content</a>
+    <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
 
-    #content {
-        padding-inline: 0 !important;
-    }
-
-    #content > .row {
-        margin-inline: 0;
-    }
-
-    #content > .row > .col-md-8 {
-        padding-left: 0;
-    }
-
-        .dropdown-toggle::after {
-        display: block;
-        position: absolute;
-        top: 50%;
-        right: 0;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%)
-    }
-
-    #content {
-        overflow: hidden;
-        width: 100%;
-        padding: 0;
-        min-height: 100vh;
-        -webkit-transition: all .3s;
-        -o-transition: all .3s;
-        transition: all .3s
-    }
-
-    .blog-rail {
-        padding-top: 4px;
-    }
-
-    .mdvti-blog-text {
-        margin-top: 10px;
-        letter-spacing: 0.015rem;
-        line-height: 1.67;
-        font-size: 17px;
-        color: #2a2a2a
-    }
-
-    .mdvti-blog-text p {
-        max-width: 72ch;
-        margin: 0 0 1.15em;
-        color: inherit;
-        font-size: inherit;
-        line-height: inherit;
-    }
-
-    .blog-post-title {
-        margin: 0 0 6px;
-    }
-
-    /* The embedded video is hard-coded to 760px and used to overflow the column. */
-    .mdvti-blog-text iframe {
-        width: 100%;
-        max-width: 100%;
-    }
-</style>
-
-<body>
 <!-- YK-NAV:START — shared header, source: partials/site-header.html -->
-<div class="yk-header" id="ykHeader">
+<div class="yk-header" id="ykHeader" role="banner">
     <div class="yk-topbar">
         <div class="yk-shell yk-topbar-inner">
             <div class="yk-topbar-contact">
@@ -256,122 +170,154 @@
 </div>
 <!-- YK-NAV:END -->
 
-    <!-- Spinner Start -->
-    <div id="spinner"
-        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-    <div class="wrapper d-flex align-items-stretch">
-
-        <div id="content" class="p-4 p-md-5 pt-5">
-            <div class="row">
-                <div class="col-md-8 col-sm-12">
-                    <div class="blog-feed-post mb-5">
-                        <div class="blog-feed-img-txt">
-                            <div class="row">
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <div class="mdvti-blog-text">
-                                        <h1 class="blog-post-title"><a href="#" class="text-dark">The Role of Yoga in Cardiac Health.</a></h1>
-                                        <div class="mdvti-post-meta">
-                                            <a href="#"><i class="fas fa-user"></i> Shubham Tripathi | Yoga
-                                                Teacher</a>
-                                        </div>
-                                        <p class="mt-3">Spiritual awakening is a profound experience that is often
-                                            described as a deep connection to the divine, a deep understanding of the
-                                            nature of life, or a sense of inner growth and transformation. It can bring
-                                            a sense of peace and oneness, and it can provide a greater understanding of
-                                            one’s purpose and the meaning of life. Spiritual awakening can also be seen
-                                            as a journey of self-discovery, as well as an opportunity to gain insight
-                                            into the spiritual truths of the universe. Regardless of the form it takes,
-                                            spiritual enlightenment can be an incredibly powerful and life-changing
-                                            experience. If you are looking for answers about life and the universe, you
-                                            may benefit from exploring the definition, signs and symptoms of spiritual
-                                            awakening.
-                                        </p>
-                                        <p>
-                                            Spiritual awakening is a term that has been used to describe a
-                                            variety of experiences. Throughout history, different spiritual paths have
-                                            used various terms to describe spiritual awakening, including enlightenment,
-                                            salvation, liberation, and self-realization. In the yoga tradition, this
-                                            process is described using the terms Kundalini awakening, Moksha, and
-                                            Samadhi. In Buddhism, the term Nirvana is often used. While the terminology
-                                            may differ, the core spiritual experience remains the same or very similar.
-                                        </p>
-                                        <div class="container p-5 d-flex justify-content-center wow fadeInUp">
-                                            <iframe width="760" height="335"
-                                                src="https://www.youtube.com/embed/snPBv1-igjM"
-                                                title="YouTube video player" frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowfullscreen></iframe>
-                                        </div>
-                                        <p class="mt-1">A small or large shift in consciousness is a common experience
-                                            and is marked by a deepened sense of peace and understanding about spiritual
-                                            paths, spiritual experience, religious experience, and mystical experiences.
-                                            An internal journey is initiated in which an individual moves from a
-                                            limited, ego-based perspective to a broader, more enlightened view of
-                                            reality. During this process, the individual gains access to a greater
-                                            source of inner wisdom and knowledge. As this wisdom is accessed, the
-                                            individual can begin to understand the interconnectedness of all things and
-                                            cultivate greater compassion, empathy, and love towards themselves and
-                                            others.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+    <main id="main">
+        <header class="jnl-masthead">
+            <div class="jnl-shell">
+                <div class="jnl-nameplate">
+                    <h1 class="jnl-title">The Yoga <em>Journal</em></h1>
+                    <div>
+                        <p class="jnl-standfirst">Essays from the Yogkulam teaching team on practice, therapy and
+                            the philosophy that holds them together.</p>
+                        <p class="jnl-imprint">The institute's journal · Lucknow · since 2012</p>
                     </div>
-                    <aside class="aside-card aside-card--closing">
-                        <p class="aside-card-kicker">Admissions</p>
-                        <h2 class="aside-card-title">Not sure which path fits?</h2>
-                        <p class="aside-card-copy">Tell our team what you want from yoga and we will point you to the right programme.</p>
-                        <div class="aside-card-actions">
-                            <a class="aside-card-cta" href="tel:18008919232">Talk to admissions</a>
-                            <a class="aside-card-link" href="course-desc.html">See all programmes</a>
-                        </div>
-                    </aside>
-                </div>
-                <div class="col-md-4 d-none d-lg-block">
-                    <aside class="blog-rail">
-                        <div class="aside-card">
-                            <p class="aside-card-kicker">Programme</p>
-                            <h2 class="aside-card-title">Post Graduate Diploma in Yoga Therapy</h2>
-                            <p class="aside-card-copy">1 year &middot; 500 hours &middot; online or hybrid. The full path from personal practice to therapeutic practice.</p>
-                            <a class="aside-card-cta" href="course-desc.html">See the programme</a>
-                        </div>
-                    </aside>
                 </div>
             </div>
-        </div>
-    </div>
+        </header>
 
+        <article class="jnl-feature">
+            <div class="jnl-shell jnl-read-grid">
+                <div class="jnl-art">
+                    <h2 class="jnl-title-lg">The Role of Yoga in Cardiac Health.</h2>
 
+                    <p class="jnl-byline">
+                        <span>Words by <b>Shubham Tripathi</b></span>
+                        <span>Yoga teacher</span>
+                    </p>
 
+                    <figure class="jnl-plate">
+                        <div class="jnl-plate-frame">
+                            <img src="img/gallery/2.jpg" width="700" height="500"
+                                alt="Students holding their certificates in front of the MDVTI India banner"
+                                fetchpriority="high" decoding="async">
+                        </div>
+                        <figcaption>Students with their certificates. From the Yogkulam gallery.</figcaption>
+                    </figure>
 
-    <!-- Back to Top -->
+                    <div class="jnl-prose">
+                        <p>Spiritual awakening is a profound experience that is often described as a deep
+                            connection to the divine, a deep understanding of the nature of life, or a sense of
+                            inner growth and transformation. It can bring a sense of peace and oneness, and it can
+                            provide a greater understanding of one’s purpose and the meaning of life. Spiritual
+                            awakening can also be seen as a journey of self-discovery, as well as an opportunity to
+                            gain insight into the spiritual truths of the universe. Regardless of the form it takes,
+                            spiritual enlightenment can be an incredibly powerful and life-changing experience. If
+                            you are looking for answers about life and the universe, you may benefit from exploring
+                            the definition, signs and symptoms of spiritual awakening.</p>
 
+                        <p>Spiritual awakening is a term that has been used to describe a variety of experiences.
+                            Throughout history, different spiritual paths have used various terms to describe
+                            spiritual awakening, including enlightenment, salvation, liberation, and
+                            self-realization. In the yoga tradition, this process is described using the terms
+                            Kundalini awakening, Moksha, and Samadhi. In Buddhism, the term Nirvana is often used.
+                            While the terminology may differ, the core spiritual experience remains the same or very
+                            similar.</p>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+                        <figure class="jnl-film">
+                            <div class="jnl-film-frame">
+                                <iframe src="https://www.youtube.com/embed/snPBv1-igjM"
+                                    title="The essay's companion film" loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                            <figcaption>Film · the essay's companion video.</figcaption>
+                        </figure>
 
-    <script src="js/site-nav.js" defer></script>
+                        <div class="jnl-pull">
+                            <p>An internal journey is initiated in which an individual moves from a limited,
+                                ego-based perspective to a broader, more enlightened view of reality.</p>
+                        </div>
+
+                        <p>A small or large shift in consciousness is a common experience and is marked by a
+                            deepened sense of peace and understanding about spiritual paths, spiritual experience,
+                            religious experience, and mystical experiences. An internal journey is initiated in
+                            which an individual moves from a limited, ego-based perspective to a broader, more
+                            enlightened view of reality. During this process, the individual gains access to a
+                            greater source of inner wisdom and knowledge. As this wisdom is accessed, the
+                            individual can begin to understand the interconnectedness of all things and cultivate
+                            greater compassion, empathy, and love towards themselves and others.</p>
+
+                        <div class="jnl-end" aria-hidden="true">
+                            <svg width="32" height="7" viewBox="0 0 32 7" fill="none">
+                                <circle cx="3.5" cy="3.5" r="3.1" fill="currentColor" />
+                                <circle cx="16" cy="3.5" r="3.1" fill="currentColor" />
+                                <circle cx="28.5" cy="3.5" r="3.1" fill="currentColor" />
+                            </svg>
+                        </div>
+
+                        <p class="jnl-folio">
+                            <span>Yogkulam · The Yoga Journal</span>
+                            <a href="tel:18008919232">Admissions · 1800-891-9232</a>
+                        </p>
+                    </div>
+                </div>
+
+                <aside class="jnl-rail" aria-label="In this journal">
+                    <div class="jnl-rail-block">
+                        <h2 class="jnl-rail-title">In this journal</h2>
+                        <ol class="jnl-index">
+                            <li>
+                                <a href="blog.html" aria-current="page">
+                                    <strong>The Role of Yoga in Cardiac Health</strong>
+                                    <span>Shubham Tripathi · <span class="jnl-now">reading now</span></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="blog-description.html">
+                                    <strong>An Introduction to Yoga</strong>
+                                    <span>12 September 2021</span>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="jnl-rail-block">
+                        <h2 class="jnl-rail-title">The programme</h2>
+                        <p class="jnl-rail-name">Post Graduate Diploma in Yoga Therapy</p>
+                        <p class="jnl-rail-note">1 year · 500 hours · online or hybrid.</p>
+                        <a class="jnl-rail-link" href="course-desc.html">See the programme
+                            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                                <path d="M1 5h11M8.4 1.4 12 5l-3.6 3.6" stroke="currentColor" stroke-width="1.3"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <a class="jnl-rail-phone" href="tel:18008919232">Admissions · 1800-891-9232</a>
+                    </div>
+                </aside>
+            </div>
+        </article>
+
+        <section class="jnl-close" aria-labelledby="jnlCloseTitle">
+            <div class="jnl-shell jnl-close-inner">
+                <div>
+                    <h2 id="jnlCloseTitle">Reading is not the same as <em>training.</em></h2>
+                    <p>The journal is where our teachers think aloud. The Post Graduate Diploma in Yoga Therapy runs
+                        one year and five hundred hours, online or hybrid, with the same teaching team leading each
+                        module.</p>
+                </div>
+                <div class="jnl-close-actions">
+                    <a class="jnl-button" href="course-desc.html">See the programmes</a>
+                    <a class="jnl-close-link" href="tel:18008919232">Talk to admissions · 1800-891-9232</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
 <!-- YK-FOOTER:START — shared footer, source: partials/site-footer.html -->
 <footer class="yk-footer">
     <div class="yk-fshell">
         <div class="yk-footer-grid">
             <div class="yk-footer-brand">
-                <a class="yk-footer-lockup" href="index.html" aria-label="Yogkulam home">
+                <a class="yk-footer-lockup" href="index.html" aria-label="Yogkulam by MDVTI India, home">
                     <img src="img/yogkulam_logo.png" alt="" width="73" height="46">
                     <span>
                         <strong>Yogkulam</strong>
@@ -419,8 +365,10 @@
     </div>
 </footer>
 <!-- YK-FOOTER:END -->
-<a class="yk-to-top" href="#top" aria-label="Back to top"><span aria-hidden="true">↑</span></a>
+    <a class="yk-to-top" href="#top" aria-label="Back to top"><span aria-hidden="true">&uarr;</span></a>
 
+    <script src="js/site-nav.js" defer></script>
+    <script src="js/blog.js" defer></script>
 </body>
 
 </html>
